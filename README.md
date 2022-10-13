@@ -1,5 +1,7 @@
 # PPAEG: AEG for Prototype Pollution
 
+[Presentation Slides](https://docs.google.com/presentation/d/1_WSLOF1536Esj1i3am7Y4pubKbzS3afh5fZtZsMpqSY/edit?usp=sharing)
+
 ### 0 Research Background
 
 #### PPAEG vs. PPDetector
