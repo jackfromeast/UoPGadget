@@ -1,0 +1,27 @@
+{
+  "name": "ion-parser",
+  "version": "0.5.2",
+  "description": "The fastest and lightest parser for TOML and ION files, an alternative to JSON or YAML file formats.",
+  "main": "parser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "toml",
+    "ion",
+    "parser",
+    "fast",
+    "light",
+    "configuration",
+    "file",
+    "json",
+    "yaml"
+  ],
+  "author": "Lepzulnag",
+  "license": "MIT",
+  "homepage": "https://github.com/Lepzulnag/ion-parser",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/Lepzulnag/ion-parser.git"
+  }
+}

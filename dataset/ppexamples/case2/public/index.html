@@ -1,0 +1,64 @@
+<!DOCTYPE html><meta charset="utf-8" />
+<h1>Air pollution challenge</h1>
+<h2>Rules</h2>
+<ul>
+  <li>The goal is to execute <code>/flag</code> via prototype pollution</li>
+  <li>You can <a href=/source.tar.gz>download the source code</a></li>
+  <li>The environment is recreated after every request. So make sure your payload works in a single request.</li>
+  <li>Outgoing network connections are blocked on the server. So make sure you can read the flag right in the response.</li>
+  <li>Flag format is <code>SECURITUM_[a-zA-Z0-9]+</code></li>
+  <li><s>Did you find the flag? Let <a href=https://twitter.com/SecurityMB>@SecurityMB</a> know!</s> The challenge is over! If you want to know how to solve it, check <a href="https://www.creastery.com/blog/securitymb-october-2021-prototype-pollution-challenge/">this amazing writeup</a> by <a href="https://twitter.com/Creastery">@Creastery</a>.</li>
+  <li><b>Solvers:</b>
+  <ul>
+    <li><a href="https://twitter.com/BitK_">@BitK_</a></li>
+    <li><a href="https://twitter.com/Creastery">@Creastery</a></li>
+    <li><a href="https://twitter.com/zevtnax">@zevtnax</a></li>
+    <li><a href="https://twitter.com/CurseRed">@CurseRed</a></li>
+    <li><a href="https://twitter.com/steike">@steike</a></li>
+    <li><a href="https://twitter.com/itszn13">@itszn13</a></li>
+    <li><a href="https://twitter.com/aparipantigozo">@aparipantigozo</a></li>
+    <li><a href="https://twitter.com/kolokokop">@kolokokop</a></li>
+    <li><a href="https://twitter.com/aszx87410">@aszx87410</a></li>
+    <li><a href="https://twitter.com/python273">@python273</a></li>
+    <li><a href="https://twitter.com/real_as3617">@real_as3617</a></li>
+    <li><a href="https://twitter.com/vvxhid1">@vvxhid1</a></li>
+    <li><a href="https://twitter.com/Ahmed_2Yasser">@Ahmed_2Yasser</a></li>
+    <li><a href="https://github.com/apple502j/">@quake_apple</a></li>
+    <li><a href="https://twitter.com/charleshooper">@charleshooper</a></li>
+    <li><a href="https://twitter.com/pspaul95">@pspaul95</a></li>
+    <li><a href="https://twitter.com/YadhuKrishna_">@YadhuKrishna_</a> and <a href="https://twitter.com/mal_f0y">@mal_f0y</a></li>
+    <li><a href="https://twitter.com/jorge_ctf">@jorge_ctf</a></li>
+  </ul></li>
+</ul>
+<form action="javascript:updateData()">
+  <p>Filter</p>
+  <input placeholder="City" name="city" type="text" />
+  <input placeholder="Year" name="year" type="number" />
+  <button>Apply</button>
+</form>
+<br /><br />
+<div id="output"></div>
+
+<script>
+  const output = document.getElementById("output");
+
+  async function updateData() {
+    const params = new URLSearchParams();
+    if (document.forms[0].city.value !== "") {
+      params.set("city", document.forms[0].city.value);
+    }
+
+    if (document.forms[0].year.value !== "") {
+      params.set("year", +document.forms[0].year.value);
+    }
+
+    const resp = await fetch("/get-data", {
+      method: "POST",
+      body: params,
+    });
+    const html = await resp.text();
+
+    output.innerHTML = html;
+  }
+  document.addEventListener("DOMContentLoaded", () => updateData());
+</script>

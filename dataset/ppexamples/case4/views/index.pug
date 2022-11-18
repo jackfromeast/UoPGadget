@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  script(src='./javascripts/jquery.js')
+  script.
+    function sendData(){
+      var name = $("#name").val();
+      var password = $("#password").val();
+      var userData = "title = \"userData\"\n\n[user]\nname = \"" + name + "\"\npassword = \"" + password + "\"";
+      $.ajax({
+    type: "POST",
+    url: "./login",
+    data: userData,
+    contentType: 'text/plain',
+    success: function(response) {alert(response)}
+    })
+
+    }
+
+  h1= title
+  img(src='../images/demonne.png' alt='login')
+  p Welcome to #{title}
+  form
+  label(for='name') Name:
+  br
+  input#name(type='text' name='name')
+  br
+  label(for='password') Password:
+  br
+  input#password(type='text' name='password')
+  <button onclick="sendData()">send</button>

