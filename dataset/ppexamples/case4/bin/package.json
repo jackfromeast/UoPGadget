@@ -1,0 +1,34 @@
+{
+  "name": "jsonbin",
+  "readme": "README",
+  "version": "1.4.1",
+  "description": "CLI and package for jsonbin.org",
+  "main": "index.js",
+  "bin": {
+    "jsonbin": "./cli.js"
+  },
+  "scripts": {
+    "prepublishOnly": "babel --ignore=node_modules index.js -o index.js",
+    "postpublish": "git checkout *.js # resetting"
+  },
+  "keywords": [],
+  "author": "Remy Sharp",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/remy/jsonbin/tree/master/bin"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.20.0",
+    "cli-highlight": "^1.1.4",
+    "clite": "^0.3.0",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-es6-promise": "^1.0.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.17.0"
+  }
+}
