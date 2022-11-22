@@ -42,9 +42,10 @@ Current Prototype Pollution Detectors (PPDetector) can be categorized as SAST to
 
 #### 1.1 Template-engine related
 
-| index | template | version | links | comments |
-| ----- | -------- | ------- | ----- | -------- |
-| 1     |          |         |       |          |
-|       |          |         |       |          |
-|       |          |         |       |          |
+| index | template                | version      | source                                                       | comments                                                     |
+| ----- | ----------------------- | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 1     | hogan                   | 3.0.2        |                                                              |                                                              |
+| 2     | lodash                  | 4.17.4       | https://www.leavesongs.com/PENETRATION/javascript-prototype-pollution-attack.html#0x05-code-breaking-2018-thejs |                                                              |
+| 3     | pug                     | 3.0.2        | deadface ctf 2022                                            |                                                              |
+| 4     | express-hbs(handlebars) | 1.0.3(4.0.6) | websec assign3                                               | cannot be exploited by  pp sink(broken after inject property) |
 

