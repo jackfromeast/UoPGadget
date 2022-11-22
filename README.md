@@ -58,13 +58,37 @@ Current Prototype Pollution Detectors (PPDetector) can be categorized as SAST to
 
 **How did i find these gadgets' vulnerabilities?**
 
-1. Google: `template engine js prototype pollution` (security blog, ctf writeup)
+1. Google: `template engine js prototype pollution` (security blog, ctf writeup) top 10 pages
 2. Visit the issues/commits/changelog of each template engine's GitHub repo
 3. CVE/NVD disclosed vulnerabilities
 
 Usually, the gadgets found inside the template render engine might not be identified as vulnerable or assigned a CVE. However, applications with prototype pollution vulnerability that also use these exploitable template render engines will be assigned a critical RCE kind vulnerability.
 
+It should be noted the above template engines might contain more than one gadgets.
 
+The following js template render engines are still left open:
+
+> https://colorlib.com/wp/top-templating-engines-for-javascript/
+>
+> https://github.com/topics/template-engine?q=js+template
+
+| template name   | link                                            | work on |
+| --------------- | ----------------------------------------------- | ------- |
+| Eta             | https://eta.js.org/                             |         |
+| doT.js          | https://olado.github.io/doT/                    |         |
+| underscorejs    | https://underscorejs.org/                       |         |
+| webix           | https://webix.com/demos/                        |         |
+| marko           | https://markojs.com/                            |         |
+| jsRender        | https://www.jsviews.com/#jsrender               |         |
+| SquirrellyJS    | https://squirrelly.js.org/                      |         |
+| Template7       | https://www.idangero.us/template7/#.Y3zrz-yZMUE |         |
+| jSmart          | https://github.com/umakantp/jsmart              |         |
+| Email Templates | https://github.com/forwardemail/email-templates |         |
+| Tangular        | https://github.com/totaljs/Tangular             |         |
+| EasyTemplateJS  | https://github.com/ushelp/EasyTemplateJS        |         |
+| Saker           | https://github.com/eshengsky/saker              |         |
+| NornJ           | https://github.com/joe-sky/nornj                |         |
+| templater.js    | https://github.com/Pinjasaur/templater.js       |         |
 
 ## 2 Undefined property searching
 
