@@ -24,7 +24,8 @@ app.engine('ejs', function (filePath, options, callback) { // define the templat
         return callback(null, rendered)
     })
 })
-app.set('views', './views')
+
+app.set('views', `${__dirname}/views`)
 app.set('view engine', 'ejs')
 
 app.all('/', (req, res) => {
