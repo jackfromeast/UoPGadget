@@ -2,3 +2,5 @@ dataset/ppexamples/*/node_modules/
 .DS_Store
 PPAEG.wiki
 PPAEG.wiki/*
+.vscode/*
+./node-find-undefined/*
