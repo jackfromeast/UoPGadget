@@ -3,5 +3,6 @@ dataset/ppexamples/*/node_modules/
 PPAEG.wiki
 PPAEG.wiki/*
 .vscode/*
+<<<<<<< HEAD
 node-find-undefined/*
 tmp/*
