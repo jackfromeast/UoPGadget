@@ -4,3 +4,4 @@ PPAEG.wiki
 PPAEG.wiki/*
 .vscode/*
 ./node-find-undefined/*
+.idea/
