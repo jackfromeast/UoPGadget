@@ -3,4 +3,5 @@ dataset/ppexamples/*/node_modules/
 PPAEG.wiki
 PPAEG.wiki/*
 .vscode/*
-./node-find-undefined/*
+node-find-undefined/*
+./tmp/*
