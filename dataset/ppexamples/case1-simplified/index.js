@@ -36,6 +36,6 @@ app.post("/get-data", async (req, res) => {
     res.json({ error: Function(`return ${template}`)() });
 });
 
-app.listen(8080, () => {
-    console.log(`Listening on http://localhost:8080`);
+app.listen(80, () => {
+    console.log(`Listening on http://localhost:80`);
 });
