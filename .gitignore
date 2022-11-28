@@ -1,4 +1,7 @@
 dataset/ppexamples/*/node_modules/
+dataset/fuzzcases/*/node_modules/
+node_modules/*
+node_modules
 .DS_Store
 PPAEG.wiki
 PPAEG.wiki/*
