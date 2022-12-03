@@ -11,4 +11,7 @@ source ~/.bashrc
 echo "create CodeQL database for this repository"
 codeql database create codeql-database --language javascript --source-root case0
 echo "running a test analysis"
-codeql database analyze --download codeql-database codeql/javascript-queries:Declarations/UnusedVariable.ql --format=csv --output=js-results.csv
+codeql database analyze --download codeql-database codeql/javascript-queries:Declarations/UnusedVariable.ql --format=csv --output=unused-var.csv
+
+echo "running analysis on undefined properties"
+codeql database analyze --download codeql-database dataset/UnusedVariable.ql --format=csv --output=undef-properties.csv
