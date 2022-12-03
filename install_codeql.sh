@@ -1,11 +1,11 @@
-#wget https://github.com/github/codeql-cli-binaries/releases/download/v2.11.4/codeql-osx64.zip
-#unzip codeql-osx64.zip
+wget https://github.com/github/codeql-cli-binaries/releases/download/v2.11.4/codeql-osx64.zip
+unzip codeql-osx64.zip
 
 path=$(pwd)
 string='export PATH="'$path'/codeql:$PATH"'
-#echo $string >> ~/.bashrc
+echo $string >> ~/.bashrc
 echo "appended $string to bash configurations"
-#source ~/.bashrc
+source ~/.bashrc
 
 
 echo "create CodeQL database for this repository"
