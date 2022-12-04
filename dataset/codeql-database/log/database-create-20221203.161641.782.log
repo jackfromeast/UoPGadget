@@ -1,0 +1,557 @@
+[2022-12-03 16:16:41] This is codeql database create codeql-database --language javascript --source-root codeql-testcases
+[2022-12-03 16:16:41] Log file was started late.
+[2022-12-03 16:16:41] [PROGRESS] database create> Initializing database at /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database.
+[2022-12-03 16:16:41] Running plumbing command: codeql database init --language=javascript --source-root=/Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-testcases --allow-missing-source-root=false --allow-already-existing -- /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database
+[2022-12-03 16:16:41] Calling plumbing command: codeql resolve languages --format=json
+[2022-12-03 16:16:42] [DETAILS] resolve languages> Scanning for [codeql-extractor.yml] from /Users/litianjian/Applications/codeql/.codeqlmanifest.json
+[2022-12-03 16:16:42] [DETAILS] resolve languages> Parsing /Users/litianjian/Applications/codeql/go/codeql-extractor.yml.
+[2022-12-03 16:16:42] [DETAILS] resolve languages> Parsing /Users/litianjian/Applications/codeql/python/codeql-extractor.yml.
+[2022-12-03 16:16:42] [DETAILS] resolve languages> Parsing /Users/litianjian/Applications/codeql/java/codeql-extractor.yml.
+[2022-12-03 16:16:42] [DETAILS] resolve languages> Parsing /Users/litianjian/Applications/codeql/html/codeql-extractor.yml.
+[2022-12-03 16:16:42] [DETAILS] resolve languages> Parsing /Users/litianjian/Applications/codeql/xml/codeql-extractor.yml.
+[2022-12-03 16:16:42] [DETAILS] resolve languages> Parsing /Users/litianjian/Applications/codeql/properties/codeql-extractor.yml.
+[2022-12-03 16:16:42] [DETAILS] resolve languages> Parsing /Users/litianjian/Applications/codeql/cpp/codeql-extractor.yml.
+[2022-12-03 16:16:42] [DETAILS] resolve languages> Parsing /Users/litianjian/Applications/codeql/csv/codeql-extractor.yml.
+[2022-12-03 16:16:42] [DETAILS] resolve languages> Parsing /Users/litianjian/Applications/codeql/csharp/codeql-extractor.yml.
+[2022-12-03 16:16:42] [DETAILS] resolve languages> Parsing /Users/litianjian/Applications/codeql/javascript/codeql-extractor.yml.
+[2022-12-03 16:16:42] [DETAILS] resolve languages> Parsing /Users/litianjian/Applications/codeql/ruby/codeql-extractor.yml.
+[2022-12-03 16:16:42] Plumbing command codeql resolve languages completed:
+                      {
+                        "extractors" : {
+                          "go" : [
+                            {
+                              "extractor_root" : "/Users/litianjian/Applications/codeql/go"
+                            }
+                          ],
+                          "python" : [
+                            {
+                              "extractor_root" : "/Users/litianjian/Applications/codeql/python"
+                            }
+                          ],
+                          "java" : [
+                            {
+                              "extractor_root" : "/Users/litianjian/Applications/codeql/java",
+                              "extractor_options" : {
+                                "exclude" : {
+                                  "title" : "A glob excluding files from analysis.",
+                                  "description" : "A glob indicating what files to exclude from the analysis.\n",
+                                  "type" : "string"
+                                }
+                              }
+                            }
+                          ],
+                          "html" : [
+                            {
+                              "extractor_root" : "/Users/litianjian/Applications/codeql/html"
+                            }
+                          ],
+                          "xml" : [
+                            {
+                              "extractor_root" : "/Users/litianjian/Applications/codeql/xml"
+                            }
+                          ],
+                          "properties" : [
+                            {
+                              "extractor_root" : "/Users/litianjian/Applications/codeql/properties"
+                            }
+                          ],
+                          "cpp" : [
+                            {
+                              "extractor_root" : "/Users/litianjian/Applications/codeql/cpp"
+                            }
+                          ],
+                          "csv" : [
+                            {
+                              "extractor_root" : "/Users/litianjian/Applications/codeql/csv"
+                            }
+                          ],
+                          "csharp" : [
+                            {
+                              "extractor_root" : "/Users/litianjian/Applications/codeql/csharp",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'brotli' (the default, to write brotli-compressed TRAP), 'gzip', and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip|brotli)$"
+                                    }
+                                  }
+                                },
+                                "buildless" : {
+                                  "title" : "Whether to use buildless (standalone) extraction.",
+                                  "description" : "A value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "cil" : {
+                                  "title" : "Whether to enable CIL extraction.",
+                                  "description" : "A value indicating, whether CIL extraction should be enabled. The default is 'true'.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "javascript" : [
+                            {
+                              "extractor_root" : "/Users/litianjian/Applications/codeql/javascript",
+                              "extractor_options" : { }
+                            }
+                          ],
+                          "ruby" : [
+                            {
+                              "extractor_root" : "/Users/litianjian/Applications/codeql/ruby"
+                            }
+                          ]
+                        }
+                      }
+[2022-12-03 16:16:42] [PROGRESS] database init> Calculating baseline information in /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-testcases
+[2022-12-03 16:16:42] [PROGRESS] database init> Resolving extractor javascript.
+[2022-12-03 16:16:42] [DETAILS] database init> Found candidate extractor root for javascript: /Users/litianjian/Applications/codeql/javascript.
+[2022-12-03 16:16:42] [PROGRESS] database init> Successfully loaded extractor JavaScript (javascript) from /Users/litianjian/Applications/codeql/javascript.
+[2022-12-03 16:16:42] [PROGRESS] database init> Created skeleton CodeQL database at /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database. This in-progress database is ready to be populated by an extractor.
+[2022-12-03 16:16:42] Plumbing command codeql database init completed.
+[2022-12-03 16:16:42] [PROGRESS] database create> Running build command: []
+[2022-12-03 16:16:42] Running plumbing command: codeql database trace-command --working-dir=/Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-testcases --index-traceless-dbs --no-db-cluster -- /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database
+[2022-12-03 16:16:42] Using autobuild script /Users/litianjian/Applications/codeql/javascript/tools/autobuild.sh.
+[2022-12-03 16:16:42] [PROGRESS] database trace-command> Running command in /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-testcases: [/Users/litianjian/Applications/codeql/javascript/tools/autobuild.sh]
+[2022-12-03 16:16:42] [build-stdout] Single-threaded extraction.
+[2022-12-03 16:16:42] [build-stdout] Extracting /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-testcases/test1.js
+[2022-12-03 16:16:43] [build-stdout] Done extracting /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-testcases/test1.js (179 ms)
+[2022-12-03 16:16:43] [build-stdout] Extracting /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-testcases/test2.js
+[2022-12-03 16:16:43] [build-stdout] Done extracting /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-testcases/test2.js (12 ms)
+[2022-12-03 16:16:43] [build-stderr] No externs trap cache found
+[2022-12-03 16:16:43] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/constants.js
+[2022-12-03 16:16:43] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/constants.js (298 ms)
+[2022-12-03 16:16:43] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/net.js
+[2022-12-03 16:16:43] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/net.js (105 ms)
+[2022-12-03 16:16:43] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/globals.js
+[2022-12-03 16:16:43] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/globals.js (255 ms)
+[2022-12-03 16:16:43] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/events.js
+[2022-12-03 16:16:43] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/events.js (17 ms)
+[2022-12-03 16:16:43] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/repl.js
+[2022-12-03 16:16:43] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/repl.js (22 ms)
+[2022-12-03 16:16:43] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/util.js
+[2022-12-03 16:16:43] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/util.js (46 ms)
+[2022-12-03 16:16:43] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/dgram.js
+[2022-12-03 16:16:43] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/dgram.js (29 ms)
+[2022-12-03 16:16:43] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/vm.js
+[2022-12-03 16:16:43] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/vm.js (25 ms)
+[2022-12-03 16:16:43] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/stream.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/stream.js (124 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/child_process.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/child_process.js (108 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/assert.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/assert.js (19 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/os.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/os.js (38 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/console.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/console.js (4 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/readline.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/readline.js (32 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/punycode.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/punycode.js (11 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/https.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/https.js (32 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/domain.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/domain.js (15 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/dns.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/dns.js (44 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/assert_legacy.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/assert_legacy.js (6 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/tty.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/tty.js (19 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/timers.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/timers.js (19 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/querystring.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/querystring.js (20 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/module.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/module.js (18 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/sys.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/sys.js (5 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/path.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/path.js (46 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/string_decoder.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/string_decoder.js (13 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/cluster.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/cluster.js (164 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/v8.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/v8.js (12 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/crypto.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/crypto.js (120 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/zlib.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/zlib.js (60 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/url.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/url.js (15 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/tls.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/tls.js (77 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/process.js
+[2022-12-03 16:16:44] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/process.js (4 ms)
+[2022-12-03 16:16:44] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/http.js
+[2022-12-03 16:16:45] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/http.js (80 ms)
+[2022-12-03 16:16:45] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/buffer.js
+[2022-12-03 16:16:45] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/buffer.js (19 ms)
+[2022-12-03 16:16:45] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/fs.js
+[2022-12-03 16:16:45] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/nodejs/fs.js (227 ms)
+[2022-12-03 16:16:45] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/ie_dom.js
+[2022-12-03 16:16:45] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/ie_dom.js (121 ms)
+[2022-12-03 16:16:45] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/mediasource.js
+[2022-12-03 16:16:45] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/mediasource.js (20 ms)
+[2022-12-03 16:16:45] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/html5.js
+[2022-12-03 16:16:45] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/html5.js (297 ms)
+[2022-12-03 16:16:45] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_anim_timing.js
+[2022-12-03 16:16:45] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_anim_timing.js (10 ms)
+[2022-12-03 16:16:45] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_dom3.js
+[2022-12-03 16:16:45] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_dom3.js (68 ms)
+[2022-12-03 16:16:45] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/fetchapi.js
+[2022-12-03 16:16:45] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/fetchapi.js (42 ms)
+[2022-12-03 16:16:45] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/streamsapi.js
+[2022-12-03 16:16:45] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/streamsapi.js (39 ms)
+[2022-12-03 16:16:45] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/fileapi.js
+[2022-12-03 16:16:45] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/fileapi.js (74 ms)
+[2022-12-03 16:16:45] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_navigation_timing.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_navigation_timing.js (24 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_range.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_range.js (22 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_indexeddb.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_indexeddb.js (57 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_dom2.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_dom2.js (150 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_elementtraversal.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_elementtraversal.js (9 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_webcrypto.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_webcrypto.js (34 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/ie_vml.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/ie_vml.js (6 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/intl.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/intl.js (26 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_rtc.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_rtc.js (212 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_requestidlecallback.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_requestidlecallback.js (7 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_geolocation.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_geolocation.js (15 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/webstorage.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/webstorage.js (14 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/webkit_usercontent.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/webkit_usercontent.js (6 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/window.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/window.js (14 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/page_visibility.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/page_visibility.js (4 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/webgl.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/webgl.js (251 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_touch_event.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_touch_event.js (22 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_event.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_event.js (53 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/whatwg_encoding.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/whatwg_encoding.js (7 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_event3.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_event3.js (9 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/gecko_xml.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/gecko_xml.js (6 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/ie_event.js
+[2022-12-03 16:16:46] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/ie_event.js (32 ms)
+[2022-12-03 16:16:46] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_css.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_css.js (146 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/ie_css.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/ie_css.js (23 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/webkit_css.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/webkit_css.js (110 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_xml.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_xml.js (27 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/gecko_css.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/gecko_css.js (18 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/iphone.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/iphone.js (17 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_selectors.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_selectors.js (12 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/chrome.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/chrome.js (56 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_batterystatus.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_batterystatus.js (6 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/webkit_notifications.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/webkit_notifications.js (24 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_screen_orientation.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_screen_orientation.js (7 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_midi.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_midi.js (27 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_serviceworker.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_serviceworker.js (58 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_device_sensor_event.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_device_sensor_event.js (7 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/webkit_event.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/webkit_event.js (3 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_permissions.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_permissions.js (10 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_gamepad.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_gamepad.js (8 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_dom1.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_dom1.js (72 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/url.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/url.js (11 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/gecko_event.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/gecko_event.js (9 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_encoding.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_encoding.js (6 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/flash.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/flash.js (19 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_pointer_events.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_pointer_events.js (10 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/gecko_ext.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/gecko_ext.js (8 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/gecko_dom.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/gecko_dom.js (66 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/webkit_dom.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/webkit_dom.js (22 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_css3d.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_css3d.js (14 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_dom4.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/web/w3c_dom4.js (5 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/vm/rhino.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/vm/rhino.js (10 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/vm/v8.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/vm/v8.js (12 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/vm/spidermonkey.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/vm/spidermonkey.js (4 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/vm/jsshell.js
+[2022-12-03 16:16:47] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/vm/jsshell.js (66 ms)
+[2022-12-03 16:16:47] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/lib/jquery-3.2.js
+[2022-12-03 16:16:48] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/lib/jquery-3.2.js (273 ms)
+[2022-12-03 16:16:48] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/lib/bdd.js
+[2022-12-03 16:16:48] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/lib/bdd.js (11 ms)
+[2022-12-03 16:16:48] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/lib/should.js
+[2022-12-03 16:16:48] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/lib/should.js (32 ms)
+[2022-12-03 16:16:48] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/lib/vows.js
+[2022-12-03 16:16:48] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/lib/vows.js (35 ms)
+[2022-12-03 16:16:48] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/es/proxy.js
+[2022-12-03 16:16:48] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/es/proxy.js (3 ms)
+[2022-12-03 16:16:48] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/es/es5.js
+[2022-12-03 16:16:48] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/es/es5.js (25 ms)
+[2022-12-03 16:16:48] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/es/intl.js
+[2022-12-03 16:16:48] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/es/intl.js (22 ms)
+[2022-12-03 16:16:48] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/es/es6_collections.js
+[2022-12-03 16:16:48] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/es/es6_collections.js (22 ms)
+[2022-12-03 16:16:48] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/es/es6.js
+[2022-12-03 16:16:48] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/es/es6.js (124 ms)
+[2022-12-03 16:16:48] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/es/es2017.js
+[2022-12-03 16:16:48] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/es/es2017.js (6 ms)
+[2022-12-03 16:16:48] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/es/es3.js
+[2022-12-03 16:16:48] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/es/es3.js (181 ms)
+[2022-12-03 16:16:48] [build-stdout] Extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/es/es2016.js
+[2022-12-03 16:16:48] [build-stdout] Done extracting /Users/litianjian/Applications/codeql/javascript/tools/data/externs/es/es2016.js (2 ms)
+[2022-12-03 16:16:48] Plumbing command codeql database trace-command completed.
+[2022-12-03 16:16:48] [PROGRESS] database create> Finalizing database at /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database.
+[2022-12-03 16:16:48] Running plumbing command: codeql database finalize --mode=normal --no-db-cluster -- /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database
+[2022-12-03 16:16:48] [PROGRESS] database finalize> Running TRAP import for CodeQL database at /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database...
+[2022-12-03 16:16:48] Running plumbing command: codeql dataset import --dbscheme=/Users/litianjian/Applications/codeql/javascript/semmlecode.javascript.dbscheme -- /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/db-javascript /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/trap/javascript
+[2022-12-03 16:16:48] Clearing disk cache since the version file /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/db-javascript/default/cache/version does not exist
+[2022-12-03 16:16:48] Tuple pool not found. Clearing relations with cached strings
+[2022-12-03 16:16:48] Trimming disk cache at /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/db-javascript/default/cache in mode brutal.
+[2022-12-03 16:16:48] Sequence stamp origin is -6380851625611616403
+[2022-12-03 16:16:48] Pausing evaluation to hard-clear memory at sequence stamp o+0
+[2022-12-03 16:16:48] Unpausing evaluation
+[2022-12-03 16:16:48] Pausing evaluation to quickly trim disk at sequence stamp o+1
+[2022-12-03 16:16:48] Unpausing evaluation
+[2022-12-03 16:16:48] Pausing evaluation to zealously trim disk at sequence stamp o+2
+[2022-12-03 16:16:48] Unpausing evaluation
+[2022-12-03 16:16:48] Trimming completed (16ms): Purged everything.
+[2022-12-03 16:16:49] Scanning for files in /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/trap/javascript
+[2022-12-03 16:16:49] Importing es2016.js.trap.gz (1 of 113)
+[2022-12-03 16:16:49] Importing es2017.js.trap.gz (2 of 113)
+[2022-12-03 16:16:49] Importing es3.js.trap.gz (3 of 113)
+[2022-12-03 16:16:49] Importing es5.js.trap.gz (4 of 113)
+[2022-12-03 16:16:49] Importing es6.js.trap.gz (5 of 113)
+[2022-12-03 16:16:49] Importing es6_collections.js.trap.gz (6 of 113)
+[2022-12-03 16:16:49] Importing intl.js.trap.gz (7 of 113)
+[2022-12-03 16:16:49] Importing proxy.js.trap.gz (8 of 113)
+[2022-12-03 16:16:49] Importing bdd.js.trap.gz (9 of 113)
+[2022-12-03 16:16:49] Importing jquery-3.2.js.trap.gz (10 of 113)
+[2022-12-03 16:16:50] Importing should.js.trap.gz (11 of 113)
+[2022-12-03 16:16:50] Importing vows.js.trap.gz (12 of 113)
+[2022-12-03 16:16:50] Importing assert.js.trap.gz (13 of 113)
+[2022-12-03 16:16:50] Importing assert_legacy.js.trap.gz (14 of 113)
+[2022-12-03 16:16:50] Importing buffer.js.trap.gz (15 of 113)
+[2022-12-03 16:16:50] Importing child_process.js.trap.gz (16 of 113)
+[2022-12-03 16:16:50] Importing cluster.js.trap.gz (17 of 113)
+[2022-12-03 16:16:50] Importing console.js.trap.gz (18 of 113)
+[2022-12-03 16:16:50] Importing constants.js.trap.gz (19 of 113)
+[2022-12-03 16:16:50] Importing crypto.js.trap.gz (20 of 113)
+[2022-12-03 16:16:50] Importing dgram.js.trap.gz (21 of 113)
+[2022-12-03 16:16:50] Importing dns.js.trap.gz (22 of 113)
+[2022-12-03 16:16:50] Importing domain.js.trap.gz (23 of 113)
+[2022-12-03 16:16:50] Importing events.js.trap.gz (24 of 113)
+[2022-12-03 16:16:50] Importing fs.js.trap.gz (25 of 113)
+[2022-12-03 16:16:50] Importing globals.js.trap.gz (26 of 113)
+[2022-12-03 16:16:50] Importing http.js.trap.gz (27 of 113)
+[2022-12-03 16:16:50] Importing https.js.trap.gz (28 of 113)
+[2022-12-03 16:16:50] Importing module.js.trap.gz (29 of 113)
+[2022-12-03 16:16:50] Importing net.js.trap.gz (30 of 113)
+[2022-12-03 16:16:50] Importing os.js.trap.gz (31 of 113)
+[2022-12-03 16:16:50] Importing path.js.trap.gz (32 of 113)
+[2022-12-03 16:16:50] Importing process.js.trap.gz (33 of 113)
+[2022-12-03 16:16:50] Importing punycode.js.trap.gz (34 of 113)
+[2022-12-03 16:16:50] Importing querystring.js.trap.gz (35 of 113)
+[2022-12-03 16:16:50] Importing readline.js.trap.gz (36 of 113)
+[2022-12-03 16:16:50] Importing repl.js.trap.gz (37 of 113)
+[2022-12-03 16:16:50] Importing stream.js.trap.gz (38 of 113)
+[2022-12-03 16:16:50] Importing string_decoder.js.trap.gz (39 of 113)
+[2022-12-03 16:16:50] Importing sys.js.trap.gz (40 of 113)
+[2022-12-03 16:16:50] Importing timers.js.trap.gz (41 of 113)
+[2022-12-03 16:16:50] Importing tls.js.trap.gz (42 of 113)
+[2022-12-03 16:16:50] Importing tty.js.trap.gz (43 of 113)
+[2022-12-03 16:16:50] Importing url.js.trap.gz (44 of 113)
+[2022-12-03 16:16:50] Importing util.js.trap.gz (45 of 113)
+[2022-12-03 16:16:50] Importing v8.js.trap.gz (46 of 113)
+[2022-12-03 16:16:50] Importing vm.js.trap.gz (47 of 113)
+[2022-12-03 16:16:50] Importing zlib.js.trap.gz (48 of 113)
+[2022-12-03 16:16:50] Importing jsshell.js.trap.gz (49 of 113)
+[2022-12-03 16:16:50] Importing rhino.js.trap.gz (50 of 113)
+[2022-12-03 16:16:50] Importing spidermonkey.js.trap.gz (51 of 113)
+[2022-12-03 16:16:50] Importing v8.js.trap.gz (52 of 113)
+[2022-12-03 16:16:50] Importing chrome.js.trap.gz (53 of 113)
+[2022-12-03 16:16:50] Importing fetchapi.js.trap.gz (54 of 113)
+[2022-12-03 16:16:50] Importing fileapi.js.trap.gz (55 of 113)
+[2022-12-03 16:16:51] Importing flash.js.trap.gz (56 of 113)
+[2022-12-03 16:16:51] Importing gecko_css.js.trap.gz (57 of 113)
+[2022-12-03 16:16:51] Importing gecko_dom.js.trap.gz (58 of 113)
+[2022-12-03 16:16:51] Importing gecko_event.js.trap.gz (59 of 113)
+[2022-12-03 16:16:51] Importing gecko_ext.js.trap.gz (60 of 113)
+[2022-12-03 16:16:51] Importing gecko_xml.js.trap.gz (61 of 113)
+[2022-12-03 16:16:51] Importing html5.js.trap.gz (62 of 113)
+[2022-12-03 16:16:51] Importing ie_css.js.trap.gz (63 of 113)
+[2022-12-03 16:16:51] Importing ie_dom.js.trap.gz (64 of 113)
+[2022-12-03 16:16:51] Importing ie_event.js.trap.gz (65 of 113)
+[2022-12-03 16:16:51] Importing ie_vml.js.trap.gz (66 of 113)
+[2022-12-03 16:16:51] Importing intl.js.trap.gz (67 of 113)
+[2022-12-03 16:16:51] Importing iphone.js.trap.gz (68 of 113)
+[2022-12-03 16:16:51] Importing mediasource.js.trap.gz (69 of 113)
+[2022-12-03 16:16:51] Importing page_visibility.js.trap.gz (70 of 113)
+[2022-12-03 16:16:51] Importing streamsapi.js.trap.gz (71 of 113)
+[2022-12-03 16:16:51] Importing url.js.trap.gz (72 of 113)
+[2022-12-03 16:16:51] Importing w3c_anim_timing.js.trap.gz (73 of 113)
+[2022-12-03 16:16:51] Importing w3c_batterystatus.js.trap.gz (74 of 113)
+[2022-12-03 16:16:51] Importing w3c_css.js.trap.gz (75 of 113)
+[2022-12-03 16:16:51] Importing w3c_css3d.js.trap.gz (76 of 113)
+[2022-12-03 16:16:51] Importing w3c_device_sensor_event.js.trap.gz (77 of 113)
+[2022-12-03 16:16:51] Importing w3c_dom1.js.trap.gz (78 of 113)
+[2022-12-03 16:16:51] Importing w3c_dom2.js.trap.gz (79 of 113)
+[2022-12-03 16:16:51] Importing w3c_dom3.js.trap.gz (80 of 113)
+[2022-12-03 16:16:51] Importing w3c_dom4.js.trap.gz (81 of 113)
+[2022-12-03 16:16:51] Importing w3c_elementtraversal.js.trap.gz (82 of 113)
+[2022-12-03 16:16:51] Importing w3c_encoding.js.trap.gz (83 of 113)
+[2022-12-03 16:16:51] Importing w3c_event.js.trap.gz (84 of 113)
+[2022-12-03 16:16:51] Importing w3c_event3.js.trap.gz (85 of 113)
+[2022-12-03 16:16:51] Importing w3c_gamepad.js.trap.gz (86 of 113)
+[2022-12-03 16:16:51] Importing w3c_geolocation.js.trap.gz (87 of 113)
+[2022-12-03 16:16:51] Importing w3c_indexeddb.js.trap.gz (88 of 113)
+[2022-12-03 16:16:51] Importing w3c_midi.js.trap.gz (89 of 113)
+[2022-12-03 16:16:51] Importing w3c_navigation_timing.js.trap.gz (90 of 113)
+[2022-12-03 16:16:51] Importing w3c_permissions.js.trap.gz (91 of 113)
+[2022-12-03 16:16:51] Importing w3c_pointer_events.js.trap.gz (92 of 113)
+[2022-12-03 16:16:51] Importing w3c_range.js.trap.gz (93 of 113)
+[2022-12-03 16:16:51] Importing w3c_requestidlecallback.js.trap.gz (94 of 113)
+[2022-12-03 16:16:51] Importing w3c_rtc.js.trap.gz (95 of 113)
+[2022-12-03 16:16:51] Importing w3c_screen_orientation.js.trap.gz (96 of 113)
+[2022-12-03 16:16:51] Importing w3c_selectors.js.trap.gz (97 of 113)
+[2022-12-03 16:16:51] Importing w3c_serviceworker.js.trap.gz (98 of 113)
+[2022-12-03 16:16:51] Importing w3c_touch_event.js.trap.gz (99 of 113)
+[2022-12-03 16:16:51] Importing w3c_webcrypto.js.trap.gz (100 of 113)
+[2022-12-03 16:16:51] Importing w3c_xml.js.trap.gz (101 of 113)
+[2022-12-03 16:16:51] Importing webgl.js.trap.gz (102 of 113)
+[2022-12-03 16:16:52] Importing webkit_css.js.trap.gz (103 of 113)
+[2022-12-03 16:16:52] Importing webkit_dom.js.trap.gz (104 of 113)
+[2022-12-03 16:16:52] Importing webkit_event.js.trap.gz (105 of 113)
+[2022-12-03 16:16:52] Importing webkit_notifications.js.trap.gz (106 of 113)
+[2022-12-03 16:16:52] Importing webkit_usercontent.js.trap.gz (107 of 113)
+[2022-12-03 16:16:52] Importing webstorage.js.trap.gz (108 of 113)
+[2022-12-03 16:16:52] Importing whatwg_encoding.js.trap.gz (109 of 113)
+[2022-12-03 16:16:52] Importing window.js.trap.gz (110 of 113)
+[2022-12-03 16:16:52] Importing test1.js.trap.gz (111 of 113)
+[2022-12-03 16:16:52] Importing test2.js.trap.gz (112 of 113)
+[2022-12-03 16:16:52] Importing sourceLocationPrefix.trap.gz (113 of 113)
+[2022-12-03 16:16:52] Merging 1 fragment for files.
+[2022-12-03 16:16:52] Merging 1 fragment for folders.
+[2022-12-03 16:16:52] Merging 1 fragment for containerparent.
+[2022-12-03 16:16:52] Merging 2 fragments for locations_default.
+[2022-12-03 16:16:52] Merging 3 fragments for hasLocation.
+[2022-12-03 16:16:52] Merging 1 fragment for extraction_data.
+[2022-12-03 16:16:52] Merging 1 fragment for scopes.
+[2022-12-03 16:16:52] Merging 1 fragment for comments.
+[2022-12-03 16:16:52] Merging 1 fragment for indentation.
+[2022-12-03 16:16:52] Merging 1 fragment for numlines.
+[2022-12-03 16:16:52] Merging 1 fragment for tokeninfo.
+[2022-12-03 16:16:52] Merging 1 fragment for next_token.
+[2022-12-03 16:16:52] Merging 1 fragment for jsdoc.
+[2022-12-03 16:16:52] Merging 1 fragment for jsdoc_tags.
+[2022-12-03 16:16:52] Merging 1 fragment for jsdoc_tag_descriptions.
+[2022-12-03 16:16:52] Merging 1 fragment for jsdoc_tag_names.
+[2022-12-03 16:16:52] Merging 1 fragment for jsdoc_type_exprs.
+[2022-12-03 16:16:52] Merging 1 fragment for toplevels.
+[2022-12-03 16:16:52] Merging 1 fragment for stmts.
+[2022-12-03 16:16:52] Merging 1 fragment for stmt_containers.
+[2022-12-03 16:16:52] Merging 1 fragment for exprs.
+[2022-12-03 16:16:52] Merging 1 fragment for enclosing_stmt.
+[2022-12-03 16:16:52] Merging 1 fragment for expr_containers.
+[2022-12-03 16:16:52] Merging 1 fragment for literals.
+[2022-12-03 16:16:52] Merging 1 fragment for variables.
+[2022-12-03 16:16:52] Merging 1 fragment for bind.
+[2022-12-03 16:16:52] Merging 1 fragment for scopenodes.
+[2022-12-03 16:16:52] Merging 1 fragment for scopenesting.
+[2022-12-03 16:16:52] Merging 1 fragment for decl.
+[2022-12-03 16:16:52] Merging 1 fragment for is_arguments_object.
+[2022-12-03 16:16:52] Merging 1 fragment for entry_cfg_node.
+[2022-12-03 16:16:52] Merging 1 fragment for exit_cfg_node.
+[2022-12-03 16:16:52] Merging 1 fragment for successor.
+[2022-12-03 16:16:52] Merging 1 fragment for is_externs.
+[2022-12-03 16:16:52] Merging 1 fragment for filetype.
+[2022-12-03 16:16:52] Merging 1 fragment for extraction_time.
+[2022-12-03 16:16:52] Merging 1 fragment for jsdoc_prefix_qualifier.
+[2022-12-03 16:16:52] Merging 1 fragment for jsdoc_errors.
+[2022-12-03 16:16:52] Merging 1 fragment for jsdoc_record_field_name.
+[2022-12-03 16:16:52] Merging 1 fragment for jsdoc_has_new_parameter.
+[2022-12-03 16:16:52] Merging 1 fragment for properties.
+[2022-12-03 16:16:52] Merging 1 fragment for regexpterm.
+[2022-12-03 16:16:52] Merging 1 fragment for regexp_const_value.
+[2022-12-03 16:16:52] Merging 1 fragment for guard_node.
+[2022-12-03 16:16:52] Merging 1 fragment for is_module.
+[2022-12-03 16:16:52] Merging 1 fragment for is_nodejs.
+[2022-12-03 16:16:52] Merging 1 fragment for is_greedy.
+[2022-12-03 16:16:52] Merging 1 fragment for array_size.
+[2022-12-03 16:16:52] Merging 1 fragment for sourceLocationPrefix.
+[2022-12-03 16:16:52] Saving string and id pools to disk.
+[2022-12-03 16:16:53] Finished importing trap files.
+[2022-12-03 16:16:53] Pausing evaluation to close the cache at sequence stamp o+3
+[2022-12-03 16:16:53] The disk cache is freshly trimmed; leave it be.
+[2022-12-03 16:16:53] Unpausing evaluation
+[2022-12-03 16:16:53] Plumbing command codeql dataset import completed.
+[2022-12-03 16:16:53] [PROGRESS] database finalize> TRAP import complete (4.3s).
+[2022-12-03 16:16:53] Running plumbing command: codeql database cleanup --mode=normal -- /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database
+[2022-12-03 16:16:53] [PROGRESS] database cleanup> Cleaning up existing TRAP files after import...
+[2022-12-03 16:16:53] [PROGRESS] database cleanup> TRAP files cleaned up (38ms).
+[2022-12-03 16:16:53] [PROGRESS] database cleanup> Cleaning up scratch directory...
+[2022-12-03 16:16:53] [PROGRESS] database cleanup> Scratch directory cleaned up (0ms).
+[2022-12-03 16:16:53] Running plumbing command: codeql dataset cleanup --mode=normal -- /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/db-javascript
+[2022-12-03 16:16:53] [PROGRESS] dataset cleanup> Cleaning up dataset in /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/db-javascript.
+[2022-12-03 16:16:53] Trimming disk cache at /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/db-javascript/default/cache in mode normal.
+[2022-12-03 16:16:53] Sequence stamp origin is -6380851606879009167
+[2022-12-03 16:16:53] Pausing evaluation to zealously trim disk at sequence stamp o+0
+[2022-12-03 16:16:53] Unpausing evaluation
+[2022-12-03 16:16:53] Trimming completed (2ms): Trimmed disposable data from cache.
+[2022-12-03 16:16:53] Pausing evaluation to close the cache at sequence stamp o+1
+[2022-12-03 16:16:53] The disk cache is freshly trimmed; leave it be.
+[2022-12-03 16:16:53] Unpausing evaluation
+[2022-12-03 16:16:53] [PROGRESS] dataset cleanup> Trimmed disposable data from cache.
+[2022-12-03 16:16:53] [PROGRESS] dataset cleanup> Finalizing dataset in /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/db-javascript
+[2022-12-03 16:16:53] [DETAILS] dataset cleanup> Finished deleting ID pool from /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/db-javascript (7ms).
+[2022-12-03 16:16:53] Plumbing command codeql dataset cleanup completed.
+[2022-12-03 16:16:53] Plumbing command codeql database cleanup completed with status 0.
+[2022-12-03 16:16:53] Plumbing command codeql database finalize completed.
+[2022-12-03 16:16:53] [PROGRESS] database create> Successfully created database at /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database.
+[2022-12-03 16:16:53] Terminating normally.

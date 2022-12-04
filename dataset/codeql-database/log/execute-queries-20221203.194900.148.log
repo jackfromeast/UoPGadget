@@ -1,0 +1,52 @@
+[2022-12-03 19:49:00] This is codeql execute queries -J-Xmx1024M --off-heap-ram=1024 --verbosity=progress --logdir=/Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/log --evaluator-log-level=5 --insecurely-execute-ml-model-checksums= --warnings=show --qlconfig-file=/Users/litianjian/Documents/GitHub/PPAEG/dataset/qlconfig.yml --no-rerun --output=/Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/results -- /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/db-javascript ../custom-js-queries/UnusedVariable.ql
+[2022-12-03 19:49:00] Calling plumbing command: codeql resolve queries --qlconfig-file=/Users/litianjian/Documents/GitHub/PPAEG/dataset/qlconfig.yml --format=json -- ../custom-js-queries/UnusedVariable.ql
+[2022-12-03 19:49:00] [PROGRESS] resolve queries> Recording pack reference truthbutcher/custom-js-queries at /Users/litianjian/Documents/GitHub/PPAEG/custom-js-queries.
+[2022-12-03 19:49:00] Plumbing command codeql resolve queries completed:
+                      [
+                        "/Users/litianjian/Documents/GitHub/PPAEG/dataset/../custom-js-queries/UnusedVariable.ql"
+                      ]
+[2022-12-03 19:49:00] Creating executor with 1 threads.
+[2022-12-03 19:49:01] Calling plumbing command: codeql resolve extensions --qlconfig-file=/Users/litianjian/Documents/GitHub/PPAEG/dataset/qlconfig.yml --insecurely-execute-ml-model-checksums= ../custom-js-queries/UnusedVariable.ql
+[2022-12-03 19:49:01] Calling plumbing command: codeql resolve queries --qlconfig-file=/Users/litianjian/Documents/GitHub/PPAEG/dataset/qlconfig.yml --format startingpacks -- ../custom-js-queries/UnusedVariable.ql
+[2022-12-03 19:49:01] [PROGRESS] resolve queries> Recording pack reference truthbutcher/custom-js-queries at /Users/litianjian/Documents/GitHub/PPAEG/custom-js-queries.
+[2022-12-03 19:49:01] Plumbing command codeql resolve queries completed:
+                      [
+                        "/Users/litianjian/Documents/GitHub/PPAEG/custom-js-queries"
+                      ]
+[2022-12-03 19:49:01] Plumbing command codeql resolve extensions completed:
+                      {
+                        "models" : [ ],
+                        "data" : { }
+                      }
+[2022-12-03 19:49:01] [DETAILS] execute queries> Did not find any ML models.
+[2022-12-03 19:49:01] [SPAMMIER] execute queries> Data extensions for query 'UnusedVariable.ql' in 'truthbutcher/custom-js-queries':
+                      {}
+[2022-12-03 19:49:01] Calling plumbing command: codeql resolve library-path --qlconfig-file=/Users/litianjian/Documents/GitHub/PPAEG/dataset/qlconfig.yml --query=/Users/litianjian/Documents/GitHub/PPAEG/dataset/../custom-js-queries/UnusedVariable.ql --format=json
+[2022-12-03 19:49:01] [DETAILS] resolve library-path> Resolving query at normalized path /Users/litianjian/Documents/GitHub/PPAEG/custom-js-queries/UnusedVariable.ql.
+[2022-12-03 19:49:01] [DETAILS] resolve library-path> Found enclosing pack 'truthbutcher/custom-js-queries' at /Users/litianjian/Documents/GitHub/PPAEG/custom-js-queries.
+[2022-12-03 19:49:01] [DETAILS] resolve library-path> Adding compilation cache at /Users/litianjian/Documents/GitHub/PPAEG/custom-js-queries/.cache.
+[2022-12-03 19:49:01] [DETAILS] resolve library-path> Resolving library dependencies from /Users/litianjian/Documents/GitHub/PPAEG/custom-js-queries/qlpack.yml.
+[2022-12-03 19:49:01] [DETAILS] resolve library-path> QL pack dependencies for /Users/litianjian/Documents/GitHub/PPAEG/custom-js-queries resolved OK.
+[2022-12-03 19:49:01] [DETAILS] resolve library-path> Found dbscheme through QL packs: /Users/litianjian/.codeql/packages/codeql/javascript-all/0.3.4/semmlecode.javascript.dbscheme.
+[2022-12-03 19:49:01] Plumbing command codeql resolve library-path completed:
+                      {
+                        "libraryPath" : [
+                          "/Users/litianjian/Documents/GitHub/PPAEG/custom-js-queries",
+                          "/Users/litianjian/.codeql/packages/codeql/javascript-all/0.3.4",
+                          "/Users/litianjian/.codeql/packages/codeql/suite-helpers/0.1.0",
+                          "/Users/litianjian/.codeql/packages/codeql/typos/0.0.5"
+                        ],
+                        "dbscheme" : "/Users/litianjian/.codeql/packages/codeql/javascript-all/0.3.4/semmlecode.javascript.dbscheme",
+                        "compilationCache" : [
+                          "/Users/litianjian/Documents/GitHub/PPAEG/custom-js-queries/.cache"
+                        ],
+                        "relativeName" : "truthbutcher/custom-js-queries/UnusedVariable.ql",
+                        "qlPackName" : "truthbutcher/custom-js-queries"
+                      }
+[2022-12-03 19:49:01] [PROGRESS] execute queries> [1/1] No need to rerun /Users/litianjian/Documents/GitHub/PPAEG/dataset/../custom-js-queries/UnusedVariable.ql.
+[2022-12-03 19:49:01] [PROGRESS] execute queries> Shutting down query evaluator.
+[2022-12-03 19:49:01] Sequence stamp origin is -6380796941952201160
+[2022-12-03 19:49:01] Pausing evaluation to close the cache at sequence stamp o+0
+[2022-12-03 19:49:01] The disk cache is freshly trimmed; leave it be.
+[2022-12-03 19:49:01] Unpausing evaluation
+[2022-12-03 19:49:01] Terminating normally.

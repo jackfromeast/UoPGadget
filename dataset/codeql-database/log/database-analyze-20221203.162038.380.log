@@ -1,0 +1,26 @@
+[2022-12-03 16:20:38] This is codeql database analyze --download codeql-database ../custom-js-queries/FindUndefinedProperties.ql --format=csv --output=undef.csv
+[2022-12-03 16:20:38] Log file was started late.
+[2022-12-03 16:20:38] [DETAILS] database analyze> Downloading queries...
+[2022-12-03 16:20:38] Running plumbing command: codeql pack download --format json --qlconfig-file=/Users/litianjian/Documents/GitHub/PPAEG/dataset/qlconfig.yml -- ../custom-js-queries/FindUndefinedProperties.ql
+[2022-12-03 16:20:38] [PROGRESS] pack download> Package specifications to check for download: ../custom-js-queries/FindUndefinedProperties.ql
+[2022-12-03 16:20:38] Calling plumbing command: codeql resolve queries --qlconfig-file=/Users/litianjian/Documents/GitHub/PPAEG/dataset/qlconfig.yml --format installedpacks ../custom-js-queries/FindUndefinedProperties.ql
+[2022-12-03 16:20:38] [PROGRESS] resolve queries> Recording pack reference truthbutcher/custom-js-queries at /Users/litianjian/Documents/GitHub/PPAEG/custom-js-queries.
+[2022-12-03 16:20:38] Plumbing command codeql resolve queries completed:
+                      {
+                        "installedPacks" : [ ]
+                      }
+[2022-12-03 16:20:38] [PROGRESS] pack download> Did not need to download any packs.
+[2022-12-03 16:20:38] Plumbing command codeql pack download completed.
+[2022-12-03 16:20:38] [PROGRESS] database analyze> Running queries.
+[2022-12-03 16:20:38] Running plumbing command: codeql database run-queries --evaluator-log-level=5 --insecurely-execute-ml-model-checksums= --warnings=show --qlconfig-file=/Users/litianjian/Documents/GitHub/PPAEG/dataset/qlconfig.yml --no-rerun -- /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database ../custom-js-queries/FindUndefinedProperties.ql
+[2022-12-03 16:20:38] Calling plumbing command: codeql resolve ram --format=json
+[2022-12-03 16:20:38] Plumbing command codeql resolve ram completed:
+                      [
+                        "-J-Xmx1024M",
+                        "--off-heap-ram=1024"
+                      ]
+[2022-12-03 16:20:38] Spawning plumbing command: execute queries -J-Xmx1024M --off-heap-ram=1024 --verbosity=progress --logdir=/Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/log --evaluator-log-level=5 --insecurely-execute-ml-model-checksums= --warnings=show --qlconfig-file=/Users/litianjian/Documents/GitHub/PPAEG/dataset/qlconfig.yml --no-rerun --output=/Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/results -- /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/db-javascript ../custom-js-queries/FindUndefinedProperties.ql
+[2022-12-03 16:20:46] [ERROR] Spawned process exited abnormally (code 2; tried to run: [/Users/litianjian/Applications/codeql/tools/osx64/java/bin/java, -Xmx1024M, -Djava.library.path=/Users/litianjian/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:., -cp, /Users/litianjian/Applications/codeql/tools/codeql.jar, com.semmle.cli2.CodeQL, env_argv, execute, queries, -J-Xmx1024M, _, _, _, _, _, _, _, --no-rerun, _, --, /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/db-javascript, ../custom-js-queries/FindUndefinedProperties.ql])
+[2022-12-03 16:20:46] Plumbing command codeql execute queries terminated with status 2.
+[2022-12-03 16:20:46] Plumbing command codeql database run-queries completed with status 2.
+[2022-12-03 16:20:46] Exiting with code 2

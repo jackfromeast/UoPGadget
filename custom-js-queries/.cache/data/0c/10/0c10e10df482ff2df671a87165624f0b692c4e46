@@ -1,0 +1,20 @@
+ #      Precompiled CodeQL query
+---
+format:
+- 202210190
+creator: "2.11.4"
+name: "UnusedVariable.ql"
+dbscheme: "4d00210ca570d55c4833af11d3372b774dbc63f2"
+stages:
+- cached: "919a22f272e901fc31922eaf232b4c5766bd78a8"
+  debugInfo: "fecaa121855b37cb5060daceb1adc2e02056f801"
+- cached: "70b97fec2ee584c1345fea009f7be9d698cd15b1"
+  debugInfo: "fecaa121855b37cb5060daceb1adc2e02056f801"
+- cached: "177ea86d01eeb8bcb8892d836bac4e52a6eb2847"
+  debugInfo: "fecaa121855b37cb5060daceb1adc2e02056f801"
+- cached: "1885e75cd6608e943c52192d4bc6e7da23d6cf67"
+  debugInfo: "fecaa121855b37cb5060daceb1adc2e02056f801"
+results:
+  '#select':
+    resultArranger: "2\"sel\"ei12\"msg\"s"
+inputsDigest: "0c10e10df482ff2df671a87165624f0b692c4e46"

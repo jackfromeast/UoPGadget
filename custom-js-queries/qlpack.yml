@@ -1,0 +1,14 @@
+---
+library: false
+name: truthbutcher/custom-js-queries
+version: 0.0.1
+dependencies:
+  codeql/javascript-all: "*"
+  codeql/suite-helpers: "*"
+  codeql/typos: "*"
+suites: codeql-suites
+extractor: javascript
+groups:
+ - javascript
+ - queries
+defaultSuiteFile: codeql-suites/javascript-code-scanning.qls

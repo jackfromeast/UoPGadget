@@ -7,11 +7,8 @@ echo $string >> ~/.bashrc
 echo "appended $string to bash configurations"
 source ~/.bashrc
 
-
 echo "create CodeQL database for this repository"
-codeql database create codeql-database --language javascript --source-root case0
-echo "running a test analysis"
-codeql database analyze --download codeql-database codeql/javascript-queries:Declarations/UnusedVariable.ql --format=csv --output=unused-var.csv
+codeql database create codeql-database --language javascript --source-root dataset 
 
 echo "running analysis on undefined properties"
-codeql database analyze --download codeql-database dataset/UnusedVariable.ql --format=csv --output=undef-properties.csv
+codeql database analyze --download codeql-database ../custom-js-queries/getPropertyName.ql --format=csv --output=undef-properties.csv --rerun

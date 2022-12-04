@@ -1,0 +1,58 @@
+[2022-12-03 20:05:02] This is codeql database analyze --download codeql-database ../custom-js-queries/getPropertyName.ql --format=csv --output=undef-properties.csv --rerun
+[2022-12-03 20:05:02] Log file was started late.
+[2022-12-03 20:05:02] [DETAILS] database analyze> Downloading queries...
+[2022-12-03 20:05:02] Running plumbing command: codeql pack download --format json --qlconfig-file=/Users/litianjian/Documents/GitHub/PPAEG/dataset/qlconfig.yml -- ../custom-js-queries/getPropertyName.ql
+[2022-12-03 20:05:02] [PROGRESS] pack download> Package specifications to check for download: ../custom-js-queries/getPropertyName.ql
+[2022-12-03 20:05:03] Calling plumbing command: codeql resolve queries --qlconfig-file=/Users/litianjian/Documents/GitHub/PPAEG/dataset/qlconfig.yml --format installedpacks ../custom-js-queries/getPropertyName.ql
+[2022-12-03 20:05:03] [PROGRESS] resolve queries> Recording pack reference truthbutcher/custom-js-queries at /Users/litianjian/Documents/GitHub/PPAEG/custom-js-queries.
+[2022-12-03 20:05:03] Plumbing command codeql resolve queries completed:
+                      {
+                        "installedPacks" : [ ]
+                      }
+[2022-12-03 20:05:03] [PROGRESS] pack download> Did not need to download any packs.
+[2022-12-03 20:05:03] Plumbing command codeql pack download completed.
+[2022-12-03 20:05:03] [PROGRESS] database analyze> Running queries.
+[2022-12-03 20:05:03] Running plumbing command: codeql database run-queries --evaluator-log-level=5 --insecurely-execute-ml-model-checksums= --warnings=show --qlconfig-file=/Users/litianjian/Documents/GitHub/PPAEG/dataset/qlconfig.yml --rerun -- /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database ../custom-js-queries/getPropertyName.ql
+[2022-12-03 20:05:03] Calling plumbing command: codeql resolve ram --format=json
+[2022-12-03 20:05:03] Plumbing command codeql resolve ram completed:
+                      [
+                        "-J-Xmx1024M",
+                        "--off-heap-ram=1024"
+                      ]
+[2022-12-03 20:05:03] Spawning plumbing command: execute queries -J-Xmx1024M --off-heap-ram=1024 --verbosity=progress --logdir=/Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/log --evaluator-log-level=5 --insecurely-execute-ml-model-checksums= --warnings=show --qlconfig-file=/Users/litianjian/Documents/GitHub/PPAEG/dataset/qlconfig.yml --rerun --output=/Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/results -- /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/db-javascript ../custom-js-queries/getPropertyName.ql
+[2022-12-03 20:05:07] Plumbing command codeql execute queries terminated with status 0.
+[2022-12-03 20:05:07] Plumbing command codeql database run-queries completed with status 0.
+[2022-12-03 20:05:07] [PROGRESS] database analyze> Interpreting results.
+[2022-12-03 20:05:07] Running plumbing command: codeql database interpret-results --format=csv -o=/Users/litianjian/Documents/GitHub/PPAEG/dataset/undef-properties.csv --max-paths=4 --csv-location-format=line-column --print-diagnostics-summary --print-metrics-summary --qlconfig-file=/Users/litianjian/Documents/GitHub/PPAEG/dataset/qlconfig.yml -- /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database ../custom-js-queries/getPropertyName.ql
+[2022-12-03 20:05:07] Calling plumbing command: codeql resolve queries --qlconfig-file=/Users/litianjian/Documents/GitHub/PPAEG/dataset/qlconfig.yml --format=json -- ../custom-js-queries/getPropertyName.ql
+[2022-12-03 20:05:07] [PROGRESS] resolve queries> Recording pack reference truthbutcher/custom-js-queries at /Users/litianjian/Documents/GitHub/PPAEG/custom-js-queries.
+[2022-12-03 20:05:07] Plumbing command codeql resolve queries completed:
+                      [
+                        "/Users/litianjian/Documents/GitHub/PPAEG/dataset/../custom-js-queries/getPropertyName.ql"
+                      ]
+[2022-12-03 20:05:07] [DETAILS] database interpret-results> Scanning for [codeql-pack.yml, qlpack.yml] from /Users/litianjian/Applications/codeql/.codeqlmanifest.json
+[2022-12-03 20:05:07] [DETAILS] database interpret-results> Scanning for [codeql-pack.yml, qlpack.yml] from /Users/litianjian/Applications/
+[2022-12-03 20:05:07] [DETAILS] database interpret-results> Not scanning from /Users/litianjian/Applications/codeql which is already done.
+[2022-12-03 20:05:07] [PROGRESS] database interpret-results> Interpreting /Users/litianjian/Documents/GitHub/PPAEG/dataset/../custom-js-queries/getPropertyName.ql...
+[2022-12-03 20:05:07] Calling plumbing command: codeql resolve library-path --query=/Users/litianjian/Documents/GitHub/PPAEG/dataset/../custom-js-queries/getPropertyName.ql --full-library-path=none --dbscheme=none --format=json
+[2022-12-03 20:05:07] [DETAILS] resolve library-path> Resolving query at normalized path /Users/litianjian/Documents/GitHub/PPAEG/custom-js-queries/getPropertyName.ql.
+[2022-12-03 20:05:07] [DETAILS] resolve library-path> Found enclosing pack 'truthbutcher/custom-js-queries' at /Users/litianjian/Documents/GitHub/PPAEG/custom-js-queries.
+[2022-12-03 20:05:07] [DETAILS] resolve library-path> Adding compilation cache at /Users/litianjian/Documents/GitHub/PPAEG/custom-js-queries/.cache.
+[2022-12-03 20:05:07] [DETAILS] resolve library-path> Dbscheme was explicitly overridden as /Users/litianjian/Documents/GitHub/PPAEG/dataset/none
+[2022-12-03 20:05:07] [DETAILS] resolve library-path> Library path was overridden on command line.
+[2022-12-03 20:05:07] Plumbing command codeql resolve library-path completed:
+                      {
+                        "libraryPath" : [
+                          "/Users/litianjian/Documents/GitHub/PPAEG/dataset/none"
+                        ],
+                        "dbscheme" : "/Users/litianjian/Documents/GitHub/PPAEG/dataset/none",
+                        "compilationCache" : [
+                          "/Users/litianjian/Documents/GitHub/PPAEG/custom-js-queries/.cache"
+                        ],
+                        "relativeName" : "truthbutcher/custom-js-queries/getPropertyName.ql",
+                        "qlPackName" : "truthbutcher/custom-js-queries"
+                      }
+[2022-12-03 20:05:07] [DETAILS] database interpret-results>  ... found results file at /Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-database/results/truthbutcher/custom-js-queries/getPropertyName.bqrs.
+[2022-12-03 20:05:07] [DETAILS] database interpret-results> Interpreted problem query "propertyNameCollection" (javascript) at path /Users/litianjian/Documents/GitHub/PPAEG/dataset/../custom-js-queries/getPropertyName.ql.
+[2022-12-03 20:05:07] Plumbing command codeql database interpret-results completed.
+[2022-12-03 20:05:07] Terminating normally.

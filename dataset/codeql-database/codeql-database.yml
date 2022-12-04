@@ -1,0 +1,9 @@
+---
+sourceLocationPrefix: "/Users/litianjian/Documents/GitHub/PPAEG/dataset/codeql-testcases"
+baselineLinesOfCode: 28
+unicodeNewlines: true
+columnKind: "utf16"
+primaryLanguage: "javascript"
+creationMetadata:
+  cliVersion: "2.11.4"
+  creationTime: "2022-12-03T21:16:42.421913Z"

