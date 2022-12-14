@@ -12,3 +12,6 @@ codeql database create codeql-database --language javascript --source-root datas
 
 echo "running analysis on undefined properties"
 codeql database analyze --download codeql-database ../custom-js-queries/getPropertyName.ql --format=csv --output=undef-properties.csv --rerun
+
+
+bash generate_getter.sh undef-properties.csv 
