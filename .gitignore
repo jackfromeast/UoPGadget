@@ -10,4 +10,6 @@ node-find-undefined/*
 tmp/*
 node-find-undefined
 .idea/
-src/pre-analysis
+*-db/
+.cache/*
+.cache

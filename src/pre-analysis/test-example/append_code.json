@@ -1,0 +1,2422 @@
+{
+	"/node_modules/hogan.js/lib/compiler.js": [
+		{
+			"base": "Hogan",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 27,
+			"endline": 27,
+			"statement_endline": 31,
+			"function_endline": 423
+		},
+		{
+			"base": "text",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 34,
+			"endline": 34,
+			"statement_endline": 47,
+			"function_endline": 160
+		},
+		{
+			"base": "buf",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 50,
+			"endline": 50,
+			"statement_endline": 53,
+			"function_endline": 54
+		},
+		{
+			"base": "tokens",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 58,
+			"endline": 58,
+			"statement_endline": 65,
+			"function_endline": 68
+		},
+		{
+			"base": "Hogan.tags",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 60,
+			"endline": 60,
+			"statement_endline": 61,
+			"function_endline": 68
+		},
+		{
+			"base": "Hogan",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 60,
+			"endline": 60,
+			"statement_endline": 61,
+			"function_endline": 68
+		},
+		{
+			"base": "tokens[j]",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 60,
+			"endline": 60,
+			"statement_endline": 61,
+			"function_endline": 68
+		},
+		{
+			"base": "tokens",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 60,
+			"endline": 60,
+			"statement_endline": 61,
+			"function_endline": 68
+		},
+		{
+			"base": "Hogan.tags",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 60,
+			"endline": 60,
+			"statement_endline": 61,
+			"function_endline": 68
+		},
+		{
+			"base": "Hogan",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 60,
+			"endline": 60,
+			"statement_endline": 61,
+			"function_endline": 68
+		},
+		{
+			"base": "tokens[j]",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 61,
+			"endline": 61,
+			"statement_endline": 61,
+			"function_endline": 68
+		},
+		{
+			"base": "tokens",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 61,
+			"endline": 61,
+			"statement_endline": 61,
+			"function_endline": 68
+		},
+		{
+			"base": "tokens[j]",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 61,
+			"endline": 61,
+			"statement_endline": 61,
+			"function_endline": 68
+		},
+		{
+			"base": "tokens",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 61,
+			"endline": 61,
+			"statement_endline": 61,
+			"function_endline": 68
+		},
+		{
+			"base": "tokens",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 74,
+			"endline": 74,
+			"statement_endline": 82,
+			"function_endline": 89
+		},
+		{
+			"base": "tokens[j]",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 75,
+			"endline": 75,
+			"statement_endline": 81,
+			"function_endline": 89
+		},
+		{
+			"base": "tokens",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 75,
+			"endline": 75,
+			"statement_endline": 81,
+			"function_endline": 89
+		},
+		{
+			"base": "tokens",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 76,
+			"endline": 76,
+			"statement_endline": 79,
+			"function_endline": 89
+		},
+		{
+			"base": "next",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 76,
+			"endline": 76,
+			"statement_endline": 79,
+			"function_endline": 89
+		},
+		{
+			"base": "next",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 78,
+			"endline": 78,
+			"statement_endline": 78,
+			"function_endline": 89
+		},
+		{
+			"base": "tokens[j]",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 78,
+			"endline": 78,
+			"statement_endline": 78,
+			"function_endline": 89
+		},
+		{
+			"base": "tokens",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 78,
+			"endline": 78,
+			"statement_endline": 78,
+			"function_endline": 89
+		},
+		{
+			"base": "tokens",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 88,
+			"endline": 88,
+			"statement_endline": 88,
+			"function_endline": 89
+		},
+		{
+			"base": "delimiters",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 98,
+			"endline": 98,
+			"statement_endline": 98,
+			"function_endline": 102
+		},
+		{
+			"base": "delimiters",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 99,
+			"endline": 99,
+			"statement_endline": 99,
+			"function_endline": 102
+		},
+		{
+			"base": "delimiters",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 99,
+			"endline": 99,
+			"statement_endline": 99,
+			"function_endline": 102
+		},
+		{
+			"base": "close",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 101,
+			"endline": 101,
+			"statement_endline": 101,
+			"function_endline": 102
+		},
+		{
+			"base": "delimiters",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 106,
+			"endline": 106,
+			"statement_endline": 106,
+			"function_endline": 160
+		},
+		{
+			"base": "delimiters",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 107,
+			"endline": 107,
+			"statement_endline": 107,
+			"function_endline": 160
+		},
+		{
+			"base": "otag",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 124,
+			"endline": 124,
+			"statement_endline": 124,
+			"function_endline": 160
+		},
+		{
+			"base": "Hogan.tags",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 125,
+			"endline": 125,
+			"statement_endline": 125,
+			"function_endline": 160
+		},
+		{
+			"base": "Hogan",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 125,
+			"endline": 125,
+			"statement_endline": 125,
+			"function_endline": 160
+		},
+		{
+			"base": "otag",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 140,
+			"endline": 140,
+			"statement_endline": 140,
+			"function_endline": 160
+		},
+		{
+			"base": "ctag",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 140,
+			"endline": 140,
+			"statement_endline": 140,
+			"function_endline": 160
+		},
+		{
+			"base": "ctag",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 142,
+			"endline": 142,
+			"statement_endline": 142,
+			"function_endline": 160
+		},
+		{
+			"base": "tokens",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 148,
+			"endline": 148,
+			"statement_endline": 148,
+			"function_endline": 160
+		},
+		{
+			"base": "tokens",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 148,
+			"endline": 148,
+			"statement_endline": 148,
+			"function_endline": 160
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 163,
+			"endline": 163,
+			"statement_endline": 165,
+			"function_endline": 166
+		},
+		{
+			"base": "token.n",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 163,
+			"endline": 163,
+			"statement_endline": 165,
+			"function_endline": 166
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 163,
+			"endline": 163,
+			"statement_endline": 165,
+			"function_endline": 166
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 164,
+			"endline": 164,
+			"statement_endline": 164,
+			"function_endline": 166
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 164,
+			"endline": 164,
+			"statement_endline": 164,
+			"function_endline": 166
+		},
+		{
+			"base": "token.n",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 164,
+			"endline": 164,
+			"statement_endline": 164,
+			"function_endline": 166
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 164,
+			"endline": 164,
+			"statement_endline": 164,
+			"function_endline": 166
+		},
+		{
+			"base": "tag",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 181,
+			"endline": 181,
+			"statement_endline": 181,
+			"function_endline": 188
+		},
+		{
+			"base": "stack",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 199,
+			"endline": 199,
+			"statement_endline": 199,
+			"function_endline": 233
+		},
+		{
+			"base": "stack",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 199,
+			"endline": 199,
+			"statement_endline": 199,
+			"function_endline": 233
+		},
+		{
+			"base": "tokens",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 201,
+			"endline": 201,
+			"statement_endline": 226,
+			"function_endline": 233
+		},
+		{
+			"base": "tail",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 204,
+			"endline": 204,
+			"statement_endline": 206,
+			"function_endline": 233
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 204,
+			"endline": 204,
+			"statement_endline": 206,
+			"function_endline": 233
+		},
+		{
+			"base": "Hogan.tags",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 208,
+			"endline": 208,
+			"statement_endline": 223,
+			"function_endline": 233
+		},
+		{
+			"base": "Hogan",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 208,
+			"endline": 208,
+			"statement_endline": 223,
+			"function_endline": 233
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 208,
+			"endline": 208,
+			"statement_endline": 223,
+			"function_endline": 233
+		},
+		{
+			"base": "Hogan.tags",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 208,
+			"endline": 208,
+			"statement_endline": 223,
+			"function_endline": 233
+		},
+		{
+			"base": "Hogan",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 208,
+			"endline": 208,
+			"statement_endline": 223,
+			"function_endline": 233
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 210,
+			"endline": 210,
+			"statement_endline": 210,
+			"function_endline": 233
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 210,
+			"endline": 210,
+			"statement_endline": 210,
+			"function_endline": 233
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 211,
+			"endline": 211,
+			"statement_endline": 223,
+			"function_endline": 233
+		},
+		{
+			"base": "stack",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 212,
+			"endline": 212,
+			"statement_endline": 214,
+			"function_endline": 233
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 213,
+			"endline": 213,
+			"statement_endline": 213,
+			"function_endline": 233
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 216,
+			"endline": 216,
+			"statement_endline": 218,
+			"function_endline": 233
+		},
+		{
+			"base": "opener",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 216,
+			"endline": 216,
+			"statement_endline": 218,
+			"function_endline": 233
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 216,
+			"endline": 216,
+			"statement_endline": 218,
+			"function_endline": 233
+		},
+		{
+			"base": "opener",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 216,
+			"endline": 216,
+			"statement_endline": 218,
+			"function_endline": 233
+		},
+		{
+			"base": "opener",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 217,
+			"endline": 217,
+			"statement_endline": 217,
+			"function_endline": 233
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 217,
+			"endline": 217,
+			"statement_endline": 217,
+			"function_endline": 233
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 219,
+			"endline": 219,
+			"statement_endline": 219,
+			"function_endline": 233
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 221,
+			"endline": 221,
+			"statement_endline": 223,
+			"function_endline": 233
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 222,
+			"endline": 222,
+			"statement_endline": 222,
+			"function_endline": 233
+		},
+		{
+			"base": "tokens",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 222,
+			"endline": 222,
+			"statement_endline": 222,
+			"function_endline": 233
+		},
+		{
+			"base": "tokens[0]",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 222,
+			"endline": 222,
+			"statement_endline": 222,
+			"function_endline": 233
+		},
+		{
+			"base": "tokens",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 222,
+			"endline": 222,
+			"statement_endline": 222,
+			"function_endline": 233
+		},
+		{
+			"base": "stack",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 228,
+			"endline": 228,
+			"statement_endline": 230,
+			"function_endline": 233
+		},
+		{
+			"base": "stack.pop()",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 229,
+			"endline": 229,
+			"statement_endline": 229,
+			"function_endline": 233
+		},
+		{
+			"base": "tags",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 236,
+			"endline": 236,
+			"statement_endline": 236,
+			"function_endline": 242
+		},
+		{
+			"base": "tags[i]",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 237,
+			"endline": 237,
+			"statement_endline": 240,
+			"function_endline": 242
+		},
+		{
+			"base": "tags",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 237,
+			"endline": 237,
+			"statement_endline": 240,
+			"function_endline": 242
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 237,
+			"endline": 237,
+			"statement_endline": 240,
+			"function_endline": 242
+		},
+		{
+			"base": "token",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 238,
+			"endline": 238,
+			"statement_endline": 238,
+			"function_endline": 242
+		},
+		{
+			"base": "tags",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 245,
+			"endline": 245,
+			"statement_endline": 245,
+			"function_endline": 250
+		},
+		{
+			"base": "tags[i]",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 246,
+			"endline": 246,
+			"statement_endline": 248,
+			"function_endline": 250
+		},
+		{
+			"base": "tags",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 246,
+			"endline": 246,
+			"statement_endline": 248,
+			"function_endline": 250
+		},
+		{
+			"base": "tags[i]",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 246,
+			"endline": 246,
+			"statement_endline": 248,
+			"function_endline": 250
+		},
+		{
+			"base": "tags",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 246,
+			"endline": 246,
+			"statement_endline": 248,
+			"function_endline": 250
+		},
+		{
+			"base": "obj",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 255,
+			"endline": 255,
+			"statement_endline": 255,
+			"function_endline": 258
+		},
+		{
+			"base": "codeObj",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 262,
+			"endline": 262,
+			"statement_endline": 264,
+			"function_endline": 266
+		},
+		{
+			"base": "codeObj ... ls[key]",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 263,
+			"endline": 263,
+			"statement_endline": 263,
+			"function_endline": 266
+		},
+		{
+			"base": "codeObj.partials",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 263,
+			"endline": 263,
+			"statement_endline": 263,
+			"function_endline": 266
+		},
+		{
+			"base": "codeObj",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 263,
+			"endline": 263,
+			"statement_endline": 263,
+			"function_endline": 266
+		},
+		{
+			"base": "codeObj.partials",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 263,
+			"endline": 263,
+			"statement_endline": 263,
+			"function_endline": 266
+		},
+		{
+			"base": "codeObj",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 263,
+			"endline": 263,
+			"statement_endline": 263,
+			"function_endline": 266
+		},
+		{
+			"base": "codeObj",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 265,
+			"endline": 265,
+			"statement_endline": 265,
+			"function_endline": 266
+		},
+		{
+			"base": "codeObj",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 269,
+			"endline": 269,
+			"statement_endline": 269,
+			"function_endline": 270
+		},
+		{
+			"base": "options",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 278,
+			"endline": 278,
+			"statement_endline": 280,
+			"function_endline": 283
+		},
+		{
+			"base": "Hogan",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 289,
+			"endline": 289,
+			"statement_endline": 289,
+			"function_endline": 423
+		},
+		{
+			"base": "Hogan",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 289,
+			"endline": 289,
+			"statement_endline": 289,
+			"function_endline": 423
+		},
+		{
+			"base": "template",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 293,
+			"endline": 293,
+			"statement_endline": 293,
+			"function_endline": 295
+		},
+		{
+			"base": "codeObj",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 293,
+			"endline": 293,
+			"statement_endline": 293,
+			"function_endline": 295
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 294,
+			"endline": 294,
+			"statement_endline": 294,
+			"function_endline": 295
+		},
+		{
+			"base": "codeObj",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 298,
+			"endline": 298,
+			"statement_endline": 298,
+			"function_endline": 306
+		},
+		{
+			"base": "codeObj",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 298,
+			"endline": 298,
+			"statement_endline": 298,
+			"function_endline": 306
+		},
+		{
+			"base": "template",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 299,
+			"endline": 299,
+			"statement_endline": 301,
+			"function_endline": 306
+		},
+		{
+			"base": "template.partials",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 300,
+			"endline": 300,
+			"statement_endline": 300,
+			"function_endline": 306
+		},
+		{
+			"base": "template",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 300,
+			"endline": 300,
+			"statement_endline": 300,
+			"function_endline": 306
+		},
+		{
+			"base": "template.partials",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 300,
+			"endline": 300,
+			"statement_endline": 300,
+			"function_endline": 306
+		},
+		{
+			"base": "template",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 300,
+			"endline": 300,
+			"statement_endline": 300,
+			"function_endline": 306
+		},
+		{
+			"base": "codeObj",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 302,
+			"endline": 302,
+			"statement_endline": 304,
+			"function_endline": 306
+		},
+		{
+			"base": "template.subs",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 303,
+			"endline": 303,
+			"statement_endline": 303,
+			"function_endline": 306
+		},
+		{
+			"base": "template",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 303,
+			"endline": 303,
+			"statement_endline": 303,
+			"function_endline": 306
+		},
+		{
+			"base": "codeObj.subs",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 303,
+			"endline": 303,
+			"statement_endline": 303,
+			"function_endline": 306
+		},
+		{
+			"base": "codeObj",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 303,
+			"endline": 303,
+			"statement_endline": 303,
+			"function_endline": 306
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 322,
+			"endline": 322,
+			"statement_endline": 322,
+			"function_endline": 327
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 323,
+			"endline": 323,
+			"statement_endline": 323,
+			"function_endline": 327
+		},
+		{
+			"base": "context.partials",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 324,
+			"endline": 324,
+			"statement_endline": 324,
+			"function_endline": 327
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 324,
+			"endline": 324,
+			"statement_endline": 324,
+			"function_endline": 327
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 324,
+			"endline": 324,
+			"statement_endline": 324,
+			"function_endline": 327
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 325,
+			"endline": 325,
+			"statement_endline": 325,
+			"function_endline": 327
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 325,
+			"endline": 325,
+			"statement_endline": 325,
+			"function_endline": 327
+		},
+		{
+			"base": "Hogan",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 329,
+			"endline": 329,
+			"statement_endline": 377,
+			"function_endline": 423
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 331,
+			"endline": 331,
+			"statement_endline": 333,
+			"function_endline": 336
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 331,
+			"endline": 331,
+			"statement_endline": 333,
+			"function_endline": 336
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 331,
+			"endline": 331,
+			"statement_endline": 333,
+			"function_endline": 336
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 332,
+			"endline": 332,
+			"statement_endline": 333,
+			"function_endline": 336
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 332,
+			"endline": 332,
+			"statement_endline": 333,
+			"function_endline": 336
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 332,
+			"endline": 332,
+			"statement_endline": 333,
+			"function_endline": 336
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 334,
+			"endline": 334,
+			"statement_endline": 334,
+			"function_endline": 336
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 335,
+			"endline": 335,
+			"statement_endline": 335,
+			"function_endline": 336
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 339,
+			"endline": 339,
+			"statement_endline": 339,
+			"function_endline": 342
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 339,
+			"endline": 339,
+			"statement_endline": 339,
+			"function_endline": 342
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 339,
+			"endline": 339,
+			"statement_endline": 339,
+			"function_endline": 342
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 340,
+			"endline": 340,
+			"statement_endline": 340,
+			"function_endline": 342
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 341,
+			"endline": 341,
+			"statement_endline": 341,
+			"function_endline": 342
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 347,
+			"endline": 347,
+			"statement_endline": 347,
+			"function_endline": 351
+		},
+		{
+			"base": "context.partials",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 348,
+			"endline": 348,
+			"statement_endline": 348,
+			"function_endline": 351
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 348,
+			"endline": 348,
+			"statement_endline": 348,
+			"function_endline": 351
+		},
+		{
+			"base": "template",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 349,
+			"endline": 349,
+			"statement_endline": 349,
+			"function_endline": 351
+		},
+		{
+			"base": "ctx",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 349,
+			"endline": 349,
+			"statement_endline": 349,
+			"function_endline": 351
+		},
+		{
+			"base": "template",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 350,
+			"endline": 350,
+			"statement_endline": 350,
+			"function_endline": 351
+		},
+		{
+			"base": "ctx",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 350,
+			"endline": 350,
+			"statement_endline": 350,
+			"function_endline": 351
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 354,
+			"endline": 354,
+			"statement_endline": 354,
+			"function_endline": 360
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 354,
+			"endline": 354,
+			"statement_endline": 354,
+			"function_endline": 360
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 355,
+			"endline": 355,
+			"statement_endline": 355,
+			"function_endline": 360
+		},
+		{
+			"base": "context.subs",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 356,
+			"endline": 356,
+			"statement_endline": 356,
+			"function_endline": 360
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 356,
+			"endline": 356,
+			"statement_endline": 356,
+			"function_endline": 360
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 356,
+			"endline": 356,
+			"statement_endline": 356,
+			"function_endline": 360
+		},
+		{
+			"base": "ctx",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 356,
+			"endline": 356,
+			"statement_endline": 356,
+			"function_endline": 360
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 357,
+			"endline": 357,
+			"statement_endline": 359,
+			"function_endline": 360
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 358,
+			"endline": 358,
+			"statement_endline": 358,
+			"function_endline": 360
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 358,
+			"endline": 358,
+			"statement_endline": 358,
+			"function_endline": 360
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 363,
+			"endline": 363,
+			"statement_endline": 363,
+			"function_endline": 364
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 363,
+			"endline": 363,
+			"statement_endline": 363,
+			"function_endline": 364
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 367,
+			"endline": 367,
+			"statement_endline": 367,
+			"function_endline": 368
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 367,
+			"endline": 367,
+			"statement_endline": 367,
+			"function_endline": 368
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 367,
+			"endline": 367,
+			"statement_endline": 367,
+			"function_endline": 368
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 371,
+			"endline": 371,
+			"statement_endline": 371,
+			"function_endline": 372
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 371,
+			"endline": 371,
+			"statement_endline": 371,
+			"function_endline": 372
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 380,
+			"endline": 380,
+			"statement_endline": 380,
+			"function_endline": 381
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 380,
+			"endline": 380,
+			"statement_endline": 380,
+			"function_endline": 381
+		},
+		{
+			"base": "node",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 380,
+			"endline": 380,
+			"statement_endline": 380,
+			"function_endline": 381
+		},
+		{
+			"base": "nodelist",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 389,
+			"endline": 389,
+			"statement_endline": 389,
+			"function_endline": 394
+		},
+		{
+			"base": "Hogan.codegen",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 390,
+			"endline": 390,
+			"statement_endline": 390,
+			"function_endline": 394
+		},
+		{
+			"base": "Hogan",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 390,
+			"endline": 390,
+			"statement_endline": 390,
+			"function_endline": 394
+		},
+		{
+			"base": "nodelist[i]",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 390,
+			"endline": 390,
+			"statement_endline": 390,
+			"function_endline": 394
+		},
+		{
+			"base": "nodelist",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 390,
+			"endline": 390,
+			"statement_endline": 390,
+			"function_endline": 394
+		},
+		{
+			"base": "nodelist",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 391,
+			"endline": 391,
+			"statement_endline": 391,
+			"function_endline": 394
+		},
+		{
+			"base": "options",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 398,
+			"endline": 398,
+			"statement_endline": 398,
+			"function_endline": 399
+		},
+		{
+			"base": "Hogan",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 401,
+			"endline": 401,
+			"statement_endline": 401,
+			"function_endline": 423
+		},
+		{
+			"base": "options",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 404,
+			"endline": 404,
+			"statement_endline": 404,
+			"function_endline": 405
+		},
+		{
+			"base": "options",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 404,
+			"endline": 404,
+			"statement_endline": 404,
+			"function_endline": 405
+		},
+		{
+			"base": "options",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 404,
+			"endline": 404,
+			"statement_endline": 404,
+			"function_endline": 405
+		},
+		{
+			"base": "options",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 404,
+			"endline": 404,
+			"statement_endline": 404,
+			"function_endline": 405
+		},
+		{
+			"base": "this.cache",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 410,
+			"endline": 410,
+			"statement_endline": 410,
+			"function_endline": 422
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 410,
+			"endline": 410,
+			"statement_endline": 410,
+			"function_endline": 422
+		},
+		{
+			"base": "template",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 413,
+			"endline": 413,
+			"statement_endline": 413,
+			"function_endline": 422
+		},
+		{
+			"base": "partials[name]",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 415,
+			"endline": 415,
+			"statement_endline": 415,
+			"function_endline": 422
+		},
+		{
+			"base": "partials",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 415,
+			"endline": 415,
+			"statement_endline": 415,
+			"function_endline": 422
+		},
+		{
+			"base": "options",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 420,
+			"endline": 420,
+			"statement_endline": 420,
+			"function_endline": 422
+		},
+		{
+			"base": "this.cache",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 421,
+			"endline": 421,
+			"statement_endline": 421,
+			"function_endline": 422
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/compiler.js",
+			"startline": 421,
+			"endline": 421,
+			"statement_endline": 421,
+			"function_endline": 422
+		}
+	],
+	"/node_modules/hogan.js/lib/template.js": [
+		{
+			"base": "Hogan",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 19,
+			"endline": 19,
+			"statement_endline": 28,
+			"function_endline": 341
+		},
+		{
+			"base": "codeObj",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 21,
+			"endline": 21,
+			"statement_endline": 21,
+			"function_endline": 28
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 22,
+			"endline": 22,
+			"statement_endline": 22,
+			"function_endline": 28
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 23,
+			"endline": 23,
+			"statement_endline": 23,
+			"function_endline": 28
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 24,
+			"endline": 24,
+			"statement_endline": 24,
+			"function_endline": 28
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 25,
+			"endline": 25,
+			"statement_endline": 25,
+			"function_endline": 28
+		},
+		{
+			"base": "codeObj",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 25,
+			"endline": 25,
+			"statement_endline": 25,
+			"function_endline": 28
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 26,
+			"endline": 26,
+			"statement_endline": 26,
+			"function_endline": 28
+		},
+		{
+			"base": "codeObj",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 26,
+			"endline": 26,
+			"statement_endline": 26,
+			"function_endline": 28
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 27,
+			"endline": 27,
+			"statement_endline": 27,
+			"function_endline": 28
+		},
+		{
+			"base": "Hogan.Template",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 30,
+			"endline": 30,
+			"statement_endline": 261,
+			"function_endline": 341
+		},
+		{
+			"base": "Hogan",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 30,
+			"endline": 30,
+			"statement_endline": 261,
+			"function_endline": 341
+		},
+		{
+			"base": "this.partials",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 51,
+			"endline": 51,
+			"statement_endline": 51,
+			"function_endline": 87
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 51,
+			"endline": 51,
+			"statement_endline": 51,
+			"function_endline": 87
+		},
+		{
+			"base": "partials",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 54,
+			"endline": 54,
+			"statement_endline": 54,
+			"function_endline": 87
+		},
+		{
+			"base": "partial",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 54,
+			"endline": 54,
+			"statement_endline": 54,
+			"function_endline": 87
+		},
+		{
+			"base": "partial",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 55,
+			"endline": 55,
+			"statement_endline": 57,
+			"function_endline": 87
+		},
+		{
+			"base": "partial",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 55,
+			"endline": 55,
+			"statement_endline": 57,
+			"function_endline": 87
+		},
+		{
+			"base": "partial",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 56,
+			"endline": 56,
+			"statement_endline": 56,
+			"function_endline": 87
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 60,
+			"endline": 60,
+			"statement_endline": 62,
+			"function_endline": 87
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 63,
+			"endline": 63,
+			"statement_endline": 63,
+			"function_endline": 87
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 63,
+			"endline": 63,
+			"statement_endline": 63,
+			"function_endline": 87
+		},
+		{
+			"base": "this.pa ... symbol]",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 71,
+			"endline": 71,
+			"statement_endline": 71,
+			"function_endline": 87
+		},
+		{
+			"base": "this.partials",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 71,
+			"endline": 71,
+			"statement_endline": 71,
+			"function_endline": 87
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 71,
+			"endline": 71,
+			"statement_endline": 71,
+			"function_endline": 87
+		},
+		{
+			"base": "partial",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 73,
+			"endline": 73,
+			"statement_endline": 83,
+			"function_endline": 87
+		},
+		{
+			"base": "partials",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 75,
+			"endline": 75,
+			"statement_endline": 75,
+			"function_endline": 87
+		},
+		{
+			"base": "partials",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 75,
+			"endline": 75,
+			"statement_endline": 75,
+			"function_endline": 87
+		},
+		{
+			"base": "partial",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 76,
+			"endline": 76,
+			"statement_endline": 80,
+			"function_endline": 87
+		},
+		{
+			"base": "partials.stackText",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 77,
+			"endline": 77,
+			"statement_endline": 79,
+			"function_endline": 87
+		},
+		{
+			"base": "partials",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 77,
+			"endline": 77,
+			"statement_endline": 79,
+			"function_endline": 87
+		},
+		{
+			"base": "partials.stackText",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 78,
+			"endline": 78,
+			"statement_endline": 78,
+			"function_endline": 87
+		},
+		{
+			"base": "partials",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 78,
+			"endline": 78,
+			"statement_endline": 78,
+			"function_endline": 87
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 78,
+			"endline": 78,
+			"statement_endline": 78,
+			"function_endline": 87
+		},
+		{
+			"base": "partials.stackText",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 78,
+			"endline": 78,
+			"statement_endline": 78,
+			"function_endline": 87
+		},
+		{
+			"base": "partials",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 78,
+			"endline": 78,
+			"statement_endline": 78,
+			"function_endline": 87
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 78,
+			"endline": 78,
+			"statement_endline": 78,
+			"function_endline": 87
+		},
+		{
+			"base": "partials.stackText",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 78,
+			"endline": 78,
+			"statement_endline": 78,
+			"function_endline": 87
+		},
+		{
+			"base": "partials",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 78,
+			"endline": 78,
+			"statement_endline": 78,
+			"function_endline": 87
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 78,
+			"endline": 78,
+			"statement_endline": 78,
+			"function_endline": 87
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 78,
+			"endline": 78,
+			"statement_endline": 78,
+			"function_endline": 87
+		},
+		{
+			"base": "partial",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 81,
+			"endline": 81,
+			"statement_endline": 82,
+			"function_endline": 87
+		},
+		{
+			"base": "partial",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 81,
+			"endline": 81,
+			"statement_endline": 82,
+			"function_endline": 87
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 82,
+			"endline": 82,
+			"statement_endline": 82,
+			"function_endline": 87
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 82,
+			"endline": 82,
+			"statement_endline": 82,
+			"function_endline": 87
+		},
+		{
+			"base": "partials",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 82,
+			"endline": 82,
+			"statement_endline": 82,
+			"function_endline": 87
+		},
+		{
+			"base": "this.pa ... symbol]",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 84,
+			"endline": 84,
+			"statement_endline": 84,
+			"function_endline": 87
+		},
+		{
+			"base": "this.partials",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 84,
+			"endline": 84,
+			"statement_endline": 84,
+			"function_endline": 87
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 84,
+			"endline": 84,
+			"statement_endline": 84,
+			"function_endline": 87
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 101,
+			"endline": 101,
+			"statement_endline": 101,
+			"function_endline": 113
+		},
+		{
+			"base": "context",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 101,
+			"endline": 101,
+			"statement_endline": 101,
+			"function_endline": 113
+		},
+		{
+			"base": "tail",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 108,
+			"endline": 108,
+			"statement_endline": 112,
+			"function_endline": 113
+		},
+		{
+			"base": "tail",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 109,
+			"endline": 109,
+			"statement_endline": 109,
+			"function_endline": 113
+		},
+		{
+			"base": "val",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 119,
+			"endline": 119,
+			"statement_endline": 121,
+			"function_endline": 134
+		},
+		{
+			"base": "ctx",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 130,
+			"endline": 130,
+			"statement_endline": 130,
+			"function_endline": 134
+		},
+		{
+			"base": "ctx",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 130,
+			"endline": 130,
+			"statement_endline": 130,
+			"function_endline": 134
+		},
+		{
+			"base": "names",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 140,
+			"endline": 140,
+			"statement_endline": 142,
+			"function_endline": 169
+		},
+		{
+			"base": "this.options",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 141,
+			"endline": 141,
+			"statement_endline": 142,
+			"function_endline": 169
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 141,
+			"endline": 141,
+			"statement_endline": 142,
+			"function_endline": 169
+		},
+		{
+			"base": "ctx",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 144,
+			"endline": 144,
+			"statement_endline": 156,
+			"function_endline": 169
+		},
+		{
+			"base": "ctx",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 144,
+			"endline": 144,
+			"statement_endline": 156,
+			"function_endline": 169
+		},
+		{
+			"base": "ctx",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 145,
+			"endline": 145,
+			"statement_endline": 145,
+			"function_endline": 169
+		},
+		{
+			"base": "ctx",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 145,
+			"endline": 145,
+			"statement_endline": 145,
+			"function_endline": 169
+		},
+		{
+			"base": "names",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 147,
+			"endline": 147,
+			"statement_endline": 155,
+			"function_endline": 169
+		},
+		{
+			"base": "names",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 148,
+			"endline": 148,
+			"statement_endline": 148,
+			"function_endline": 169
+		},
+		{
+			"base": "this.options",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 176,
+			"endline": 176,
+			"statement_endline": 176,
+			"function_endline": 196
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 176,
+			"endline": 176,
+			"statement_endline": 176,
+			"function_endline": 196
+		},
+		{
+			"base": "ctx",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 178,
+			"endline": 178,
+			"statement_endline": 178,
+			"function_endline": 196
+		},
+		{
+			"base": "ctx",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 179,
+			"endline": 179,
+			"statement_endline": 179,
+			"function_endline": 196
+		},
+		{
+			"base": "this.options",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 200,
+			"endline": 200,
+			"statement_endline": 200,
+			"function_endline": 207
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 200,
+			"endline": 200,
+			"statement_endline": 200,
+			"function_endline": 207
+		},
+		{
+			"base": "this.options",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 202,
+			"endline": 202,
+			"statement_endline": 202,
+			"function_endline": 207
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 202,
+			"endline": 202,
+			"statement_endline": 202,
+			"function_endline": 207
+		},
+		{
+			"base": "this.options",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 204,
+			"endline": 204,
+			"statement_endline": 204,
+			"function_endline": 207
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 204,
+			"endline": 204,
+			"statement_endline": 204,
+			"function_endline": 207
+		},
+		{
+			"base": "this.options",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 211,
+			"endline": 211,
+			"statement_endline": 213,
+			"function_endline": 215
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 211,
+			"endline": 211,
+			"statement_endline": 213,
+			"function_endline": 215
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 214,
+			"endline": 214,
+			"statement_endline": 214,
+			"function_endline": 215
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 214,
+			"endline": 214,
+			"statement_endline": 214,
+			"function_endline": 215
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 218,
+			"endline": 218,
+			"statement_endline": 218,
+			"function_endline": 218
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 220,
+			"endline": 220,
+			"statement_endline": 220,
+			"function_endline": 220
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 220,
+			"endline": 220,
+			"statement_endline": 220,
+			"function_endline": 220
+		},
+		{
+			"base": "ctx",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 225,
+			"endline": 225,
+			"statement_endline": 226,
+			"function_endline": 238
+		},
+		{
+			"base": "ctx",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 225,
+			"endline": 225,
+			"statement_endline": 226,
+			"function_endline": 238
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 232,
+			"endline": 232,
+			"statement_endline": 232,
+			"function_endline": 238
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 232,
+			"endline": 232,
+			"statement_endline": 232,
+			"function_endline": 238
+		},
+		{
+			"base": "this.subsText",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 232,
+			"endline": 232,
+			"statement_endline": 232,
+			"function_endline": 238
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 232,
+			"endline": 232,
+			"statement_endline": 232,
+			"function_endline": 238
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 232,
+			"endline": 232,
+			"statement_endline": 232,
+			"function_endline": 238
+		},
+		{
+			"base": "this.subsText",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 232,
+			"endline": 232,
+			"statement_endline": 232,
+			"function_endline": 238
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 232,
+			"endline": 232,
+			"statement_endline": 232,
+			"function_endline": 238
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 232,
+			"endline": 232,
+			"statement_endline": 232,
+			"function_endline": 238
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 232,
+			"endline": 232,
+			"statement_endline": 232,
+			"function_endline": 238
+		},
+		{
+			"base": "ctx",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 242,
+			"endline": 242,
+			"statement_endline": 242,
+			"function_endline": 250
+		},
+		{
+			"base": "ctx",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 242,
+			"endline": 242,
+			"statement_endline": 242,
+			"function_endline": 250
+		},
+		{
+			"base": "this.subs",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 253,
+			"endline": 253,
+			"statement_endline": 253,
+			"function_endline": 259
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 253,
+			"endline": 253,
+			"statement_endline": 253,
+			"function_endline": 259
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 255,
+			"endline": 255,
+			"statement_endline": 255,
+			"function_endline": 259
+		},
+		{
+			"base": "this",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 257,
+			"endline": 257,
+			"statement_endline": 257,
+			"function_endline": 259
+		},
+		{
+			"base": "scope",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 269,
+			"endline": 269,
+			"statement_endline": 275,
+			"function_endline": 279
+		},
+		{
+			"base": "scope",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 270,
+			"endline": 270,
+			"statement_endline": 270,
+			"function_endline": 279
+		},
+		{
+			"base": "PartialTemplate",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 283,
+			"endline": 283,
+			"statement_endline": 283,
+			"function_endline": 312
+		},
+		{
+			"base": "Substitutions",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 285,
+			"endline": 285,
+			"statement_endline": 285,
+			"function_endline": 312
+		},
+		{
+			"base": "instance",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 285,
+			"endline": 285,
+			"statement_endline": 285,
+			"function_endline": 312
+		},
+		{
+			"base": "partial",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 288,
+			"endline": 288,
+			"statement_endline": 288,
+			"function_endline": 312
+		},
+		{
+			"base": "partial",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 289,
+			"endline": 289,
+			"statement_endline": 289,
+			"function_endline": 312
+		},
+		{
+			"base": "partial",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 290,
+			"endline": 290,
+			"statement_endline": 290,
+			"function_endline": 312
+		},
+		{
+			"base": "partial",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 293,
+			"endline": 293,
+			"statement_endline": 293,
+			"function_endline": 312
+		},
+		{
+			"base": "partial",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 294,
+			"endline": 294,
+			"statement_endline": 294,
+			"function_endline": 312
+		},
+		{
+			"base": "stackSubs",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 296,
+			"endline": 296,
+			"statement_endline": 296,
+			"function_endline": 312
+		},
+		{
+			"base": "stackSubs",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 296,
+			"endline": 296,
+			"statement_endline": 296,
+			"function_endline": 312
+		},
+		{
+			"base": "subs",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 296,
+			"endline": 296,
+			"statement_endline": 296,
+			"function_endline": 312
+		},
+		{
+			"base": "partial.subs",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 299,
+			"endline": 299,
+			"statement_endline": 299,
+			"function_endline": 312
+		},
+		{
+			"base": "partial",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 299,
+			"endline": 299,
+			"statement_endline": 299,
+			"function_endline": 312
+		},
+		{
+			"base": "stackSubs",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 299,
+			"endline": 299,
+			"statement_endline": 299,
+			"function_endline": 312
+		},
+		{
+			"base": "partial",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 303,
+			"endline": 303,
+			"statement_endline": 303,
+			"function_endline": 312
+		},
+		{
+			"base": "stackPartials",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 305,
+			"endline": 305,
+			"statement_endline": 305,
+			"function_endline": 312
+		},
+		{
+			"base": "stackPartials",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 305,
+			"endline": 305,
+			"statement_endline": 305,
+			"function_endline": 312
+		},
+		{
+			"base": "partials",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 305,
+			"endline": 305,
+			"statement_endline": 305,
+			"function_endline": 312
+		},
+		{
+			"base": "partial.partials",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 308,
+			"endline": 308,
+			"statement_endline": 308,
+			"function_endline": 312
+		},
+		{
+			"base": "partial",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 308,
+			"endline": 308,
+			"statement_endline": 308,
+			"function_endline": 312
+		},
+		{
+			"base": "stackPartials",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 308,
+			"endline": 308,
+			"statement_endline": 308,
+			"function_endline": 312
+		},
+		{
+			"base": "Object",
+			"filename": "/node_modules/hogan.js/lib/template.js",
+			"startline": 338,
+			"endline": 338,
+			"statement_endline": 338,
+			"function_endline": 339
+		}
+	]
+}
