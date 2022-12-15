@@ -2,7 +2,7 @@
 
 sed -n 's/^[^,]*,[^,]*,[^,]*,\([^,]*\),.*$/\1/p' $1 | grep -v "prototype" | sed -e 's/$/,/' -e '1s/^/{\n/' -e '$s/$/\n}/' -e '$s/,//' > undef.json
 sed -E 's/^([^,]*,){3}"([^"]*)".*$/\2/; /^prototype$/d' $1 > undef.txt
-
+sort undef.txt | uniq -u
 # Set the input and output file names
 input_file="undef.txt"
 output_file="getters.js"
