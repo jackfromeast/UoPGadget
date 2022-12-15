@@ -1,0 +1,88 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const fs = require('fs');
+const path = require("path");
+const protocol_1 = require("./protocol");
+const { createInstrumenter } = require('istanbul-lib-instrument');
+const { hookRequire } = require('istanbul-lib-hook');
+let sigint = false;
+process.on('SIGINT', function () {
+    console.log('Received SIGINT. shutting down gracefully');
+    sigint = true;
+});
+class Worker {
+    constructor(fn) {
+        this.fn = fn;
+    }
+    getTotalCoverage() {
+        let total = 0;
+        for (const filePath in global.__coverage__) {
+            for (const s in global.__coverage__[filePath].s) {
+                total += global.__coverage__[filePath].s[s] ? 1 : 0;
+            }
+            for (const f in global.__coverage__[filePath].f) {
+                total += global.__coverage__[filePath].f[f] ? 1 : 0;
+            }
+            for (const b in global.__coverage__[filePath].b) {
+                for (const i of global.__coverage__[filePath].b[b]) {
+                    total += i ? 1 : 0;
+                }
+            }
+        }
+        return total;
+    }
+    dump_coverage() {
+        const data = JSON.stringify(global.__coverage__);
+        if (!fs.existsSync('./.nyc_output')) {
+            fs.mkdirSync('./.nyc_output');
+        }
+        fs.writeFileSync('./.nyc_output/cov.json', data);
+    }
+    start() {
+        process.on('message', async (m) => {
+            try {
+                if (m.type === protocol_1.ManageMessageType.WORK) {
+                    if (sigint) {
+                        this.dump_coverage();
+                        process.exit(0);
+                    }
+                    if (this.fn.constructor.name === 'AsyncFunction') {
+                        // @ts-ignore
+                        await this.fn(Buffer.from(m.buf.data));
+                    }
+                    else {
+                        // @ts-ignore
+                        this.fn(Buffer.from(m.buf.data));
+                    }
+                    // @ts-ignore
+                    process.send({
+                        type: protocol_1.WorkerMessageType.RESULT,
+                        coverage: this.getTotalCoverage()
+                    });
+                }
+            }
+            catch (e) {
+                console.log("=================================================================");
+                console.log(e);
+                this.dump_coverage();
+                // @ts-ignore
+                process.send({
+                    type: protocol_1.WorkerMessageType.CRASH,
+                });
+                process.exit(1);
+            }
+        });
+    }
+}
+const instrumenter = createInstrumenter({ compact: true });
+// @ts-ignore
+hookRequire((filePath) => true, (code, { filename }) => {
+    const newCode = instrumenter.instrumentSync(code, filename);
+    return newCode;
+});
+// @ts-ignore
+const fuzzTargetPath = path.join(process.cwd(), process.argv[2]);
+const fuzzTargetFn = require(fuzzTargetPath).fuzz;
+const worker = new Worker(fuzzTargetFn);
+worker.start();
+//# sourceMappingURL=worker.js.map
