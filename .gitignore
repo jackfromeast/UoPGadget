@@ -13,5 +13,4 @@ node-find-undefined
 *-db/
 .cache/*
 .cache
-.gitkeep
 
