@@ -1,1 +1,0 @@
-"Unused variable, import, function or class","Unused variables, imports, functions or classes may be a symptom of a bug and should be examined carefully.","recommendation","Unused variable x.","/lodash-case1.js","8","5","8","5"
