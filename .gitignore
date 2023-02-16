@@ -13,4 +13,7 @@ node-find-undefined
 *-db/
 .cache/*
 .cache
-
+node-find-undefined.zip
+error.log
+.gdb_history
+.assets/PPAEG-final-presentation.pptx
