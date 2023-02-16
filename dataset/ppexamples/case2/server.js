@@ -35,6 +35,7 @@ app.all('/', (req, res) => {
         req.session.data = data
     }
 
+
     res.render('index', {
         language: data.language, 
         category: data.category
