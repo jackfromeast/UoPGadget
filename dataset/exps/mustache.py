@@ -3,7 +3,7 @@ import json
 import os
 
 HOST = os.getenv("HOST", "localhost")
-PORT = os.getenv("PORT", 8002)
+PORT = os.getenv("PORT", 80)
 USERNAME = os.getenv("BASIC_USERNAME", "guest")
 PASSWORD = os.getenv("BASIC_PASSWORD", "guest")
 
