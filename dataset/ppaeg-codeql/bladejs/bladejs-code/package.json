@@ -1,0 +1,19 @@
+{
+  "name": "bladejs",
+  "version": "1.0.3",
+  "description": "BladeJs view engline for node.js, JavaScript version of Laravel Blade Engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torabian/bladejs.git"
+  },
+  "author": "Ali Torabi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/torabian/bladejs/issues"
+  },
+  "homepage": "https://github.com/torabian/bladejs#readme"
+}

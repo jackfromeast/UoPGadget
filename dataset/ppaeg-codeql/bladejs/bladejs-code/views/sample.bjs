@@ -1,0 +1,11 @@
+:: {{author}} ::
+
+@for   (var i = 1; i <= 2; i ++)
+    The current value is sdasdsa asdasdA
+        @for (var b =1; b<=2; b++)
+            The sub value {{ b + i }}  and:  {{ b * add(i)  }}
+            @if (i == 2)
+                Now I is {{ i }}
+            @endif
+        @endfor
+@endfor
