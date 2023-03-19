@@ -15,5 +15,6 @@ node-find-undefined
 .cache
 node-find-undefined.zip
 error.log
+find-undefined-node/isolate-*
 .gdb_history
 .assets/PPAEG-final-presentation.pptx
