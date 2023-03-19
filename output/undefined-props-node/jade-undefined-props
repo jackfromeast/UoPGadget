@@ -1,0 +1,4180 @@
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x2dc4209c7bf9: [String] in OldSpace: #NODE_NO_WARNINGS
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e2807551: [String] in OldSpace: #listener
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x2dc4209c7c19: [String] in OldSpace: #warning
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x2dc4209c7c19: [String] in OldSpace: #warning
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x2dc4209c8079: [String] in OldSpace: #wasm_web_api
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x10fbc2e383c9: [String] in OldSpace: #NODE_V8_COVERAGE
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x2dc4209cada9: [String] in OldSpace: #NODE_DEBUG
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x2dc4209cb759: [String] in OldSpace: #report
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x2dc4209ddf89: [String] in OldSpace: #NODE_CHANNEL_FD
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x2dc4209de261: [String] in OldSpace: #NODE_UNIQUE_ID
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x2dc4209e4259: [String] in OldSpace: #WATCH_REPORT_DEPENDENCIES
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x2dc4209e4411: [String] in OldSpace: #module_wrap
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x3838e2836ae1: [String] in OldSpace: #tcp_wrap
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x3838e2836a81: [String] in OldSpace: #pipe_wrap
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0xc46f4815fd1: [String] in OldSpace: #hasDtrace
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0xc46f4816009: [String] in OldSpace: #DTRACE_HTTP_CLIENT_REQUEST
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0xc46f4816411: [String] in OldSpace: #DTRACE_HTTP_CLIENT_RESPONSE
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0xc46f48164d1: [String] in OldSpace: #DTRACE_HTTP_SERVER_REQUEST
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0xc46f4816591: [String] in OldSpace: #DTRACE_HTTP_SERVER_RESPONSE
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0xc46f48098c1: [String] in OldSpace: #DTRACE_NET_SERVER_CONNECTION
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0xc46f4809849: [String] in OldSpace: #DTRACE_NET_STREAM_END
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0xc46f481c461: [String] in OldSpace: #block_list
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0xc46f4820299: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 480831910
+ - description: 0x3838e2809589 <String[7]: #kHandle>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0xc46f4820299: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 480831910
+ - description: 0x3838e2809589 <String[7]: #kHandle>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0xc46f4820299: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 480831910
+ - description: 0x3838e2809589 <String[7]: #kHandle>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+0x1977b018b9: [Map] in ReadOnlySpace
+ - type: SYMBOL_TYPE
+ - instance size: 24
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281b501: [String] in OldSpace: #port
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281ab39: [String] in OldSpace: #flowlabel
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0xc46f4820299: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 480831910
+ - description: 0x3838e2809589 <String[7]: #kHandle>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0xc46f4820299: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 480831910
+ - description: 0x3838e2809589 <String[7]: #kHandle>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0xc46f4820299: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 480831910
+ - description: 0x3838e2809589 <String[7]: #kHandle>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+0x1977b018b9: [Map] in ReadOnlySpace
+ - type: SYMBOL_TYPE
+ - instance size: 24
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281b501: [String] in OldSpace: #port
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281ab39: [String] in OldSpace: #flowlabel
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0xc46f4820299: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 480831910
+ - description: 0x3838e2809589 <String[7]: #kHandle>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0xc46f4820299: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 480831910
+ - description: 0x3838e2809589 <String[7]: #kHandle>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0xc46f4820299: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 480831910
+ - description: 0x3838e2809589 <String[7]: #kHandle>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+0x1977b018b9: [Map] in ReadOnlySpace
+ - type: SYMBOL_TYPE
+ - instance size: 24
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281b501: [String] in OldSpace: #port
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281ab39: [String] in OldSpace: #flowlabel
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e280e8b1: [String] in OldSpace: #O_SYMLINK
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x3838e283b2a9: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 500135773
+ - description: 0x3838e2801241 <String[28]: #nodejs.util.promisify.custom>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+0x1977b018b9: [Map] in ReadOnlySpace
+ - type: SYMBOL_TYPE
+ - instance size: 24
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x191a77931741: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 983086519
+ - description: 0x3838e2824d71 <String[19]: #customPromisifyArgs>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+0x1977b018b9: [Map] in ReadOnlySpace
+ - type: SYMBOL_TYPE
+ - instance size: 24
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x3838e283b2a9: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 500135773
+ - description: 0x3838e2801241 <String[28]: #nodejs.util.promisify.custom>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+0x1977b018b9: [Map] in ReadOnlySpace
+ - type: SYMBOL_TYPE
+ - instance size: 24
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x191a77931741: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 983086519
+ - description: 0x3838e2824d71 <String[19]: #customPromisifyArgs>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+0x1977b018b9: [Map] in ReadOnlySpace
+ - type: SYMBOL_TYPE
+ - instance size: 24
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x3838e283b2a9: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 500135773
+ - description: 0x3838e2801241 <String[28]: #nodejs.util.promisify.custom>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+0x1977b018b9: [Map] in ReadOnlySpace
+ - type: SYMBOL_TYPE
+ - instance size: 24
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x191a77931741: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 983086519
+ - description: 0x3838e2824d71 <String[19]: #customPromisifyArgs>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+0x1977b018b9: [Map] in ReadOnlySpace
+ - type: SYMBOL_TYPE
+ - instance size: 24
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e2804d11: [String] in OldSpace: #noDeprecation
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x1977b05cb1: [String] in ReadOnlySpace: #prototype
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0x2d19fc0d3061: [String] in OldSpace: #/home/PPAEG/dataset/ppgadgets/jade/app.js\x00
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0x2d19fc0d3061: [String] in OldSpace: #/home/PPAEG/dataset/ppgadgets/jade/app.js\x00
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x32b755b19e31: [String]: c"/home/PPAEG/dataset/ppgadgets/jade/app.js\x00"
+0x1977b02c29: [Map] in ReadOnlySpace
+ - type: CONS_ONE_BYTE_STRING_TYPE
+ - instance size: 32
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281a981: [String] in OldSpace: #encoding
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281a981: [String] in OldSpace: #encoding
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281b749: [String] in OldSpace: #signal
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x1977b0a239: [String] in ReadOnlySpace: #href
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281a9d1: [String] in OldSpace: #errno
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e2806f51: [String] in OldSpace: #error
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281a9d1: [String] in OldSpace: #errno
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e2806f51: [String] in OldSpace: #error
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281a9d1: [String] in OldSpace: #errno
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e2806f51: [String] in OldSpace: #error
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281a9d1: [String] in OldSpace: #errno
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e2806f51: [String] in OldSpace: #error
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281a9d1: [String] in OldSpace: #errno
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e2806f51: [String] in OldSpace: #error
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281a9d1: [String] in OldSpace: #errno
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e2806f51: [String] in OldSpace: #error
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281a981: [String] in OldSpace: #encoding
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281a981: [String] in OldSpace: #encoding
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281a981: [String] in OldSpace: #encoding
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281b749: [String] in OldSpace: #signal
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x1977b0a239: [String] in ReadOnlySpace: #href
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x1977b04469: [String] in ReadOnlySpace: #type
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0x2d19fc0e4bf1: [String] in OldSpace: #MODULE
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0x2d19fc0e4bf1: [String] in OldSpace: #MODULE
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x32b755b1b961: [String]: >"MODULE"
+0x1977b01b41: [Map] in ReadOnlySpace
+ - type: THIN_ONE_BYTE_STRING_TYPE
+ - instance size: 24
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0x2d19fc0e52a1: [String] in OldSpace: #/home/PPAEG/dataset/ppgadgets/jade/app.js
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0x2d19fc0e52a1: [String] in OldSpace: #/home/PPAEG/dataset/ppgadgets/jade/app.js
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x32b755b1a439: [String]: c"/home/PPAEG/dataset/ppgadgets/jade/app.js"
+0x1977b02c29: [Map] in ReadOnlySpace
+ - type: CONS_ONE_BYTE_STRING_TYPE
+ - instance size: 32
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281b749: [String] in OldSpace: #signal
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x1977b0a239: [String] in ReadOnlySpace: #href
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281a9d1: [String] in OldSpace: #errno
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e2806f51: [String] in OldSpace: #error
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281a9d1: [String] in OldSpace: #errno
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281a9d1: [String] in OldSpace: #errno
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e2806f51: [String] in OldSpace: #error
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281a9d1: [String] in OldSpace: #errno
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e2806f51: [String] in OldSpace: #error
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x1977b04469: [String] in ReadOnlySpace: #type
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x2d19fc0ee279: [String] in OldSpace: #columnOffset
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x2d19fc0edc79: [String] in OldSpace: #lineOffset
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281a5c1: [String] in OldSpace: #cachedData
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x2d19fc0ee299: [String] in OldSpace: #produceCachedData
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x2d19fc0ee2c1: [String] in OldSpace: #parsingContext
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x2d19fc0ee2e1: [String] in OldSpace: #contextExtensions
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281a5c1: [String] in OldSpace: #cachedData
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e281b7c1: [String] in OldSpace: #sourceMapURL
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0x2d19fc0f0f99: [String] in OldSpace: #/home/PPAEG/dataset/ppgadgets/jade\x00jade
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0x2d19fc0f0f99: [String] in OldSpace: #/home/PPAEG/dataset/ppgadgets/jade\x00jade
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x32b755b1ddc1: [String]: c"/home/PPAEG/dataset/ppgadgets/jade\x00jade"
+0x1977b02c29: [Map] in ReadOnlySpace
+ - type: CONS_ONE_BYTE_STRING_TYPE
+ - instance size: 32
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e2802061: [String] in OldSpace: #exports
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0x2d19fc0f0fd1: [String] in OldSpace: #jade\x00/home/PPAEG/dataset/ppgadgets/jade/node_modules\x00/home/PPAEG/dataset/ppgadgets/node_modules\x00/home/PPAEG/dataset/node_modules\x00/home/PPAEG/node_modules\x00/home/node_modules\x00/node_modules\x00/root/.node_modules\x00/root/.node_libraries\x00/home/PPAEG/lib/node
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0x2d19fc0f0fd1: [String] in OldSpace: #jade\x00/home/PPAEG/dataset/ppgadgets/jade/node_modules\x00/home/PPAEG/dataset/ppgadgets/node_modules\x00/home/PPAEG/dataset/node_modules\x00/home/PPAEG/node_modules\x00/home/node_modules\x00/node_modules\x00/root/.node_modules\x00/root/.node_libraries\x00/home/PPAEG/lib/node
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x32b755b1e4c1: [String]: c"jade\x00/home/PPAEG/dataset/ppgadgets/jade/node_modules\x00/home/PPAEG/dataset/ppgadgets/node_modules\x00/home/PPAEG/dataset/node_modules\x00/home/PPAEG/node_modules\x00/home/node_modules\x00/node_modules\x00/root/.node_modules\x00/root/.node_libraries\x00/home/PPAEG/lib/node"
+0x1977b02c29: [Map] in ReadOnlySpace
+ - type: CONS_ONE_BYTE_STRING_TYPE
+ - instance size: 32
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x2d19fc0f1151: [String] in OldSpace: #uncaughtExceptionMonitor
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x2d19fc0f1129: [String] in OldSpace: #uncaughtException
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x3838e280a089: [String] in OldSpace: #exit
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0x191a7791e5a9: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 491039013
+ - description: 0x3838e281a211 <String[17]: #node:arrowMessage>
+ - private: 1
+ - private_name: 0
+ - private_brand: 0
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0x191a7791e5a9: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 491039013
+ - description: 0x3838e281a211 <String[17]: #node:arrowMessage>
+ - private: 1
+ - private_name: 0
+ - private_brand: 0
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0x191a7791e5d9: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 230787535
+ - description: 0x3838e281a261 <String[14]: #node:decorated>
+ - private: 1
+ - private_name: 0
+ - private_brand: 0
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0x191a7791e5d9: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 230787535
+ - description: 0x3838e281a261 <String[14]: #node:decorated>
+ - private: 1
+ - private_name: 0
+ - private_brand: 0
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x17ead919ed1: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 984163792
+ - description: 0x3838e2802c69 <String[28]: #kEnhanceStackBeforeInspector>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+0x1977b018b9: [Map] in ReadOnlySpace
+ - type: SYMBOL_TYPE
+ - instance size: 24
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e28028a9: [String] in OldSpace: #prepareStackTrace
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x3838e28028a9: [String] in OldSpace: #prepareStackTrace
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x2d19fc0f93c9: [String] in OldSpace: #FORCE_COLOR
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x2d19fc0f9401: [String] in OldSpace: #NODE_DISABLE_COLORS
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x2d19fc0f9429: [String] in OldSpace: #NO_COLOR
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x2d19fc0f9489: [String] in OldSpace: #TMUX
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x2d19fc0f94a1: [String] in OldSpace: #CI
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x1977b06be1: [Symbol] in ReadOnlySpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 433654192
+ - description: 0x001977b06bf9 <String[18]: #Symbol.toStringTag>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+0x1977b018b9: [Map] in ReadOnlySpace
+ - type: SYMBOL_TYPE
+ - instance size: 24
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x1977b04f11: [String] in ReadOnlySpace: #errors
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0x1977b06aa1: [Symbol] in ReadOnlySpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 350093503
+ - description: 0x001977b06ab9 <String[12]: #Symbol.split>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+------------------------------Undefined Property Found------------------------------
+[+] Handled by src/runtime/runtime-object.cc:MaybeHandle<Object> Runtime::GetObjectProperty
+[+] KeyName:0x1977b06aa1: [Symbol] in ReadOnlySpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 350093503
+ - description: 0x001977b06ab9 <String[12]: #Symbol.split>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x1977b04921: [String] in ReadOnlySpace: #cause
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x191a77938c31: [Symbol] in OldSpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 402875594
+ - description: 0x3838e281b5b9 <String[5]: #query>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+0x1977b018b9: [Map] in ReadOnlySpace
+ - type: SYMBOL_TYPE
+ - instance size: 24
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x1977b058f1: [String] in ReadOnlySpace: #name
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x1977b06be1: [Symbol] in ReadOnlySpace
+ - map: 0x001977b018b9 <Map[24]>
+ - hash: 433654192
+ - description: 0x001977b06bf9 <String[18]: #Symbol.toStringTag>
+ - private: 0
+ - private_name: 0
+ - private_brand: 0
+0x1977b018b9: [Map] in ReadOnlySpace
+ - type: SYMBOL_TYPE
+ - instance size: 24
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x2d19fc0ff449: [String] in OldSpace: #circular
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: Smi: 0x2 (2)
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: 0x1977b058f1: [String] in ReadOnlySpace: #name
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetNamedProperty, InterpreterAssembler) in &done
+[+] KeyName:: DebugPrint: 0x2d19fc0ff449: [String] in OldSpace: #circular
+0x1977b01369: [Map] in ReadOnlySpace
+ - type: ONE_BYTE_INTERNALIZED_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+------------------------------Undefined Property Found------------------------------
+
+[+] Handled by src/interpreter/interpreter-generator.cc:IGNITION_HANDLER(GetKeyedProperty, InterpreterAssembler)
+[+] KeyName:: DebugPrint: Smi: 0x0 (0)
+
+[+] Value:: DebugPrint: 0x1977b015b9: [Oddball] in ReadOnlySpace: #undefined
+0x1977b01571: [Map] in ReadOnlySpace
+ - type: ODDBALL_TYPE
+ - instance size: 48
+ - elements kind: HOLEY_ELEMENTS
+ - unused property fields: 0
+ - enum length: invalid
+ - stable_map
+ - undetectable
+ - non-extensible
+ - back pointer: 0x001977b015b9 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x001977b01269 <Other heap object (STRONG_DESCRIPTOR_ARRAY_TYPE)>
+ - prototype: 0x001977b01339 <null>
+ - constructor: 0x001977b01339 <null>
+ - dependent code: 0x001977b01251 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+

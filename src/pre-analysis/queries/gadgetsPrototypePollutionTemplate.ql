@@ -41,8 +41,7 @@
 
  predicate undefinedPropertyNames(string propertyName) {
   propertyName = [
-    "blocks",
-    "outputFunctionName"
+    "line"
   ]
 }
  
@@ -219,6 +218,16 @@
      ) and 
      lbl instanceof CallFlowLabel
    }
+
+  //  override predicate isSource(DataFlow::Node pred, DataFlow::FlowLabel lbl){
+  //   exists(DataFlow::PropRead read |
+  //     undefinedPropertyNames(resolvePropertyName(read)) and
+  //     // resolvePropertyName(read) = "%PROP%" and
+  //     pred.(DataFlow::FunctionNode) = read.getBasicBlock().getContainer().(Function).flow()) and
+  //     lbl instanceof CallFlowLabel
+  //  }
+
+
  
    // predicate isCallFlowStep(DataFlow::FlowLabel lbl) {
    //   lbl instanceof CallFlowLabel

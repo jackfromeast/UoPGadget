@@ -13,5 +13,5 @@ const TEMPLATE = `
 `;
 const template = hogan.compile(TEMPLATE);
 
-// pp2rce sink
+//pp2rce sink
 Function(`return ${template}`)();
