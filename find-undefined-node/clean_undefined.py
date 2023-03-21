@@ -22,34 +22,29 @@ Then, run the node-find-undefined program with the js file and output the result
 
 Then, run the following:
 
-  python3 clean_undefined.py path_to_resultfile.txt path_to_outputfile.txt
+  python3 clean_undefined.py path_to_resultfile.txt
 
-Need to specify the resultfile.txt path and the output file path.
+Need to specify the resultfile.txt path.
 
-The result file contains undefined property name with "\n" as separation.
-At the same time, the command line will print out the undefined properties in array format.
+The command line will print out the undefined properties in array format.
 """
 
 import os;
 import sys;
 
 undefined = []
+undefined_no_repeat = []
 
 def get_undefined(line):
   if "KeyName::" in line:
     index = line.find("#")
-    name = line[index + 1:]
-    undefined.append(name.strip())
-
-def write_output(file_name):
-  with open(file_name, 'w') as txt_file:
-    for name in undefined:
-      txt_file.write(name + "\n")
+    if index != -1:
+      name = line[index + 1:]
+      undefined.append(name.strip())
 
 def main():
   args = sys.argv[1:]
   path = args[0]
-  output = args[1]
 
   f = open(path, 'r')
 
@@ -64,8 +59,8 @@ def main():
     elif need:
       get_undefined(line)
 
-  print(undefined)
-  write_output(output)
+  undefined_no_repeat = list(set(undefined))
+  print(undefined_no_repeat)
 
 if __name__ == '__main__':
   main()
