@@ -17,4 +17,14 @@ node-find-undefined.zip
 error.log
 find-undefined-node/isolate-*
 .gdb_history
-.assets/PPAEG-final-presentation.pptx
+*.pptx
+
+
+.pyc
+*_jalangi_*.js*
+.DS_Store
+z3.emscripten.js.mem
+libz3*
+.babelrc
+
+*/cache/
