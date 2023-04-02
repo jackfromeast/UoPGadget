@@ -16,6 +16,7 @@ node-find-undefined
 node-find-undefined.zip
 error.log
 find-undefined-node/isolate-*
+*/isolate-*.log
 .gdb_history
 *.pptx
 
@@ -26,5 +27,4 @@ find-undefined-node/isolate-*
 z3.emscripten.js.mem
 libz3*
 .babelrc
-
 */cache/
