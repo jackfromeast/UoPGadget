@@ -15,12 +15,12 @@
             
             "program": "distributor/bin/distributor.js",
             "args": [
-                "./tests/numbers/infoflow.js",
+                "./tests/gadgets/gadgets.js"
             ],
             "env": {
                 "EXPOSE_PRINT_PATHS": "1",
                 "max_old_space_size": "4096",
-                "Z3_PATH": "/home/ubuntu/ExpoSE/node_modules/z3javascript/bin/libz3.so"
+                "Z3_PATH": "/home/PPAEG/ExpoSE+/node_modules/z3javascript/bin/libz3.so"
             },
             "cwd":"${workspaceFolder}"
         },

@@ -1909,14 +1909,16 @@ if (typeof J$ === 'undefined') {
 
 
     function instrumentEvalCode(code, iid, isDirect) {
-        return instrumentCode({
-            code: code,
-            thisIid: iid,
-            isEval: true,
-            inlineSourceMap: true,
-            inlineSource: true,
-            isDirect: isDirect
-        }).code;
+        // lzy
+        return code;
+        // return instrumentCode({
+        //     code: code,
+        //     thisIid: iid,
+        //     isEval: true,
+        //     inlineSourceMap: true,
+        //     inlineSource: true,
+        //     isDirect: isDirect
+        // }).code;
     }
 
     function removeShebang(code) {

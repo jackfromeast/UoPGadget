@@ -384,7 +384,8 @@ class SymbolicState {
 	getSolution(model) {
 		let solution = {};
 
-		for (let name in this.inputSymbols) {
+		for (const name of Object.keys(this.inputSymbols)) {
+		// for (let name in this.inputSymbols) {
 			let solutionAst = model.eval(this.inputSymbols[name]);
 			solution[name] = solutionAst.asConstant(model);
 			solutionAst.destroy();
