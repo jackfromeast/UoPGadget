@@ -119,9 +119,48 @@ class SymbolicExecution {
 		}
 	}
 
+	/** jackfromeast
+	 * sybolicCheckForEvalLikeFunctions
+	 * @param {*} f 
+	 * @param {*} args 
+	 * @param {*} state 
+	 * @returns 
+	 */
+	sybolicCheckForEvalLikeFunctions(f, args, state){
+		switch(f.name){
+		case "eval":
+			return state.isSymbolic(args[0]);
+		case "Function":
+			// args[-1] not work
+			return state.isSymbolic(args[args.length-1]);
+		case "execScript":
+			return state.isSymbolic(args[0]);
+		case "executeJavaScript":
+			return state.isSymbolic(args[0]);
+		case "execCommand":
+			return state.isSymbolic(args[0]);
+		case "setTimeout":
+			return state.isSymbolic(args[0]);
+		case "setInterval":
+			return state.isSymbolic(args[0]);
+		case "setImmediate":
+			return state.isSymbolic(args[0]);
+		default:
+			return false;
+		}
+	}
+
 	invokeFunPre(iid, f, base, args, _isConstructor, _isMethod) {
 		this.state.coverage.touch(iid);
 		Log.logHigh(`Execute function ${ObjectHelper.asString(f)} at ${this._location(iid)}`);
+
+		/** jackfromeast
+ 		 * add symbolic check for eval-like functions
+		 * check whether the argument of eval-like functions are symbolic, which usually means that our undefined property has flows to the sink
+		 */
+		if(this.sybolicCheckForEvalLikeFunctions(f, args, this.state)){
+			Log.logSink(`Found a potential flow to the sink: ${f.name}`);
+		}
 
 		f = this.state.getConcrete(f);
 		this._reportFn(f, base, args);

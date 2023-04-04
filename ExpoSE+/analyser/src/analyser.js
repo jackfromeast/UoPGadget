@@ -7,15 +7,15 @@
 //
 // Symbolic execution analyser entry point
 
-// import SymbolicExecution from "./symbolic-execution";
-// import Config from "./config";
-// import Log from "./utilities/log";
-// import External from "./external";
+import SymbolicExecution from "./symbolic-execution";
+import Config from "./config";
+import Log from "./utilities/log";
+import External from "./external";
 
-const SymbolicExecution = require("./symbolic-execution");
-const Config = require("./config");
-const Log = require("./utilities/log");
-const External = require("./external");
+// const SymbolicExecution = require("./symbolic-execution");
+// const Config = require("./config");
+// const Log = require("./utilities/log");
+// const External = require("./external");
 
 const fs = External.load("fs");
 const process = External.load("process");
@@ -36,7 +36,7 @@ process.on("disconnect", function() {
 
 J$.analysis = new SymbolicExecution(J$, JSON.parse(input), (state, coverage) => {
 
-	Log.log("Finished play with PC " + state.pathCondition.map(x => x.ast));
+	Log.logPC("Finished play with PC " + state.pathCondition.map(x => x.ast));
 
 	if (Config.outCoveragePath) {
 		fs.writeFileSync(Config.outCoveragePath, JSON.stringify(coverage.end()));

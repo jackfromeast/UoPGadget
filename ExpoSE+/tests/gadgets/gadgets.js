@@ -24,9 +24,7 @@ function verify(){
 
     let result = test()
     
-    if(Object._expose._isSymbolic(result)){
-        throw "[!] Found undefined value flows to the sink."
-    }
+    Function(result);
 
 }
 

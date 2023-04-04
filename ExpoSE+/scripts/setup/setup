@@ -9,9 +9,9 @@ echo "Setting Up Packages"
 echo "Building Analyser"
 ./scripts/build/build_all
 
-#touch ~/.bashrc
+touch ~/.bashrc
 
-#echo "Installing into PATH"
-#./scripts/setup/install_bashprofile
+echo "Installing into PATH"
+./scripts/setup/install_bashprofile
 
 exit 0

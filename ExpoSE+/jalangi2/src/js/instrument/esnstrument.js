@@ -34,7 +34,7 @@ if (typeof J$ === 'undefined') {
     }
 
     function es6Transform(code) {
-        console.log('Transforming');
+        // console.log('Transforming');
 	    if (typeof(babel) !== 'undefined' && !process.env['NO_ES7']) {
 		    var res = babel.transform(code, {
 		      retainLines: true,

@@ -24,18 +24,30 @@ const log_path = console.log;
  * logs are now removed at compile for performance
  */
  
+// analyzer's log should use blue color
+// sink's log should use red color
 class Log {
 
     logHigh(msg) {
-        log_path("[?] " + msg);
+        log_path("\x1b[34m%s\x1b[0m", "[?] "+msg);
     }
 
     logMid(msg) {
-        log_path("[?] " + msg);
+        log_path("\x1b[34m%s\x1b[0m", "[?] "+msg);
     }
 
     log(msg) {
-        log_path("[!] " + msg);
+        log_path("\x1b[34m%s\x1b[0m", "[+] "+msg);
+    }
+
+    // lzy
+    logPC(msg){
+        log_path("\x1b[33m%s\x1b[0m", "[+] "+msg);
+    }
+
+    // lzy
+    logSink(msg){
+        log_path("\x1b[31m%s\x1b[0m", "[!] "+msg)
     }
 
     logQuery(clause, solver, checkCount, startTime, endTime, model, attempts, hitMax) {
