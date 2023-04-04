@@ -15,7 +15,7 @@
             
             "program": "distributor/bin/distributor.js",
             "args": [
-                "./tests/template_engines/hogan/app.js"
+                "./tests/template_engines/bladejs/app.js"
             ],
             "env": {
                 "EXPOSE_PRINT_PATHS": "1",
