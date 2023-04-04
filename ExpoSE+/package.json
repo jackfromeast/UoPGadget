@@ -10,7 +10,8 @@
   "scripts": {
     "start": "./expoSE ui",
     "test": "./scripts/run_tests",
-    "postinstall": "./scripts/setup/setup"
+    "postinstall": "./scripts/setup/setup",
+    "build": "./scripts/setup/setup"
   },
   "dependencies": {
     "@babel/cli": "^7.4.4",

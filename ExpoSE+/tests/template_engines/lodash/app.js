@@ -26,16 +26,6 @@ Object.prototype.sourceURL = S$.pureSymbol('sourceURL_undef')
  */
 fs.readFile('/home/ubuntu/ExpoSE/TemplateEngines/lodash/template.ejs', (err, content) => {
     let compiled = lodash.template(content)
-
-    // if(Object._expose._isSymbolic(compiled)){
-    //     throw "[+][+]FOUNDAGADGETS!"
-    // }
-    // let rendered = compiled({'language': 'python', 'category':'programming'})
-
-    // test whether the sink is symbolic
-    // if(compiled instanceof ConcolicValue){
-    //     throw "FOUNDAGADGETS!"
-    // }
 })
 
 

@@ -44,4 +44,4 @@ Object.prototype['block'] =
 
 const template = pug.compile(`h1= msg`);
 
-console.log(template.toString());
+// console.log(template.toString());

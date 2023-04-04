@@ -148,6 +148,7 @@ class SymbolicExecution {
 		default:
 			return false;
 		}
+	
 	}
 
 	invokeFunPre(iid, f, base, args, _isConstructor, _isMethod) {
@@ -158,8 +159,10 @@ class SymbolicExecution {
  		 * add symbolic check for eval-like functions
 		 * check whether the argument of eval-like functions are symbolic, which usually means that our undefined property has flows to the sink
 		 */
-		if(this.sybolicCheckForEvalLikeFunctions(f, args, this.state)){
-			Log.logSink(`Found a potential flow to the sink: ${f.name}`);
+		if(f && this.sybolicCheckForEvalLikeFunctions(f, args, this.state)){
+			Log.logSink("Found a potential flow to the sink: " + f.name + " at" + this._location(iid).toString());
+			Log.logSink("Current input: " + JSON.stringify(this.state.input));
+			Log.logSink("Current state: " + this.state.pathCondition.map(x => x.ast));
 		}
 
 		f = this.state.getConcrete(f);
