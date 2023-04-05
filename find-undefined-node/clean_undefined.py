@@ -11,8 +11,8 @@ Original file is located at
 How to use this:
 Before running the node-find-undefined program, add:
 
-  console.log("===========start")
-  console.log("===========end")
+  console.log("===========start===========")
+  console.log("===========end===========")
 
 At the beginning and end of the js file respectively.
 
@@ -50,10 +50,10 @@ def main():
 
   need = False
   for line in f:
-    if line == "===========start\n":
+    if line == "===========start===========\n":
       need = True
       continue
-    elif line == "===========end\n":
+    elif line == "===========end===========\n":
       need = False
       continue
     elif need:

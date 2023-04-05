@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+echo "Setting up for Node"
+node --version
+
+echo "Setting Up Packages"
+./scripts/setup/setup_packages
+
+echo "Building Analyser"
+./scripts/build/build_all
+
+touch ~/.bashrc
+
+echo "Installing into PATH"
+./scripts/setup/install_bashprofile
+
+exit 0

@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "$schema": "https://json.schemastore.org/launch",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Distributor",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            
+            "program": "distributor/bin/distributor.js",
+            "args": [
+                "./tests/template_engines/bladejs/app.js"
+            ],
+            "env": {
+                "EXPOSE_PRINT_PATHS": "1",
+                "max_old_space_size": "4096",
+                "Z3_PATH": "/home/ubuntu/PPAEG/ExpoSE+/node_modules/z3javascript/bin/libz3.so"
+            },
+            "cwd":"${workspaceFolder}"
+        },
+        {
+            "name": "Debug Analyser",
+            "request": "attach",
+            "type": "node",
+            "address": "localhost",
+            "port": 9229,
+            "description": "start the debugger and run the Distributor like `node distributor/bin/distributor.js ../tests/numbers/infoflow.js`"
+        }
+    ]
+}

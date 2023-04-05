@@ -1,1 +1,0 @@
-find . -name "*_jalangi_.*" -type f -delete

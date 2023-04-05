@@ -1,0 +1,1 @@
+['isTTY', 'encoding', 'newListener', 'signal', 'href', 'errno', 'error']

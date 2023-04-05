@@ -1,0 +1,13 @@
+{
+  "name": "ExpoSE+",
+  "version": "0.0.2",
+  "description": "Symbolic Execution for JavaScript",
+  "author": "Blake Loring <blake@parsed.uk>, Johannes Kinder <johannes.kinder@rhul.ac.uk>",
+  "readme": "README.md",
+  "scripts": {
+    "postinstall": "./scripts/postinstall"
+  },
+  "license": "",
+  "main": "src/symbolic-execution.js",
+  "devDependencies": {}
+}

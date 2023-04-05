@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+#Setup runtime environment variables
+source ./scripts/env
+
+#Invoke analyser
+(node --max_old_space_size=4096 distributor/bin/distributor.js "$1" "${@:2}")
