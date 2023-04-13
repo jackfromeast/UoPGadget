@@ -22,9 +22,9 @@ import External from "./external";
 
 class SymbolicExecution {
 
-	constructor(sandbox, initialInput, exitFn) {
+	constructor(sandbox, initialInput, undefinedPool, exitFn) {
 		this._sandbox = sandbox;
-		this.state = new SymbolicState(initialInput, this._sandbox);
+		this.state = new SymbolicState(initialInput, undefinedPool, this._sandbox);
 		this.models = ModelBuilder(this.state);
 		this._fileList = new Array();
 		this._exitFn = exitFn;
@@ -173,6 +173,19 @@ class SymbolicExecution {
 		const fn_model = this.models.get(f);
 		Log.logMid(fn_model ? ("Exec Model: " + functionName + " " + (new Error()).stack) : functionName + " unmodeled");
 
+		/** jackfromeast
+		 * If non of the arguments are symbolic, we do not need to call the model function
+		 * Probably there are several cases that modeled function are needed, but currently I just ignore them
+		 */
+		if(!Object.values(args).some(x => this.state.isSymbolic(x))){
+			return {
+				f: f,
+				base: base,
+				args: args,
+				skip: false};
+		}
+		
+
 		/**
 		 * Concretize the function if it is native and we do not have a custom model for it
 		 * TODO: We force concretization on toString functions to avoid recursive call from the lookup into this.models
@@ -240,6 +253,19 @@ class SymbolicExecution {
 
 	getFieldPre(iid, base, offset, _isComputed, _isOpAssign, _isMethodCall) {
 		this.state.coverage.touch(iid);
+
+		// check undefined properties
+		// our polluted undefined properties will also be assessed in symbols.js, exclude them
+		if (!this.state.isSymbolic(base) && !this.state.isSymbolic(offset) && !offset.endsWith("_undef")) {
+			if(base[offset] == undefined){
+				// if this.state.undefinedPool does not contain this offset, add it to the pool
+				if(!this.state.undefinedPool.includes(offset.toString())){
+					Log.logUndefined("Found undefined property: " + offset.toString() + " at " + this._location(iid).toString());
+					this.state.undefinedPool.push(offset.toString());
+				}
+			}
+		}
+
 		return {
 			base: base,
 			offset: offset,
@@ -345,11 +371,14 @@ class SymbolicExecution {
 		this.state.coverage.touch(iid);
 		Log.logHigh(`Put field ${ObjectHelper.asString(base)}[${ObjectHelper.asString(offset)}] at ${this._location(iid)}`);
 
-		if (this.state.getConcrete(offset) === "src"
-        || this.state.getConcrete(offset) === "href") {
-			this.report(val);	
-			val = this.state.getConcrete(val);
-		}
+		// lzy
+		// don't know why src and href need to be handled separately
+		// decided to comment out this part
+		// if (this.state.getConcrete(offset) === "src"
+		// || this.state.getConcrete(offset) === "href") {
+		// 	this.report(val);	
+		// 	val = this.state.getConcrete(val);
+		// }
 
 		return {
 			base: base,

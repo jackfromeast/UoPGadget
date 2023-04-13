@@ -7,6 +7,7 @@ import Strategy from "./strategies";
 import Coverage from "./coverage-aggregator";
 import Stats from "../../lib/Stats/bin/main";
 import Log from "./log";
+import UndefinedPool from "./undefined";
 
 class Center {
 
@@ -22,6 +23,7 @@ class Center {
 		this._done = [];
 		this._errors = 0;
 		this._running = [];
+		this.undefinedPool = new UndefinedPool(this.options.undefinedFile);
 		this._coverage = new Coverage();
 		this._stats = new Stats();
 
@@ -44,6 +46,7 @@ class Center {
 		cases.forEach(i => this._strategy.add(i));
 
 		this._requeue();
+		this._printUndefined();
 		this._printStatus();
 	}
 
@@ -84,7 +87,9 @@ class Center {
 
 		//Start any remaining queued
 		this._requeue();
+
 		this._printStatus();
+		this._printNewUndefined();
 
 		//If finished print output
 		if (!this._running.length) {
@@ -96,8 +101,16 @@ class Center {
 		Log("[" + this._done.length + " done /" + this._strategy.length() +" queued / " + this._running.length + " running / " + this._errors + " errors / " + this._coverage.current().loc.toFixed(2) * 100 + "% coverage ] ***\n");
 	}
 
+	_printUndefined() {
+		Log(`Current Undefined Pool has ${this.undefinedPool.getLength()} properties: ${this.undefinedPool.getUndefinedPool().toString()}\n`);
+	}
+
+	_printNewUndefined() {
+		Log(`Newly Discovered Undefined Props: ${this.undefinedPool.getUpdatedMap().toString()}\n`);
+	}
+
 	_finishedTesting() {
-		this.cbs.forEach(cb => cb(this, this._done, this._errors, this._coverage, this._stats.final()));
+		this.cbs.forEach(cb => cb(this, this._done, this._errors, this._coverage, this._stats.final(), this.undefinedPool.getUpdatedMap()));
 	}
 
 	cancel() {
@@ -121,12 +134,13 @@ class Center {
 		});
 	}
 
-	_pushDone(test, input, pc, alternatives, coverage, errors) {
+	_pushDone(test, input, pc, alternatives, undefinedPool, coverage, errors) {
 		this._done.push({
 			id: test.file.id,
 			input: input,
 			pc: pc,
 			errors: errors,
+			undefinedPool: this.undefinedPool.getUndatedPool(undefinedPool), // added by jackfromest
 			time: test.time(),
 			startTime: test.startTime(),
 			coverage: this._coverage.current(),
@@ -153,11 +167,12 @@ class Center {
 		}
 
 		if (finalOut) {
-			this._pushDone(test, finalOut.input, finalOut.pc, finalOut.alternatives, coverage, errors.concat(finalOut.errors));
+			this._pushDone(test, finalOut.input, finalOut.pc, finalOut.alternatives, finalOut.undefinedPool, coverage, errors.concat(finalOut.errors));
 			this._expandAlternatives(test.file, finalOut.alternatives, coverage);
 			this._stats.merge(finalOut.stats);
+			this.undefinedPool.updatePool(finalOut.input, finalOut.undefinedPool);
 		} else {
-			this._pushDone(test, test.file.input, test.file.pc, [], coverage, errors.concat([{ error: "Error extracting final output - a fatal error must have occured" }]));
+			this._pushDone(test, test.file.input, test.file.pc, [], [], coverage, errors.concat([{ error: "Error extracting final output - a fatal error must have occured" }]));
 		}
 
 		this._postTest(test);
@@ -168,6 +183,7 @@ class Center {
 		 *  where the test case starts
 		 */
 		let nextTest = new Spawn(this.options.analyseScript, file, {
+			undefinedPool: this.undefinedPool.getUndefinedPool(),
 			log: this.options.printPaths,
 			timeout: this.options.testMaxTime,
 		});

@@ -58,7 +58,7 @@ function BuildUnaryJumpTable(state) {
 }
 
 class SymbolicState {
-	constructor(input, sandbox) {
+	constructor(input, undefinedPool, sandbox) {
 		this.ctx = new Z3.Context();
 		this.slv = new Z3.Solver(this.ctx,
 			Config.incrementalSolverEnabled,
@@ -77,6 +77,7 @@ class SymbolicState {
 		this.input = input;
 		this.inputSymbols = {};
 		this.pathCondition = [];
+		this.undefinedPool = undefinedPool; // lzy: add newly find undefined properties while path exploration
 
 		this.stats = new Stats();
 		this.coverage = new Coverage(sandbox);
@@ -550,16 +551,13 @@ class SymbolicState {
 		switch (field_c) {
 
 		case "length": {
-
 			if (base_s.getLength()) {
 				return base_s.getLength();
 			} else {
 				Log.log("No length field on symbolic value");
 			}
-
 			break;
 		}
-
 		default: {
 			Log.log("Unsupported symbolic field - concretizing " + base_c + " and field " + field_c);
 			break;

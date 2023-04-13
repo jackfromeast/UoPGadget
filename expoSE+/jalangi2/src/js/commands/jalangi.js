@@ -99,21 +99,29 @@ if (args.analysis) {
 }
 
 Module._extensions['.js'] = function (module, filename) {
-    var code = fs.readFileSync(filename, 'utf8');
     var instFilename = makeInstCodeFileName(filename);
-    var instCodeAndData = J$.instrumentCode(
-        {
-            code: code,
-            isEval: false,
-            origCodeFileName: filename,
-            instCodeFileName: instFilename,
-            inlineSourceMap: !!args.inlineIID,
-            inlineSource: !!args.inlineSource
-        });
-    instUtil.applyASTHandler(instCodeAndData, astHandler, J$);
-    fs.writeFileSync(makeSMapFileName(instFilename), instCodeAndData.sourceMapString, "utf8");
-    fs.writeFileSync(instFilename, instCodeAndData.code, "utf8");
-    module._compile(instCodeAndData.code, filename);
+    // lzy
+    // if the file is under the node_modules and it contains a instrumented version, we use load from the file directly
+    if (filename.indexOf("node_modules") > 0 && fs.existsSync(instFilename)) {
+        var instCode = fs.readFileSync(instFilename, 'utf8');
+        module._compile(instCode, instFilename);
+    }
+    else{
+        var code = fs.readFileSync(filename, 'utf8');
+        var instCodeAndData = J$.instrumentCode(
+            {
+                code: code,
+                isEval: false,
+                origCodeFileName: filename,
+                instCodeFileName: instFilename,
+                inlineSourceMap: !!args.inlineIID,
+                inlineSource: !!args.inlineSource
+            });
+        instUtil.applyASTHandler(instCodeAndData, astHandler, J$);
+        fs.writeFileSync(makeSMapFileName(instFilename), instCodeAndData.sourceMapString, "utf8");
+        fs.writeFileSync(instFilename, instCodeAndData.code, "utf8");
+        module._compile(instCodeAndData.code, instFilename); // filename->instFilename  
+    }
 };
 
 function startProgram() {

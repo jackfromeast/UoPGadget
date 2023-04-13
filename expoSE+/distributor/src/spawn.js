@@ -16,7 +16,9 @@ class Spawn {
 		this.script = script;
 		this.file = file;
 		this.options = opts;
-		this.args = [this.file.path, JSON.stringify(this.file.input)];
+		// add undefined pool
+		this.args = [this.file.path, JSON.stringify(this.file.input), JSON.stringify(opts.undefinedPool)];
+		// this.args = [this.file.path, JSON.stringify(this.file.input)];
 		this.tmpCoverageFile = tmp.fileSync();
 		this.tmpOutFile = tmp.fileSync();
 

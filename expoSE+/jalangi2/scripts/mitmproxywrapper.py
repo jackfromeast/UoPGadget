@@ -124,10 +124,10 @@ class Wrapper(object):
             description='Helper tool for OS X proxy configuration and mitmproxy.',
             epilog='Any additional arguments will be passed on unchanged to mitmproxy.'
         )
-        parser.add_argument('-t', '--toggle', action='store_true', help='just toggle the proxy configuration')
-        parser.add_argument('-d', '--auto-disable', action='store_true', help='auto disable the proxy')
-#         parser.add_argument('--honeyproxy', action='store_true', help='run honeyproxy instead of mitmproxy')
-        parser.add_argument('-p', '--port', type=int, help='override the default port of 8080', default=8080)
+        parser.addArgument('-t', '--toggle', action='store_true', help='just toggle the proxy configuration')
+        parser.addArgument('-d', '--auto-disable', action='store_true', help='auto disable the proxy')
+#         parser.addArgument('--honeyproxy', action='store_true', help='run honeyproxy instead of mitmproxy')
+        parser.addArgument('-p', '--port', type=int, help='override the default port of 8080', default=8080)
         args, extra_arguments = parser.parse_known_args()
 
         wrapper = cls(port=args.port, extra_arguments=extra_arguments)

@@ -45,6 +45,10 @@ class Log {
         log_path("\x1b[33m%s\x1b[0m", "[+] "+msg);
     }
 
+    logUndefined(msg){
+        log_path("\x1b[32m%s\x1b[0m", "[+] "+msg);
+    }
+
     // lzy
     logSink(msg){
         log_path("\x1b[31m%s\x1b[0m", "[!] "+msg)

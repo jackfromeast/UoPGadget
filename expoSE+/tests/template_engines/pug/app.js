@@ -45,5 +45,6 @@ Object.prototype.block = S$.pureSymbol('block_undef');
 
 
 const template = pug.compile(`h1= msg`);
+// console.log(template({msg: "Hello World"}));
 
 // console.log(template.toString());

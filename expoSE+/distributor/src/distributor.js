@@ -5,6 +5,8 @@ import Center from "./center";
 import Config from "./config";
 import CoverageMap from "./coverage-map";
 import JsonWriter from "./json-writer";
+import path from "path";
+// import UndefinedPool from "./undefined";
 
 process.title = "ExpoSE Distributor";
 
@@ -36,12 +38,15 @@ if (process.argv.length >= 3) {
 		center.cancel();
 	}, Config.maxTime);
 
-	center.done((center, done, errors, coverage, stats) => {
+	center.done((center, done, errors, coverage, stats, newUndefinedMap) => {
 
+		let dateObj = new Date();
+		let logFilePath = path.dirname(target) + `/expose-${dateObj.getMonth()+1}-${dateObj.getDate()}-${dateObj.getHours()}-${dateObj.getMinutes()}-${dateObj.getSeconds()}` + "-log.json";
 		if (Config.jsonOut) {
-			console.log("Writing JSON");
-			JsonWriter(Config.jsonOut, target, coverage, start, (new Date()).getTime(), done);
+			logFilePath = Config.jsonOut + `expose-${dateObj.getMonth()+1}-${dateObj.getDate()}-${dateObj.getHours()}-${dateObj.getMinutes()}-${dateObj.getSeconds()}}` + "-log.json";
 		}
+		console.log(`[+] Writing output to ${logFilePath}`);
+		JsonWriter(logFilePath, target, coverage, start, (new Date()).getTime(), newUndefinedMap, done);
 
 		function round(num, precision) {
 			return Math.round(num * Math.pow(10, precision)) / Math.pow(10, precision);
@@ -61,6 +66,11 @@ if (process.argv.length >= 3) {
 				console.log(`[!] ${item.replay}`);
 			}
 		});
+		
+		console.log("[!] Newly Found Undefined Properties");
+		for (var key in newUndefinedMap) {
+			console.log("[+] ".concat(key, ": ").concat(newUndefinedMap[key].toString()));
+		}
 
 		console.log("[!] Stats");
 

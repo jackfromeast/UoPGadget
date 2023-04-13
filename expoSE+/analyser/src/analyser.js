@@ -12,15 +12,11 @@ import Config from "./config";
 import Log from "./utilities/log";
 import External from "./external";
 
-// const SymbolicExecution = require("./symbolic-execution");
-// const Config = require("./config");
-// const Log = require("./utilities/log");
-// const External = require("./external");
-
 const fs = External.load("fs");
 const process = External.load("process");
 
-const input = process.argv[process.argv.length - 1];
+const input = process.argv[process.argv.length - 2];
+const undefinedPool = process.argv[process.argv.length - 1];
 
 Log.logHigh("Built with VERY logging enabled");
 Log.logMid("Built with FINE logging enabled");
@@ -34,7 +30,7 @@ process.on("disconnect", function() {
 	process.exit();
 });
 
-J$.analysis = new SymbolicExecution(J$, JSON.parse(input), (state, coverage) => {
+J$.analysis = new SymbolicExecution(J$, JSON.parse(input), JSON.parse(undefinedPool),(state, coverage) => {
 
 	Log.logPC("Finished play with PC " + state.pathCondition.map(x => x.ast));
 
@@ -52,6 +48,7 @@ J$.analysis = new SymbolicExecution(J$, JSON.parse(input), (state, coverage) => 
 			input: state.input,
 			errors: state.errors,
 			alternatives: current,
+			undefinedPool: state.undefinedPool,
 			stats: state.stats.export()
 		};
 
