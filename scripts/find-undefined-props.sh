@@ -26,13 +26,15 @@ for dir in "${parent_dir}"/*; do
     if [ -d "${dir}" ]; then
         subdir_name=$(basename "${dir}")
         output_path="${output_base}/${subdir_name}-undefined-props-raw.txt"
-        output_clean_path="${output_base}/${subdir_name}-undefined-props.txt"
+        output_clean_path="${output_base}/${subdir_name}-undefined-props.json"
 
         echo "[+] Processing ${dir}"
-        pushd "${dir}" > /dev/null
+        # pushd "${dir}" > /dev/null
+        cd "${dir}"
         "${find_undefined_node}" app.js > "${output_path}" 2>&1
         python3 "${clean_script}" "${output_path}" > "${output_clean_path}" 2>&1
-        popd > /dev/null
+        # popd > /dev/null
+        cd ..
     fi
 done
 

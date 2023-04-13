@@ -1,1 +1,0 @@
-['escapeFunction', 'debug', 'newListener', 'client', 'rmWhitespace', 'strict', 'settings', 'cache', 'localsName', 'scope', 'escape', 'closeDelimiter', 'views', 'isTTY', 'href', 'root', 'destructuredLocals', 'async', 'outputFunctionName', 'delimiter', '_with', 'errno', 'context', 'error', 'legacyInclude', 'compileDebug', 'encoding', 'openDelimiter', 'filename']

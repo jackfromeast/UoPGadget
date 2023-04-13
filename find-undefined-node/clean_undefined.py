@@ -31,6 +31,7 @@ The command line will print out the undefined properties in array format.
 
 import os;
 import sys;
+import json;
 
 undefined = []
 undefined_no_repeat = []
@@ -60,7 +61,9 @@ def main():
       get_undefined(line)
 
   undefined_no_repeat = list(set(undefined))
-  print(undefined_no_repeat)
+  # generate json format array for undefined properties
+  undefined_no_repeat_json = json.dumps(undefined_no_repeat)
+  print(undefined_no_repeat_json)
 
 if __name__ == '__main__':
   main()
