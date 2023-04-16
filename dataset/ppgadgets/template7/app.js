@@ -1,3 +1,4 @@
+console.log("===========start===========")
 const template7 = require('template7');
 
 // exp-1
@@ -50,9 +51,10 @@ Object.prototype.meta={
         }
     }
 
-//const source = `Hello{{msg}}`
-const source = `Hello {{join myArray delimiter=", "}}`
+const source = `Hello{{msg}}`
+//const source = `Hello {{join myArray delimiter=", "}}`
 const template =  template7.compile(source);
 
 console.log(template.toString())
 console.log(template({msg:"World!"}))
+console.log("===========end===========")

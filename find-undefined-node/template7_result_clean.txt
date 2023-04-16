@@ -1,0 +1,1 @@
+["errno", "encoding", "compiled", "contextExtensions", "type", "signal", "cachedData", "exports", "containsKeys", "isTTY", "newListener", "columnOffset", "parsingContext", "href", "string", "error", "produceCachedData", "module", "NODE_V8_COVERAGE", "lineOffset"]
