@@ -1,6 +1,8 @@
 pug = require("pug")
 S$ = require("../../../lib/S$")
 
+// ./expoSE+ --undefined-file /home/ubuntu/PPAEG/output/undefined-props-node/pug-undefined-props.json tests/template_engines/pug/app.js
+
 /* Payload Injection*/
 // inject property to root prototype
 

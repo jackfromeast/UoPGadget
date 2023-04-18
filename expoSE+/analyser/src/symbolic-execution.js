@@ -256,7 +256,7 @@ class SymbolicExecution {
 
 		// check undefined properties
 		// our polluted undefined properties will also be assessed in symbols.js, exclude them
-		if (!this.state.isSymbolic(base) && !this.state.isSymbolic(offset) && !offset.endsWith("_undef")) {
+		if (!this.state.isSymbolic(base) && !this.state.isSymbolic(offset) && !offset.toString().endsWith("_undef")) {
 			if(base[offset] == undefined){
 				// if this.state.undefinedPool does not contain this offset, add it to the pool
 				if(!this.state.undefinedPool.includes(offset.toString())){

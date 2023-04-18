@@ -22,7 +22,11 @@ const template = `html
             h1 Blade is cool`;
             
 blade.compile(template, {'debug': true}, function(err, tmpl) {
-    tmpl({'nav': []}, function(err, html) {
-        console.log(html, err);
-    });
+    if (err) {
+        console.log(err);
+    }else{
+        tmpl({'nav': []}, function(err, html) {
+            // console.log(html, err);
+        });
+    }
 });

@@ -11,6 +11,8 @@ class UndefinedPool {
 	constructor(initalFile=undefined) {
 		this.undefinedPool = [];
 		this.updatedMap = {};
+		// for each test case, store newly discovered undefined props
+		this.currentUpdataedMap = {};
 
 		if (initalFile) {
 			try {
@@ -30,7 +32,16 @@ class UndefinedPool {
 		if (newUndefined.length > 0) {
 			this.undefinedPool = this.undefinedPool.concat(newUndefined);
 			this.updatedMap[JSON.stringify(input)] = newUndefined;
+			this.currentUpdataedMap[JSON.stringify(input)] = newUndefined;
 		}
+	}
+
+	flushCurrentUpdatedMap() {
+		this.currentUpdataedMap = {};
+	}
+
+	getCurrentUpdatedMap() {
+		return this.currentUpdataedMap;
 	}
 
 	getUndatedPool(pool){

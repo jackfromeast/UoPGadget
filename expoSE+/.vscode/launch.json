@@ -16,15 +16,16 @@
             "program": "distributor/bin/distributor.js",
             "args": [
                 "--undefined-file",
-                "/home/ubuntu/PPAEG/expoSE+/tests/gadgets/undefined_gadgets.json",
-                "/home/ubuntu/PPAEG/expoSE+/tests/gadgets/gadgets.js"
+                "/home/ubuntu/PPAEG/output/undefined-props-node/bladejs-undefined-props.json",
+                "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/bladejs/app.js"
             ],
             "env": {
                 "EXPOSE_PRINT_PATHS": "1",
                 "max_old_space_size": "4096",
                 "Z3_PATH": "/home/ubuntu/PPAEG/expoSE+/node_modules/z3javascript/bin/libz3.so"
             },
-            "cwd":"${workspaceFolder}"
+            "cwd":"${workspaceFolder}",
+            "description": "node distributor/bin/distributor.js --undefined-file /home/ubuntu/PPAEG/expoSE+/tests/gadgets/undefined_gadgets.json /home/ubuntu/PPAEG/expoSE+/tests/gadgets/gadgets.js"
         },
         {
             "name": "Debug Analyser",

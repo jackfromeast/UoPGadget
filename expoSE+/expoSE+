@@ -57,8 +57,13 @@ else
 		fi
 	fi
    
-  MITM_PORT="${MITM_PORT}" EXPOSE_PLAY_SCRIPT=${EXPOSE_PLAY_SCRIPT} EXPOSE_QUERY_DUMP=$EXPOSE_QUERY_DUMP ./scripts/analyse "$(abs_target "$1" "$ORIGIN_PATH")" "${@:2}"
-  OUT_CODE=$?
+  # MITM_PORT="${MITM_PORT}" EXPOSE_PLAY_SCRIPT=${EXPOSE_PLAY_SCRIPT} EXPOSE_QUERY_DUMP=$EXPOSE_QUERY_DUMP ./scripts/analyse "$(abs_target "$1" "$ORIGIN_PATH")" "${@:2}"
+  # OUT_CODE=$?
+  
+  ## pass all the arguments to the distributor
+  source ./scripts/env
+  node distributor/bin/distributor.js "${@:1}"
+
 
   if [[ ! -z $MITM_PID ]]; then
       echo "Killing server"

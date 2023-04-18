@@ -117,7 +117,8 @@ class Spawn {
 	}
 
 	makeReplayString() {
-		return /* this._mkEnvReplay() + */ EXPOSE_REPLAY_PATH + " " + this.shellescape(this.args);
+		// replay igonre the undefined pool
+		return /* this._mkEnvReplay() + */ EXPOSE_REPLAY_PATH + " " + this.shellescape(this.args.slice(0, 2));
 	}
 
 	kill() {

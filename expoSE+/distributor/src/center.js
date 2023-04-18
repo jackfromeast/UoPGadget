@@ -106,7 +106,9 @@ class Center {
 	}
 
 	_printNewUndefined() {
-		Log(`Newly Discovered Undefined Props: ${this.undefinedPool.getUpdatedMap().toString()}\n`);
+		if(this.undefinedPool.getCurrentUpdatedMap().length > 0){
+			Log(`Newly Discovered Undefined Props: ${JSON.stringify(this.undefinedPool.getCurrentUpdatedMap())}\n`);
+		}
 	}
 
 	_finishedTesting() {
@@ -182,6 +184,7 @@ class Center {
 		/** jackfromest
 		 *  where the test case starts
 		 */
+		this.undefinedPool.flushCurrentUpdatedMap();
 		let nextTest = new Spawn(this.options.analyseScript, file, {
 			undefinedPool: this.undefinedPool.getUndefinedPool(),
 			log: this.options.printPaths,

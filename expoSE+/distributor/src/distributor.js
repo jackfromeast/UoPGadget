@@ -67,7 +67,7 @@ if (process.argv.length >= 3) {
 			}
 		});
 		
-		console.log("[!] Newly Found Undefined Properties");
+		console.log("[!] Newly Found Undefined Properties: ");
 		for (var key in newUndefinedMap) {
 			console.log("[+] ".concat(key, ": ").concat(newUndefinedMap[key].toString()));
 		}
