@@ -31,7 +31,7 @@ for dir in "${parent_dir}"/*; do
         echo "[+] Processing ${dir}"
         # pushd "${dir}" > /dev/null
         cd "${dir}"
-        "${find_undefined_node}" app.js > "${output_path}" 2>&1
+        "${find_undefined_node}" --jitless app.js > "${output_path}" 2>&1
         python3 "${clean_script}" "${output_path}" > "${output_clean_path}" 2>&1
         # popd > /dev/null
         cd ..
