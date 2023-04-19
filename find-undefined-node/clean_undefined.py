@@ -28,7 +28,7 @@ Need to specify the resultfile.txt path.
 
 The command line will print out the undefined properties in array format.
 """
-
+import re;
 import os;
 import sys;
 import json;
@@ -42,6 +42,14 @@ def get_undefined(line):
     if index != -1:
       name = line[index + 1:]
       undefined.append(name.strip())
+
+    ## keyed property like index 0x3 for array
+    ## jackfromeast
+    match = re.search(r"\((\d+)\)", line)
+    if match:
+      key_name = match.group(1)
+      undefined.append(key_name.strip("()").strip())
+
 
 def main():
   args = sys.argv[1:]
