@@ -506,10 +506,13 @@ class SymbolicState {
 	}
 
 	/** 
-   * Symbolic binary operation, expects two concolic values and an operator
-   */
+   	* Symbolic binary operation, expects at least one values and an operator
+   	*/
 	binary(op, left, right) {
-    
+		// jackfromeast
+		left = this.concolic(left);
+		right = this.concolic(right);
+
 		if (typeof this.getConcrete(left) === "string") {
 			right = this.ToString(right);
 		}

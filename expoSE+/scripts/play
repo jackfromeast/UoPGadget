@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ( node --inspect-brk=9229 ./jalangi2/src/js/commands/jalangi.js --inlineIID --inlineSource --analysis ./analyser/src/analyser.js "${@:1}")
+# ( node --inspect-brk=9229 ./jalangi2/src/js/commands/jalangi.js --inlineIID --inlineSource --analysis ./analyser/bin/analyser.js "${@:1}")
 
 (node ./jalangi2/src/js/commands/jalangi.js --inlineIID --inlineSource --analysis ./analyser/bin/analyser.js "${@:1}")
 

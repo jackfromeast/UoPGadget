@@ -1,12 +1,19 @@
+/*
+./expoSE+ --undefined-file /home/ubuntu/PPAEG/output/undefined-props-node/bladejs-undefined-props.json /home/ubuntu/PPAEG/expoSE+/tests/template_engines/bladejs/app.js
+*/
+
 const blade = require('blade');
 // Object.prototype.name = "somename"
 // Object.prototype.value = "somevalue"
 // Object.prototype.code = "process.mainModule.require('child_process').execSync(\`touch a.txt\`)"
 
 var S$ = require('../../../lib/S$')
-Object.prototype.name = S$.pureSymbol('name_undef')
-Object.prototype.value = S$.pureSymbol('value_undef')
-Object.prototype.code = S$.pureSymbol('code_undef')
+// // Object.prototype.name = S$.pureSymbol('name_undef')
+// // Object.prototype.value = S$.pureSymbol('value_undef')
+Object.prototype.name = ""
+Object.prototype.value = ""
+// // Object.prototype.code = S$.pureSymbol('code_undef')
+Object.prototype.code = S$.symbol('flag_undef', "xxxxxx")
 
 
 const template = `html

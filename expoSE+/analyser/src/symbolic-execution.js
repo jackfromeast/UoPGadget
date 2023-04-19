@@ -232,6 +232,11 @@ class SymbolicExecution {
 
 	forinObject(iid, val) {
 		this.state.coverage.touch(iid);
+		// jackfromeast
+		// if the object is symbolic, we will enumerate its concrete properties
+		if(this.state.isSymbolic(val)){
+			return { result: this.state.getConcrete(val) };
+		}
 		return { result: val };
 	}
 
@@ -257,7 +262,7 @@ class SymbolicExecution {
 		// check undefined properties
 		// our polluted undefined properties will also be assessed in symbols.js, exclude them
 		if (!this.state.isSymbolic(base) && !this.state.isSymbolic(offset) && !offset.toString().endsWith("_undef")) {
-			if(base[offset] == undefined){
+			if(base[offset] === undefined){
 				// if this.state.undefinedPool does not contain this offset, add it to the pool
 				if(!this.state.undefinedPool.includes(offset.toString())){
 					Log.logUndefined("Found undefined property: " + offset.toString() + " at " + this._location(iid).toString());
@@ -519,8 +524,8 @@ class SymbolicExecution {
 
 	binaryPre(iid, op, left, right, _isOpAssign, _isSwitchCaseComparison, _isComputed) {
  
-		//Don't do symbolic logic if the symbolic values are diff types
-		//Concretise instead
+		// Don't do symbolic logic if the symbolic values are diff types
+		// Concretise instead
 		if (this.state.isWrapped(left) || this.state.isWrapped(right)) {
  
 			const left_c  = this.state.getConcrete(left);
