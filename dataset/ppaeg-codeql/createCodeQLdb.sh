@@ -16,7 +16,7 @@ for child_dir in "$parent_dir"/*; do
     if [ ! -d "${child_dir}-db" ]; then
       # If not, create one using the "codeql database create" command in the child directory
       echo "Creating CodeQL database for ${child_dir}"
-      (cd "$child_dir" && codeql database create --language=javascript --source-root "./${child_dir}-code" "./${child_dir}-db")
+      (cd "$child_dir" && /home/ubuntu/codeql/codeql database create --language=javascript --source-root "./${child_dir}-code" "./${child_dir}-db")
     fi
   fi
 done

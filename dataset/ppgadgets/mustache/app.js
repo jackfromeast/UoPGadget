@@ -21,6 +21,9 @@ fs.readFile("./views/admin.html", function (err, template) {
     Object.prototype[cache_key] = cache_val
 })
 
+// for node-find-undefined
+console.log("="*20+"start"+"="*20+"\n")
+
 
 app.engine('html', function (filePath, options, callback) {
     fs.readFile(filePath, function (err, content) {
@@ -44,3 +47,7 @@ app.get('/admin', (req, res) => {
 app.listen(80, () => {
     console.log("Server is up!");
 });
+
+// for node-find-undefined
+console.log("="*20+"end"+"="*20+"\n")
+

