@@ -1,9 +1,0 @@
-errno
-error
-b
-c
-d
-isTTY
-error
-newListener
-error

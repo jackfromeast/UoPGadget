@@ -8,15 +8,7 @@ Original file is located at
 """
 
 """
-How to use this:
-Before running the node-find-undefined program, add:
-
-  console.log("===========start===========")
-  console.log("===========end===========")
-
-At the beginning and end of the js file respectively.
-
-Then, run the node-find-undefined program with the js file and output the result to a txt file:
+Run the node-find-undefined program with the js file and output the result to a txt file:
 
   ./node-find-undefined filename.js > resultfile.txt
 
@@ -35,6 +27,8 @@ import json;
 
 undefined = []
 undefined_no_repeat = []
+
+
 
 def get_undefined(line):
   if "KeyName::" in line:
@@ -59,16 +53,17 @@ def main():
 
   need = False
   for line in f:
-    if line == "===========start===========\n":
-      need = True
-      continue
-    elif line == "===========end===========\n":
-      need = False
-      continue
-    elif need:
       get_undefined(line)
 
   undefined_no_repeat = list(set(undefined))
+
+  ## remove known undefined properties
+  for key in IgnoreUndefProps:
+      for prop in IgnoreUndefProps[key]:
+        if prop in undefined_no_repeat:
+          undefined_no_repeat.remove(prop)
+
+
   # generate json format array for undefined properties
   undefined_no_repeat_json = json.dumps(undefined_no_repeat)
   print(undefined_no_repeat_json)
