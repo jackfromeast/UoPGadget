@@ -1,1 +1,25 @@
-["escape", "href", "settings", "outputFunctionName", "escapeFunction", "error", "delimiter", "_with", "debug", "root", "isTTY", "views", "client", "localsName", "context", "legacyInclude", "newListener", "openDelimiter", "encoding", "rmWhitespace", "strict", "scope", "destructuredLocals", "errno", "closeDelimiter", "filename", "cache", "async", "compileDebug"]
+{
+  "settings": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "delimiter": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "scope": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "context": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "debug": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "compileDebug": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "client": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "_with": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "rmWhitespace": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "strict": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "filename": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/utils.js",
+  "async": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "cache": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "escape": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "escapeFunction": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "openDelimiter": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "closeDelimiter": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "root": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "outputFunctionName": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "localsName": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "views": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "destructuredLocals": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js",
+  "legacyInclude": "/home/ubuntu/PPAEG/dataset/pptestunits/ejs/node_modules/ejs/lib/ejs.js"
+}

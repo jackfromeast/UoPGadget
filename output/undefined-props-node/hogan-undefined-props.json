@@ -1,1 +1,8 @@
-["isTTY", "name", "modelGet", "\\x0a", "sectionTags", "errno", "asString", "error", "newListener", "delimiters", "disableLambda"]
+{
+  "Template": "/home/ubuntu/PPAEG/dataset/pptestunits/hogan/node_modules/hogan.js/lib/compiler.js",
+  "disableLambda": "/home/ubuntu/PPAEG/dataset/pptestunits/hogan/node_modules/hogan.js/lib/compiler.js",
+  "delimiters": "/home/ubuntu/PPAEG/dataset/pptestunits/hogan/node_modules/hogan.js/lib/compiler.js",
+  "modelGet": "/home/ubuntu/PPAEG/dataset/pptestunits/hogan/node_modules/hogan.js/lib/compiler.js",
+  "sectionTags": "/home/ubuntu/PPAEG/dataset/pptestunits/hogan/node_modules/hogan.js/lib/compiler.js",
+  "\\x0a": "/home/ubuntu/PPAEG/dataset/pptestunits/hogan/node_modules/hogan.js/lib/compiler.js"
+}

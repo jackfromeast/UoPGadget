@@ -1,1 +1,19 @@
-["\"function\"", "trackIds", "compat", "ignoreStandalone", "knownHelpers", "helper", "data", "flex", "srcName", "name", "container.hooks.helperMissing", "falsy", "separator", "knownHelpersOnly", "pendingContent", "usePartial", "$", "allowedProtoMethods", "useDecorators", "helpers", "strict", "main_d", "ranges", "allowProtoPropertiesByDefault", "partial", "useBlockParams", "blockParams", "current", "container.escapeExpression", "type", "isTTY", "msg", "errno", "source", "parseError", "openStandalone", "stringParams", "noEscape", "assumeObjects", "allowedProtoProperties", "allowProtoMethodsByDefault", "decorator", "inlineStandalone", "error", "allowCallsToHelperMissing", "closeStandalone", "forceBuffer", "newListener", "$$$isSourceNode$$$", "useDepths", "hash", "depths", "partials", "isRootSeen", "decorators", "srcFile"]
+{
+  "return": "/home/ubuntu/PPAEG/dataset/pptestunits/express-hbs/node_modules/readdirp/index.js",
+  "__esModule": "/home/ubuntu/PPAEG/dataset/pptestunits/express-hbs/node_modules/handlebars/dist/cjs/handlebars/compiler/printer.js",
+  "Handlebars": "/home/ubuntu/PPAEG/dataset/pptestunits/express-hbs/node_modules/handlebars/dist/cjs/handlebars/no-conflict.js",
+  "foo": "/home/ubuntu/PPAEG/dataset/pptestunits/express-hbs/node_modules/bluebird/js/release/util.js",
+  "__BluebirdErrorTypes__": "/home/ubuntu/PPAEG/dataset/pptestunits/express-hbs/node_modules/bluebird/js/release/errors.js",
+  "BLUEBIRD_DEBUG": "/home/ubuntu/PPAEG/dataset/pptestunits/express-hbs/node_modules/bluebird/js/release/util.js",
+  "NODE_ENV": "/home/ubuntu/PPAEG/dataset/pptestunits/express-hbs/node_modules/bluebird/js/release/util.js",
+  "BLUEBIRD_WARNINGS": "/home/ubuntu/PPAEG/dataset/pptestunits/express-hbs/node_modules/bluebird/js/release/util.js",
+  "BLUEBIRD_LONG_STACK_TRACES": "/home/ubuntu/PPAEG/dataset/pptestunits/express-hbs/node_modules/bluebird/js/release/util.js",
+  "BLUEBIRD_W_FORGOTTEN_RETURN": "/home/ubuntu/PPAEG/dataset/pptestunits/express-hbs/node_modules/bluebird/js/release/util.js",
+  "dispatchEvent": "/home/ubuntu/PPAEG/dataset/pptestunits/express-hbs/node_modules/bluebird/js/release/debuggability.js",
+  "isTTY": "/home/ubuntu/PPAEG/dataset/pptestunits/express-hbs/node_modules/bluebird/js/release/debuggability.js",
+  "nodeType": "/home/ubuntu/PPAEG/dataset/pptestunits/express-hbs/node_modules/lodash/lodash.js",
+  "__core-js_shared__": "/home/ubuntu/PPAEG/dataset/pptestunits/express-hbs/node_modules/lodash/lodash.js",
+  "_": "/home/ubuntu/PPAEG/dataset/pptestunits/express-hbs/node_modules/lodash/lodash.js",
+  "Cache": "/home/ubuntu/PPAEG/dataset/pptestunits/express-hbs/node_modules/lodash/lodash.js",
+  "length": "/home/ubuntu/PPAEG/dataset/pptestunits/express-hbs/node_modules/lodash/lodash.js"
+}
