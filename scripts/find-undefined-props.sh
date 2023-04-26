@@ -16,7 +16,7 @@ parent_dir="$(realpath "$1")"
 script_dir="$(dirname "$(realpath "$0")")"
 output_base="${script_dir}/../output/undefined-props-node"
 find_undefined_node="${script_dir}/../find-undefined-node/node-find-undefined"
-clean_script="${script_dir}/../find-undefined-node/clean_undefined.py"
+clean_script="${script_dir}/../find-undefined-node/extract-key.js"
 
 # Create the output directory if it does not exist
 mkdir -p "${output_base}"
@@ -32,7 +32,7 @@ for dir in "${parent_dir}"/*; do
         # pushd "${dir}" > /dev/null
         cd "${dir}"
         "${find_undefined_node}" --jitless app.js > "${output_path}" 2>&1
-        python3 "${clean_script}" "${output_path}" > "${output_clean_path}" 2>&1
+        node "${clean_script}" "${output_path}" "${output_clean_path}"
         # popd > /dev/null
         cd ..
     fi
