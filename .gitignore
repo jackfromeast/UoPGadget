@@ -6,9 +6,9 @@ node_modules
 PPAEG.wiki
 PPAEG.wiki/*
 .vscode/*
-node-find-undefined/*
 tmp/*
 node-find-undefined
+node-find-undefined-old
 .idea/
 *-db/
 .cache/*
