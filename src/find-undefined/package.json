@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "acorn": "^8.8.2",
-    "estraverse": "^5.3.0",
-    "hogan.js": "^3.0.2",
-    "wrench": "^1.5.9"
-  }
-}

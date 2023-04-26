@@ -17,7 +17,7 @@ class UndefinedPool {
 		if (initalFile) {
 			try {
 				const data = fs.readFileSync(initalFile, { encoding: "utf8" });
-				this.undefinedPool = JSON.parse(data);
+				this.undefinedPool = Object.keys(JSON.parse(data));
 			} catch (err) {
 				console.log(err);
 			}

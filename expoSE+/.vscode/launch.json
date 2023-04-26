@@ -15,9 +15,9 @@
             
             "program": "distributor/bin/distributor.js",
             "args": [
-                "--undefined-file",
-                "/home/ubuntu/PPAEG/expoSE+/tmp/cleaned-pug-node-undefined.log",
-                "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/pug/app.js"
+                // "--undefined-file",
+                // "/home/ubuntu/PPAEG/expoSE+/tmp/cleaned-pug-node-undefined.log",
+                "/home/ubuntu/PPAEG/expoSE+/tests/strings/complex_substr2.js"
             ],
             "env": {
                 "EXPOSE_PRINT_PATHS": "1",
