@@ -102,7 +102,7 @@ class Center {
 	}
 
 	_printUndefined() {
-		Log(`Current Undefined Pool has ${this.undefinedPool.getLength()} properties: ${this.undefinedPool.getUndefinedPool().toString()}\n`);
+		Log(`Current Undefined Pool has ${this.undefinedPool.getLength()} properties: ${JSON.stringify(this.undefinedPool.getUndefinedPool())}\n`);
 	}
 
 	_printNewUndefined() {

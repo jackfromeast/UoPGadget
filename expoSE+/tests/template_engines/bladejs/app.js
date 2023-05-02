@@ -8,12 +8,9 @@ const blade = require('blade');
 // Object.prototype.code = "process.mainModule.require('child_process').execSync(\`touch a.txt\`)"
 
 var S$ = require('../../../lib/S$')
-// // Object.prototype.name = S$.pureSymbol('name_undef')
-// // Object.prototype.value = S$.pureSymbol('value_undef')
 Object.prototype.name = ""
 Object.prototype.value = ""
-// // Object.prototype.code = S$.pureSymbol('code_undef')
-Object.prototype.code = S$.symbol('flag_undef', "xxxxxx")
+Object.prototype.code = S$.pureSymbol('code_undef')
 
 
 const template = `html
@@ -28,7 +25,7 @@ const template = `html
         #content.center
             h1 Blade is cool`;
             
-blade.compile(template, {'debug': true}, function(err, tmpl) {
+blade.compile(template, {'debug': false}, function(err, tmpl) {
     if (err) {
         console.log(err);
     }else{
