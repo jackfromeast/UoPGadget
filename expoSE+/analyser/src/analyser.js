@@ -32,15 +32,6 @@ process.on("disconnect", function() {
 
 J$.analysis = new SymbolicExecution(J$, JSON.parse(input), JSON.parse(undefinedPool),(state, coverage) => {
 
-	Log.logPC("Finished play with PC " + state.pathCondition.map(x => x.ast));
-
-	if (Config.outCoveragePath) {
-		fs.writeFileSync(Config.outCoveragePath, JSON.stringify(coverage.end()));
-		Log.log("Wrote final coverage to " + Config.outCoveragePath);
-	} else {
-		Log.log("No final coverage path supplied");
-	}
-
 	// We record the alternatives list as the results develop to make the output tool more resilient to SMT crashes
 	state.alternatives((current) => {
 		const finalOut = {
@@ -59,4 +50,13 @@ J$.analysis = new SymbolicExecution(J$, JSON.parse(input), JSON.parse(undefinedP
 			Log.log("No final output path supplied");
 		}
 	});
+	
+	Log.logPC("Finished play with PC " + state.pathCondition.map(x => x.ast));
+
+	if (Config.outCoveragePath) {
+		fs.writeFileSync(Config.outCoveragePath, JSON.stringify(coverage.end()));
+		Log.log("Wrote final coverage to " + Config.outCoveragePath);
+	} else {
+		Log.log("No final coverage path supplied");
+	}
 });

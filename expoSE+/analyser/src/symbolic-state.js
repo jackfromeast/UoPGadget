@@ -8,6 +8,7 @@ import Coverage from "./coverage";
 import Config from "./config";
 import SymbolicHelper from "./symbolic-helper";
 import { SymbolicObject } from "./values/symbolic-object";
+import { PureSymbol } from "./values/pure-symbol";
 import { WrappedValue, ConcolicValue } from "./values/wrapped-values";
 import { stringify } from "./utilities/safe-json";
 import Stats from "../../lib/Stats/bin/main";
@@ -75,7 +76,8 @@ class SymbolicState {
 		Z3.Query.MAX_REFINEMENTS = Config.maxRefinements;
 
 		this.input = input;
-		this.inputSymbols = {};
+		this.inputSymbols = {}; // not including pureSymbol and SymbolicObject, only for symbol that pass to sovler
+		this.wrapperSymbols = {}; // pureSymbol and SymbolicObject
 		this.pathCondition = [];
 		this.undefinedPool = undefinedPool; // lzy: add newly find undefined properties while path exploration
 
@@ -178,10 +180,16 @@ class SymbolicState {
 	_buildPC(childInputs, i, inputCallback) {
 
 		const newPC = this.ctx.mkNot(this.pathCondition[i].ast);
+
 		const allChecks = this.pathCondition.slice(0, i).reduce((last, next) => last.concat(next.ast.checks), []).concat(newPC.checks);
 
 		Log.logMid(`Checking if ${newPC.simplify().toString()} is satisfiable`);
 
+		/** jackfromeast
+		 *  ExpoSE serves each PC as a separate SMT query which seems does not follows the general idea
+		 *  We will and all the previous PC together with the current mkNot PC and check if it is satisfiable
+		 */
+		
 		const solution = this._checkSat(newPC, i, allChecks);
 
 		if (solution) {
@@ -201,6 +209,14 @@ class SymbolicState {
 		return this.pathCondition.slice(0, i).map(x => x.ast);
 	}
 
+	/**
+	 * Solve the current PC and get the alternative inputs for the next round
+	 * 
+	 * __bound: the upper bound of the current PC
+	 * Only mkNot the PC after __bound and assume the pc before __bound always holds true
+	 * 
+	 * @param {*} inputCallback 
+	 */
 	alternatives(inputCallback) {
 		let childInputs = [];
 
@@ -208,7 +224,14 @@ class SymbolicState {
 			throw `Bound ${this.input._bound} > ${this.pathCondition.length}, divergence has occured`;
 		}
 
-		//Push all PCs up until bound
+		// For each pure symbol, summarize it
+		for (let symbol of Object.values(this.wrapperSymbols)) {
+			if (this.isPureSymbol(symbol)) {
+				this.summaryPureSymbol(symbol);
+			}
+		}
+
+		// Path conditions before _bound should always holds true
 		this._buildAsserts(Math.min(this.input._bound, this.pathCondition.length)).forEach(x => this.slv.assert(x));
 		this.slv.push();
 
@@ -232,33 +255,31 @@ class SymbolicState {
 		inputCallback(childInputs);
 	}
 
+	/** jackfromeast
+	 * @param {*} concrete: the concrete value to be converted to a symbolic value
+	 * @returns sort: the sort of the symbolic value
+	 */
 	_getSort(concrete) {
 		let sort;
 
 		switch (typeof(concrete)) {
-
 		case "boolean":
 			sort = this.ctx.mkBoolSort();
 			break;
-
 		case "number":
 			sort = this.ctx.mkRealSort();
 			break;
-
 		case "string":
 			sort = this.ctx.mkStringSort();
 			break;
-
 		default:
 			Log.log(`Symbolic input variable of type ${typeof val} not yet supported.`);
 		}
-
 		return sort;
 	}
 
 	_deepConcrete(start, _concreteCount) {
 		start = this.getConcrete(start);	
-
 		/*
 		let worklist = [this.getConcrete(start)];
 		let seen = [];
@@ -279,12 +300,11 @@ class SymbolicState {
 				}
 			}
 		}
-    */
-
+    	*/
 		return start;
 	}
 
-	// jfe
+	// jackfromeast
 	// used for making the input argument of a function concrete
 	concretizeCall(f, base, args, report = true) {
 
@@ -309,40 +329,74 @@ class SymbolicState {
 		};
 	}
 
+	/** jackfromeast
+	 * 
+	 * when we create an pure symbol, what we are trying to say is that the type/sort of the value is undecidable yet
+	 * in ExpoSE, they try to mkNot of all the others types and test them one by one
+	 * in ExpoSE+, we try to determine the type of the value in the first round, add the possible type constraints and only check these types in the following rounds
+	 * 
+	 * @param {string} name 
+	 * @returns symbolic value
+	 */
 	createPureSymbol(name) {
 
 		this.stats.seen("Pure Symbols");
 
+		// if it is not the first round, pureType would contains an concrete type e.g. strings
 		let pureType = this.createSymbolicValue(name + "_t", "undefined");
 
-		let res;
-
-		if (this.assertEqual(pureType, this.concolic("string"))) {
-			res = this.createSymbolicValue(name, "seed_string");
-		} else if (this.assertEqual(pureType, this.concolic("number"))) {
-			res = this.createSymbolicValue(name, 0);
-		} else if (this.assertEqual(pureType, this.concolic("boolean"))) {
-			res = this.createSymbolicValue(name, false);
-		} else if (this.assertEqual(pureType, this.concolic("object"))) {
-			res = this.createSymbolicValue(name, {});
-		} else if (this.assertEqual(pureType, this.concolic("array_number"))) {
-			res = this.createSymbolicValue(name, [0]);
-		} else if (this.assertEqual(pureType, this.concolic("array_string"))) {
-			res = this.createSymbolicValue(name, [""]);
-		} else if (this.assertEqual(pureType, this.concolic("array_bool"))) {
-			res = this.createSymbolicValue(name, [false]);
-		} else if (this.assertEqual(pureType, this.concolic("null"))) {
-			res = null;
+		if (pureType.getConcrete() !== "undefined") {
+			// in the following rounds,
+			switch (pureType.getConcrete()) {
+			case "string":
+				this.assertEqual(pureType, this.concolic("string")); // add the first type constraint
+				return this.createSymbolicValue(name, "xxx");
+			case "number":
+				this.assertEqual(pureType, this.concolic("number"));
+				return this.createSymbolicValue(name, 0);
+			case "boolean":
+				this.assertEqual(pureType, this.concolic("boolean"));
+				return this.createSymbolicValue(name, false);
+			case "object":
+				this.assertEqual(pureType, this.concolic("object"));
+				return this.createSymbolicValue(name, {});
+			case "array_number":
+				this.assertEqual(pureType, this.concolic("array_number"));
+				return this.createSymbolicValue(name, [0]);
+			case "array_string":
+				this.assertEqual(pureType, this.concolic("array_string"));
+				return this.createSymbolicValue(name, ["seed_string"]);
+			case "array_bool":
+				this.assertEqual(pureType, this.concolic("array_bool"));
+				return this.createSymbolicValue(name, [false]);
+			case "null":
+				return null;
+			default:
+				Log.log(`Symbolic input variable of type ${typeof val} not yet supported.`);
+			}
 		} else {
-			res = undefined;
+			// in the first round, we create a real pure symbol
+			let res = new PureSymbol(name);
+			this.wrapperSymbols[name] = res;
+			res.setPureType(pureType);
+			return res;
 		}
-
-		return res;
 	}
 
 	/**
-     * TODO: Symbol Renaming internalization
-     */
+	 * Push type constraints of the pure symbol to the PC
+	 * @param {pureSymbol} pureSymbol 
+	 * @returns 
+	 */
+	summaryPureSymbol(pureSymbol){
+		let pureType = pureSymbol.getPureType();
+		let possibleTypes = pureSymbol.getPossibleTypes();
+
+		for (let type of possibleTypes) {
+			this.assertEqual(pureType, this.concolic(type));
+		}
+	}
+
 	createSymbolicValue(name, concrete) {
 
 		Log.logMid(`Args ${stringify(arguments)} ${name} ${concrete}`);
@@ -351,7 +405,8 @@ class SymbolicState {
 
 		//TODO: Very ugly short circuit
 		if (!(concrete instanceof Array) && typeof concrete === "object") {
-			return new SymbolicObject(name);
+			this.wrapperSymbols[name] = new SymbolicObject(name);
+			return this.wrapperSymbols[name];
 		}
 
 		let symbolic;
@@ -431,6 +486,13 @@ class SymbolicState {
 
 	isSymbolic(val) {
 		return !!ConcolicValue.getSymbolic(val);
+	}
+
+	/** jackfromeast
+	 * check if the symbol is a pure symbol
+	 */
+	isPureSymbol(symbol){
+		return symbol instanceof PureSymbol;
 	}
 
 	updateSymbolic(val, val_s) {
@@ -538,7 +600,6 @@ class SymbolicState {
 		}
 
 		if (canHaveFields() && isRealNumber()) { 
-
 			const withinBounds = this.ctx.mkAnd(
 				this.ctx.mkGt(field_s, this.ctx.mkIntVal(-1)),
 				this.ctx.mkLt(field_s, base_s.getLength())
@@ -552,7 +613,6 @@ class SymbolicState {
 		}
 
 		switch (field_c) {
-
 		case "length": {
 			if (base_s.getLength()) {
 				return base_s.getLength();
@@ -670,6 +730,8 @@ class SymbolicState {
 
 	/**
      * Assert left == right on the path condition
+	 * 
+	 * @param {boolean} push_constraints
      */
 	assertEqual(left, right) {
 		const equalityTest = this.binary("==", left, right);

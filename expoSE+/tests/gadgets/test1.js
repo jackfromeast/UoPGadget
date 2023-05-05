@@ -1,8 +1,9 @@
 var S$ = require('../../lib/S$')
 
-a = S$.symbol('a',0)
+a = S$.pureSymbol('a')
+// let a = S$.symbol('a', "xxx")
 
-if(a == 'helloworld'){
+if(a === 'helloworld'){
     console.log('hello world')}
 else{
     console.log('not hello world')

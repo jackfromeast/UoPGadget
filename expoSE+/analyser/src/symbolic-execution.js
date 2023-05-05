@@ -120,13 +120,13 @@ class SymbolicExecution {
 	}
 
 	/** jackfromeast
-	 * sybolicCheckForEvalLikeFunctions
+	 * symbolicCheckForEvalLikeFunctions
 	 * @param {*} f 
 	 * @param {*} args 
 	 * @param {*} state 
 	 * @returns 
 	 */
-	sybolicCheckForEvalLikeFunctions(f, args, state){
+	symbolicCheckForEvalLikeFunctions(f, args, state){
 		switch(f.name){
 		case "eval":
 			return state.isSymbolic(args[0]);
@@ -148,8 +148,18 @@ class SymbolicExecution {
 		default:
 			return false;
 		}
-	
 	}
+
+	/** jackfromeast
+	 * TODO: symbolicCheckForFileAccessFunction
+	 * @param {*} f 
+	 * @param {*} args 
+	 * @param {*} state 
+	 * @returns 
+	 */
+	// symbolicCheckForFileAccessFunction(f, args, state){
+
+	// }
 
 	invokeFunPre(iid, f, base, args, _isConstructor, _isMethod) {
 		this.state.coverage.touch(iid);
@@ -159,7 +169,7 @@ class SymbolicExecution {
  		 * add symbolic check for eval-like functions
 		 * check whether the argument of eval-like functions are symbolic, which usually means that our undefined property has flows to the sink
 		 */
-		if(f && this.sybolicCheckForEvalLikeFunctions(f, args, this.state)){
+		if(f && this.symbolicCheckForEvalLikeFunctions(f, args, this.state)){
 			Log.logSink("Found a potential flow to the sink: " + f.name + " at" + this._location(iid).toString());
 			Log.logSink("Current input: " + JSON.stringify(this.state.input));
 			Log.logSink("Current state: " + this.state.pathCondition.map(x => x.ast));
@@ -177,7 +187,7 @@ class SymbolicExecution {
 		 * If non of the arguments are symbolic, we do not need to call the model function
 		 * Probably there are several cases that modeled function are needed, but currently I just ignore them
 		 */
-		if(!Object.values(args).some(x => this.state.isSymbolic(x))){
+		if(!Object.values(args).some(x => this.state.isSymbolic(x)||x instanceof SymbolicObject)){
 			return {
 				f: f,
 				base: base,
@@ -185,7 +195,6 @@ class SymbolicExecution {
 				skip: false};
 		}
 		
-
 		/**
 		 * Concretize the function if it is native and we do not have a custom model for it
 		 * TODO: We force concretization on toString functions to avoid recursive call from the lookup into this.models
@@ -269,6 +278,12 @@ class SymbolicExecution {
 					this.state.undefinedPool.push(offset.toString());
 				}
 			}
+		}
+
+		// For the pure symbol
+		// However, the method call also triggers getFieldPre, so it does not nessarily mean that the base is a object
+		if (this.state.isPureSymbol(base)){
+			base.addType("method", "getField", undefined, offset);
 		}
 
 		return {
@@ -376,14 +391,10 @@ class SymbolicExecution {
 		this.state.coverage.touch(iid);
 		Log.logHigh(`Put field ${ObjectHelper.asString(base)}[${ObjectHelper.asString(offset)}] at ${this._location(iid)}`);
 
-		// lzy
-		// don't know why src and href need to be handled separately
-		// decided to comment out this part
-		// if (this.state.getConcrete(offset) === "src"
-		// || this.state.getConcrete(offset) === "href") {
-		// 	this.report(val);	
-		// 	val = this.state.getConcrete(val);
-		// }
+		// for the pure symbol
+		if (this.state.isPureSymbol(base)){
+			base.addType("method", "putField");
+		}
 
 		return {
 			base: base,
@@ -523,6 +534,15 @@ class SymbolicExecution {
 	}
 
 	binaryPre(iid, op, left, right, _isOpAssign, _isSwitchCaseComparison, _isComputed) {
+
+		// For the pure symbol
+		if(this.state.isPureSymbol(left)||this.state.isPureSymbol(right)){
+			if(this.state.isPureSymbol(left) && !this.state.isWrapped(right)){
+				left.addType("binary", op, typeof(right));
+			}else if(!this.state.isWrapped(left) && this.state.isPureSymbol(right)){
+				right.addType("binary", op, typeof(left));
+			}
+		}
  
 		// Don't do symbolic logic if the symbolic values are diff types
 		// Concretise instead
@@ -546,7 +566,6 @@ class SymbolicExecution {
 			} else {
 				Log.logHigh("Not concretizing " + op + " " + left + " " + right + " " + typeof left_c + " " + typeof right_c);
 			}
-
 		}
 
 		// Don't evaluate natively when args are symbolic
@@ -577,6 +596,11 @@ class SymbolicExecution {
 	}
 
 	unaryPre(iid, op, left) {
+		
+		// For the pure symbol
+		if(this.state.isPureSymbol(left)){
+			left.addType("unary", op);
+		}
 
 		// Don't evaluate natively when args are symbolic
 		return {
