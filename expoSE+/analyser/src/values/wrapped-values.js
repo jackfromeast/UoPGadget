@@ -29,7 +29,14 @@
 class WrappedValue {
 
     constructor(concrete) {
-        this.concrete = concrete;
+        // this.concrete = concrete;
+        // jackfromeast, make it cannot be enumerated
+        Object.defineProperty(this, 'concrete', {
+            value: concrete,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        });
     }
 
     clone() {
@@ -56,8 +63,21 @@ class ConcolicValue extends WrappedValue {
      */    
     constructor(concrete, symbolic, arrayType = undefined) {
         super(concrete);
-        this.symbolic = symbolic;
-        this._arrayType = arrayType;
+        // this.symbolic = symbolic;
+        // this._arrayType = arrayType;
+
+        // jackfromeast, make it cannot be enumerated
+        this.__defineProperty('symbolic', symbolic);
+        this.__defineProperty('_arrayType', arrayType);
+    }
+
+    __defineProperty(name, value){
+        Object.defineProperty(this, name, {
+            value: value,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        });
     }
 
     toString() {

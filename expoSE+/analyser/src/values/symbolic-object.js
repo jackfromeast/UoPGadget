@@ -1,5 +1,6 @@
 /* Copyright (c) Royal Holloway, University of London | Contact Blake Loring (blake@parsed.uk), Duncan Mitchell (Duncan.Mitchell.2015@rhul.ac.uk), or Johannes Kinder (johannes.kinder@rhul.ac.uk) for details or support | LICENSE.md for license details */
 
+import log from "../utilities/log";
 import { WrappedValue } from "./wrapped-values";
 
 class SymbolicObject extends WrappedValue {
@@ -7,10 +8,19 @@ class SymbolicObject extends WrappedValue {
     constructor(name) {
        	super({});
 
-       	this._name = name;
-        this._core = this.getConcrete();
-        this._set = {};
-        this._lastIndex = 0;
+        this.__defineProperty("_name", name);
+        this.__defineProperty("_core", this.getConcrete());
+        this.__defineProperty("_set", {});
+        this.__defineProperty("_lastIndex", 0);
+    }
+
+    __defineProperty(name, value){
+        Object.defineProperty(this, name, {
+            value: value,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        });
     }
 
     setField(state, offset, v) {
@@ -27,6 +37,7 @@ class SymbolicObject extends WrappedValue {
     	
     	if (!this._set[offset]) {
             // Can't use offset in name, if offset is a symbol is will crash
+            // console.log("Creating pure symbol for offset " + offset);
     		this._core[offset] = state.createPureSymbol(`${this._name}_elements_${offset}_${this._lastIndex++}`);
     	}
 

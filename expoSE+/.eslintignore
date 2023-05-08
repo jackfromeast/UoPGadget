@@ -1,1 +1,3 @@
 **/node_modules/**
+analyser/src/symbolic-helper-new.js
+analyser/src/symbolic-state-new.js

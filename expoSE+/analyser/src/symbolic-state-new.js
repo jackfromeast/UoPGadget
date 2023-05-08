@@ -1,4 +1,17 @@
-/* Copyright (c) Royal Holloway, University of London | Contact Blake Loring (blake@parsed.uk), Duncan Mitchell (Duncan.Mitchell.2015@rhul.ac.uk), or Johannes Kinder (johannes.kinder@rhul.ac.uk) for details or support | LICENSE.md for license details */
+/** jackfromeast
+ * 
+ * class SymbolicState:
+ * 1/ preserve the symolic state of the program (path constraints, input symbols, wrapper symbols, etc.)
+ * 2/ create pure/symbolic symbols
+ * 
+ * TODO: class SymbolicSolver:
+ * 1/ solve the path constraints and generate alternative inputs
+ * 
+ * class SymbolicModel:
+ * 1/ provide a bunch of helper functions to generate symbolic representation for different operations(binary operations, unary operations)
+ * 2/ currently do not include the modeled functions
+ * 
+ */
 
 // JALANGI DO NOT INSTRUMENT
 
@@ -14,49 +27,6 @@ import { stringify } from "./utilities/safe-json";
 import Stats from "../../lib/Stats/bin/main";
 import Z3 from "z3javascript";
 import Helpers from "./models/helpers";
-
-function BuildUnaryJumpTable(state) {
-	const ctx = state.ctx;
-	return {
-		"boolean":  {
-			"+": function(val_s) {
-				return ctx.mkIte(val_s, state.constantSymbol(1), state.constantSymbol(0));
-			},
-			"-": function(val_s) {
-				return ctx.mkIte(val_s, state.constantSymbol(-1), state.constantSymbol(0));               
-			},
-			"!": function(val_s) {
-				return ctx.mkNot(val_s);
-			}
-		},
-		"number": {
-			"!": function(val_s, val_c) {
-				let bool_s = state.asSymbolic(state.toBool(new ConcolicValue(val_c, val_s)));
-				return bool_s ? ctx.mkNot(bool_s) : undefined;
-			},
-			"+": function(val_s) {
-				return val_s;
-			},
-			"-": function(val_s) {
-				return ctx.mkUnaryMinus(val_s);
-			}
-		},
-		"string": {
-			"!": function(val_s, val_c) {
-				let bool_s = state.asSymbolic(state.toBool(new ConcolicValue(val_c, val_s)));
-				return bool_s ? ctx.mkNot(bool_s) : undefined;
-			},
-			"+": function(val_s) {
-				return ctx.mkStrToInt(val_s);
-			},
-			"-": function(val_s) {
-				return ctx.mkUnaryMinus(
-					ctx.mkStrToInt(val_s)
-				);
-			}
-		}
-	}; 
-}
 
 class SymbolicState {
 	constructor(input, undefinedPool, sandbox) {
@@ -85,7 +55,6 @@ class SymbolicState {
 		this.coverage = new Coverage(sandbox);
 		this.errors = [];
 
-		this._unaryJumpTable = BuildUnaryJumpTable(this);
 		this._setupSmtFunctions();
 	}
 
@@ -113,24 +82,6 @@ class SymbolicState {
 			binder: binder || false,
 			forkIid: this.coverage.last()
 		});
-	}
-
-	conditional(result) {
-
-		const result_c = this.getConcrete(result),
-			result_s = this.asSymbolic(result);
-
-		if (result_c === true) {
-			Log.logMid(`Concrete result was true, pushing ${result_s}`);
-			this.pushCondition(result_s);
-		} else if (result_c === false) {
-			Log.logMid(`Concrete result was false, pushing not of ${result_s}`);
-			this.pushCondition(this.ctx.mkNot(result_s));
-		} else {
-			Log.log("WARNING: Symbolic Conditional on non-bool, concretizing");
-		}
-
-		return result_c;
 	}
 
 	/**
@@ -278,57 +229,6 @@ class SymbolicState {
 		return sort;
 	}
 
-	_deepConcrete(start, _concreteCount) {
-		start = this.getConcrete(start);	
-		/*
-		let worklist = [this.getConcrete(start)];
-		let seen = [];
-
-		while (worklist.length) {
-			const arg = worklist.pop();
-			seen.push(arg);
-
-			for (let i in arg) {
-				if (this.isSymbolic(arg[i])) {
-					arg[i] = this.getConcrete(arg[i]);
-					concreteCount.val += 1;
-				}
-
-				const seenBefore = !!seen.find(x => x === arg); 
-				if (arg[i] instanceof Object && !seenBefore) {
-					worklist.push(arg[i]); 
-				}
-			}
-		}
-    	*/
-		return start;
-	}
-
-	// jackfromeast
-	// used for making the input argument of a function concrete
-	concretizeCall(f, base, args, report = true) {
-
-		const numConcretizedProperties = { val: 0 };
-		base = this._deepConcrete(base, numConcretizedProperties); 
-
-		const n_args = Array(args.length);
-
-		for (let i = 0; i < args.length; i++) {
-			n_args[i] = this._deepConcrete(args[i], numConcretizedProperties);
-		}
-
-		if (report && numConcretizedProperties.val) {
-			this.stats.set("Concretized Function Calls", f.name);
-			Log.logMid(`Concrete function concretizing all inputs ${ObjectHelper.asString(f)} ${ObjectHelper.asString(base)} ${ObjectHelper.asString(args)}`);
-		}
-
-		return {
-			base: base,
-			args: n_args,
-			count: numConcretizedProperties.val
-		};
-	}
-
 	/** jackfromeast
 	 * 
 	 * when we create an pure symbol, what we are trying to say is that the type/sort of the value is undecidable yet
@@ -349,25 +249,26 @@ class SymbolicState {
 			// in the following rounds,
 			switch (pureType.getConcrete()) {
 			case "string":
-				this.assertEqual(pureType, this.concolic("string")); // add the first type constraint
+				// TODO: FIX THIS
+				this.assertEqual(pureType, SymbolicHelper.concolic("string"), this); // add the first type constraint
 				return this.createSymbolicValue(name, "xxx");
 			case "number":
-				this.assertEqual(pureType, this.concolic("number"));
+				this.assertEqual(pureType, SymbolicHelper.concolic("number"), this);
 				return this.createSymbolicValue(name, 0);
 			case "boolean":
-				this.assertEqual(pureType, this.concolic("boolean"));
+				this.assertEqual(pureType, SymbolicHelper.concolic("boolean"), this);
 				return this.createSymbolicValue(name, false);
 			case "object":
-				this.assertEqual(pureType, this.concolic("object"));
+				this.assertEqual(pureType, SymbolicHelper.concolic("object"), this);
 				return this.createSymbolicValue(name, {});
 			case "array_number":
-				this.assertEqual(pureType, this.concolic("array_number"));
+				this.assertEqual(pureType, SymbolicHelper.concolic("array_number"), this);
 				return this.createSymbolicValue(name, [0]);
 			case "array_string":
-				this.assertEqual(pureType, this.concolic("array_string"));
+				this.assertEqual(pureType, SymbolicHelper.concolic("array_string"), this);
 				return this.createSymbolicValue(name, ["seed_string"]);
 			case "array_bool":
-				this.assertEqual(pureType, this.concolic("array_bool"));
+				this.assertEqual(pureType, SymbolicHelper.concolic("array_bool"), this);
 				return this.createSymbolicValue(name, [false]);
 			case "null":
 				return null;
@@ -392,23 +293,9 @@ class SymbolicState {
 		let pureType = pureSymbol.getPureType();
 		let possibleTypes = pureSymbol.getPossibleTypes();
 
-		if(possibleTypes.size !== 0){
-			for (let type of possibleTypes) {
-				this.assertEqual(pureType, this.concolic(type));
-			}
-		}else{
-			// if there is no sign indicating the type of the pure symbol
-			// we should assume it has all the possible types
-			this.assertEqual(pureType, this.concolic("string"));
-			this.assertEqual(pureType, this.concolic("number"));
-			this.assertEqual(pureType, this.concolic("boolean"));
-			this.assertEqual(pureType, this.concolic("object"));
-			this.assertEqual(pureType, this.concolic("array_number"));
-			this.assertEqual(pureType, this.concolic("array_string"));
-			this.assertEqual(pureType, this.concolic("array_bool"));
+		for (let type of possibleTypes) {
+			this.assertEqual(pureType, SymbolicHelper.concolic(type));
 		}
-
-
 	}
 
 	createSymbolicValue(name, concrete) {
@@ -493,40 +380,111 @@ class SymbolicState {
 
 		return model ? this.getSolution(model) : undefined;
 	}
+}
 
-	isWrapped(val) {
-		return val instanceof WrappedValue;
+/** jackfromeast
+ * 
+ * 1/ provide a bunch of helper functions to generate symbolic representation for different operations(binary operations, unary operations)
+ * 2/ currently do not include the modeled functions
+ * 
+ * If the model function need to add pc to the state, then it need to pass the state as an argument
+ * E.g. condition(result, state) => {... state.pushCondition(...)}
+ * 
+ * TODO: we should puts this in the models folder !!!
+ */
+class SymbolicModel {
+	constructor(ctx, stats){
+		this.ctx = ctx;
+		this.stats = stats;
+
+		this._unaryJumpTable = _buildUnaryJumpTable();
 	}
 
-	isSymbolic(val) {
-		return !!ConcolicValue.getSymbolic(val);
+	/**
+     * Perform a unary op on a ConcolicValue or a concrete value
+     * Concretizes the ConcolicValue if we don't know how to do that action symbolically
+     */
+	unary(op, left) {
+		const result_c = SymbolicHelper.evalUnary(op, SymbolicHelper.getConcrete(left));
+		const result_s = SymbolicHelper.isSymbolic(left) ? this._symbolicUnary(op, SymbolicHelper.getConcrete(left), SymbolicHelper.asSymbolic(left)) : undefined;
+		return result_s ? new ConcolicValue(result_c, result_s) : result_c;
 	}
 
-	/** jackfromeast
-	 * check if the symbol is a pure symbol
-	 */
-	isPureSymbol(symbol){
-		return symbol instanceof PureSymbol;
+	/**
+     * Perform a symbolic unary action.
+     * Expects an Expr and returns an Expr or undefined if we don't
+     * know how to do this op symbolically
+     */
+	_symbolicUnary(op, left_c, left_s) {
+		this.stats.seen("Symbolic Unary");
+	
+		const unaryFn = this._unaryJumpTable[typeof(left_c)] ? this._unaryJumpTable[typeof(left_c)][op] : undefined;
+
+		if (unaryFn) {
+			return unaryFn(left_s, left_c);
+		} else {
+			Log.log(`Unsupported symbolic operand: ${op} on ${left_c} symbolic ${left_s}`);
+			return undefined;
+		}
 	}
 
-	updateSymbolic(val, val_s) {
-		return ConcolicValue.setSymbolic(val, val_s);
+	_buildUnaryJumpTable() {
+		return {
+			"boolean":  {
+				"+": function(val_s) {
+					return this.ctx.mkIte(val_s, this.constantSymbol(1), this.constantSymbol(0));
+				},
+				"-": function(val_s) {
+					return this.ctx.mkIte(val_s, this.constantSymbol(-1), this.constantSymbol(0));               
+				},
+				"!": function(val_s) {
+					return this.ctx.mkNot(val_s);
+				}
+			},
+			"number": {
+				"!": function(val_s, val_c) {
+					let bool_s = SymbolicHelper.asSymbolic(SymbolicHelper.toBool(new ConcolicValue(val_c, val_s)));
+					return bool_s ? this.ctx.mkNot(bool_s) : undefined;
+				},
+				"+": function(val_s) {
+					return val_s;
+				},
+				"-": function(val_s) {
+					return this.ctx.mkUnaryMinus(val_s);
+				}
+			},
+			"string": {
+				"!": function(val_s, val_c) {
+					let bool_s = SymbolicHelper.asSymbolic(SymbolicHelper.toBool(new ConcolicValue(val_c, val_s)));
+					return bool_s ? this.ctx.mkNot(bool_s) : undefined;
+				},
+				"+": function(val_s) {
+					return this.ctx.mkStrToInt(val_s);
+				},
+				"-": function(val_s) {
+					return this.ctx.mkUnaryMinus(
+						this.ctx.mkStrToInt(val_s)
+					);
+				}
+			}
+		}; 
 	}
 
-	getConcrete(val) {
-		return val instanceof WrappedValue ? val.getConcrete() : val;
-	}
+	/** 
+   	* Symbolic binary operation, expects at least one values and an operator
+   	*/
+	binary(op, left, right) {
+		// jackfromeast
+		left = SymbolicHelper.concolic(left);
+		right = SymbolicHelper.concolic(right);
 
-	arrayType(val) {
-		return val instanceof WrappedValue ? val.getArrayType() : undefined;
-	}
+		if (typeof SymbolicHelper.getConcrete(left) === "string") {
+			right = SymbolicHelper.ToString(right);
+		}
 
-	getSymbolic(val) {
-		return ConcolicValue.getSymbolic(val);
-	}
-
-	asSymbolic(val) {
-		return ConcolicValue.getSymbolic(val) || this.constantSymbol(val);
+		const result_c = SymbolicHelper.evalBinary(op, SymbolicHelper.getConcrete(left), SymbolicHelper.getConcrete(right));
+		const result_s = this._symbolicBinary(op, SymbolicHelper.getConcrete(left), SymbolicHelper.asSymbolic(left), SymbolicHelper.getConcrete(right), SymbolicHelper.asSymbolic(right));
+		return typeof(result_s) !== undefined ? new ConcolicValue(result_c, result_s) : result_c;
 	}
 
 	_symbolicBinary(op, left_c, left_s, right_c, right_s) {
@@ -581,28 +539,11 @@ class SymbolicState {
 		return undefined;
 	}
 
-	/** 
-   	* Symbolic binary operation, expects at least one values and an operator
-   	*/
-	binary(op, left, right) {
-		// jackfromeast
-		left = this.concolic(left);
-		right = this.concolic(right);
-
-		if (typeof this.getConcrete(left) === "string") {
-			right = this.ToString(right);
-		}
-
-		const result_c = SymbolicHelper.evalBinary(op, this.getConcrete(left), this.getConcrete(right));
-		const result_s = this._symbolicBinary(op, this.getConcrete(left), this.asSymbolic(left), this.getConcrete(right), this.asSymbolic(right));
-		return typeof(result_s) !== undefined ? new ConcolicValue(result_c, result_s) : result_c;
-	}
 
 	/** jackfromeast
-	 * What does this mean?
-	 * Symbolic field lookup - currently only has support for symbolic arrays / strings
+	* Symbolic field lookup - currently only has support for symbolic arrays / strings
    	*/
-	symbolicField(base_c, base_s, field_c, field_s) {
+	symbolicField(base_c, base_s, field_c, field_s, state) {
 		this.stats.seen("Symbolic Field");
 
 		function canHaveFields() {
@@ -618,8 +559,8 @@ class SymbolicState {
 				this.ctx.mkGt(field_s, this.ctx.mkIntVal(-1)),
 				this.ctx.mkLt(field_s, base_s.getLength())
 			);
-            
-			if (this.conditional(new ConcolicValue(field_c > -1 && field_c < base_c.length, withinBounds))) {
+			
+			if (this.conditional(new ConcolicValue(field_c > -1 && field_c < base_c.length, withinBounds), state)) {
 				return base_s.getField(this.ctx.mkRealToInt(field_s));
 			} else {
 				return undefined;
@@ -645,72 +586,80 @@ class SymbolicState {
 		return undefined;
 	}
 
-	/**
-     * Coerce either a concrete or ConcolicValue to a boolean
-     * Concretizes the ConcolicValue if no coercion rule is known
-     */
-	toBool(val) {
-        
-		if (this.isSymbolic(val)) {
-			const val_type = typeof this.getConcrete(val);
+	conditional(result, state) {
 
-			switch (val_type) {
-			case "boolean":
-				return val;
-			case "number":
-				return this.binary("!=", val, this.concolic(0));
-			case "string":
-				return this.binary("!=", val, this.concolic(""));
-			}
+		const result_c = this.getConcrete(result),
+			result_s = this.asSymbolic(result);
 
-			Log.log("WARNING: Concretizing coercion to boolean (toBool) due to unknown type");
-		}
-
-		return this.getConcrete(!!val);
-	}
-
-	/**
-     * Perform a symbolic unary action.
-     * Expects an Expr and returns an Expr or undefined if we don't
-     * know how to do this op symbolically
-     */
-	_symbolicUnary(op, left_c, left_s) {
-		this.stats.seen("Symbolic Unary");
- 
-		const unaryFn = this._unaryJumpTable[typeof(left_c)] ? this._unaryJumpTable[typeof(left_c)][op] : undefined;
-
-		if (unaryFn) {
-			return unaryFn(left_s, left_c);
+		if (result_c === true) {
+			Log.logMid(`Concrete result was true, pushing ${result_s}`);
+			state.pushCondition(result_s);
+		} else if (result_c === false) {
+			Log.logMid(`Concrete result was false, pushing not of ${result_s}`);
+			state.pushCondition(this.ctx.mkNot(result_s));
 		} else {
-			Log.log(`Unsupported symbolic operand: ${op} on ${left_c} symbolic ${left_s}`);
-			return undefined;
+			Log.log("WARNING: Symbolic Conditional on non-bool, concretizing");
 		}
+
+		return result_c;
 	}
 
-	ToString(symbol) {
+	/** jackfromeast
+	 * Used for making the input argument of a function concrete
+	 */
+	concretizeCall(f, base, args, report = true) {
 
-		if (typeof this.getConcrete(symbol) !== "string") {
-			Log.log(`TODO: Concretizing non string input ${symbol} reduced to ${this.getConcrete(symbol)}`);
-			return "" + this.getConcrete(symbol); 
+		const numConcretizedProperties = { val: 0 };
+		base = this._deepConcrete(base, numConcretizedProperties); 
+
+		const n_args = Array(args.length);
+
+		for (let i = 0; i < args.length; i++) {
+			n_args[i] = this._deepConcrete(args[i], numConcretizedProperties);
 		}
 
-		return symbol;
+		if (report && numConcretizedProperties.val) {
+			this.stats.set("Concretized Function Calls", f.name);
+			Log.logMid(`Concrete function concretizing all inputs ${ObjectHelper.asString(f)} ${ObjectHelper.asString(base)} ${ObjectHelper.asString(args)}`);
+		}
+
+		return {
+			base: base,
+			args: n_args,
+			count: numConcretizedProperties.val
+		};
+	}
+
+	_deepConcrete(start, _concreteCount) {
+		start = this.getConcrete(start);	
+		/*
+		let worklist = [this.getConcrete(start)];
+		let seen = [];
+
+		while (worklist.length) {
+			const arg = worklist.pop();
+			seen.push(arg);
+
+			for (let i in arg) {
+				if (this.isSymbolic(arg[i])) {
+					arg[i] = this.getConcrete(arg[i]);
+					concreteCount.val += 1;
+				}
+
+				const seenBefore = !!seen.find(x => x === arg); 
+				if (arg[i] instanceof Object && !seenBefore) {
+					worklist.push(arg[i]); 
+				}
+			}
+		}
+    	*/
+		return start;
 	}
 
 	/**
-     * Perform a unary op on a ConcolicValue or a concrete value
-     * Concretizes the ConcolicValue if we don't know how to do that action symbolically
-     */
-	unary(op, left) {
-		const result_c = SymbolicHelper.evalUnary(op, this.getConcrete(left));
-		const result_s = this.isSymbolic(left) ? this._symbolicUnary(op, this.getConcrete(left), this.asSymbolic(left)) : undefined;
-		return result_s ? new ConcolicValue(result_c, result_s) : result_c;
-	}
-
-	/**
-     * Return a symbol which will always be equal to the constant value val
-     * returns undefined if the theory is not supported.
-     */
+	 * Return a symbol which will always be equal to the constant value val
+	 * returns undefined if the theory is not supported.
+	 */
 	constantSymbol(val) {
 		this.stats.seen("Wrapped Constants");
 
@@ -733,25 +682,20 @@ class SymbolicState {
 	}
 
 	/**
-     * If val is a symbolic value then return val otherwise wrap it
-     * with a constant symbol inside a ConcolicValue.
-     *
-     * Used to turn a concrete value into a constant symbol for symbolic ops.
-     */
-	concolic(val) {
-		return this.isSymbolic(val) ? val : new ConcolicValue(val, this.constantSymbol(val));
-	}
-
-	/**
      * Assert left == right on the path condition
 	 * 
 	 * @param {boolean} push_constraints
      */
-	assertEqual(left, right) {
+	assertEqual(left, right, state) {
 		const equalityTest = this.binary("==", left, right);
-		this.conditional(equalityTest);
+
+		this.conditional(equalityTest, state);
 		return this.getConcrete(equalityTest);
 	}
+
 }
 
-export default SymbolicState;
+
+
+
+export default { SymbolicState, SymbolicModel };

@@ -15,30 +15,51 @@
  */
 import { WrappedValue } from "./wrapped-values";
 
+/**
+ * the following are the methods names of the different object
+ * delete the shared methods for different types: toString, valueOf, toLocaleString
+ */
+class MethodDict{
+    constructor(){
+        // this is a static class 
+    }
+
+    static string_methods = ["charAt", "charCodeAt", "concat", "endsWith", "includes", "indexOf", "lastIndexOf", "localeCompare", "match", "normalize", "padEnd", "padStart", "repeat", "replace", "search", "slice", "split", "startsWith", "substring", "toLocaleLowerCase", "toLocaleUpperCase", "toLowerCase", "toUpperCase", "trim", "trimStart", "trimEnd"]
+
+    static array_methods = ["concat", "copyWithin", "entries", "every", "fill", "filter", "find", "findIndex", "flat", "flatMap", "forEach", "includes", "indexOf", "join", "keys", "lastIndexOf", "map", "pop", "push", "reduce", "reduceRight", "reverse", "shift", "slice", "some", "sort", "splice", "unshift", "values"]
+
+    static number_methods = ["toExponential", "toFixed", "toLocaleString", "toPrecision"]
+
+    // static boolean_methods = ["toString", "valueOf"]
+
+    static object_methods = ["hasOwnProperty", "isPrototypeOf", "propertyIsEnumerable"]
+}
+
 class PureSymbol extends WrappedValue {
     
     constructor(name) {
        	super(undefined);
 
-       	this._name = name;
-        this._possibleTypes = [];
-        this._pureType = undefined;
+        this.__defineProperty("_name", name)
+        this.__defineProperty("_possibleTypes", [])
+        this.__defineProperty("_pureType", undefined)
 
-        // the following are the methods names of the different object
-        // delete the shared methods for different types: toString, valueOf, toLocaleString
-        this._string_methods = ["charAt", "charCodeAt", "concat", "endsWith", "includes", "indexOf", "lastIndexOf", "localeCompare", "match", "normalize", "padEnd", "padStart", "repeat", "replace", "search", "slice", "split", "startsWith", "substring", "toLocaleLowerCase", "toLocaleUpperCase", "toLowerCase", "toUpperCase", "trim", "trimStart", "trimEnd"]
-        this._array_methods = ["concat", "copyWithin", "entries", "every", "fill", "filter", "find", "findIndex", "flat", "flatMap", "forEach", "includes", "indexOf", "join", "keys", "lastIndexOf", "map", "pop", "push", "reduce", "reduceRight", "reverse", "shift", "slice", "some", "sort", "splice", "unshift", "values"]
-        this._number_methods = ["toExponential", "toFixed", "toLocaleString", "toPrecision"]
-        // this._boolean_methods = ["toString", "valueOf"]
-        this._object_methods = ["hasOwnProperty", "isPrototypeOf", "propertyIsEnumerable"]
+        this.__defineProperty("_method_dict", {
+            "string": MethodDict.string_methods,
+            "array": MethodDict.array_methods,
+            "number": MethodDict.number_methods,
+            // "boolean": MethodDict.boolean_methods,
+            "object": MethodDict.object_methods
+        })
+    }
 
-        this._method_dict = {
-            "string": this._string_methods,
-            "array": this._array_methods,
-            "number": this._number_methods,
-            // "boolean": this._boolean_methods,
-            "object": this._object_methods
-        }
+    __defineProperty(name, value){
+        Object.defineProperty(this, name, {
+            value: value,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        });
     }
 
     /**
@@ -137,6 +158,10 @@ class PureSymbol extends WrappedValue {
 
     /**
      * determine the type of the pure symbol by the name of the method
+     * 
+     * A found issue:
+     * if the something like `a.b.c` apprears, although b is most likely an object, but there also a chance that we can make a.b a primitive and c an other primitive(undefined property) 
+     * 
      */
     __handleMethodType(op, field_name){
         
