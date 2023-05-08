@@ -136,11 +136,12 @@ class Center {
 		});
 	}
 
-	_pushDone(test, input, pc, alternatives, undefinedPool, coverage, errors) {
+	_pushDone(test, input, pc, pcString, alternatives, undefinedPool, coverage, errors) {
 		this._done.push({
 			id: test.file.id,
 			input: input,
 			pc: pc,
+			pcString: pcString,
 			errors: errors,
 			undefinedPool: this.undefinedPool.getUndatedPool(undefinedPool), // added by jackfromest
 			time: test.time(),
@@ -148,7 +149,7 @@ class Center {
 			coverage: this._coverage.current(),
 			case_coverage: this.options.perCaseCoverage ?  new Coverage().add(coverage).final(true) : undefined, 
 			replay: test.makeReplayString(),
-			alternatives: alternatives.length
+			alternatives: alternatives
 		});
 
 		if (errors.length) {
@@ -169,12 +170,12 @@ class Center {
 		}
 
 		if (finalOut) {
-			this._pushDone(test, finalOut.input, finalOut.pc, finalOut.alternatives, finalOut.undefinedPool, coverage, errors.concat(finalOut.errors));
+			this._pushDone(test, finalOut.input, finalOut.pc, finalOut.pcString, finalOut.alternatives, finalOut.undefinedPool, coverage, errors.concat(finalOut.errors));
 			this._expandAlternatives(test.file, finalOut.alternatives, coverage);
 			this._stats.merge(finalOut.stats);
 			this.undefinedPool.updatePool(finalOut.input, finalOut.undefinedPool);
 		} else {
-			this._pushDone(test, test.file.input, test.file.pc, [], [], coverage, errors.concat([{ error: "Error extracting final output - a fatal error must have occured" }]));
+			this._pushDone(test, test.file.input, test.file.pc, test.file.pcString, [], [], coverage, errors.concat([{ error: "Error extracting final output - a fatal error must have occured" }]));
 		}
 
 		this._postTest(test);

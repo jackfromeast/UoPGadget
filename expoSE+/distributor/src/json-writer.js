@@ -11,6 +11,30 @@ export default function(file, target, coverage, start, end, newUndefinedMap, tes
 		start: start,
 		end: end,
 		undefinedMap: newUndefinedMap,
-		done: test_list
-	}), err => { if (err) console.log(`Failed to write JSON because ${err}`); });
+		done: filterDone(test_list)
+	}, null, 4), err => { if (err) console.log(`Failed to write JSON because ${err}`); });
+}
+
+/** jackfromeast
+ * 
+ * For each test case in the done structure, we only log the id, input, strinfiedPC, alternatives, time.
+ * Currently, we do not log the coverage information, undefinedPool
+ * 
+ */
+
+function filterDone(Done){
+	let newDone = [];
+	for(let i = 0; i < Done.length; i++){
+		let test = Done[i];
+		let newTest = {
+			id: test.id,
+			input: test.input,
+			stringifiedPC: test.pcString,
+			alternatives: test.alternatives,
+			// undefinedPool: test.undefinedPool,
+			time: test.time
+		};
+		newDone.push(newTest);
+	}
+	return newDone;
 }

@@ -36,6 +36,7 @@ J$.analysis = new SymbolicExecution(J$, JSON.parse(input), JSON.parse(undefinedP
 	state.alternatives((current) => {
 		const finalOut = {
 			pc: state.finalPC(),
+			pcString: state.finalPC().toString(),
 			input: state.input,
 			errors: state.errors,
 			alternatives: current,

@@ -56,8 +56,6 @@ if (process.argv.length >= 3) {
 			return round((v / 1000), 4);
 		}
 
-		console.log("");
-
 		done.forEach(item => {
 			const pcPart = Config.printPathCondition ? (` PC: ${item.pc}`) : "";
 			console.log(`[+] ${JSON.stringify(item.input)}${pcPart} took ${formatSeconds(item.time)}s`);
@@ -73,13 +71,11 @@ if (process.argv.length >= 3) {
 		}
 
 		console.log("[!] Stats");
-
 		for (const stat in stats) {
 			console.log(`[+] ${stat}: ${JSON.stringify(stats[stat].payload)}`);
 		}
 
 		console.log("[!] Done");
-
 		let totalLines = 0;
 		let totalRealLines = 0;
 		let totalLinesFound = 0;

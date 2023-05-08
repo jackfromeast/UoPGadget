@@ -35,16 +35,16 @@ parser.addArgument("--max-concurrent", {
 	help: "max number of tests to run concurrently",
 });
 
-parser.addArgument("--max-time", {
-	dest: "max_time",
+parser.addArgument("--timeout", {
+	dest: "timeout",
 	type: "string",
 	defaultValue: "2h",
 	action: "store",
 	help: "maximum time for the tests",
 });
 
-parser.addArgument("--test-timeout", {
-	dest: "test_timeout",
+parser.addArgument("--per-timeout", {
+	dest: "per_timeout",
 	type: "string",
 	defaultValue: "40m",
 	action: "store",
@@ -135,8 +135,8 @@ const args = parser.parseArgs();
 
 export default {
 	maxConcurrent: args.max_concurrent,
-	maxTime: timeFrom(args.max_time),
-	testMaxTime: timeFrom(args.test_timeout),
+	maxTime: timeFrom(args.timeout),
+	testMaxTime: timeFrom(args.per_timeout),
 	testStrategy: args.test_strategy,
 	jsonOut: args.json_path,
 	printPaths: args.print_paths,
