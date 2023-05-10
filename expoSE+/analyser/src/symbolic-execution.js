@@ -173,6 +173,7 @@ class SymbolicExecution {
 			Log.logSink("Found a potential flow to the sink: " + f.name + " at" + this._location(iid).toString());
 			Log.logSink("Current input: " + JSON.stringify(this.state.input));
 			Log.logSink("Current state: " + this.state.pathCondition.map(x => x.ast));
+			this.state.foundGadgets();
 		}
 
 		f = this.state.getConcrete(f);

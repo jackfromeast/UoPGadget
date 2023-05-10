@@ -41,7 +41,8 @@ J$.analysis = new SymbolicExecution(J$, JSON.parse(input), JSON.parse(undefinedP
 			errors: state.errors,
 			alternatives: current,
 			undefinedPool: state.undefinedPool,
-			stats: state.stats.export()
+			stats: state.stats.export(),
+			result: state.result
 		};
 
 		if (Config.outFilePath) {

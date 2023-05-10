@@ -136,12 +136,13 @@ class Center {
 		});
 	}
 
-	_pushDone(test, input, pc, pcString, alternatives, undefinedPool, coverage, errors) {
+	_pushDone(test, input, pc, pcString, alternatives, result, undefinedPool, coverage, errors) {
 		this._done.push({
 			id: test.file.id,
 			input: input,
 			pc: pc,
 			pcString: pcString,
+			result: result,
 			errors: errors,
 			undefinedPool: this.undefinedPool.getUndatedPool(undefinedPool), // added by jackfromest
 			time: test.time(),
@@ -170,12 +171,12 @@ class Center {
 		}
 
 		if (finalOut) {
-			this._pushDone(test, finalOut.input, finalOut.pc, finalOut.pcString, finalOut.alternatives, finalOut.undefinedPool, coverage, errors.concat(finalOut.errors));
+			this._pushDone(test, finalOut.input, finalOut.pc, finalOut.pcString, finalOut.alternatives, finalOut.result, finalOut.undefinedPool, coverage, errors.concat(finalOut.errors));
 			this._expandAlternatives(test.file, finalOut.alternatives, coverage);
 			this._stats.merge(finalOut.stats);
 			this.undefinedPool.updatePool(finalOut.input, finalOut.undefinedPool);
 		} else {
-			this._pushDone(test, test.file.input, test.file.pc, test.file.pcString, [], [], coverage, errors.concat([{ error: "Error extracting final output - a fatal error must have occured" }]));
+			this._pushDone(test, test.file.input, test.file.pc, test.file.pcString, [], finalOut.result, [], coverage, errors.concat([{ error: "Error extracting final output - a fatal error must have occured" }]));
 		}
 
 		this._postTest(test);

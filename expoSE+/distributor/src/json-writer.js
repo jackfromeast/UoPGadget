@@ -17,7 +17,7 @@ export default function(file, target, coverage, start, end, newUndefinedMap, tes
 
 /** jackfromeast
  * 
- * For each test case in the done structure, we only log the id, input, strinfiedPC, alternatives, time.
+ * For each test case in the done structure, we only log the id, input, strinfiedPC, result, alternatives, time.
  * Currently, we do not log the coverage information, undefinedPool
  * 
  */
@@ -30,6 +30,7 @@ function filterDone(Done){
 			id: test.id,
 			input: test.input,
 			stringifiedPC: test.pcString,
+			foundGagdet: test.result,
 			alternatives: test.alternatives,
 			// undefinedPool: test.undefinedPool,
 			time: test.time
