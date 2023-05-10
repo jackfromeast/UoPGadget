@@ -15,9 +15,11 @@
             
             "program": "distributor/bin/distributor.js",
             "args": [
+                // "--timeout",
+                // "60s",
                 "--undefined-file",
-                "/home/ubuntu/PPAEG/output/undefined-props-node/hogan-undefined-props.json",
-                "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/hogan/app.js"
+                "/home/ubuntu/PPAEG/output/undefined-props-node/lodash-undefined-props.json",
+                "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/lodash/app.js"
             ],
             "env": {
                 "EXPOSE_PRINT_PATHS": "1",

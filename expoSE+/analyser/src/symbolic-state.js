@@ -82,6 +82,7 @@ class SymbolicState {
 		this.undefinedPool = undefinedPool; // lzy: add newly find undefined properties while path exploration
 
 		this.stats = new Stats();
+		this.result = false; // found the gadget or not
 		this.coverage = new Coverage(sandbox);
 		this.errors = [];
 
@@ -177,19 +178,15 @@ class SymbolicState {
 		});
 	}
 
-	_buildPC(childInputs, i, inputCallback) {
-
-		const newPC = this.ctx.mkNot(this.pathCondition[i].ast);
-
+	_solvePC(childInputs, i, inputCallback, mkNot=true) {
+		var newPC = this.pathCondition[i].ast;
+		if(mkNot){ 
+			newPC = this.ctx.mkNot(newPC);
+		}
 		const allChecks = this.pathCondition.slice(0, i).reduce((last, next) => last.concat(next.ast.checks), []).concat(newPC.checks);
 
 		Log.logMid(`Checking if ${newPC.simplify().toString()} is satisfiable`);
 
-		/** jackfromeast
-		 *  ExpoSE serves each PC as a separate SMT query which seems does not follows the general idea
-		 *  We will and all the previous PC together with the current mkNot PC and check if it is satisfiable
-		 */
-		
 		const solution = this._checkSat(newPC, i, allChecks);
 
 		if (solution) {
@@ -224,13 +221,6 @@ class SymbolicState {
 			throw `Bound ${this.input._bound} > ${this.pathCondition.length}, divergence has occured`;
 		}
 
-		// For each pure symbol, summarize it
-		for (let symbol of Object.values(this.wrapperSymbols)) {
-			if (this.isPureSymbol(symbol)) {
-				this.summaryPureSymbol(symbol);
-			}
-		}
-
 		// Path conditions before _bound should always holds true
 		this._buildAsserts(Math.min(this.input._bound, this.pathCondition.length)).forEach(x => this.slv.assert(x));
 		this.slv.push();
@@ -239,7 +229,7 @@ class SymbolicState {
 
 			//TODO: Make checks on expressions smarter
 			if (!this.pathCondition[i].binder) {
-				this._buildPC(childInputs, i, inputCallback);
+				this._solvePC(childInputs, i, inputCallback);
 			}
 
 			Log.logMid(this.slv.toString());
@@ -249,10 +239,74 @@ class SymbolicState {
 			this.slv.push();
 		}
 
+
+		/** jackfromeast
+		 * 
+		 * if bound > pathCondition.length, meaning there is error in the program
+		 * if bound < pathCondition.length, meaning there are newly discovered path condition, and we already add them to the childInputs
+		 * if bound == pathCondition.length, meaning there is no newly discovered path condition
+		 * 
+		 * but if there are newly discovered pure symbol, we should add them to the childInputs and explore the next round
+		 */
+		if (this.pathCondition.length>0 && this.input._bound === this.pathCondition.length && this._getPureSymbolNum()) {
+			// solve the exisiting path condition(before the _bound)
+			this._solvePC(childInputs, this.input._bound-1, inputCallback, false);
+		}
+		
+		// solve done
 		this.slv.reset();
+
+
+		/** jackfromeast
+		 * For each pure symbol, summarize it
+		 * Instead of pushing the constraints to the solver and get the pure symbol's type,
+		 * We add them directly to the childInputs
+		 * 
+		 * If we have more than one pure symbol, we will make the combination of the pure symbols and add them to the childInputs
+		 */
+		if (this._getPureSymbolNum()) {
+			let pureSymbolTypes = this.summaryPureSymbol();
+			let childInputsWithTypes = [];
+
+			if(childInputs.length == 0) {
+				for (let i = 0; i < pureSymbolTypes.length; i++) {
+					childInputsWithTypes.push({
+						input: Object.assign(pureSymbolTypes[i], {_bound: Object.keys(pureSymbolTypes[i]).length}),
+						pc: "",
+						forkIid: this.coverage.last(),
+					});
+
+				}
+			}
+			else{
+				for (let i = 0; i < childInputs.length; i++) {
+					for (let j = 0; j < pureSymbolTypes.length; j++) {
+						let newItem = Object.assign({}, childInputs[i]);
+						newItem.input = Object.assign({}, childInputs[i].input, pureSymbolTypes[j]);
+						newItem.input._bound += this._getPureSymbolNum();
+						childInputsWithTypes.push(newItem);
+					}
+				}
+			}
+
+			childInputs = childInputsWithTypes;
+		}
 
 		//Guarentee inputCallback is called at least once
 		inputCallback(childInputs);
+	}
+
+	/**
+	 * get the current pure symbol's num
+	 */
+	_getPureSymbolNum(){
+		let num = 0;
+		for(let symbol of Object.values(this.wrapperSymbols)){
+			if(this.isPureSymbol(symbol)){
+				num++;
+			}
+		}
+		return num;
 	}
 
 	/** jackfromeast
@@ -384,29 +438,60 @@ class SymbolicState {
 	}
 
 	/**
-	 * Push type constraints of the pure symbol to the PC
-	 * @param {pureSymbol} pureSymbol 
-	 * @returns 
+	 * generate possible combination of pure symbols's possible types
+	 * we donot push these type constraints to the PC directly
+	 * 
+	 * @returns [{pureSymbol1_t: 'String', pureSymbol2_t: 'Number'}, {...}]
 	 */
-	summaryPureSymbol(pureSymbol){
-		let pureType = pureSymbol.getPureType();
-		let possibleTypes = pureSymbol.getPossibleTypes();
-
-		if(possibleTypes.size !== 0){
-			for (let type of possibleTypes) {
-				this.assertEqual(pureType, this.concolic(type));
+	summaryPureSymbol(){
+		let possibleTypes = {};
+		for (let symbol of Object.values(this.wrapperSymbols)) {
+			if (this.isPureSymbol(symbol)) {
+				possibleTypes[symbol.getName()+"_t"] = symbol.getPossibleTypes();
 			}
-		}else{
-			// if there is no sign indicating the type of the pure symbol
-			// we should assume it has all the possible types
-			this.assertEqual(pureType, this.concolic("string"));
-			this.assertEqual(pureType, this.concolic("number"));
-			this.assertEqual(pureType, this.concolic("boolean"));
-			this.assertEqual(pureType, this.concolic("object"));
-			this.assertEqual(pureType, this.concolic("array_number"));
-			this.assertEqual(pureType, this.concolic("array_string"));
-			this.assertEqual(pureType, this.concolic("array_bool"));
 		}
+
+		const generateCombinations = (obj) => {
+			let keys = Object.keys(obj);
+			if (!keys.length) return [{}];
+			let result = [];
+			let rest = generateCombinations(
+				Object.fromEntries(Object.entries(obj).slice(1))
+			);
+			for (let val of obj[keys[0]]) {
+				for (let comb of rest) {
+					// result.push({ [keys[0]]: val, ...comb }); donot support ... syntax
+					let newObj = Object.assign({}, comb);
+					newObj[keys[0]] = val;
+					result.push(newObj);
+				}
+			}
+			return result;
+		};
+
+		return generateCombinations(possibleTypes);
+
+
+		
+		// let pureType = pureSymbol.getPureType();
+		// let possibleTypes = pureSymbol.getPossibleTypes();
+
+		// if(possibleTypes.size !== 0){
+		// 	for (let type of possibleTypes) {
+		// 		this.assertEqual(pureType, this.concolic(type));
+		// 	}
+		// }else{
+		// 	// if there is no sign indicating the type of the pure symbol
+		// 	// we should assume it has all the possible types
+		// 	this.assertEqual(pureType, this.concolic("string"));
+		// 	this.assertEqual(pureType, this.concolic("number"));
+		// 	this.assertEqual(pureType, this.concolic("boolean"));
+		// 	this.assertEqual(pureType, this.concolic("object"));
+		// 	this.assertEqual(pureType, this.concolic("array_number"));
+		// 	this.assertEqual(pureType, this.concolic("array_string"));
+		// 	this.assertEqual(pureType, this.concolic("array_bool"));
+		// }
+
 
 
 	}
@@ -426,29 +511,41 @@ class SymbolicState {
 		let symbolic;
 		let arrayType;
 
+		// Use generated input if available
+		if (name in this.input && this._typeCheck(name)) {
+			concrete = this.input[name];
+		} else {
+			this.input[name] = concrete;
+		}
+
 		if (concrete instanceof Array) {
 			this.stats.seen("Symbolic Arrays");
 			symbolic = this.ctx.mkArray(name, this._getSort(concrete[0]));
 			this.pushCondition(this.ctx.mkGe(symbolic.getLength(), this.ctx.mkIntVal(0)), true);
 			arrayType = typeof(concrete[0]);
-		} else {
+		} else if (concrete !== "undefined"){
+			// if the concrete value is undefined, meaning it is a pure symbol, it should appear in the PC of this round
 			this.stats.seen("Symbolic Primitives");
 			const sort = this._getSort(concrete);
 			const symbol = this.ctx.mkStringSymbol(name);
 			symbolic = this.ctx.mkConst(symbol, sort);
 		}
 
-		// Use generated input if available
-		if (name in this.input) {
-			concrete = this.input[name];
-		} else {
-			this.input[name] = concrete;
+		// if the concrete value is undefined, meaning it is a pure symbol, it should appear in the PC of this round
+		if (concrete !== "undefined"){
+			this.inputSymbols[name] = symbolic;
 		}
-
-		this.inputSymbols[name] = symbolic;
 
 		Log.logMid(`Initializing fresh symbolic variable ${symbolic} using concrete value ${concrete}`);
 		return new ConcolicValue(concrete, symbolic, arrayType);
+	}
+
+	_typeCheck(name) {
+		if (name.endsWith("_t") && !["string", "boolean", "number", "object", "array_number", "array_string", "array_bool", "undefined"].includes(this.input[name])) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 	getSolution(model) {
@@ -740,6 +837,10 @@ class SymbolicState {
      */
 	concolic(val) {
 		return this.isSymbolic(val) ? val : new ConcolicValue(val, this.constantSymbol(val));
+	}
+
+	foundGadgets(){
+		this.result = true;
 	}
 
 	/**

@@ -35,6 +35,9 @@ class SymbolicObject extends WrappedValue {
 
     	state.stats.seen("Symbolic Object Field Lookups");
     	
+        /**
+         * TODO: Is this correct? Why we need to keep establishing new symbols?
+         */
     	if (!this._set[offset]) {
             // Can't use offset in name, if offset is a symbol is will crash
             // console.log("Creating pure symbol for offset " + offset);

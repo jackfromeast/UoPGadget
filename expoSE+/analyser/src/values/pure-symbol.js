@@ -125,13 +125,7 @@ class PureSymbol extends WrappedValue {
     __handleBinaryType(op, operand_type){
         let possible_type = "unknown";
         if(op !== 'in'){
-            if(operand_type === "undefined"){
-                possible_type = "undefined"
-                this._possibleTypes.push(possible_type);
-            }else if(operand_type === "null"){
-                possible_type = "null"
-                this._possibleTypes.push(possible_type);
-            }else if(operand_type === "boolean"){
+            if(operand_type === "boolean"){
                 possible_type = "boolean"
                 this._possibleTypes.push(possible_type);
             }else if(operand_type === "number"){
@@ -144,6 +138,7 @@ class PureSymbol extends WrappedValue {
                 possible_type = "object"
                 this._possibleTypes.push(possible_type);
             }else if(operand_type === "array"){
+                // TODO: the array type is not accurate
                 possible_type = "array"
                 this._possibleTypes.push(possible_type);
             }else{
