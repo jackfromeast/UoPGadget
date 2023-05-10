@@ -176,7 +176,7 @@ class Center {
 			this._stats.merge(finalOut.stats);
 			this.undefinedPool.updatePool(finalOut.input, finalOut.undefinedPool);
 		} else {
-			this._pushDone(test, test.file.input, test.file.pc, test.file.pcString, [], finalOut.result, [], coverage, errors.concat([{ error: "Error extracting final output - a fatal error must have occured" }]));
+			this._pushDone(test, test.file.input, test.file.pc, test.file.pcString, [], false, [], coverage, errors.concat([{ error: "Error extracting final output - a fatal error must have occured" }]));
 		}
 
 		this._postTest(test);
