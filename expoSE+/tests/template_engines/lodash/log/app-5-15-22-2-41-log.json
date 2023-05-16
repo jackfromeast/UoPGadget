@@ -1,0 +1,45 @@
+{
+    "source": "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/lodash/app.js",
+    "start": 1684188153313,
+    "end": 1684188161512,
+    "undefinedMap": {
+        "{\"_bound\":0,\"sourceURL_undef_t\":\"undefined\"}": [
+            "1",
+            "0"
+        ]
+    },
+    "done": [
+        {
+            "id": 0,
+            "input": {
+                "_bound": 0,
+                "sourceURL_undef_t": "undefined"
+            },
+            "stringifiedPC": "",
+            "foundGagdet": false,
+            "alternatives": [
+                {
+                    "input": {
+                        "sourceURL_undef_t": "string",
+                        "_bound": 1
+                    },
+                    "pc": "",
+                    "forkIid": 345
+                }
+            ],
+            "time": 3851
+        },
+        {
+            "id": 1,
+            "input": {
+                "sourceURL_undef_t": "string",
+                "_bound": 1,
+                "sourceURL_undef": "xxx"
+            },
+            "stringifiedPC": "(= sourceURL_undef_t \"string\"),(= sourceURL_undef sourceURL_undef),(= sourceURL_undef sourceURL_undef),(= sourceURL_undef sourceURL_undef),(= sourceURL_undef sourceURL_undef)",
+            "foundGagdet": true,
+            "alternatives": [],
+            "time": 4238
+        }
+    ]
+}

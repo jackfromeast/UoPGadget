@@ -1,0 +1,32 @@
+{
+    "source": "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/pug/app.js",
+    "start": 1684182804660,
+    "end": 1684182816653,
+    "undefinedMap": {
+        "{\"_bound\":0}": [
+            "keyword",
+            "beforeExpr",
+            "isLoop",
+            "isAssign",
+            "prefix",
+            "postfix",
+            "binop",
+            "startsExpr",
+            "1",
+            "rightAssociative",
+            "enumerable"
+        ]
+    },
+    "done": [
+        {
+            "id": 0,
+            "input": {
+                "_bound": 0
+            },
+            "stringifiedPC": "",
+            "foundGagdet": false,
+            "alternatives": [],
+            "time": 11749
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "source": "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/squirrellyjs/app-?.js",
+    "start": 1684188232894,
+    "end": 1684188236425,
+    "undefinedMap": {},
+    "done": [
+        {
+            "id": 0,
+            "input": {
+                "_bound": 0
+            },
+            "stringifiedPC": "",
+            "foundGagdet": false,
+            "alternatives": [],
+            "time": 3519
+        }
+    ]
+}

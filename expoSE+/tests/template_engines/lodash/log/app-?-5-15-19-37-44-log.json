@@ -1,0 +1,18 @@
+{
+    "source": "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/lodash/app-?.js",
+    "start": 1684179461497,
+    "end": 1684179464865,
+    "undefinedMap": {},
+    "done": [
+        {
+            "id": 0,
+            "input": {
+                "_bound": 0
+            },
+            "stringifiedPC": "",
+            "foundGagdet": false,
+            "alternatives": [],
+            "time": 3364
+        }
+    ]
+}

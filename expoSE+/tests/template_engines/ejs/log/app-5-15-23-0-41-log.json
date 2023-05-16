@@ -1,0 +1,62 @@
+{
+    "source": "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/ejs/app.js",
+    "start": 1684191626605,
+    "end": 1684191641653,
+    "undefinedMap": {},
+    "done": [
+        {
+            "id": 0,
+            "input": {
+                "_bound": 0,
+                "outputFunctionName_undef_t": "undefined"
+            },
+            "stringifiedPC": "",
+            "foundGagdet": false,
+            "alternatives": [
+                {
+                    "input": {
+                        "outputFunctionName_undef_t": "string",
+                        "_bound": 1
+                    },
+                    "pc": "",
+                    "forkIid": 321
+                }
+            ],
+            "time": 4691
+        },
+        {
+            "id": 1,
+            "input": {
+                "outputFunctionName_undef_t": "string",
+                "_bound": 1,
+                "outputFunctionName_undef": "xxx"
+            },
+            "stringifiedPC": "(= outputFunctionName_undef_t \"string\"),(not (= outputFunctionName_undef \"\"))",
+            "foundGagdet": true,
+            "alternatives": [
+                {
+                    "input": {
+                        "outputFunctionName_undef_t": "string",
+                        "outputFunctionName_undef": "",
+                        "_bound": 2
+                    },
+                    "pc": "",
+                    "forkIid": 432
+                }
+            ],
+            "time": 5420
+        },
+        {
+            "id": 2,
+            "input": {
+                "outputFunctionName_undef_t": "string",
+                "outputFunctionName_undef": "",
+                "_bound": 2
+            },
+            "stringifiedPC": "(= outputFunctionName_undef_t \"string\"),(not (not (= outputFunctionName_undef \"\")))",
+            "foundGagdet": false,
+            "alternatives": [],
+            "time": 4912
+        }
+    ]
+}

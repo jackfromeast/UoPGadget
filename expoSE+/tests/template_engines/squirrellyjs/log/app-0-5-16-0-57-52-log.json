@@ -1,0 +1,134 @@
+{
+    "source": "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/squirrellyjs/app-0.js",
+    "start": 1684198650869,
+    "end": 1684198672137,
+    "undefinedMap": {
+        "{\"_bound\":0,\"defaultFilter_undef_t\":\"undefined\"}": [
+            "type",
+            "0",
+            "atomdeleted",
+            "webmanifest",
+            "buffer",
+            "application",
+            "vbox-extpack",
+            "disposition-notification",
+            "_router",
+            "mergeParams",
+            "strict",
+            "end",
+            "sensitive",
+            "params",
+            "baseUrl",
+            "next",
+            "originalUrl",
+            "_parsedUrl",
+            "route",
+            "query",
+            "decoder",
+            "charset",
+            "allowDots",
+            "allowSparse",
+            "arrayLimit",
+            "charsetSentinel",
+            "comma",
+            "delimiter",
+            "depth",
+            "ignoreQueryPrefix",
+            "interpretNumericEntities",
+            "parameterLimit",
+            "parseArrays",
+            "plainObjects",
+            "strictNullHandling",
+            "locals",
+            "_all",
+            ".squirrelly",
+            "2",
+            "3",
+            "1",
+            "4",
+            "5",
+            "if-modified-since",
+            "if-none-match",
+            "status",
+            "statusCode"
+        ],
+        "{\"defaultFilter_undef_t\":\"object\",\"_bound\":1}": [
+            "[object Object]"
+        ]
+    },
+    "done": [
+        {
+            "id": 0,
+            "input": {
+                "_bound": 0,
+                "defaultFilter_undef_t": "undefined"
+            },
+            "stringifiedPC": "",
+            "foundGagdet": false,
+            "alternatives": [
+                {
+                    "input": {
+                        "defaultFilter_undef_t": "string",
+                        "_bound": 1
+                    },
+                    "pc": "",
+                    "forkIid": 9641
+                },
+                {
+                    "input": {
+                        "defaultFilter_undef_t": "object",
+                        "_bound": 1
+                    },
+                    "pc": "",
+                    "forkIid": 9641
+                }
+            ],
+            "time": 7903
+        },
+        {
+            "id": 2,
+            "input": {
+                "defaultFilter_undef_t": "object",
+                "_bound": 1
+            },
+            "stringifiedPC": "(= defaultFilter_undef_t \"object\")",
+            "foundGagdet": false,
+            "alternatives": [],
+            "time": 8073
+        },
+        {
+            "id": 1,
+            "input": {
+                "defaultFilter_undef_t": "string",
+                "_bound": 1,
+                "defaultFilter_undef": "xxx"
+            },
+            "stringifiedPC": "(= defaultFilter_undef_t \"string\"),(not (= defaultFilter_undef \"\")),(not (= defaultFilter_undef \"\"))",
+            "foundGagdet": true,
+            "alternatives": [
+                {
+                    "input": {
+                        "defaultFilter_undef_t": "string",
+                        "defaultFilter_undef": "",
+                        "_bound": 2
+                    },
+                    "pc": "",
+                    "forkIid": 944
+                }
+            ],
+            "time": 8767
+        },
+        {
+            "id": 3,
+            "input": {
+                "defaultFilter_undef_t": "string",
+                "defaultFilter_undef": "",
+                "_bound": 2
+            },
+            "stringifiedPC": "(= defaultFilter_undef_t \"string\"),(not (not (= defaultFilter_undef \"\")))",
+            "foundGagdet": false,
+            "alternatives": [],
+            "time": 4386
+        }
+    ]
+}

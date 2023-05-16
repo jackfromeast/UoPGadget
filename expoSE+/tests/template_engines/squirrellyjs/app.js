@@ -1,43 +1,36 @@
 const express = require('express')
 var sqrl = require('squirrelly')
-const fs = require('fs')
-const path = this.require('path')
+const path = require('path')
 const app = express()
-const port = 8000
+const http = require('http')
+const port = 9991
 
 templatePath = path.join(__dirname, 'index.squirrelly');
 
-// express: app.render: merge
-// Object.prototype.defaultFilter="e')); console.log('RCE') //";//prototype pollution
+// source: express: app.render: merge
+// Object.prototype.defaultFilter = "e')); console.log('RCE')//";
 
 // for symboilc execution
 var S$ = require('../../../lib/S$')
 Object.prototype.defaultFilter = S$.pureSymbol('defaultFilter_undef');
 
 
-// for node-find-undefined
-console.log("="*20+"start"+"="*20+"\n")
-
 app.set('views', __dirname);
 app.set('view engine', 'squirrelly')
 app.get('/', (req, res) => {
-   res.render(templatePath, {'testValue':'test'})
+   try{
+      res.render(templatePath, {'testValue':'test'})
+   }
+   finally{
+      res.send('Hello World!');
+   }
+
 })
-// console.log("===========start===========")
-// // call sqrl.renderFile
-// fs.readFileSync('index.squirrelly', 'utf8', function (err,data) {
-//     if (err) {
-//         return console.log(err);
-//     }
-//     var result = sqrl.compile(data, {'testValue':'test'});
-// });
-// console.log("===========end===========")
-// sqrl.compile('index.squirrelly', {'testValue':'test'})
- 
-app.listen(port, () => {})
+
+var server = app.listen(port, () => {
+   // Send a GET request to the server
+   http.get(`http://localhost:${port}`, (res) => {
+      server.close();
+   });
+});
 module.exports = app;
-
-// for node-find-undefined
-console.log("="*20+"end"+"="*20+"\n")
-
-

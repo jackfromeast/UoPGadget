@@ -10,11 +10,21 @@ var S$ = require('../../../lib/S$')
 Object.prototype.client = true
 Object.prototype.escapeFunction = S$.pureSymbol('escapeFunction_undef')
 
-var result = ejs.renderFile(templatePath, {
-    title:" storeHtml | logins ",
-    buttonHintF:"login",
-    buttonHintS:"No account? Register now",
-    hint:"login",
-    next:"/register"
-})
+// Define the template string
+const templateString = `
+  <h1>Hello, <%= name %>!</h1>
+  <p>Today is <%= date %>.</p>
+`;
+
+// Compile the template string into a template function
+const templateFunction = ejs.compile(templateString);
+
+// Define the data object
+const data = {
+  name: 'John Doe',
+  date: new Date().toLocaleDateString()
+};
+
+// Render the template with the data object
+const output = templateFunction(data);
 

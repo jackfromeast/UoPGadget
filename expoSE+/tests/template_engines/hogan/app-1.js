@@ -36,12 +36,6 @@ const TEMPLATE = `
 </table>
 `;
 
-// for node-find-undefined
-console.log("="*20+"start"+"="*20+"\n")
-
 const template = hogan.compile(TEMPLATE);
 template.render();
-
-// for node-find-undefined
-console.log("="*20+"end"+"="*20+"\n")
 

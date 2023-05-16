@@ -1,0 +1,17 @@
+{
+    "source": "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/doT/app-1.js",
+    "start": 1684197341461,
+    "end": 1684197353837,
+    "undefinedMap": {},
+    "done": [
+        {
+            "id": 0,
+            "input": {
+                "_bound": 0
+            },
+            "foundGagdet": false,
+            "alternatives": [],
+            "time": 12372
+        }
+    ]
+}

@@ -1,0 +1,62 @@
+{
+    "source": "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/doT/app-1.js",
+    "start": 1684197988077,
+    "end": 1684197998836,
+    "undefinedMap": {},
+    "done": [
+        {
+            "id": 0,
+            "input": {
+                "_bound": 0,
+                "global_undef_t": "undefined"
+            },
+            "stringifiedPC": "",
+            "foundGagdet": false,
+            "alternatives": [
+                {
+                    "input": {
+                        "global_undef_t": "string",
+                        "_bound": 1
+                    },
+                    "pc": "",
+                    "forkIid": 4217
+                }
+            ],
+            "time": 3605
+        },
+        {
+            "id": 1,
+            "input": {
+                "global_undef_t": "string",
+                "_bound": 1,
+                "global_undef": "xxx"
+            },
+            "stringifiedPC": "(= global_undef_t \"string\"),(not (= global_undef \"\"))",
+            "foundGagdet": false,
+            "alternatives": [
+                {
+                    "input": {
+                        "global_undef_t": "string",
+                        "global_undef": "",
+                        "_bound": 2
+                    },
+                    "pc": "",
+                    "forkIid": 40
+                }
+            ],
+            "time": 3522
+        },
+        {
+            "id": 2,
+            "input": {
+                "global_undef_t": "string",
+                "global_undef": "",
+                "_bound": 2
+            },
+            "stringifiedPC": "(= global_undef_t \"string\"),(not (not (= global_undef \"\")))",
+            "foundGagdet": false,
+            "alternatives": [],
+            "time": 3616
+        }
+    ]
+}

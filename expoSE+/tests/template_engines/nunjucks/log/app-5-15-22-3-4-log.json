@@ -1,0 +1,91 @@
+{
+    "source": "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/nunjucks/app.js",
+    "start": 1684188172237,
+    "end": 1684188184612,
+    "undefinedMap": {
+        "{\"_bound\":0,\"content_undef_t\":\"undefined\"}": [
+            "enumerable",
+            "fields",
+            "WebLoader",
+            "watch",
+            "noCache",
+            "dev",
+            "autoescape",
+            "throwOnUndefined",
+            "trimBlocks",
+            "lstripBlocks",
+            "express",
+            "tmplProps",
+            "path",
+            "tags",
+            "blockStart",
+            "blockEnd",
+            "variableStart",
+            "variableEnd",
+            "commentStart",
+            "commentEnd",
+            "parent"
+        ],
+        "{\"content_undef_t\":\"string\",\"_bound\":1,\"content_undef\":\"xxx\"}": [
+            "Update",
+            "get",
+            "lineno"
+        ]
+    },
+    "done": [
+        {
+            "id": 0,
+            "input": {
+                "_bound": 0,
+                "content_undef_t": "undefined"
+            },
+            "stringifiedPC": "",
+            "foundGagdet": false,
+            "alternatives": [
+                {
+                    "input": {
+                        "content_undef_t": "string",
+                        "_bound": 1
+                    },
+                    "pc": "",
+                    "forkIid": 177
+                }
+            ],
+            "time": 3766
+        },
+        {
+            "id": 1,
+            "input": {
+                "content_undef_t": "string",
+                "_bound": 1,
+                "content_undef": "xxx"
+            },
+            "stringifiedPC": "(= content_undef_t \"string\"),(not (= content_undef \"\"))",
+            "foundGagdet": true,
+            "alternatives": [
+                {
+                    "input": {
+                        "content_undef_t": "string",
+                        "content_undef": "",
+                        "_bound": 2
+                    },
+                    "pc": "",
+                    "forkIid": 224
+                }
+            ],
+            "time": 4620
+        },
+        {
+            "id": 2,
+            "input": {
+                "content_undef_t": "string",
+                "content_undef": "",
+                "_bound": 2
+            },
+            "stringifiedPC": "(= content_undef_t \"string\"),(not (not (= content_undef \"\")))",
+            "foundGagdet": false,
+            "alternatives": [],
+            "time": 3869
+        }
+    ]
+}

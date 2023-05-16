@@ -8,8 +8,8 @@ var S$ = require('../../../lib/S$')
 // Object.prototype.name = '2';
 // Object.prototype.inject = "},flag:process.mainModule.require(`child_process`).execSync(`touch ./attack.txt`).toString()}}//"
 
-// Object.prototype.asString = '1';
-// Object.prototype.name = '2';
+Object.prototype.asString = '1';
+Object.prototype.name = '2';
 Object.prototype.inject = S$.pureSymbol('inject_undef');
 
 

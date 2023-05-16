@@ -1,0 +1,85 @@
+{
+    "source": "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/jade/app.js",
+    "start": 1684179440425,
+    "end": 1684179449472,
+    "undefinedMap": {
+        "{\"_bound\":0,\"line_undef_t\":\"undefined\"}": [
+            "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/jade/node_modules/transformers/node_modules/source-map/lib/source-map/./base64-vlq",
+            "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/jade/node_modules/transformers/node_modules/source-map/lib/source-map/./base64",
+            "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/jade/node_modules/transformers/node_modules/source-map/lib/source-map/./util",
+            "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/jade/node_modules/transformers/node_modules/source-map/lib/source-map/./array-set",
+            "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/jade/node_modules/transformers/node_modules/source-map/lib/source-map/./mapping-list",
+            "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/jade/node_modules/transformers/node_modules/source-map/lib/source-map/./binary-search",
+            "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/jade/node_modules/transformers/node_modules/source-map/lib/source-map/./source-map-generator",
+            "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/jade/node_modules/source-map/lib/source-map/./base64-vlq",
+            "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/jade/node_modules/source-map/lib/source-map/./base64",
+            "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/jade/node_modules/source-map/lib/source-map/./util",
+            "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/jade/node_modules/source-map/lib/source-map/./array-set",
+            "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/jade/node_modules/source-map/lib/source-map/./mapping-list",
+            "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/jade/node_modules/source-map/lib/source-map/./binary-search",
+            "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/jade/node_modules/source-map/lib/source-map/./quick-sort",
+            "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/jade/node_modules/source-map/lib/source-map/./source-map-generator",
+            "3",
+            "10",
+            "2",
+            "14",
+            "keyword",
+            "beforeExpr",
+            "isLoop",
+            "isAssign",
+            "prefix",
+            "postfix",
+            "binop",
+            "startsExpr",
+            "16",
+            "8",
+            "15",
+            "5",
+            "9",
+            "11",
+            "6",
+            "1",
+            "4",
+            "7",
+            "12",
+            "13",
+            "17",
+            "19",
+            "18"
+        ]
+    },
+    "done": [
+        {
+            "id": 0,
+            "input": {
+                "_bound": 0,
+                "line_undef_t": "undefined"
+            },
+            "stringifiedPC": "",
+            "foundGagdet": false,
+            "alternatives": [
+                {
+                    "input": {
+                        "line_undef_t": "string",
+                        "_bound": 1
+                    },
+                    "pc": "",
+                    "forkIid": 6209
+                }
+            ],
+            "time": 4385
+        },
+        {
+            "id": 1,
+            "input": {
+                "line_undef_t": "string",
+                "_bound": 1,
+                "line_undef": "xxx"
+            },
+            "stringifiedPC": "(= line_undef_t \"string\")",
+            "foundGagdet": false,
+            "alternatives": [],
+            "time": 4350
+        }
+    ]
+}

@@ -10,10 +10,11 @@ const hbs = require('express-hbs');
 // For symbolic execution
 var S$ = require('../../../lib/S$');
 Object.prototype.type="constructor";
-Object.prototype.program = S$.pureSymbol('program_undef');
-
-// for node-find-undefined
-console.log("="*20+"start"+"="*20+"\n")
+Object.prototype.program = {
+    "opcodes": [],
+    "children":[],
+    "blockParams": S$.pureSymbol('blockParams_undef')
+}
 
 // Register the 'emptyComment' partial
 hbs.handlebars.registerPartial('emptyComment', '');
@@ -21,7 +22,3 @@ hbs.handlebars.registerPartial('emptyComment', '');
 const source = `foo{{> emptyComment}}`
 const template =  hbs.handlebars.compile(source);
 template({msg:"World!"})
-
-// for node-find-undefined
-console.log("="*20+"end"+"="*20+"\n")
-

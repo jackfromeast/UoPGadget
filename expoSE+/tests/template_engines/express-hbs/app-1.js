@@ -20,15 +20,8 @@ var S$ = require('../../../lib/S$');
 Object.prototype.type='Program';
 Object.prototype.body = S$.pureSymbol('body_undef');
 
-// for node-find-undefined
-console.log("="*20+"start"+"="*20+"\n")
 
 const source = `Hello {{ msg }}`;
 const template =  hbs.handlebars.compile(source);
 
 template({msg:"World!"})
-
-
-// for node-find-undefined
-console.log("="*20+"end"+"="*20+"\n")
-

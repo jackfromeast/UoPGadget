@@ -1,0 +1,74 @@
+{
+    "source": "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/bladejs/app.js",
+    "start": 1684178997757,
+    "end": 1684179009861,
+    "undefinedMap": {
+        "{\"_bound\":0,\"code_undef_t\":\"undefined\"}": [
+            "5",
+            "escape",
+            "code",
+            "v",
+            "a",
+            "done",
+            "numChildren"
+        ],
+        "{\"code_undef_t\":\"object\",\"_bound\":1}": [
+            "lastFilename",
+            "column",
+            "col"
+        ]
+    },
+    "done": [
+        {
+            "id": 0,
+            "input": {
+                "_bound": 0,
+                "code_undef_t": "undefined"
+            },
+            "stringifiedPC": "",
+            "foundGagdet": false,
+            "alternatives": [
+                {
+                    "input": {
+                        "code_undef_t": "string",
+                        "_bound": 1
+                    },
+                    "pc": "",
+                    "forkIid": 393
+                },
+                {
+                    "input": {
+                        "code_undef_t": "object",
+                        "_bound": 1
+                    },
+                    "pc": "",
+                    "forkIid": 393
+                }
+            ],
+            "time": 3919
+        },
+        {
+            "id": 2,
+            "input": {
+                "code_undef_t": "object",
+                "_bound": 1
+            },
+            "stringifiedPC": "(= code_undef_t \"object\")",
+            "foundGagdet": false,
+            "alternatives": [],
+            "time": 7295
+        },
+        {
+            "id": 1,
+            "input": {
+                "code_undef_t": "string",
+                "_bound": 1,
+                "code_undef": "xxx"
+            },
+            "stringifiedPC": "(= code_undef_t \"string\"),(> (to_real (str.len (str.++ \"\" \",\"\"obj\"\":{v:\" code_undef \"\" \"\" \"}\"))) 0.0),(> (to_real (str.len (str.++ \"\" \",\"\"obj\"\":{v:\" code_undef \"\" \"\" \"}\"))) 0.0),(> (to_real (str.len (str.++ \"\" \",\"\"obj\"\":{v:\" code_undef \"\" \"\" \"}\"))) 0.0),(> (to_real (str.len (str.++ \"\" \",\"\"obj\"\":{v:\" code_undef \"\" \"\" \"}\"))) 0.0),(> (to_real (str.len (str.++ \"\" \",\"\"obj\"\":{v:\" code_undef \"\" \"\" \"}\"))) 0.0),(> (to_real (str.len (str.++ \"\" \",\"\"obj\"\":{v:\" code_undef \"\" \"\" \"}\"))) 0.0),(> (to_real (str.len (str.++ \"\" \",\"\"obj\"\":{v:\" code_undef \"\" \"\" \"}\"))) 0.0),(> (to_real (str.len (str.++ \",\"\"href\"\":{v:nav[i],e:1},\"\"somename\"\":{v:undefined}\"\n                             \",\"\"obj\"\":{v:\"\n                             code_undef\n                             \"\"\n                             \"\"\n                             \"}\")))\n   0.0),(> (to_real (str.len (str.++ \"\" \",\"\"obj\"\":{v:\" code_undef \"\" \"\" \"}\"))) 0.0),(> (to_real (str.len (str.++ \"\" \",\"\"obj\"\":{v:\" code_undef \"\" \"\" \"}\"))) 0.0)",
+            "foundGagdet": false,
+            "alternatives": [],
+            "time": 8060
+        }
+    ]
+}
