@@ -39,8 +39,9 @@ if (typeof J$ === 'undefined') {
 		    var res = babel.transform(code, {
 		      retainLines: true,
                 // lzy
-                // presets: ['es2017','es2015']
-		        presets: ['./jalangi2/node_modules/babel-preset-es2017', './jalangi2/node_modules/babel-preset-es2015']
+                // presets: ['es2017']
+                // presets: ['./jalangi2/node_modules/babel-preset-es2017']
+		        presets: ['./jalangi2/node_modules/babel-preset-es2015']
 		    }).code; 
 
 		    if (res && res.indexOf('use strict') != -1) {
@@ -765,11 +766,29 @@ if (typeof J$ === 'undefined') {
         }
     }
 
+    /** jackfromeast
+     * 
+     * This function convert the logical `or` to contional expression ?:
+     * E.g. let x = a || b => let x = a ? J$._() : b 
+     * J$._() retruns the last computed value which is a or b
+     * 
+     * However, in ExpoSE+, if a is a concolic value, since a ? is a conditional expression, we will convert a to boolean, which will retrun true or false to x
+     * We need to convert it back to a
+     * E.g.
+     * let x = a || b => let x = a ? a : b
+     *
+     */
     function wrapLogicalOr(node, left, right) {
         if (!Config.INSTR_CONDITIONAL || Config.INSTR_CONDITIONAL("||", node)) {
             printCondIidToLoc(node);
+            // var ret = replaceInExpr(
+            //     logConditionalFunName + "(" + RP + "1, " + RP + "2)?" + logLastFunName + "():" + RP + "3",
+            //     getCondIid(),
+            //     left,
+            //     right
+            // );
             var ret = replaceInExpr(
-                logConditionalFunName + "(" + RP + "1, " + RP + "2)?" + logLastFunName + "():" + RP + "3",
+                logConditionalFunName + "(" + RP + "1, " + RP + "2)?" + RP + "2" + ":" + RP + "3",
                 getCondIid(),
                 left,
                 right
