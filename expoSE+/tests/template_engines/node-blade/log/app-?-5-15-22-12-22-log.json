@@ -1,0 +1,18 @@
+{
+    "source": "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/bladejs/app-?.js",
+    "start": 1684188738664,
+    "end": 1684188742068,
+    "undefinedMap": {},
+    "done": [
+        {
+            "id": 0,
+            "input": {
+                "_bound": 0
+            },
+            "stringifiedPC": "",
+            "foundGagdet": false,
+            "alternatives": [],
+            "time": 3400
+        }
+    ]
+}

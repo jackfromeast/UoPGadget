@@ -1,0 +1,103 @@
+{
+    "source": "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/ejs/app-2.js",
+    "start": 1684765847150,
+    "end": 1684765864681,
+    "undefinedMap": {},
+    "done": [
+        {
+            "id": 0,
+            "input": {
+                "_bound": 0,
+                "escapeFunction_undef_t": "undefined"
+            },
+            "stringifiedPC": "",
+            "foundGagdet": false,
+            "alternatives": [
+                {
+                    "input": {
+                        "escapeFunction_undef_t": "string",
+                        "_bound": 1
+                    },
+                    "pc": "",
+                    "forkIid": 433
+                },
+                {
+                    "input": {
+                        "escapeFunction_undef_t": "object",
+                        "_bound": 1
+                    },
+                    "pc": "",
+                    "forkIid": 433
+                },
+                {
+                    "input": {
+                        "escapeFunction_undef_t": "array_string",
+                        "_bound": 1
+                    },
+                    "pc": "",
+                    "forkIid": 433
+                }
+            ],
+            "time": 3641
+        },
+        {
+            "id": 1,
+            "input": {
+                "escapeFunction_undef_t": "string",
+                "_bound": 1,
+                "escapeFunction_undef": "seed_string"
+            },
+            "stringifiedPC": "(= escapeFunction_undef_t \"string\"),(not (= escapeFunction_undef \"\"))",
+            "foundGagdet": true,
+            "alternatives": [
+                {
+                    "input": {
+                        "escapeFunction_undef_t": "string",
+                        "escapeFunction_undef": "",
+                        "_bound": 2
+                    },
+                    "pc": "",
+                    "forkIid": 320
+                }
+            ],
+            "time": 10072
+        },
+        {
+            "id": 2,
+            "input": {
+                "escapeFunction_undef_t": "object",
+                "_bound": 1
+            },
+            "stringifiedPC": "(= escapeFunction_undef_t \"object\")",
+            "foundGagdet": false,
+            "alternatives": [],
+            "time": 10098
+        },
+        {
+            "id": 3,
+            "input": {
+                "escapeFunction_undef_t": "array_string",
+                "_bound": 1,
+                "escapeFunction_undef": [
+                    "seed_string"
+                ]
+            },
+            "stringifiedPC": "(= escapeFunction_undef_t \"array_string\"),(>= escapeFunction_undef_Array_Length 0),true",
+            "foundGagdet": false,
+            "alternatives": [],
+            "time": 10281
+        },
+        {
+            "id": 4,
+            "input": {
+                "escapeFunction_undef_t": "string",
+                "escapeFunction_undef": "",
+                "_bound": 2
+            },
+            "stringifiedPC": "(= escapeFunction_undef_t \"string\"),(not (not (= escapeFunction_undef \"\")))",
+            "foundGagdet": false,
+            "alternatives": [],
+            "time": 3788
+        }
+    ]
+}
