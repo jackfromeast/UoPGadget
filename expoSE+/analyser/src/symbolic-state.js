@@ -14,6 +14,7 @@ import { stringify } from "./utilities/safe-json";
 import Stats from "../../lib/Stats/bin/main";
 import Z3 from "z3javascript";
 import Helpers from "./models/helpers";
+import log from "./utilities/log";
 
 function BuildUnaryJumpTable(state) {
 	const ctx = state.ctx;
@@ -218,6 +219,7 @@ class SymbolicState {
 		let childInputs = [];
 
 		if (this.input._bound > this.pathCondition.length) {
+			log.error("{this.input}");
 			throw `Bound ${this.input._bound} > ${this.pathCondition.length}, divergence has occured`;
 		}
 
@@ -404,7 +406,7 @@ class SymbolicState {
 			switch (pureType.getConcrete()) {
 			case "string":
 				this.assertEqual(pureType, this.concolic("string")); // add the first type constraint
-				return this.createSymbolicValue(name, "xxx");
+				return this.createSymbolicValue(name, "seed_string");
 			case "number":
 				this.assertEqual(pureType, this.concolic("number"));
 				return this.createSymbolicValue(name, 0);
@@ -491,9 +493,6 @@ class SymbolicState {
 		// 	this.assertEqual(pureType, this.concolic("array_string"));
 		// 	this.assertEqual(pureType, this.concolic("array_bool"));
 		// }
-
-
-
 	}
 
 	createSymbolicValue(name, concrete) {
@@ -598,6 +597,48 @@ class SymbolicState {
 	isSymbolic(val) {
 		return !!ConcolicValue.getSymbolic(val);
 	}
+
+
+	/** jackfromeast
+	 * To avoid Maximum call stack size exceeded error, we only check the first level of the object
+	 * @param {*} val : could be ConcolicValue; object or array that has concolic value inside; normal value
+	 * @returns 
+	 */
+	isSymbolicDeep(val) {
+		// Firstly check if the value is symbolic
+		if(this.isSymbolic(val)){
+			return true;
+		}
+		// The val is not symbolic directly, could be an object or an array that contains symbolic value
+		else{
+			// not a object or an array, return false
+			if (typeof val !== "object" || val === null) {
+				return false;
+			}
+			else{
+				// Get the value's own property names
+				let keys = Object.keys(val);
+	
+				// Loop over each property in the value
+				for (let i = 0; i < keys.length; i++) {
+					let prop = keys[i];
+					let descriptor = Object.getOwnPropertyDescriptor(val, prop);
+	
+					// If the property is not a getter, check if it's symbolic
+					if (!(descriptor && descriptor.get)) {
+						if (this.isSymbolic(val[prop])) {
+							return true;
+						}
+					}
+				
+				}
+
+				return false;
+			}
+		}
+	}
+	
+	
 
 	/** jackfromeast
 	 * check if the symbol is a pure symbol
