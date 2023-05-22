@@ -1,6 +1,7 @@
 export default function(state, ctx, model, helpers) {
 
 	const ConcretizeIfNative = helpers.ConcretizeIfNative;
+  const symbolicHook = helpers.symbolicHook;
 
 	//TODO: Test IsNative for apply, bind & call
 	model.add(Function.prototype.apply, ConcretizeIfNative(Function.prototype.apply));
@@ -22,6 +23,19 @@ export default function(state, ctx, model, helpers) {
 
     return Object.prototype.keys.apply(state.getConcrete(base), args);
   });
+
+  // jackfromeast
+  model.add(Object.prototype.toString, symbolicHook(
+    Object.prototype.toString,
+    (base, _a) => state.isSymbolic(base) && typeof(state.getConcrete(base)) === "object",
+    (base, _a, result) => {
+      if (state.isSymbolic(base)) {
+        return new ConcolicValue(base.toString(), ctx.mkString('[object Object]'));
+      }else{
+        return base.toString();
+      }
+  }
+  ));
 
   model.add(Object.assign, (base, args) => {
     return Object.assign.call(base, state.getConcrete(args[0]), state.getConcrete(args[1]));

@@ -247,6 +247,15 @@ export default function(state, ctx, model, helpers) {
 				return new ConcolicValue(result, state.asSymbolic(base));
 				}
 				));
+	// jackfromeast
+	model.add(String.prototype.toString, symbolicHook(
+		String.prototype.toString,
+		(base, _args) => state.isSymbolic(base) && typeof state.getConcrete(base) === 'string',
+		(base, _args, result) => {
+			// No transformation is needed because the base value is already a string
+			return new ConcolicValue(result, state.asSymbolic(base));
+		}
+		));
 
 }
 
