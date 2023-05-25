@@ -413,9 +413,21 @@ class SymbolicState {
 			case "boolean":
 				this.assertEqual(pureType, this.concolic("boolean"));
 				return this.createSymbolicValue(name, false);
-			case "object":
+			case "object":{
 				this.assertEqual(pureType, this.concolic("object"));
-				return this.createSymbolicValue(name, {});
+				let symbolObj = this.createSymbolicValue(name, {});
+				
+				// set symbolic variables for found elements of the current object in the Inputs
+				for (let key of Object.keys(this.input)){
+					let reg = new RegExp(`^${name}_elements_(\\w+)_t$`);
+
+					if(reg.test(key)){
+						let element_name = reg.exec(key)[1];
+						symbolObj.setField(this, element_name, this.createPureSymbol(`${name}_elements_${element_name}`));
+					}
+				}
+				return symbolObj;
+			}
 			case "array_number":
 				this.assertEqual(pureType, this.concolic("array_number"));
 				return this.createSymbolicValue(name, [0]);
@@ -472,27 +484,6 @@ class SymbolicState {
 		};
 
 		return generateCombinations(possibleTypes);
-
-
-		
-		// let pureType = pureSymbol.getPureType();
-		// let possibleTypes = pureSymbol.getPossibleTypes();
-
-		// if(possibleTypes.size !== 0){
-		// 	for (let type of possibleTypes) {
-		// 		this.assertEqual(pureType, this.concolic(type));
-		// 	}
-		// }else{
-		// 	// if there is no sign indicating the type of the pure symbol
-		// 	// we should assume it has all the possible types
-		// 	this.assertEqual(pureType, this.concolic("string"));
-		// 	this.assertEqual(pureType, this.concolic("number"));
-		// 	this.assertEqual(pureType, this.concolic("boolean"));
-		// 	this.assertEqual(pureType, this.concolic("object"));
-		// 	this.assertEqual(pureType, this.concolic("array_number"));
-		// 	this.assertEqual(pureType, this.concolic("array_string"));
-		// 	this.assertEqual(pureType, this.concolic("array_bool"));
-		// }
 	}
 
 	createSymbolicValue(name, concrete) {
