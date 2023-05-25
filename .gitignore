@@ -33,3 +33,5 @@ libz3*
 **/expose-**.json
 **/expose-**.txt
 **/expose-**.log
+
+**/log/**-log.json
