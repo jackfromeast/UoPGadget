@@ -6,7 +6,7 @@ import Config from "./config";
 import CoverageMap from "./coverage-map";
 import JsonWriter from "./json-writer";
 import path from "path";
-// import UndefinedPool from "./undefined";
+import fs from "fs";
 
 process.title = "ExpoSE Distributor";
 
@@ -41,11 +41,20 @@ if (process.argv.length >= 3) {
 	center.done((center, done, errors, coverage, stats, newUndefinedMap) => {
 
 		let dateObj = new Date();
-		let logFilePath = path.dirname(target) + `/expose-${dateObj.getMonth()+1}-${dateObj.getDate()}-${dateObj.getHours()}-${dateObj.getMinutes()}-${dateObj.getSeconds()}` + "-log.json";
+		let test_filename = path.basename(target).replace(".js","");
+		
+		let logFilePath = path.dirname(target) + `/log/${test_filename}-${dateObj.getMonth()+1}-${dateObj.getDate()}-${dateObj.getHours()}-${dateObj.getMinutes()}-${dateObj.getSeconds()}` + "-log.json";
+		
 		if (Config.jsonOut) {
-			logFilePath = Config.jsonOut + `expose-${dateObj.getMonth()+1}-${dateObj.getDate()}-${dateObj.getHours()}-${dateObj.getMinutes()}-${dateObj.getSeconds()}}` + "-log.json";
+			logFilePath = Config.jsonOut + `/log/${test_filename}-${dateObj.getMonth()+1}-${dateObj.getDate()}-${dateObj.getHours()}-${dateObj.getMinutes()}-${dateObj.getSeconds()}}` + "-log.json";
 		}
+
+		// Ensure the log directory exists
+		let logDir = path.dirname(logFilePath);
+		fs.mkdirSync(logDir, { recursive: true });
+
 		console.log(`[+] Writing output to ${logFilePath}`);
+		
 		JsonWriter(logFilePath, target, coverage, start, (new Date()).getTime(), newUndefinedMap, done);
 
 		function round(num, precision) {
