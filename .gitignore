@@ -35,3 +35,4 @@ libz3*
 **/expose-**.log
 
 **/log/**-log.json
+**/undefined-props-raw-*.txt
