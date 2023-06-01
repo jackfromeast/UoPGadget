@@ -1,0 +1,11 @@
+{
+  "Template": "/home/ubuntu/PPAEG/dataset/pptestunits/hogan/node_modules/hogan.js/lib/compiler.js",
+  "asString": "/home/ubuntu/PPAEG/dataset/pptestunits/hogan/node_modules/hogan.js/lib/compiler.js",
+  "disableLambda": "/home/ubuntu/PPAEG/dataset/pptestunits/hogan/node_modules/hogan.js/lib/compiler.js",
+  "delimiters": "/home/ubuntu/PPAEG/dataset/pptestunits/hogan/node_modules/hogan.js/lib/compiler.js",
+  "modelGet": "/home/ubuntu/PPAEG/dataset/pptestunits/hogan/node_modules/hogan.js/lib/template.js",
+  "data}}\\x0a    <tr>\\x0a      <td>{{city}}</td>\\x0a      <td>{{pollution}}</td>\\x0a      <td>{{year}}</td>\\x0a    </tr>\\x0a  {{/data}}\\x0a  {{^data}}\\x0a    Nothing found\\x0a  {{/data}}\\x0a  </tbody>\\x0a</table>\\x0a||false||false||||false\"": "/home/ubuntu/PPAEG/dataset/pptestunits/hogan/node_modules/hogan.js/lib/compiler.js",
+  "sectionTags": "/home/ubuntu/PPAEG/dataset/pptestunits/hogan/node_modules/hogan.js/lib/compiler.js",
+  "\\x0a": "/home/ubuntu/PPAEG/dataset/pptestunits/hogan/node_modules/hogan.js/lib/compiler.js",
+  "name": "/home/ubuntu/PPAEG/dataset/pptestunits/hogan/node_modules/hogan.js/lib/compiler.js"
+}
