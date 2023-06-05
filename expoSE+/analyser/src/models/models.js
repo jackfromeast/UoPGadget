@@ -72,6 +72,7 @@ function BuildModels(state) {
 	Object._expose.pureSymbol = function(name) { return state.createPureSymbol(name); };
 	//lzy
 	Object._expose._isSymbolic = function(val) { return state.isSymbolic(val)?true:false};
+	Object._expose.setupSymbols = function() { return state._setupUndefinedUT()};
 
 	return model;
 }

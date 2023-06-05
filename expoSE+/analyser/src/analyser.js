@@ -15,7 +15,8 @@ import External from "./external";
 const fs = External.load("fs");
 const process = External.load("process");
 
-const input = process.argv[process.argv.length - 2];
+const input = process.argv[process.argv.length - 3];
+const undefinedUnderTest = process.argv[process.argv.length - 2];
 const undefinedPool = process.argv[process.argv.length - 1];
 
 Log.logHigh("Built with VERY logging enabled");
@@ -30,7 +31,7 @@ process.on("disconnect", function() {
 	process.exit();
 });
 
-J$.analysis = new SymbolicExecution(J$, JSON.parse(input), JSON.parse(undefinedPool),(state, coverage) => {
+J$.analysis = new SymbolicExecution(J$, JSON.parse(input), JSON.parse(undefinedUnderTest), JSON.parse(undefinedPool),(state, coverage) => {
 
 	// We record the alternatives list as the results develop to make the output tool more resilient to SMT crashes
 	state.alternatives((current) => {
@@ -41,6 +42,7 @@ J$.analysis = new SymbolicExecution(J$, JSON.parse(input), JSON.parse(undefinedP
 			errors: state.errors,
 			alternatives: current,
 			undefinedPool: state.undefinedPool,
+			undefinedUT: state.undefinedUnderTest,
 			stats: state.stats.export(),
 			result: state.result
 		};

@@ -4,12 +4,25 @@
  * in ExpoSE, they try to mkNot of all the others types and tese them one by one
  * in ExpoSE+, we try to determine the type of the value in the first round, add the possible type constraints and only check these types in the following rounds
  * 
- * when conduct symbolic execution with prueSymbol, all the operations(binary, unary, methods, etc) will helps to determine the type of the value, and push to the path constraints
+ * when conduct symbolic execution with prueSymbol, all the operations(binary, unary, methods, etc) will helps to determine what types COULD the value holds, and push to the path constraints
  * however, since javascript supports an implicit type conversion, we are trying to determine the type of the value that most likely to be and necessary to be 
  * 
  * TODO: the decision of the type of the pure symbol should be keep refining
  * e.g.
  * if there aren't any forin/get/set operations, then object/array won't be pushed to the path constraints
+ * 
+ * TODO: should we summary the type of the pure symbol in the end of the execution?
+ * currently, we add types once we seen a new operation
+ * however, to determine the valid type of the pure symbol, we need to check all the operations
+ * e.g.
+ * if(x.a.length > 0) { ... } => x.a is an array, object, or string
+ * x.a + ".local" => x.a can only be a string, or array (due to the implicit type conversion)
+ * 
+ * FIXME: 
+ * if we only try to indicate the type of pureSymbol in the first round, some operations may not be visible as the concrete value is undefined
+ * e.g.
+ * if (x.a && x.a.length > 0) { ... }
+ * a could be an array or object, however, we don't know the length field has been visited in the first round
  * 
  * 
  */
@@ -26,7 +39,7 @@ class MethodDict{
 
     static string_methods = ["charAt", "charCodeAt", "concat", "endsWith", "includes", "indexOf", "lastIndexOf", "localeCompare", "match", "normalize", "padEnd", "padStart", "repeat", "replace", "search", "slice", "split", "startsWith", "substring", "toLocaleLowerCase", "toLocaleUpperCase", "toLowerCase", "toUpperCase", "trim", "trimStart", "trimEnd"]
 
-    static array_methods = ["concat", "copyWithin", "entries", "every", "fill", "filter", "find", "findIndex", "flat", "flatMap", "forEach", "includes", "indexOf", "join", "keys", "lastIndexOf", "map", "pop", "push", "reduce", "reduceRight", "reverse", "shift", "slice", "some", "sort", "splice", "unshift", "values"]
+    static array_methods = ["concat", "copyWithin", "entries", "every", "fill", "filter", "find", "findIndex", "flat", "flatMap", "forEach", "includes", "indexOf", "join", "keys", "lastIndexOf", "map", "pop", "push", "reduce", "reduceRight", "reverse", "shift", "slice", "some", "sort", "splice", "unshift", "values", "length"]
 
     static number_methods = ["toExponential", "toFixed", "toLocaleString", "toPrecision"]
 
@@ -74,6 +87,10 @@ class PureSymbol extends WrappedValue {
      * @param {*} get_field_name: only exists if the op_type is method and op is getField
      */
     addType(op_type, op, operand_type=undefined, get_field_name=undefined){
+        
+        // keep the string type
+        this._possibleTypes.push('string');
+
         if(op_type === "binary"){
             this.__handleBinaryType(op, operand_type);
         }
@@ -157,6 +174,13 @@ class PureSymbol extends WrappedValue {
      * A found issue:
      * if the something like `a.b.c` apprears, although b is most likely an object, but there also a chance that we can make a.b a primitive and c an other primitive(undefined property) 
      * 
+     * 
+     * TODO:
+     * For the getField method, there are three cases for the offset:
+     * 1. built-in method name: string, array, number, boolean, object
+     * 2. index(numeric): array
+     * 3. property name(string): object 
+     * 
      */
     __handleMethodType(op, field_name){
         
@@ -173,7 +197,15 @@ class PureSymbol extends WrappedValue {
         }
     }
 
-    getPossibleTypes(){ return new Set(this._possibleTypes); }
+    getPossibleTypes(){ 
+        // if the type is unknown
+        if(this._possibleTypes.length === 0){
+            return ["string","object","array_string"];
+        }
+        else{
+            return new Set(this._possibleTypes); 
+        }
+    }
 
     getName(){ return this._name; }
 

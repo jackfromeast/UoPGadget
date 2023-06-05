@@ -22,9 +22,9 @@ import External from "./external";
 
 class SymbolicExecution {
 
-	constructor(sandbox, initialInput, undefinedPool, exitFn) {
+	constructor(sandbox, initialInput, undefinedUnderTest, undefinedPool, exitFn) {
 		this._sandbox = sandbox;
-		this.state = new SymbolicState(initialInput, undefinedPool, this._sandbox);
+		this.state = new SymbolicState(initialInput, undefinedUnderTest, undefinedPool, this._sandbox);
 		this.models = ModelBuilder(this.state);
 		this._fileList = new Array();
 		this._exitFn = exitFn;
@@ -126,13 +126,12 @@ class SymbolicExecution {
 	 * @param {*} state 
 	 * @returns 
 	 */
-	symbolicCheckForEvalLikeFunctions(f, args, state){
+	OldsymbolicCheckForEvalLikeFunctions(f, args, state){
 		switch(f.name){
 		case "eval":
 			return state.isSymbolic(args[0]);
 		case "Function":
-			// args[-1] not work
-			return state.isSymbolic(args[args.length-1]);
+			return Array.from(args).some(arg => state.isSymbolic(arg));
 		case "execScript":
 			return state.isSymbolic(args[0]);
 		case "executeJavaScript":
@@ -146,6 +145,22 @@ class SymbolicExecution {
 		case "setImmediate":
 			return state.isSymbolic(args[0]);
 		default:
+			return false;
+		}
+	}
+
+	symbolicCheckForEvalLikeFunctions(f, args, state){
+		if(f===eval){
+			return state.isSymbolic(args[0]);
+		} else if (f === Function) {
+			return Array.from(args).some(arg => state.isSymbolic(arg));
+		} else if(f===setTimeout){
+			return state.isSymbolic(args[0]);
+		}else if(f===setInterval){
+			return state.isSymbolic(args[0]);
+		}else if(f===setImmediate){
+			return state.isSymbolic(args[0]);
+		}else{
 			return false;
 		}
 	}
@@ -185,10 +200,15 @@ class SymbolicExecution {
 		Log.logMid(fn_model ? ("Exec Model: " + functionName + " " + (new Error()).stack) : functionName + " unmodeled");
 
 		/** jackfromeast
-		 * If non of the arguments are symbolic, we do not need to call the model function
+		 * 
+		 * If non of the base and arguments are symbolic, we do not need to call the model function
+		 * 
+		 * base is the object that the function is called on like this.buf.join()
+		 * 
+		 * If non of the arguments  are symbolic, we do not need to call the model function
 		 * Probably there are several cases that modeled function are needed, but currently I just ignore them
 		 */
-		if(!Object.values(args).some(x => this.state.isSymbolic(x)||x instanceof SymbolicObject)){
+		if(!this.state.isSymbolicDeep(base) && !Object.values(args).some(x => this.state.isSymbolicDeep(x)||x instanceof SymbolicObject)){
 			return {
 				f: f,
 				base: base,
@@ -266,13 +286,24 @@ class SymbolicExecution {
 		};
 	}
 
+	_filterPath(path){
+		// filter out the path that contains the following strings
+
+		if(path.includes("acorn") || path.includes("babel")){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
 	getFieldPre(iid, base, offset, _isComputed, _isOpAssign, _isMethodCall) {
 		this.state.coverage.touch(iid);
 
 		// check undefined properties
 		// our polluted undefined properties will also be assessed in symbols.js, exclude them
-		if (!this.state.isSymbolic(base) && !this.state.isSymbolic(offset) && !offset.toString().endsWith("_undef")) {
-			if(base[offset] === undefined){
+		if (base && !this.state.isSymbolic(base) && !this.state.isSymbolic(offset) && !offset.toString().endsWith("_undef")) {
+			if(base[offset] === undefined && !this._filterPath(this._location(iid).toString())){
 				// if this.state.undefinedPool does not contain this offset, add it to the pool
 				if(!this.state.undefinedPool.includes(offset.toString())){
 					Log.logUndefined("Found undefined property: " + offset.toString() + " at " + this._location(iid).toString());
@@ -620,7 +651,14 @@ class SymbolicExecution {
 			result: this.state.unary(op, left)
 		};
 	}
-
+	
+	/**
+	 * This callback is called after a condition check before branching. Branching can happen in various statements
+     * including if-then-else, switch-case, while, for, ||, &&, ?:.
+	 * 
+	 * Among them, the return value of if-then-else, switch-case, while, for is in boolean type.
+	 * The return value of || could be the value itself
+	 */
 	conditional(iid, result) {
 		this.state.coverage.touch_cnd(iid, this.state.getConcrete(result)); 
 		Log.logHigh(`Evaluating conditional ${ObjectHelper.asString(result)}`);

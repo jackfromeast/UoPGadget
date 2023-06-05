@@ -60,7 +60,7 @@ function BuildUnaryJumpTable(state) {
 }
 
 class SymbolicState {
-	constructor(input, undefinedPool, sandbox) {
+	constructor(input, undefinedUnderTest, undefinedPool, sandbox) {
 		this.ctx = new Z3.Context();
 		this.slv = new Z3.Solver(this.ctx,
 			Config.incrementalSolverEnabled,
@@ -77,8 +77,8 @@ class SymbolicState {
 		Z3.Query.MAX_REFINEMENTS = Config.maxRefinements;
 
 		this.input = input;
-		this.inputSymbols = {}; // not including pureSymbol and SymbolicObject, only for symbol that pass to sovler
-		this.wrapperSymbols = {}; // pureSymbol and SymbolicObject
+		this.inputSymbols = {}; // not including pureSymbol and symbolicObject, only for symbol that pass to sovler
+		this.wrapperSymbols = {}; // pureSymbol and symbolicObject
 		this.pathCondition = [];
 		this.undefinedPool = undefinedPool; // lzy: add newly find undefined properties while path exploration
 
@@ -89,6 +89,15 @@ class SymbolicState {
 
 		this._unaryJumpTable = BuildUnaryJumpTable(this);
 		this._setupSmtFunctions();
+
+		this.undefinedUnderTest = undefinedUnderTest;
+	}
+
+	_setupUndefinedUT() {
+		for (let i=0; i < this.undefinedUnderTest.length; i++) {
+			// pollute the prototype
+			Object.prototype[this.undefinedUnderTest[i]] = this.createPureSymbol(this.undefinedUnderTest[i]+"_undef");
+		}
 	}
 
 	/** Set up a bunch of SMT functions used by the models **/
@@ -105,7 +114,7 @@ class SymbolicState {
 		this.slv.fromString( 
 			"(define-fun str.isWhite ((c String)) Bool (= c \" \"))\n" + //TODO: Only handles  
 			"(define-fun-rec str.whiteLeft ((s String) (i Int)) Int (if (str.isWhite (str.at s i)) (str.whiteLeft s (+ i 1)) i))\n" +
-      "(define-fun-rec str.whiteRight ((s String) (i Int)) Int (if (str.isWhite (str.at s i)) (str.whiteRight s (- i 1)) i))\n"
+			"(define-fun-rec str.whiteRight ((s String) (i Int)) Int (if (str.isWhite (str.at s i)) (str.whiteRight s (- i 1)) i))\n"
 		);
 	}
 

@@ -4,8 +4,8 @@ import Log from "../utilities/log";
 export default function(state, ctx, model, helper) {
 
 	const symbolicHook = helper.symbolicHook;
-  const mkFunctionName = helper.mkFunctionName;
-  const mkIndexSymbol = helper.mkIndexSymbol;
+  	const mkFunctionName = helper.mkFunctionName;
+  	const mkIndexSymbol = helper.mkIndexSymbol;
 	const NoOp = helper.NoOp;
 
 	model.add(Array.prototype.push, function(base, args) {
@@ -166,19 +166,54 @@ export default function(state, ctx, model, helper) {
 	));
 
 	model.add(Array.prototype.join, function(base, args) {
-    const isSymbolicVal = Array.prototype.find.call(base, x => state.isSymbolic(x));
-    
-    if (!isSymbolicVal) {
-      return Array.prototype.join.apply(base, args);
-    }
+    // const isSymbolicVal = Array.prototype.find.call(base, x => state.isSymbolic(x));
+		const isSymbolicVal = state.isSymbolicDeep(base);
+		if (!isSymbolicVal) {
+		return Array.prototype.join.apply(base, args);
+		}
 
-		const sep = args[0] ? helper.coerceToString(args[0]) : ',';
-		let finalString = '';
-		for (let i = 0; i < base.length; i++) {
-			if (i > 0) {
-				finalString = state.binary('+', finalString, sep);
+			const sep = args[0] ? helper.coerceToString(args[0]) : ',';
+			let finalString = '';
+			for (let i = 0; i < base.length; i++) {
+				if (i > 0) {
+					finalString = state.binary('+', finalString, sep);
+				}
+				finalString = state.binary('+', finalString, helper.coerceToString(base[i]));
 			}
-			finalString = state.binary('+', finalString, helper.coerceToString(base[i]));
+			return finalString;
+	});
+
+	/** jackfromeast
+	 * 
+	 * Array.prototype.toString is a special case of Array.prototype.join(',')
+	 * 
+	 * FIXME: there are two cases:
+	 * 1/ the array is symbolic
+	 * 2/ the array is concrete, but one of its elements is symbolic
+	 * 
+	 * Probobly, we other modeled function also has this issue
+	 */
+	model.add(Array.prototype.toString, function(base, _args) {
+		// const isSymbolicVal = Array.prototype.find.call(base, x => state.isSymbolic(x));
+		const isSymbolicVal = state.isSymbolicDeep(base);
+		
+		if (!isSymbolicVal) {
+			return Array.prototype.toString.call(base);
+		}
+	
+		const sep = ',';
+		let finalString = '';
+
+		if(state.isSymbolic(base)) {
+			
+		}
+		else {
+			for (let i = 0; i < base.length; i++) {
+				if (i > 0) {
+					finalString = state.binary('+', finalString, sep);
+				}
+				finalString = state.binary('+', finalString, helper.coerceToString(base[i]));
+			}
 		}
 		return finalString;
 	});
@@ -191,5 +226,5 @@ export default function(state, ctx, model, helper) {
 	model.add(Array.prototype.shift, NoOp(Array.prototype.shift));
 	model.add(Array.prototype.unshift, NoOp(Array.prototype.unshift));
 	model.add(Array.prototype.fill, NoOp(Array.prototype.fill));
-  model.add(Array.prototype.reduce, NoOp(Array.prototype.reduce)); //TODO: This should only be a no-op if the function given as a reducer is not native 
+  	model.add(Array.prototype.reduce, NoOp(Array.prototype.reduce)); //TODO: This should only be a no-op if the function given as a reducer is not native 
 }
