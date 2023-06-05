@@ -20,7 +20,7 @@ public class InstrumentCode {
         engine.eval(new java.io.FileReader("src/js/Config.js"));
         engine.eval(new java.io.FileReader("src/js/instrument/astUtil.js"));
         engine.eval(new java.io.FileReader("node_modules/escodegen/escodegen.browser.min.js"));
-        engine.eval(new java.io.FileReader("node_modules/babel-core/index.js"));
+        engine.eval(new java.io.FileReader("node_modules/@babel/core/index.js"));
         engine.eval(new java.io.FileReader("node_modules/acorn/acorn.js"));
         engine.eval(new java.io.FileReader("src/js/instrument/esnstrument.js"));
     }

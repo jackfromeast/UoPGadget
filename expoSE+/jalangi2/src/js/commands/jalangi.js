@@ -70,9 +70,13 @@ function makeSMapFileName(name) {
 acorn = require("acorn");
 
 try {
-  babel = require('babel-core');
+  babel = require('@babel/core');
+  require('@babel/helpers');
+  require('@babel/preset-env');
+  require('@babel/plugin-transform-runtime');
+  require('core-js/stable');
   // lzy
-  babel.transform('', { presets: ['./jalangi2/node_modules/babel-preset-es2017', './jalangi2/node_modules/babel-preset-es2015'] }); /* Precaches all dependencies o they dont get jalangi eval'd */
+  babel.transform('', { presets: ['./jalangi2/node_modules/@babel/preset-env'] }); /* Precaches all dependencies o they dont get jalangi eval'd */
 } catch (e) {}
 
 esotope = require("esotope");
