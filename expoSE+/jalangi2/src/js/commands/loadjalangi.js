@@ -29,8 +29,8 @@ if (typeof J$ === 'undefined') {
     acorn = require("acorn");
 
     try {
-    babel = require("babel-core");
-    babel.transform('', { presets: ['es2017','es2015'] }); /* Precaches all dependencies o they dont get jalangi eval'd */
+    babel = require("@babel/core");
+    babel.transform('', { presets: ['preset-env'] }); /* Precaches all dependencies o they dont get jalangi eval'd */
     } catch (e) {}
 
 
@@ -128,7 +128,7 @@ if (typeof J$ === 'undefined') {
 
         var prefix = 'if (typeof J$ === "undefined") {\n';
         prefix += " acorn = require('"+path.resolve(__dirname, "./../../../node_modules/acorn/dist/acorn.js")+"');\n";
-        prefix += " babel = require('"+path.resolve(__dirname, "./../../../node_modules/babel-core/index.js")+"');\n";
+        prefix += " babel = require('"+path.resolve(__dirname, "./../../../node_modules/@babel/core/index.js")+"');\n";
         prefix += " esotope = require('"+path.resolve(__dirname, "./../../../node_modules/esotope/esotope.js")+"');\n";
         require('../headers').headerSources.forEach(function (header) {
             prefix += " require('"+path.resolve(__dirname, "./../../../" + header)+"');\n";

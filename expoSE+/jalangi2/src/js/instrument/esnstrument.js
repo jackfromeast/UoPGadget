@@ -41,7 +41,7 @@ if (typeof J$ === 'undefined') {
                 // lzy
                 // presets: ['es2017']
                 // presets: ['./jalangi2/node_modules/babel-preset-es2017']
-		        presets: ['./jalangi2/node_modules/babel-preset-es2015']
+		        presets: ['./jalangi2/node_modules/@babel/preset-env']
 		    }).code; 
 
 		    if (res && res.indexOf('use strict') != -1) {

@@ -3,7 +3,7 @@
 const acorn = require("acorn");
 
 try {
-const babel = require("babel-core");
+const babel = require("@babel/core");
 } catch (e) {}
 
 const fs = require("fs");

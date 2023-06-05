@@ -29,8 +29,8 @@ if (typeof J$ === 'undefined') {
     acorn = require("acorn");
 
     try {
-    babel = require("babel-core");
-    babel.transform('', { presets: ['es2017','es2015'] }); /* Precaches all dependencies o they dont get jalangi eval'd */
+    babel = require("@babel/core");
+    babel.transform('', { presets: ['preset-env'] }); /* Precaches all dependencies o they dont get jalangi eval'd */
     } catch (e) {}
     
     esotope = require("esotope");
