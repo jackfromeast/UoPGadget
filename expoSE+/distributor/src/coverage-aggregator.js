@@ -49,7 +49,7 @@ class Coverage {
 
 	/**
      * Merges new coverage data from a path with existing data
-       */
+    */
 	add(coverage) {
         
 		for (let i in coverage) {

@@ -44,6 +44,17 @@ class UndefinedPool {
 		return this.currentUpdataedMap;
 	}
 
+	/** FIXME: only support [[xxx], [yyy]] */
+	getNewUndefinedUT(){
+		let newUndefined = [];
+		for (let key in this.currentUpdataedMap) {
+			for (let prop in this.currentUpdataedMap[key]) {
+				newUndefined.push([prop]);
+			}
+		}
+		return newUndefined;
+	}
+
 	getUndatedPool(pool){
 		let newUndefined = pool.filter((elem) => !this.undefinedPool.includes(elem));
 		return newUndefined;
@@ -67,4 +78,49 @@ class UndefinedPool {
 
 }
 
-export default UndefinedPool;
+/**
+ * undefinedUTQ is used to maintain the queue of undefined props under testing
+ * 
+ * FIXME: 
+ * Sometimes, we set the initial input value of a chained property that is necessary to find the paired undefined prop. In addtion, we might need to make that property's value fixed.
+ * Currently, we only support something like: [[prop1], [prop2], [prop1, prop3], ...]
+ * 
+ */
+class UndefinedUTQ {
+	constructor(testFile=undefined) {
+		this.queue = [];
+		this.currentProp = undefined;
+
+		if (testFile) {
+			try {
+				const data = fs.readFileSync(testFile, { encoding: "utf8" });
+				this.queue = JSON.parse(data);
+			} catch (err) {
+				console.log(err);
+			}
+		}
+	}
+
+	getCurrentUT(){
+		return this.currentProp;
+	}
+
+	next(){
+		this.currentProp = this.queue.pop();
+		return this.currentProp;
+	}
+
+	push(input){
+		this.queue.push(input);
+	}
+
+	pushArray(input){
+		this.queue = this.queue.concat(input);
+	}
+
+	getLength(){
+		return this.queue.length;
+	}
+}
+
+export default {UndefinedPool, UndefinedUTQ};

@@ -43,10 +43,18 @@ parser.addArgument("--timeout", {
 	help: "maximum time for the tests",
 });
 
+parser.addArgument("--undef-per-timeout", {
+	dest: "undef_per_timeout",
+	type: "string",
+	defaultValue: "20m",
+	action: "store",
+	help: "timeout for individual undefined properties",
+});
+
 parser.addArgument("--per-timeout", {
 	dest: "per_timeout",
 	type: "string",
-	defaultValue: "40m",
+	defaultValue: "20m",
 	action: "store",
 	help: "timeout for individual tests",
 });
@@ -115,6 +123,21 @@ parser.addArgument("--undefined-file", {
 	help: "the initial undefined properties",
 });
 
+parser.addArgument("--undefined-utq", {
+	dest: "undefined_utq",
+	type: "string",
+	defaultValue: undefined,
+	action: "store",
+	help: "the undefined properties under testing",
+});
+
+parser.addArgument("--push-new", {
+	dest: "push_new",
+	defaultValue: false,
+	action: "storeTrue",
+	help: "whether add newly found undefined prop to the queue",
+});
+
 parser.addArgument("--z3", {
 	dest: "z3_lib",
 	type: "string",
@@ -136,6 +159,7 @@ const args = parser.parseArgs();
 export default {
 	maxConcurrent: args.max_concurrent,
 	maxTime: timeFrom(args.timeout),
+	undefMaxTime: timeFrom(args.undef_per_timeout),
 	testMaxTime: timeFrom(args.per_timeout),
 	testStrategy: args.test_strategy,
 	jsonOut: args.json_path,
@@ -145,6 +169,8 @@ export default {
 	perCaseCoverage: args.case_coverage,
 	analyseScript: args.play_script,
 	undefinedFile: args.undefined_file,
+	undefinedUTQ: args.undefined_utq,
+	pushNew: args.push_new,
 	z3: args.z3_lib,
 };
 

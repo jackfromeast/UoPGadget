@@ -6,6 +6,7 @@ export default function(file, target, coverage, start, end, newUndefinedMap, tes
 	// console.log(`\n*-- Writing JSON to ${file} --*`);
 	fs.writeFile(file, JSON.stringify({
 		source: target,
+		undefinedUnderTesting: target.undefinedUT,
 		// comment out since code coverage is not used
 		// finalCoverage: coverage.final(true) /* Include SMAP in the final coverage JSON */ ,
 		start: start,
