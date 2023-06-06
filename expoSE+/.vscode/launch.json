@@ -17,9 +17,13 @@
             "args": [
                 // "--timeout",
                 // "60s",
+                "--undef-per-timeout",
+                "30s",
                 "--undefined-file",
-                "/home/ubuntu/PPAEG/output/undefined-props-node/lodash-undefined-props.json",
-                "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/lodash/app.js"
+                "/home/ubuntu/PPAEG/output/undefined-props-node/node-blade-undefined-props.json",
+                "--undefined-utq",
+                "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/node-blade/undefinedUT.json",
+                "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/node-blade/app-4.js"
             ],
             "env": {
                 "EXPOSE_PRINT_PATHS": "1",
@@ -27,7 +31,7 @@
                 "Z3_PATH": "/home/ubuntu/PPAEG/expoSE+/node_modules/z3javascript/bin/libz3.so"
             },
             "cwd":"${workspaceFolder}",
-            "description": "node distributor/bin/distributor.js --undefined-file /home/ubuntu/PPAEG/expoSE+/tests/gadgets/undefined_gadgets.json /home/ubuntu/PPAEG/expoSE+/tests/gadgets/gadgets.js"
+            "description": "./expoSE+ --undef-per-timeout 5m --undefined-file /home/ubuntu/PPAEG/output/undefined-props-node/node-blade-undefined-props.json --undefined-utq /home/ubuntu/PPAEG/expoSE+/tests/template_engines/node-blade/undefinedUT.json /home/ubuntu/PPAEG/expoSE+/tests/template_engines/node-blade/app-4.js"
         },
         {
             "name": "Debug Analyser",
