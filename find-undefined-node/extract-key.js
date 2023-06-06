@@ -7,11 +7,11 @@ function extractInfo(content) {
   const result = {};
   sections.forEach(section => {
     const keyNameMatch = section.match(/KeyName:: .*#(.*)/);
-    const sourceFileMatch = section.match(/Source File: : .*"(.*)"/);
+    const sourceFileMatch = section.match(/Source File:.*(\#|uc"|")([^"\n]+)\"?/);
 
     if (keyNameMatch && sourceFileMatch) {
       const keyName = keyNameMatch[1].trim();
-      const sourceFile = sourceFileMatch[1].trim();
+      const sourceFile = sourceFileMatch[2].trim();
       result[keyName] = sourceFile;
     }
   });
@@ -30,7 +30,9 @@ function main() {
   // detelte the properties whose source file starts with 'node:'
   filtered = {};
   for (const key in extractedInfo) {
-        if (!extractedInfo[key].startsWith('node:')) {
+        if (!extractedInfo[key].startsWith('node:')
+            && extractedInfo[key].search('babel')==-1
+            && extractedInfo[key].search('acorn')==-1) {
             filtered[key] = extractedInfo[key];
         }}
 
