@@ -3,6 +3,11 @@
 var S$ = require('S$');
 var x = S$.pureSymbol('X');
 
-if (x.whatwhatwhat == "fixer") {
-	throw 'Reachable';
+if (x.layer1_0 == "fixer") {
+	if(x.layer1_1){
+		let y = x.layer1_1
+		if(y.length === 3){
+			throw 'Reachable';
+		}
+	}
 }
