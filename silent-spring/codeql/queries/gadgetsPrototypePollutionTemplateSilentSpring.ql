@@ -42,10 +42,8 @@
  predicate undefinedPropertyNames(string propertyName) {
   propertyName = ["sourceMapURL", "1", "encoding", "parsingContext", "lineOffset", "contextExtensions", "cachedData", "global", "module", "newListener", "exportKeys", "destination", "2", "type", "fs", "columnOffset", "withFileTypes", "__settings", "errno", "signal", "exports", "isTTY", "rendermodule", "href", "produceCachedData", "error", "noDeprecation"]
 
-
-
 }
- 
+
  
  predicate propagationAnArgumentListIncludes(string funcName) {
    funcName = [
