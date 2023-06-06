@@ -7,8 +7,6 @@ PPAEG.wiki
 PPAEG.wiki/*
 .vscode/*
 tmp/*
-node-find-undefined
-node-find-undefined-old
 .idea/
 *-db/
 .cache/*
