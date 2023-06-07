@@ -320,7 +320,7 @@ class Scheduler extends EventEmitter{
 		}
 
 		console.log(`[+] ExpoSE Finished Testing: ${this.undefinedUT.length>0?this.undefinedUT:"unknown"}, ${this._done.length} paths, ${this._errors} errors`);
-		Log(`======================================== ENDING TEST RUN ========================================\n`);
+		Log("======================================== ENDING TEST RUN ========================================\n");
 	}
 
 	_setupLogFile(){
@@ -329,9 +329,9 @@ class Scheduler extends EventEmitter{
 
 		let logfname = `${this.undefinedUT.length>0 ? this.undefinedUT.join("-"):"unknown"}-${dateObj.getMonth()+1}-${dateObj.getDate()}-${dateObj.getHours()}-${dateObj.getMinutes()}-log.json`;
 
-		let logFilePath = path.dirname(this.file) + `/log/${fname}/` + logfname;
+		let logFilePath = path.dirname(this.file) + "/log/" + logfname;
 		if (Config.jsonOut) {
-			logFilePath = Config.jsonOut + `/log/${fname}/` + logfname;
+			logFilePath = Config.jsonOut + "/log/" + logfname;
 		}
 
 		// Ensure the log directory exists
