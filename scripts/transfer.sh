@@ -41,6 +41,8 @@ The working dir has the following structure:
 Usage:
     ./transfer.sh <source_path> <destination_path> [codebase1] [codebase2] [codebase3] ...
 
+    do not use related paths, use absolute paths instead.
+
     if we want to transfer all codebases, we can use input nothing as the last argument.
 '
 
