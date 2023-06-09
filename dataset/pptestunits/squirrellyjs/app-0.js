@@ -7,8 +7,12 @@ const port = 9991
 
 templatePath = path.join(__dirname+'/views/', 'index.squirrelly');
 
-// source: express: app.render: merge
-Object.prototype.defaultFilter = "e')); console.log('RCE')//";
+try{
+   Object._expose.setupSymbols()
+}
+catch(e){
+   console.log("[!] symbolic execution not enabled")
+}
 
 app.set('views', __dirname);
 app.set('view engine', 'squirrelly')

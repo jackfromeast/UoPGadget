@@ -1,5 +1,12 @@
 const blade = require('blade');
 
+try{
+    Object._expose.setupSymbols()
+}
+catch(e){
+    console.log("[!] symbolic execution not enabled")
+}
+
 const template = `html
     head
         title Blade
@@ -12,10 +19,8 @@ const template = `html
         #content.center
             h1 Blade is cool`;
 
-
 blade.compile(template, {'debug': true}, function(err, tmpl) {
     tmpl({'nav': []}, function(err, html) {
         console.log(html, err);
     });
 });
-

@@ -1,8 +1,12 @@
 pug = require("pug")
 
 
-// const template = pug.compile(`h1= msg`);
-// console.log(template({msg: "Hello World"}));
+try{
+    Object._expose.setupSymbols()
+}
+catch(e){
+    console.log("[!] symbolic execution not enabled")
+}
 
 const path = require('path');
 const templatePath = path.join(__dirname+"/views/", 'attrs.pug');

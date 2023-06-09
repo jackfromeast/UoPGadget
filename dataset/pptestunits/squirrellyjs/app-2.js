@@ -4,17 +4,12 @@ const path = require('path')
 
 templatePath = path.join(__dirname+'/views/', 'complex.sqrl');
 
-Object.prototype.settings = {
-    'view options':{
-       prefixes: {
-          h: "@",
-          b: "al",
-          i: "",
-          r: "*",
-          c: "/",
-          e: "!",
-        }
-    }
- };
+try{
+   Object._expose.setupSymbols()
+}
+catch(e){
+   console.log("[!] symbolic execution not enabled")
+}
+
 
 sqrl.renderFile(templatePath, { kids: ['Ben', 'Polly', 'Joel', 'Phronsie', 'Davie'] });

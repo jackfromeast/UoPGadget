@@ -1,14 +1,14 @@
 'use strict';
 
-var assert = require('assert');
 var doT = require('dot');
 
-
-const templates = doT.process({path: __dirname});
+try{
+    Object._expose.setupSymbols()
+}
+catch(e){
+    console.log("[!] symbolic execution not enabled")
+}
 
 // injected code can only be executed if undefined is passed to template function
-// templates.test();
-var ttest = require(__dirname+'/ttest.js')
-console.log(ttest.toString());
-
-
+const templates = doT.process({path: __dirname+'/views'});
+var mytemplate = require(__dirname+'/views/mytemplate.js')

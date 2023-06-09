@@ -4,8 +4,11 @@ const path = require('path')
 
 templatePath = path.join(__dirname+'/views/', 'complex.sqrl');
 
-// source: express: app.render: merge
-// Object.prototype.defaultFilter = "e')); console.log('RCE')//";
-Object.prototype.settings = {};
+try{
+    Object._expose.setupSymbols()
+}
+catch(e){
+    console.log("[!] symbolic execution not enabled")
+}
 
 sqrl.renderFile(templatePath, { kids: ['Ben', 'Polly', 'Joel', 'Phronsie', 'Davie'] });

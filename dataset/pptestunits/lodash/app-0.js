@@ -1,6 +1,13 @@
 const lodash = require('lodash')
 const fs = require('fs')
 
+try{
+    Object._expose.setupSymbols()
+}
+catch(e){
+    console.log("[!] symbolic execution not enabled")
+}
+
 /**
  * Exported function call
  */

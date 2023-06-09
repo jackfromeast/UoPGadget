@@ -1,5 +1,12 @@
 const hogan = require("hogan.js");
 
+try{
+  Object._expose.setupSymbols()
+}
+catch(e){
+  console.log("[!] symbolic execution not enabled")
+}
+
 /* Exported Function Call*/
 const TEMPLATE = `
 <table border="1">
