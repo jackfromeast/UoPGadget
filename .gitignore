@@ -31,8 +31,8 @@ libz3*
 **/expose-**.json
 **/expose-**.txt
 **/expose-**.log
-./expoSE+/tests-pp/*
-./expoSE+/tests-pp
+expoSE+/tests-pp/*
+expoSE+/tests-pp
 
 **/log/**-log.json
 **/undefined-props-raw-*.txt
