@@ -4,7 +4,8 @@ This script is used to automatically run the test units in the database(./templa
 
 
 Usage: 
-    bash ./find-undef-work.sh <path> [specific_subdir]
+    bash ./find-undef-work.sh <path> all
+    bash ./find-undef-work.sh <path> [specific_subdir1] [specific_subdir2] ...
 '
 
 # Check if the user provided a path
@@ -26,13 +27,23 @@ find_undefined_node="${script_dir}/../find-undefined-node/node-find-undefined"
 clean_script="${script_dir}/../find-undefined-node/extract-key.js"
 convert_script="${script_dir}/../find-undefined-node/convert-ut.js"
 
+# Create an associative array where the keys are the specific subdirectories to process
+declare -A specific_dirs
+all_dirs=false
+
+if [ "$1" = "all" ]; then
+    all_dirs=true
+else
+    for dir; do specific_dirs["$dir"]=1; done
+fi
+
 # Iterate over each subdirectory and run node app-?.js
 for dir in "${parent_dir}"/*; do
     if [ -d "${dir}" ]; then
         subdir_name=$(basename "${dir}")
 
-        # Skip this iteration if specific directory is set and it doesn't match the current subdir
-        if [ -n "$specific_dir" ] && [ "$specific_dir" != "all" ] && [ "$subdir_name" != "$specific_dir" ]; then
+        # Skip this iteration if not all directories and this subdir is not among the specific ones
+        if ! $all_dirs && { [ ! -v "specific_dirs[$subdir_name]" ] || (( ${specific_dirs["$subdir_name"]} != 1 )); }; then
             continue
         fi
 
