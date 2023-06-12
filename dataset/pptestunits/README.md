@@ -25,3 +25,4 @@ pptestunits
 Please follow the rules that: <br>
 1. the template either placed in the ./views folder or hardcoded in the test file.
 2. the test file should be named as app-*.js
+3. do not try to call the generated function
