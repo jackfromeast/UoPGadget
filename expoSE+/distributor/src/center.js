@@ -46,6 +46,12 @@ class Center {
 		}
 	}
 
+	cancel(){
+		if (this.scheduler !== null){
+			this.scheduler.cancel();
+		}
+	}
+
 	/**
 	 * We made this function synchronous
 	 * 

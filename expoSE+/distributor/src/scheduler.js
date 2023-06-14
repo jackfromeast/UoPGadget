@@ -325,7 +325,7 @@ class Scheduler extends EventEmitter{
 
 	_setupLogFile(){
 		let dateObj = new Date();
-		let fname = path.basename(this.file).replace(".js","");
+		// let fname = path.basename(this.file).replace(".js","");
 
 		let logfname = `${this.undefinedUT.length>0 ? this.undefinedUT.join("-"):"unknown"}-${dateObj.getMonth()+1}-${dateObj.getDate()}-${dateObj.getHours()}-${dateObj.getMinutes()}-log.json`;
 
