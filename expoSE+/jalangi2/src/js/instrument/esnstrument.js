@@ -769,26 +769,30 @@ if (typeof J$ === 'undefined') {
     /** jackfromeast
      * 
      * This function convert the logical `or` to contional expression ?:
-     * E.g. let x = a || b => let x = a ? J$._() : b 
-     * J$._() retruns the last computed value which is a or b
+     * E.g. let x = a || b => let x = J$.C(a) ? J$._() : b 
+     * J$._() retruns the last computed value which is J$.C(a) or b
      * 
-     * However, in ExpoSE+, if a is a concolic value, since a ? is a conditional expression, we will convert a to boolean, which will retrun true or false to x
-     * We need to convert it back to a
-     * E.g.
-     * let x = a || b => let x = a ? a : b
+     * The problem is that if a is an symbolic value, in J$.C(a) convert a to its concrete value (otherwise, the condition will always return true due to our symbolic object wrapper). Then J$._() will be the concrete value of a, and we will lose the symbolic variable.
+     * 
+     * To solve this problem, I first solution is to modify the instrumentation: let x = a || b => let x = J$.C(a) ? a : b
+     * But this would cause a problem when instrumenting chained logical or: 
+     * let x = a() || b() || c() =>
+     * J$.C((J$.C(a()) ? a():b())) ? (J$.C(a()) ? a():b()) : c()
+     * 
+     * in stead of generating something like:
+     * let x = J$.C(a()) ? a() : J$.C(b()) ? b() : c() 
+     * 
+     * Currently, I use the second solution in the following code:
+     * let J$._() = a instead of let J$._() = J$.C(a)
+     * 
+     * modified in runtime/analysis.js:C function and analyser/src/symbolic-execution.js:conditional function
      *
      */
     function wrapLogicalOr(node, left, right) {
         if (!Config.INSTR_CONDITIONAL || Config.INSTR_CONDITIONAL("||", node)) {
             printCondIidToLoc(node);
-            // var ret = replaceInExpr(
-            //     logConditionalFunName + "(" + RP + "1, " + RP + "2)?" + logLastFunName + "():" + RP + "3",
-            //     getCondIid(),
-            //     left,
-            //     right
-            // );
             var ret = replaceInExpr(
-                logConditionalFunName + "(" + RP + "1, " + RP + "2)?" + RP + "2" + ":" + RP + "3",
+                logConditionalFunName + "(" + RP + "1, " + RP + "2)?" + logLastFunName + "():" + RP + "3",
                 getCondIid(),
                 left,
                 right

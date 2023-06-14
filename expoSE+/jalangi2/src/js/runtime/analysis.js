@@ -706,7 +706,7 @@ if (typeof J$ === 'undefined') {
         result = B(iid+1, "===", switchLeft, right, createBitPattern(false, false, true));
 
         if (sandbox.analysis && sandbox.analysis.conditional) {
-            aret = sandbox.analysis.conditional(iid, result);
+            aret, _ = sandbox.analysis.conditional(iid, result);
             if (aret) {
                 if (result && !aret.result) {
                     right = !right;
@@ -722,14 +722,18 @@ if (typeof J$ === 'undefined') {
     function C(iid, left) {
         var aret;
         if (sandbox.analysis && sandbox.analysis.conditional) {
-            aret = sandbox.analysis.conditional(iid, left);
+            aret, lastV = sandbox.analysis.conditional(iid, left);
             if (aret) {
                 left = aret.result;
             }
         }
 
-        lastVal = left;
-        return (lastComputedValue = left);
+        // || or && condition operator
+        // aret = J$.C(left); 
+        // last = left; which could be a symbolic variable
+        lastVal = lastV;
+        lastComputedValue = lastV;
+        return left;
     }
 
     function S(iid, f) {

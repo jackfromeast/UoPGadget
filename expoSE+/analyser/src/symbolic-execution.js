@@ -657,7 +657,7 @@ class SymbolicExecution {
      * including if-then-else, switch-case, while, for, ||, &&, ?:.
 	 * 
 	 * Among them, the return value of if-then-else, switch-case, while, for is in boolean type.
-	 * The return value of || could be the value itself
+	 * The return value of || and && could be the value itself
 	 */
 	conditional(iid, result) {
 		this.state.coverage.touch_cnd(iid, this.state.getConcrete(result)); 
@@ -668,7 +668,9 @@ class SymbolicExecution {
 			this.state.conditional(this.state.toBool(result));
 		}
 
-		return { result: this.state.getConcrete(result) };
+		// To handle chained || and && operators
+		// return J$.C(left): boolean, left: any type (including symbolic variable)
+		return { result: this.state.getConcrete(result) }, result;
 	}
 
 	instrumentCodePre(iid, code) {
