@@ -8,7 +8,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Debug Distributor",
+            "name": "Debug ExpoSE+",
             "skipFiles": [
                 "<node_internals>/**"
             ],
@@ -18,21 +18,46 @@
                 // "--timeout",
                 // "60s",
                 "--undef-per-timeout",
-                "30s",
+                "1m",
                 "--undefined-file",
-                "/home/ubuntu/PPAEG/output/undefined-props-node/node-blade-undefined-props.json",
+                "/home/ubuntu/ppaeg/expoSE+/tests-pp/templates/pug/app-0/undefined-props-0.json",
                 "--undefined-utq",
-                "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/node-blade/undefinedUT.json",
-                "/home/ubuntu/PPAEG/expoSE+/tests/template_engines/node-blade/app-4.js"
+                "/home/ubuntu/ppaeg/expoSE+/tests-pp/templates/pug/app-0/undefined-props-ut.json",
+                "/home/ubuntu/ppaeg/expoSE+/tests-pp/templates/pug/app-0/app-0.js"
+                // "/home/ubuntu/ppaeg/expoSE+/tests/or/or.js"
             ],
             "env": {
                 "EXPOSE_PRINT_PATHS": "1",
                 "max_old_space_size": "4096",
-                "Z3_PATH": "/home/ubuntu/PPAEG/expoSE+/node_modules/z3javascript/bin/libz3.so"
+                "Z3_PATH": "/home/ubuntu/ppaeg/expoSE+/node_modules/z3javascript/bin/libz3.so"
             },
             "cwd":"${workspaceFolder}",
-            "description": "./expoSE+ --undef-per-timeout 5m --undefined-file /home/ubuntu/PPAEG/output/undefined-props-node/node-blade-undefined-props.json --undefined-utq /home/ubuntu/PPAEG/expoSE+/tests/template_engines/node-blade/undefinedUT.json /home/ubuntu/PPAEG/expoSE+/tests/template_engines/node-blade/app-4.js"
+            "description": "./expoSE+ --undef-per-timeout 5m --undefined-file /home/ubuntu/ppaeg/output/undefined-props-node/node-blade-undefined-props.json --undefined-utq /home/ubuntu/ppaeg/expoSE+/tests-pp/template_engines/node-blade/undefinedUT.json /home/ubuntu/ppaeg/expoSE+/tests-pp/template_engines/node-blade/app-4.js"
         },
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Replay ExpoSE+",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            
+            "program": "distributor/bin/distributor.js",
+            "args": [
+                "--input",
+                "{\"settings_undef_t\": \"object\", \"_bound\": 4, \"settings_undef_elements_view options_t\": \"string\", \"settings_undef_elements_view cache_t\": \"string\", \"settings_undef_elements_views_t\": \"object\", \"settings_undef_elements_view cache\": \"seed_string\", \"settings_undef_elements_view options\": \"seed_string\"}",
+                "/home/ubuntu/ppaeg/expoSE+/tests-pp/templates/squirrellyjs/app-1/app-1.js"
+            ],
+            "env": {
+                "EXPOSE_PRINT_PATHS": "1",
+                "max_old_space_size": "4096",
+                "Z3_PATH": "/home/ubuntu/ppaeg/expoSE+/node_modules/z3javascript/bin/libz3.so"
+            },
+            "cwd":"${workspaceFolder}",
+            "description": "bash expoSE+ /home/ubuntu/ppaeg/expoSE+/tests-pp/templates/squirrellyjs/app-1/app-1.js \"{\"settings_undef_t\": \"object\", \"_bound\": 4, \"settings_undef_elements_view options_t\": \"string\", \"settings_undef_elements_view cache_t\": \"string\", \"settings_undef_elements_views_t\": \"object\", \"settings_undef_elements_view cache\": \"seed_string\", \"settings_undef_elements_view options\": \"seed_string\"}\""
+        },
+
         {
             "name": "Debug Analyser",
             "request": "attach",

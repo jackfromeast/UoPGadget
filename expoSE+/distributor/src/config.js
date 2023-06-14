@@ -30,7 +30,7 @@ const parser = new ArgumentParser({
 parser.addArgument("--max-concurrent", {
 	dest: "max_concurrent",
 	type: "int",
-	defaultValue: os.cpus().length,
+	defaultValue: os.cpus().length * 2,
 	action: "store",
 	help: "max number of tests to run concurrently",
 });
@@ -154,6 +154,16 @@ parser.addArgument("test-file", {
 	help: "the path to the test file",
 });
 
+// positional arguments
+parser.addArgument("--input", {
+	dest: "init_input",
+	type: "string",
+	defaultValue: undefined,
+	action: "store",
+	help: "the initial input to the test file",
+});
+
+
 const args = parser.parseArgs();
 
 export default {
@@ -172,6 +182,7 @@ export default {
 	undefinedUTQ: args.undefined_utq,
 	pushNew: args.push_new,
 	z3: args.z3_lib,
+	input: args.init_input,
 };
 
 
