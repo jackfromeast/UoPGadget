@@ -93,12 +93,13 @@ class UndefinedUTQ {
 
 		if (testFile) {
 			try {
-				const data = fs.readFileSync(testFile, { encoding: "utf8" });
-				
-				// remove the _expose internal property
-				data = data.filter(item => item !== ['_expose']);
+				const  data = fs.readFileSync(testFile, { encoding: "utf8" });
 
 				this.queue = JSON.parse(data);
+
+				// remove the _expose internal property
+				this.queue = this.queue.filter(item => item !== ["_expose"]);
+				
 			} catch (err) {
 				console.log(err);
 			}
