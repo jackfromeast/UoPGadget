@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+  </head>
+  <body>
+    <h1>{{title}}</h1>
+    <ul>
+    <template repeat="{{user in users}}">
+      <li>{{user.name}}</li>
+    </template>
+    </ul>
+  </body>
+</html>
