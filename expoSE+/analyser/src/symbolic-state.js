@@ -228,7 +228,7 @@ class SymbolicState {
 		let childInputs = [];
 
 		if (this.input._bound > this.pathCondition.length) {
-			log.error("{this.input}");
+			log(`${this.input}`);
 			throw `Bound ${this.input._bound} > ${this.pathCondition.length}, divergence has occured`;
 		}
 
@@ -408,9 +408,9 @@ class SymbolicState {
 		this.stats.seen("Pure Symbols");
 
 		// if it is not the first round, pureType would contains an concrete type e.g. strings
-		let pureType = this.createSymbolicValue(name + "_t", "undefined");
+		let pureType = this.createSymbolicValueType(name + "_t", "unknown");
 
-		if (pureType.getConcrete() !== "undefined") {
+		if (pureType.getConcrete() !== "unknown") {
 			// in the following rounds,
 			switch (pureType.getConcrete()) {
 			case "string":
@@ -448,6 +448,14 @@ class SymbolicState {
 				return this.createSymbolicValue(name, [false]);
 			case "null":
 				return null;
+			/**
+			 * meaning the symbolic value are set to undefined on purpose
+			 * in the following round, this field will always be set to undefine which is intended
+			 * other types will be explored from other partent branches
+			 */
+			case "undefined":
+				this.assertEqual(pureType, this.concolic("undefined"));
+				return undefined;
 			default:
 				Log.log(`Symbolic input variable of type ${typeof val} not yet supported.`);
 			}
@@ -464,6 +472,9 @@ class SymbolicState {
 	 * generate possible combination of pure symbols's possible types
 	 * we donot push these type constraints to the PC directly
 	 * 
+	 * add undefined types if pure symbol > 2
+	 * this makes we can test the scenario that only one/a few of them appears in a single round
+	 * 
 	 * @returns [{pureSymbol1_t: 'String', pureSymbol2_t: 'Number'}, {...}]
 	 */
 	summaryPureSymbol(){
@@ -471,6 +482,12 @@ class SymbolicState {
 		for (let symbol of Object.values(this.wrapperSymbols)) {
 			if (this.isPureSymbol(symbol)) {
 				possibleTypes[symbol.getName()+"_t"] = symbol.getPossibleTypes();
+			}
+		}
+
+		if(Object.keys(possibleTypes).length > 1){
+			for (let key of Object.keys(possibleTypes)) {
+				possibleTypes[key].push("undefined");
 			}
 		}
 
@@ -495,6 +512,47 @@ class SymbolicState {
 		return generateCombinations(possibleTypes);
 	}
 
+	/**
+	 * This function is used to create the symbol for symbolic variable's types.
+	 * @param {*} name 
+	 * @param {*} type 
+	 * @returns 
+	 */
+	createSymbolicValueType(name, type) {
+
+		let symbolic;
+		let arrayType;
+
+		// Use generated input if available
+		if (name in this.input && this._typeCheck(name)) {
+			type = this.input[name];
+		} else {
+			this.input[name] = type;
+		}
+
+		// if the concrete value is undefined, meaning it is a pure symbol, it should appear in the PC of this round
+		this.stats.seen("Symbolic Primitives");
+		const sort = this._getSort("astring");
+		const symbol = this.ctx.mkStringSymbol(name);
+		symbolic = this.ctx.mkConst(symbol, sort);
+		
+
+		// if the concrete value is unknown, meaning it is a pure symbol, it shouldn't appear in the PC of this round
+		// we assume that all the symbolic values with "unknown" concrete value are pure symbols
+		if (type !== "unknown"){
+			this.inputSymbols[name] = symbolic;
+		}
+
+		return new ConcolicValue(type, symbolic, arrayType);
+	}
+
+	/**
+	 * Assigning symbolic values to input variables
+	 * 
+	 * @param {*} name 
+	 * @param {*} concrete 
+	 * @returns 
+	 */
 	createSymbolicValue(name, concrete) {
 
 		Log.logMid(`Args ${stringify(arguments)} ${name} ${concrete}`);
@@ -522,7 +580,7 @@ class SymbolicState {
 			symbolic = this.ctx.mkArray(name, this._getSort(concrete[0]));
 			this.pushCondition(this.ctx.mkGe(symbolic.getLength(), this.ctx.mkIntVal(0)), true);
 			arrayType = typeof(concrete[0]);
-		} else if (concrete !== "undefined"){
+		} else {
 			// if the concrete value is undefined, meaning it is a pure symbol, it should appear in the PC of this round
 			this.stats.seen("Symbolic Primitives");
 			const sort = this._getSort(concrete);
@@ -530,10 +588,7 @@ class SymbolicState {
 			symbolic = this.ctx.mkConst(symbol, sort);
 		}
 
-		// if the concrete value is undefined, meaning it is a pure symbol, it should appear in the PC of this round
-		if (concrete !== "undefined"){
-			this.inputSymbols[name] = symbolic;
-		}
+		this.inputSymbols[name] = symbolic;
 
 		Log.logMid(`Initializing fresh symbolic variable ${symbolic} using concrete value ${concrete}`);
 		return new ConcolicValue(concrete, symbolic, arrayType);
