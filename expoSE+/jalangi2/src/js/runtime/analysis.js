@@ -700,13 +700,13 @@ if (typeof J$ === 'undefined') {
 
     // case label inside switch
     function C2(iid, right) {
-        var aret, result;
+        var aret, result, _;
 
         // avoid iid collision; iid may not have a map in the sourcemap
         result = B(iid+1, "===", switchLeft, right, createBitPattern(false, false, true));
 
         if (sandbox.analysis && sandbox.analysis.conditional) {
-            aret, _ = sandbox.analysis.conditional(iid, result);
+            [aret, _] = sandbox.analysis.conditional(iid, result);
             if (aret) {
                 if (result && !aret.result) {
                     right = !right;
@@ -720,9 +720,9 @@ if (typeof J$ === 'undefined') {
 
     // Expression in conditional
     function C(iid, left) {
-        var aret;
+        var aret, lastV;
         if (sandbox.analysis && sandbox.analysis.conditional) {
-            aret, lastV = sandbox.analysis.conditional(iid, left);
+            [aret, lastV] = sandbox.analysis.conditional(iid, left);
             if (aret) {
                 left = aret.result;
             }

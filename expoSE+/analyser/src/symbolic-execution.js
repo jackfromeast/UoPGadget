@@ -670,7 +670,7 @@ class SymbolicExecution {
 
 		// To handle chained || and && operators
 		// return J$.C(left): boolean, left: any type (including symbolic variable)
-		return { result: this.state.getConcrete(result) }, result;
+		return [{ result: this.state.getConcrete(result) }, result];
 	}
 
 	instrumentCodePre(iid, code) {
