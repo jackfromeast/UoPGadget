@@ -6,13 +6,15 @@ function extractInfo(content) {
 
   const result = {};
   sections.forEach(section => {
-    const keyNameMatch = section.match(/KeyName:: .*#(.*)/);
+    const keyNameMatch = section.match(/KeyName:[^#>\n]*(#|>)(.*)/);
     const sourceFileMatch = section.match(/Source File:.*(\#|uc"|")([^"\n]+)\"?/);
 
     if (keyNameMatch && sourceFileMatch) {
-      const keyName = keyNameMatch[1].trim();
+      const keyName = keyNameMatch[2].trim();
       const sourceFile = sourceFileMatch[2].trim();
-      result[keyName] = sourceFile;
+      if (keyName && sourceFile){
+        result[keyName] = sourceFile;
+      }
     }
   });
 
