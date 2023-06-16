@@ -98,7 +98,7 @@ class UndefinedUTQ {
 				this.queue = JSON.parse(data);
 
 				// remove the _expose internal property
-				this.queue = this.queue.filter(item => item !== ["_expose"]);
+				this.queue = this.queue.filter(item => !arraysEqual(item, ["_expose"]));
 				
 			} catch (err) {
 				console.log(err);
@@ -126,6 +126,14 @@ class UndefinedUTQ {
 	getLength(){
 		return this.queue.length;
 	}
+}
+
+function arraysEqual(a, b) {
+	if (a.length !== b.length) return false;
+	for (var i = 0; i < a.length; i++) {
+		if (a[i] !== b[i]) return false;
+	}
+	return true;
 }
 
 export default {UndefinedPool, UndefinedUTQ};
