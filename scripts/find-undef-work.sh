@@ -31,7 +31,7 @@ convert_script="${script_dir}/../find-undefined-node/convert-ut.js"
 declare -A specific_dirs
 all_dirs=false
 
-if [ "$1" = "all" ]; then
+if [ "$2" = "all" ]; then
     all_dirs=true
 else
     for dir; do specific_dirs["$dir"]=1; done
