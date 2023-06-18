@@ -1,5 +1,7 @@
 #!/bin/bash
-
+#
+# USAGE: cd dataset/ppaeg-codeql && ./createCodeQLdb.sh ./
+ 
 # Prompt the user to enter a parent directory
 read -p "Enter the path to the parent directory: " parent_dir
 
