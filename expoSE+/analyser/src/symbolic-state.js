@@ -14,7 +14,6 @@ import { stringify } from "./utilities/safe-json";
 import Stats from "../../lib/Stats/bin/main";
 import Z3 from "z3javascript";
 import Helpers from "./models/helpers";
-import log from "./utilities/log";
 
 function BuildUnaryJumpTable(state) {
 	const ctx = state.ctx;
@@ -228,7 +227,7 @@ class SymbolicState {
 		let childInputs = [];
 
 		if (this.input._bound > this.pathCondition.length) {
-			log(`${this.input}`);
+			// Log.log(`${JSON.stringify(this.input)}`);
 			throw `Bound ${this.input._bound} > ${this.pathCondition.length}, divergence has occured`;
 		}
 

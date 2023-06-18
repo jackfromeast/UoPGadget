@@ -19,6 +19,7 @@ import NotAnErrorException from "./not-an-error-exception";
 import { isNative } from "./utilities/IsNative";
 import ModelBuilder from "./models/models";
 import External from "./external";
+const fs = require("fs");
 
 class SymbolicExecution {
 
@@ -166,15 +167,27 @@ class SymbolicExecution {
 	}
 
 	/** jackfromeast
-	 * TODO: symbolicCheckForFileAccessFunction
+	 * need to check whether this is correct
 	 * @param {*} f 
 	 * @param {*} args 
 	 * @param {*} state 
 	 * @returns 
 	 */
-	// symbolicCheckForFileAccessFunction(f, args, state){
+	symbolicCheckForFileAccessFunction(f, args, state) {
+		if(f===fs.readFile || f===fs.readFileSync){
+			return state.isSymbolic(args[0]);
+		}else if(f===fs.writeFile || f===fs.writeFileSync){
+			return (state.isSymbolic(args[0]) || state.isSymbolic(args[1]));
+		}else{
+			return false;
+		}
+		
+	}
 
-	// }
+	symbolicCheckForSinkFunctions(f, args, state) {
+		return this.symbolicCheckForEvalLikeFunctions(f, args, state) ||
+				this.symbolicCheckForFileAccessFunction(f, args, state);
+	}
 
 	invokeFunPre(iid, f, base, args, _isConstructor, _isMethod) {
 		this.state.coverage.touch(iid);
@@ -184,7 +197,7 @@ class SymbolicExecution {
  		 * add symbolic check for eval-like functions
 		 * check whether the argument of eval-like functions are symbolic, which usually means that our undefined property has flows to the sink
 		 */
-		if(f && this.symbolicCheckForEvalLikeFunctions(f, args, this.state)){
+		if(f && this.symbolicCheckForSinkFunctions(f, args, this.state)){
 			Log.logSink("Found a potential flow to the sink: " + f.name + " at" + this._location(iid).toString());
 			Log.logSink("Current input: " + JSON.stringify(this.state.input));
 			Log.logSink("Current state: " + this.state.pathCondition.map(x => x.ast));

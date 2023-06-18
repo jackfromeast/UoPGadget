@@ -24,7 +24,7 @@ Log.logMid("Built with FINE logging enabled");
 Log.log("Built with BASE logging enabled");
 Log.log("Intial Input " + input);
 
-process.title = "ExpoSE Play " + input;
+// process.title = "ExpoSE Play " + input;
 
 process.on("disconnect", function() {
 	Log.log("Premature termination - Parent exit");

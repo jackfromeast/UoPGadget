@@ -179,7 +179,7 @@ class PureSymbol extends WrappedValue {
      * For the getField method, there are three cases for the offset:
      * 1. built-in method name: string, array, number, boolean, object
      * 2. index(numeric): array
-     * 3. property name(string): object 
+     * 3. property name(string): object
      * 
      */
     __handleMethodType(op, field_name){
@@ -203,7 +203,7 @@ class PureSymbol extends WrappedValue {
             return ["string","object","array_string"];
         }
         else{
-            return new Set(this._possibleTypes); 
+            return Array.from(new Set(this._possibleTypes)); 
         }
     }
 

@@ -34,9 +34,11 @@ class SymbolicObject extends WrappedValue {
     getField(state, offset) {
 
     	state.stats.seen("Symbolic Object Field Lookups");
-    	
+
         /**
-         * TODO: Is this correct? Why we need to keep establishing new symbols?
+         * lazy initialization of symbolic object fields except:
+         * 1/ FIXME: reading object's built-in methods
+         * 2/ the field is meant to be undefined(the field will be set as in the this._set[offset] = true;)
          */
     	if (!this._set[offset]) {
             // Can't use offset in name, if offset is a symbol is will crash
