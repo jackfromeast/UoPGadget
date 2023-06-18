@@ -14,9 +14,9 @@
 
 # Define the project root path
 project_root_path="/home/ubuntu/ppaeg"
-working_dir="${project_root_path}/expoSE+/tests-pp/templates"
+working_dir="${project_root_path}/expoSE+/tests-pp/templates-6-15"
 # timeout_per_testunit="30m"
-timeout_per_undefined="10m"
+timeout_per_undefined="6m"
 timeout_per_worker="1m"
 
 # If no arguments are passed, run tests for all templates
