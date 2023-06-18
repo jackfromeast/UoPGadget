@@ -28,12 +28,15 @@ I recommand install both codeql cli and codeql plugin for vscode.
 
 To download the codeql cli, we can just download its release file:
 ```
-cd ~/
+cd ~
 wget https://github.com/github/codeql-cli-binaries/releases/download/v2.13.3/codeql-linux64.zip
+cd /path/to/ppaeg/silent-spring/codeql/queries
+/path/to/codeql/codeql pack install
 ```
 
 Setup the codeql database for each codebase placed in the ./dataset/ppaeg-codeql:
 ```
+cd /path/to/ppaeg/ppaeg-codeql/
 bash ./dataset/ppaeg-codeql/createCodeQLdb.sh
 ```
 
