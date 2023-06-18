@@ -3,7 +3,7 @@ var sqrl = require('squirrelly')
 const path = require('path')
 const app = express()
 const http = require('http')
-const port = 9991
+
 
 templatePath = path.join(__dirname+'/views/', 'index.squirrelly');
 
@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 
 })
 
-var server = app.listen(port, () => {
+var server = app.listen(0, () => {
    // Send a GET request to the server
    http.get(`http://localhost:${port}`, (res) => {
       server.close();

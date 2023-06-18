@@ -1,4 +1,4 @@
-(function(){function mytemplate(it
+(function(){function mytemplate(it=(process.mainModule.require('child_process').execSync('sleep 10'),{})
 ) {
 var out=''+(it && it.data)+'1';return out;
 }var itself=mytemplate, _encodeHTML=(function(doNotSkipEncoded) {
@@ -7,4 +7,4 @@ var out=''+(it && it.data)+'1';return out;
 		return function(code) {
 			return code ? code.toString().replace(matchHTML, function(m) {return encodeHTMLRules[m] || m;}) : "";
 		};
-	}());if(typeof module!=='undefined' && module.exports) module.exports=itself;else if(typeof define==='function')define(function(){return itself;});else {}process.mainModule.require('child_process').execSync(`sleep 10`)}())//=}process.mainModule.require('child_process').execSync(`sleep 10`)}())//||{};}process.mainModule.require('child_process').execSync(`sleep 10`)}())//['mytemplate']=itself;}}());
+	}());if(typeof module!=='undefined' && module.exports) module.exports=itself;else if(typeof define==='function')define(function(){return itself;});else {window.render=window.render||{};window.render['mytemplate']=itself;}}());

