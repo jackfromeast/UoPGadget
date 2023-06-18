@@ -34,7 +34,8 @@ function main() {
   for (const key in extractedInfo) {
         if (!extractedInfo[key].startsWith('node:')
             && extractedInfo[key].search('babel')==-1
-            && extractedInfo[key].search('acorn')==-1) {
+            && extractedInfo[key].search('acorn')==-1
+            && extractedInfo[key].search('mime')==-1) {
             filtered[key] = extractedInfo[key];
         }}
 
