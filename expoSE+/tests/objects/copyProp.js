@@ -15,6 +15,7 @@ var S$ = require('S$');
 
 var fromobj = S$.pureSymbol('fromObj_undef');
 
+// from pug
 function copyProps(toObj, fromObj) {
     for (var key in fromObj) {
         if (hasOwnProp(fromObj, key)) {
@@ -49,3 +50,15 @@ if(PASS){
 }else{
     throw "[-] TEST FAIL!";
 }
+
+
+// from doT
+function copy(o, to) {
+	to = to || {};
+	for (var property in o) {
+		to[property] = o[property];
+	}
+	return to;
+}
+
+copy(fromobj, toObj);
