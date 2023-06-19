@@ -33,6 +33,7 @@ function filterDone(Done){
 			stringifiedPC: test.pcString,
 			foundGagdet: test.result,
 			alternatives: test.alternatives,
+			helperPool: test.helperPool,
 			// undefinedPool: test.undefinedPool,
 			time: test.time
 		};

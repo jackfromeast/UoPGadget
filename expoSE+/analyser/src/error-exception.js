@@ -12,4 +12,18 @@ NotAnErrorException.prototype.toString = function() {
 	return "NotAnErrorException";
 };
 
-export default NotAnErrorException;
+/**
+ * This is place to decide whether an error is caused by undefined
+ * 
+ * @param {*} e 
+ * @returns 
+ */
+function isUndefCausedError(e){
+	if (e instanceof TypeError) {
+		return true;
+	}else{
+		return false;
+	}
+}
+
+export default {NotAnErrorException, isUndefCausedError};

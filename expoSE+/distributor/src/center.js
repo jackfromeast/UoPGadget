@@ -25,13 +25,16 @@ class Center {
 		this._cancelled = false;
 		this.options = Config;
 		
-		this.pushNew = this.options.pushNew;
+		this.chainProp = this.options.chainProp;
+		this.helperProp = this.options.helperProp;
 
 		if (this.options.undefinedUTQ){
 			this.undefinedUTQ = new Undef.UndefinedUTQ(this.options.undefinedUTQ);
 			this.multiUT = true;
 		}else{
-			this.undefinedUTQ = [];
+			// this.undefinedUTQ = [];
+			this.undefinedUTQ = new Undef.UndefinedUTQ(this.options.undefinedUTQ);
+			this.multiUT = true;
 		}
 
 		this.scheduler = null;
@@ -64,9 +67,20 @@ class Center {
 			this.scheduler = new Scheduler(this.curUndefined);
 
 			const done = new Promise(resolve => {
-				this.scheduler.on("done", (newlyFoundUndefined) => {
-					if (this.pushNew) {
-						this.undefinedUTQ.pushArray(newlyFoundUndefined);
+				this.scheduler.on("done", (propsUT, newlyFoundProps, newHelperProps, success) => {
+					if (success && this.curUndefined.withHelper) {
+						this.undefinedUTQ.addSuccessHelper(this.curUndefined.withHelper);
+						
+						// clean up the items in the queue that used to test the helper property
+						this.undefinedUTQ.cleanUp(this.curUndefined.roundid);
+					}
+
+					if (!success && this.helperProp){
+						this.undefinedUTQ.addHelperProps(propsUT, newHelperProps);
+					}
+
+					if (!success && this.chainProp) {
+						/** FIXME */
 					}
 					
 					this.scheduler = null;  // explicitly set null for garbage collection

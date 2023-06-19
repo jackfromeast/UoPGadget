@@ -76,15 +76,21 @@ class SymbolicState {
 		Z3.Query.MAX_REFINEMENTS = Config.maxRefinements;
 
 		this.input = input;
-		this.inputSymbols = {}; // not including pureSymbol and symbolicObject, only for symbol that pass to sovler
-		this.wrapperSymbols = {}; // pureSymbol and symbolicObject
+		this.inputSymbols = {}; 			/** symbols passing to the sovler, not including pureSymbol and symbolicObject, */
+		this.wrapperSymbols = {}; 			/** pureSymbol and symbolicObject */
 		this.pathCondition = [];
-		this.undefinedPool = undefinedPool; // lzy: add newly find undefined properties while path exploration
+		this.undefinedPool = undefinedPool; /** current undefined pool */
 
 		this.stats = new Stats();
-		this.result = false; // found the gadget or not
+		this.result = false; 				/** found the gadget or not */
 		this.coverage = new Coverage(sandbox);
 		this.errors = [];
+
+		/** Helper Properties */
+		this.retHelper = false;				/** whether retrun the helper candidates */
+		this.hasLoaded = false;				/** whether the polluted variable has been visited */
+		this.helperCandidates = [];			/** patching undefined property candidates */
+
 
 		this._unaryJumpTable = BuildUnaryJumpTable(this);
 		this._setupSmtFunctions();
@@ -92,10 +98,56 @@ class SymbolicState {
 		this.undefinedUnderTest = undefinedUnderTest;
 	}
 
+	setupUndefined(propName, propValue) {
+		/**
+		 * Even though getter helps us to track the first access of the property
+		 * but it will cause the unexpected behavior of the property in its decentants
+		 * since getter will also be inherited
+		 * 
+		 * if propName='line', propValue=1
+		 * {}.line = 0 // will not assign new property named 'line' to {}
+		 * Object.prototype.line = 0
+		 */
+		// Object.defineProperty(Object.prototype, propName, {
+		// 	get() {
+		// 		Log.log(`${propName} has been visited for the first time`);
+		// 		global.J$.analysis.state.hasLoaded = true;
+
+		// 		// After first access, replace getter with simple value
+		// 		Object.defineProperty(Object.prototype, propName, {
+		// 			value: propValue,
+		// 			writable: true,
+		// 			configurable: true,
+		// 			enumerable: true
+		// 		});
+
+		// 		// Return the new value
+		// 		return this[propName];
+		// 	},
+		// 	set(value) {
+		// 		propValue = value;
+		// 	},
+		// 	configurable: true,
+		// 	enumerable: true
+		// });
+		Object.prototype[propName] = propValue;
+		if(!this.undefinedUnderTest.includes(propName)) {
+			this.undefinedPool.push(propName);
+		}
+	}
+
 	_setupUndefinedUT() {
 		for (let i=0; i < this.undefinedUnderTest.length; i++) {
 			// pollute the prototype
-			Object.prototype[this.undefinedUnderTest[i]] = this.createPureSymbol(this.undefinedUnderTest[i]+"_undef");
+			// Object.prototype[this.undefinedUnderTest[i]] = this.createPureSymbol(this.undefinedUnderTest[i]+"_undef");
+
+			// pollute the prototype and log its first access
+			for (let i = 0; i < this.undefinedUnderTest.length; i++) {
+				const propName = this.undefinedUnderTest[i];
+				const propValue = this.createPureSymbol(propName + "_undef");
+				
+				this.setupUndefined(propName, propValue);
+			}
 		}
 	}
 
@@ -828,7 +880,7 @@ class SymbolicState {
 			break;
 		}
 		default: {
-			Log.log("Unsupported symbolic field - concretizing " + base_c + " and field " + field_c);
+			// Log.log("Unsupported symbolic field - concretizing " + base_c + " and field " + field_c);
 			break;
 		}
 
@@ -947,6 +999,14 @@ class SymbolicState {
 		const equalityTest = this.binary("==", left, right);
 		this.conditional(equalityTest);
 		return this.getConcrete(equalityTest);
+	}
+
+	addHelperCandidate(prop) {
+		let index = this.helperCandidates.indexOf(prop);
+		if (index != -1){
+			this.helperCandidates.splice(index, 1);
+		}
+		this.helperCandidates.unshift(prop);
 	}
 }
 

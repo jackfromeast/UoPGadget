@@ -15,7 +15,7 @@ import { SymbolicObject } from "./values/symbolic-object";
 import ObjectHelper from "./utilities/object-helper";
 import SymbolicState from "./symbolic-state";
 import Log from "./utilities/log";
-import NotAnErrorException from "./not-an-error-exception";
+import Exception from "./error-exception";
 import { isNative } from "./utilities/IsNative";
 import ModelBuilder from "./models/models";
 import External from "./external";
@@ -68,14 +68,31 @@ class SymbolicExecution {
 		this._exitFn(this.state, this.state.coverage);
 	}
 
+	/**
+	 * Hook function for uncaught exceptions and throwed errors
+	 * 
+	 * check whether the exception is due to the unexpected loading of polluted value
+	 * if it is, set this.retHelper to ture which will return current state.helperCandidates
+	 * 
+	 * @param {*} e: Exception
+	 * @returns 
+	 */
 	_uncaughtException(e) {
 
 		//Ignore NotAnErrorException
-		if (e instanceof NotAnErrorException) {
+		if (e instanceof Exception.NotAnErrorException) {
 			return;
 		}
 
-		Log.log(`Uncaught exception ${e} Stack: ${e.stack ? e.stack : ""}`);
+		if (Exception.isUndefCausedError(e)){
+			Log.log(`Uncaught exception ${e}`);
+			Log.log("Assume it is due to the unexpected loading of polluted value, decide to explore the helper candidates.");
+
+			this.state.retHelper = true;
+
+		}else{
+			Log.log(`Uncaught exception ${e} Stack: ${e.stack ? e.stack : ""}`);
+		}
 
 		this.state.errors.push({
 			error: "" + e,
@@ -215,9 +232,7 @@ class SymbolicExecution {
 		/** jackfromeast
 		 * 
 		 * If non of the base and arguments are symbolic, we do not need to call the model function
-		 * 
 		 * base is the object that the function is called on like this.buf.join()
-		 * 
 		 * If non of the arguments  are symbolic, we do not need to call the model function
 		 * Probably there are several cases that modeled function are needed, but currently I just ignore them
 		 */
@@ -275,6 +290,8 @@ class SymbolicExecution {
 
 	forinObject(iid, val) {
 		this.state.coverage.touch(iid);
+		
+		
 		// jackfromeast
 		// if the object is symbolic, we will enumerate its concrete properties
 		if(this.state.isSymbolic(val)){
@@ -310,17 +327,60 @@ class SymbolicExecution {
 		}
 	}
 
+	/**
+	 * Filter out the property by its name
+	 * @param {*} prop 
+	 */
+	_filterProp(prop){
+		// numberic like property name will be filtered out
+		// '1', '2', '3'
+		if(!isNaN(parseFloat(prop)) && isFinite(prop)){
+			return true;
+		} else if(prop === "undefined"){
+			return true;
+		}
+		return false;
+	}
+
 	getFieldPre(iid, base, offset, _isComputed, _isOpAssign, _isMethodCall) {
 		this.state.coverage.touch(iid);
 
 		// check undefined properties
 		// our polluted undefined properties will also be assessed in symbols.js, exclude them
-		if (base && !this.state.isSymbolic(base) && !this.state.isSymbolic(offset) && !offset.toString().endsWith("_undef")) {
-			if(base[offset] === undefined && !this._filterPath(this._location(iid).toString())){
+		if (base && !this.state.isSymbolic(offset) && !offset.toString().endsWith("_undef")) {
+			if(base[offset] === undefined && !this._filterPath(this._location(iid).toString()) 
+				&& !this._filterProp(offset.toString())){
+
 				// if this.state.undefinedPool does not contain this offset, add it to the pool
 				if(!this.state.undefinedPool.includes(offset.toString())){
 					Log.logUndefined("Found undefined property: " + offset.toString() + " at " + this._location(iid).toString());
 					this.state.undefinedPool.push(offset.toString());
+				}
+
+				// for the helper candidates
+				// we collect all the undefined property lookups after the first time of polluted value loaded
+				if(this.state.hasLoaded){
+					this.state.addHelperCandidate(offset.toString());
+					// this.state.helperCandidates.push(offset.toString());
+				} 
+			}
+		}
+
+		/**
+		 * log the first access to the polluted value in root prototype
+		 * no symbolic value should be loaded yet
+		 * 
+		 * FIXME: test this logic
+		 */
+		if (!this.state.hasLoaded){
+			try{
+				if(this.state.undefinedUnderTest.includes(offset) && !base.hasOwnProperty(offset)){
+					this.state.hasLoaded = true;
+				}
+			}
+			catch(e){
+				if(this.state.isSymbolic(offset) || this.state.isSymbolic(base)){
+					throw "Symbolic value shouldn't load before this.state.hasLoaded = false";
 				}
 			}
 		}

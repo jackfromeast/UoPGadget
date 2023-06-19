@@ -131,11 +131,18 @@ parser.addArgument("--undefined-utq", {
 	help: "the undefined properties under testing",
 });
 
-parser.addArgument("--push-new", {
-	dest: "push_new",
+parser.addArgument("--chain", {
+	dest: "chainProp",
 	defaultValue: false,
 	action: "storeTrue",
-	help: "whether add newly found undefined prop to the queue",
+	help: "whether test chain undefined prop to the queue",
+});
+
+parser.addArgument("--patching", {
+	dest: "helperProp",
+	defaultValue: false,
+	action: "storeTrue",
+	help: "whether test patching undefined prop to the queue",
 });
 
 parser.addArgument("--z3", {
@@ -180,7 +187,8 @@ export default {
 	analyseScript: args.play_script,
 	undefinedFile: args.undefined_file,
 	undefinedUTQ: args.undefined_utq,
-	pushNew: args.push_new,
+	chainProp: args.chainProp,
+	helperProp: args.helperProp,
 	z3: args.z3_lib,
 	input: args.init_input,
 };

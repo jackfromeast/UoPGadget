@@ -6,7 +6,6 @@
 
 const fs = require("fs");
 
-
 class UndefinedPool {
 	constructor(initalFile=undefined) {
 		this.undefinedPool = [];
@@ -49,7 +48,7 @@ class UndefinedPool {
 		let newUndefined = [];
 		for (let key in this.currentUpdataedMap) {
 			for (let prop in this.currentUpdataedMap[key]) {
-				newUndefined.push([prop]);
+				newUndefined.push(prop);
 			}
 		}
 		return newUndefined;
@@ -81,29 +80,110 @@ class UndefinedPool {
 /**
  * undefinedUTQ is used to maintain the queue of undefined props under testing
  * 
- * FIXME: 
- * Sometimes, we set the initial input value of a chained property that is necessary to find the paired undefined prop. In addtion, we might need to make that property's value fixed.
- * Currently, we only support something like: [[prop1], [prop2], [prop1, prop3], ...]
+ *
+ * each items in the queue consists of:
+ * {
+ * 	props: [],
+ * 	initialInput: undefined,
+ * 	withHelper: undefined,
+ * 	withChain: undefined,
+ * 	roundid: 0 // when does the items has been added to the queue
+ * }
  * 
  */
 class UndefinedUTQ {
 	constructor(testFile=undefined) {
 		this.queue = [];
 		this.currentProp = undefined;
+		this.roundid = 0;
 
 		if (testFile) {
 			try {
-				const  data = fs.readFileSync(testFile, { encoding: "utf8" });
+				const data = fs.readFileSync(testFile, { encoding: "utf8" });
 
-				this.queue = JSON.parse(data);
+				this.addInitialProps(JSON.parse(data));
 
-				// remove the _expose internal property
-				this.queue = this.queue.filter(item => !arraysEqual(item, ["_expose"]));
-				
 			} catch (err) {
 				console.log(err);
 			}
+		}else{
+			this.insert({
+				props: [],
+				initialInput: undefined,
+				withHelper: undefined,
+				withChain: undefined,
+				roundid: this.roundid
+			});
+			this.roundid++;
 		}
+
+		/** Patching properties */
+		this.helperProps = [];		/** all the tested helper properties */
+		this.successHelper = [];
+
+	}
+
+	addInitialProps(props) {
+		for (let i = 0; i < props.length; i++) {
+			if (arraysEqual(props[i], ["_expose"])) {continue;}
+			this.push({
+				props: props[i],
+				initialInput: undefined,
+				withHelper: undefined,
+				withChain: undefined,
+				roundid: this.roundid
+			});
+		}
+		this.roundid++;
+	}
+
+	/**
+	 * Add found helper properties to the queue
+	 * 
+	 * when testing prop1, we found [prop3, prop4, prop5] as helper properties
+	 * then, we add [[prop1, prop3], [prop1, prop4], [prop1, prop5]] to the queue
+	 * @param {*} props 
+	 */
+	addHelperProps(propsUT, props) {
+		let newProps = props.filter(ele => !this.helperProps.includes(ele));
+		
+		if (this.successHelper.length > 0) {
+			for (let i = 0; i < this.successHelper.length; i++) {
+				if (!propsUT.includes(this.successHelper[i])) {
+					this.push({
+						props: [...propsUT, this.successHelper[i]],
+						initialInput: undefined,
+						withHelper: this.successHelper[i],
+						withChain: undefined,
+						roundid: this.roundid
+					});
+				}
+			}
+		}
+
+		for (let i = 0; i < newProps.length; i++) {
+			if (!propsUT.includes(newProps[i])){
+				this.push({
+					props: [...propsUT, newProps[i]],
+					initialInput: undefined,
+					withHelper: newProps[i],
+					withChain: undefined,
+					roundid: this.roundid
+				});
+				this.helperProps.push(newProps[i]);
+			}
+		}
+		this.roundid++;
+	}
+
+	addSuccessHelper(props){
+		if(!this.successHelper.includes(props)){
+			this.successHelper = [...this.successHelper, props];
+		}
+	}
+
+	cleanUp(roundid) {
+		this.queue = this.queue.filter(item => item.roundid !== roundid);
 	}
 
 	getCurrentUT(){
@@ -111,12 +191,16 @@ class UndefinedUTQ {
 	}
 
 	next(){
-		this.currentProp = this.queue.pop();
+		this.currentProp = this.queue.shift();
 		return this.currentProp;
 	}
 
 	push(input){
 		this.queue.push(input);
+	}
+
+	insert(input){
+		this.queue.unshift(input);
 	}
 
 	pushArray(input){
