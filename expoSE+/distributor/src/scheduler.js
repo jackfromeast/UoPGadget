@@ -37,13 +37,19 @@ class Scheduler extends EventEmitter{
          * propUnderTest could be empty
          * meaning the symbolic variables are defined in the test file itself
          */
-		this.undefinedUT = propUnderTest;
+		this.undefinedUT = propUnderTest.props;
+		this.withHelper = propUnderTest.withHelper;
+		this.withChain = propUnderTest.withChain;
+
+		this.helperPool = new Undef.UndefinedPool();
 
 		/** initialized in start method */
 		this.timeout = null;
 		this.starttime = null;
 		this.file = null;
 		this.baseInput = null;
+
+		this.success = 0;
 	}
 
 	start(file, baseInput) {
@@ -65,10 +71,17 @@ class Scheduler extends EventEmitter{
 		return this;
 	}
     
+	/**
+	 * It won't cancel all the running test immediately
+	 * It will wait for the current test to finish
+	 * 
+	 * Due to the fact that _testFileDone callback is synchronous
+	 * So it will take time to process the result of each test
+	 */
 	cancel() {
 		this._cancelled = true;
 		this._running.forEach(test => test.kill());
-		this._finishedTesting();
+		// this._finishedTesting();
 	}
 
 	addCb(cb) {
@@ -151,7 +164,7 @@ class Scheduler extends EventEmitter{
 		this._summary();
 
 		// emit done event
-		this.emit("done", this.undefinedPool.getNewUndefinedUT());
+		this.emit("done", this.undefinedUT, this.undefinedPool.getNewUndefinedUT(), this.helperPool.getUndefinedPool(), this.success);
 	}
 
 	_nextID() {
@@ -170,7 +183,7 @@ class Scheduler extends EventEmitter{
 		});
 	}
 
-	_pushDone(test, input, pc, pcString, alternatives, result, undefinedUT, undefinedPool, coverage, errors) {
+	_pushDone(test, input, pc, pcString, alternatives, result, undefinedUT, undefinedPool, helperPool, coverage, errors) {
 		this._done.push({
 			id: test.file.id,
 			input: input,
@@ -179,7 +192,8 @@ class Scheduler extends EventEmitter{
 			pcString: pcString,
 			result: result,
 			errors: errors,
-			undefinedPool: this.undefinedPool.getUndatedPool(undefinedPool), // added by jackfromest
+			undefinedPool: this.undefinedPool.getUndatedPool(undefinedPool),
+			helperPool: this.helperPool.getUndatedPool(helperPool),
 			time: test.time(),
 			startTime: test.startTime(),
 			coverage: this._coverage.current(),
@@ -206,13 +220,18 @@ class Scheduler extends EventEmitter{
 		}
 
 		if (finalOut) {
-			this._pushDone(test, finalOut.input, finalOut.pc, finalOut.pcString, finalOut.alternatives, finalOut.result, finalOut.undefinedUT, finalOut.undefinedPool, coverage, errors.concat(finalOut.errors));
+			this._pushDone(test, finalOut.input, finalOut.pc, finalOut.pcString, finalOut.alternatives, finalOut.result, finalOut.undefinedUT, finalOut.undefinedPool, finalOut.helperPool, coverage, errors.concat(finalOut.errors));
 			this._expandAlternatives(test.file, finalOut.alternatives, coverage);
 			this._stats.merge(finalOut.stats);
 			this.undefinedPool.updatePool(finalOut.input, finalOut.undefinedPool);
-			//	TODO: add new undefined props to undefined property under testing pool
+			this.helperPool.updatePool(finalOut.input, finalOut.helperPool);
+			
+			if (finalOut.result) {
+				this.success += 1;
+			}
+
 		} else {
-			this._pushDone(test, test.file.input, test.file.pc, test.file.pcString, [], false, this.undefinedUT, [], coverage, errors.concat([{ error: "Error extracting final output - a fatal error must have occured" }]));
+			this._pushDone(test, test.file.input, test.file.pc, test.file.pcString, [], false, this.undefinedUT, [], [], coverage, errors.concat([{ error: "Error extracting final output - a fatal error must have occured" }]));
 		}
 
 		this._postTest(test);
