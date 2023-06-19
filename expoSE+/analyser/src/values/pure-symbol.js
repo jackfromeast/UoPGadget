@@ -88,9 +88,6 @@ class PureSymbol extends WrappedValue {
      */
     addType(op_type, op, operand_type=undefined, get_field_name=undefined){
         
-        // keep the string type
-        this._possibleTypes.push('string');
-
         if(op_type === "binary"){
             this.__handleBinaryType(op, operand_type);
         }
@@ -203,6 +200,8 @@ class PureSymbol extends WrappedValue {
             return ["string","object","array_string"];
         }
         else{
+            // always include string
+            this._possibleTypes.push("string");
             return Array.from(new Set(this._possibleTypes)); 
         }
     }
