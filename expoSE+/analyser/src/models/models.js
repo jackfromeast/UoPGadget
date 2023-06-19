@@ -70,9 +70,9 @@ function BuildModels(state) {
 	Object._expose.makeSymbolic = function(name, initial) { return state.createSymbolicValue(name, initial); };
 	Object._expose.notAnError = function() { return NotAnErrorException; };
 	Object._expose.pureSymbol = function(name) { return state.createPureSymbol(name); };
-	//lzy
 	Object._expose._isSymbolic = function(val) { return state.isSymbolic(val)?true:false};
 	Object._expose.setupSymbols = function() { return state._setupUndefinedUT()};
+	Object._expose.setupASymbol = function(name, val) { return state.setupUndefined(name, val)};
 
 	return model;
 }
