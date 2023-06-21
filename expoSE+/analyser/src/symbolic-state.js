@@ -1034,6 +1034,10 @@ class SymbolicState {
 		this.helperCandidates.unshift(prop);
 	}
 
+	/**
+	 * FIXME: Whenever we try to call this.ctx.*, we need to save and restore the prototype
+	 * 
+	 */
 	savePrototype(){
 		this.saved_prototype = {};
 		for (var key in Object.prototype) {

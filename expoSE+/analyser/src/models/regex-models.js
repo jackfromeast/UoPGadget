@@ -16,7 +16,10 @@ export default function(state, ctx, model, helpers) {
 		const runMethod = helpers.runMethod;
 		return function(base, args) {
 			if (Config.regexEnabled && condition(base, args)) {
-				return hook(base, args);
+				state.savePrototype();
+				let ret = hook(base, args);
+				state.restorePrototype();
+				return ret;
 			} else {
 				const [result, thrown] = runMethod(f, base, args);
 				if (thrown) {
