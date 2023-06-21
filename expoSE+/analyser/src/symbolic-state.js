@@ -871,6 +871,7 @@ class SymbolicState {
 	symbolicField(base_c, base_s, field_c, field_s) {
 		this.stats.seen("Symbolic Field");
 
+		this.savePrototype();
 		function canHaveFields() {
 			return typeof base_c === "string" || base_c instanceof Array;
 		}
@@ -885,16 +886,18 @@ class SymbolicState {
 				this.ctx.mkLt(field_s, base_s.getLength())
 			);
             
+			let res = undefined;
 			if (this.conditional(new ConcolicValue(field_c > -1 && field_c < base_c.length, withinBounds))) {
-				return base_s.getField(this.ctx.mkRealToInt(field_s));
-			} else {
-				return undefined;
+				res = base_s.getField(this.ctx.mkRealToInt(field_s));
 			}
+			this.restorePrototype();
+			return res;
 		}
 
 		switch (field_c) {
 		case "length": {
 			if (base_s.getLength()) {
+				this.restorePrototype();
 				return base_s.getLength();
 			} else {
 				Log.log("No length field on symbolic value");
@@ -907,7 +910,7 @@ class SymbolicState {
 		}
 
 		}
-
+		this.restorePrototype();
 		return undefined;
 	}
 
