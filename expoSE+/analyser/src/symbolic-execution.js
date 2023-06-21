@@ -19,6 +19,7 @@ import Exception from "./error-exception";
 import { isNative } from "./utilities/IsNative";
 import ModelBuilder from "./models/models";
 import External from "./external";
+import {binaryTypeCoercion, unaryTypeCoercion} from "./type-coercion";
 const fs = require("fs");
 
 class SymbolicExecution {
@@ -648,6 +649,13 @@ class SymbolicExecution {
 				right.addType("binary", op, typeof(left));
 			}
 		}
+
+		// Type Coercion
+		if (this.state.isSymbolic(left) || this.state.isSymbolic(right)) {
+			let res = binaryTypeCoercion(op, left, right);
+			left = res.op1;
+			right = res.op2;
+		}
  
 		// Don't do symbolic logic if the symbolic values are diff types
 		// Concretise instead
@@ -705,6 +713,11 @@ class SymbolicExecution {
 		// For the pure symbol
 		if(this.state.isPureSymbol(left)){
 			left.addType("unary", op);
+		}
+
+		// Type Coercion
+		if (this.state.isSymbolic(left)) {
+			left = unaryTypeCoercion(op, left);
 		}
 
 		// Don't evaluate natively when args are symbolic
