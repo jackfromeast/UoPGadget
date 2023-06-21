@@ -90,7 +90,8 @@ class SymbolicState {
 		this.retHelper = false;				/** whether retrun the helper candidates */
 		this.hasLoaded = false;				/** whether the polluted variable has been visited */
 		this.helperCandidates = [];			/** patching undefined property candidates */
-
+		
+		this.saved_prototype = {};
 
 		this._unaryJumpTable = BuildUnaryJumpTable(this);
 		this._setupSmtFunctions();
@@ -778,51 +779,72 @@ class SymbolicState {
 
 		Log.logMid(`Symbolic Binary: ${stringify(arguments)}`);
 
+		// restore the root prototype when entering the Z3's world
+		this.savePrototype();
+
+		let ret = undefined;
+
 		switch (op) {
 		case "===":
 		case "==":
-			return this.ctx.mkEq(left_s, right_s);
+			ret = this.ctx.mkEq(left_s, right_s);
+			break;
 		case "!==":
 		case "!=":
-			return this.ctx.mkNot(this.ctx.mkEq(left_s, right_s));
+			ret = this.ctx.mkNot(this.ctx.mkEq(left_s, right_s));
+			break;
 		case "&&":
-			return this.ctx.mkAnd(left_s, right_s);
+			ret = this.ctx.mkAnd(left_s, right_s);
+			break;
 		case "||":
-			return this.ctx.mkOr(left_s, right_s);
+			ret = this.ctx.mkOr(left_s, right_s);
+			break;
 		case ">":
-			return this.ctx.mkGt(left_s, right_s);
+			ret = this.ctx.mkGt(left_s, right_s);
+			break;
 		case ">=":
-			return this.ctx.mkGe(left_s, right_s);
+			ret = this.ctx.mkGe(left_s, right_s);
+			break;
 		case "<=":
-			return this.ctx.mkLe(left_s, right_s);
+			ret = this.ctx.mkLe(left_s, right_s);
+			break;
 		case "<":
-			return this.ctx.mkLt(left_s, right_s);
+			ret = this.ctx.mkLt(left_s, right_s);
+			break;
 		case "<<":
 		case "<<<":
 			left_s = this.ctx.mkRealToInt(left_s);
 			right_s = this.ctx.mkRealToInt(right_s);
-			return this.ctx.mkIntToReal(this.ctx.mkMul(left_s, this.ctx.mkPower(this.ctx.mkIntVal(2), right_s)));
+			ret = this.ctx.mkIntToReal(this.ctx.mkMul(left_s, this.ctx.mkPower(this.ctx.mkIntVal(2), right_s)));
+			break;
 		case ">>":
 		case ">>>":
 			left_s = this.ctx.mkRealToInt(left_s);
 			right_s = this.ctx.mkRealToInt(right_s);
-			return this.ctx.mkIntToReal(this.ctx.mkDiv(left_s, this.ctx.mkPower(this.ctx.mkIntVal(2), right_s)));
+			ret = this.ctx.mkIntToReal(this.ctx.mkDiv(left_s, this.ctx.mkPower(this.ctx.mkIntVal(2), right_s)));
+			break;
 		case "+":
-			return typeof left_c === "string" ? this.ctx.mkSeqConcat([left_s, right_s]) : this.ctx.mkAdd(left_s, right_s);
+			ret = typeof left_c === "string" ? this.ctx.mkSeqConcat([left_s, right_s]) : this.ctx.mkAdd(left_s, right_s);
+			break;
 		case "-":
-			return this.ctx.mkSub(left_s, right_s);
+			ret = this.ctx.mkSub(left_s, right_s);
+			break;
 		case "*":
-			return this.ctx.mkMul(left_s, right_s);
+			ret = this.ctx.mkMul(left_s, right_s);
+			break;
 		case "/":
-			return this.ctx.mkDiv(left_s, right_s);
+			ret = this.ctx.mkDiv(left_s, right_s);
+			break;
 		case "%":
-			return this.ctx.mkMod(left_s, right_s);
+			ret = this.ctx.mkMod(left_s, right_s);
+			break;
 		default:
 			Log.log(`Symbolic execution does not support operand ${op}, concretizing.`);
 			break;
 		}
 
-		return undefined;
+		this.restorePrototype();
+		return ret;
 	}
 
 	/** 
@@ -1007,6 +1029,20 @@ class SymbolicState {
 			this.helperCandidates.splice(index, 1);
 		}
 		this.helperCandidates.unshift(prop);
+	}
+
+	savePrototype(){
+		this.saved_prototype = {};
+		for (var key in Object.prototype) {
+			this.saved_prototype[key] = Object.prototype[key];
+			delete Object.prototype[key];
+		}
+	}
+
+	restorePrototype(){
+		for (var key in this.saved_prototype) {
+			Object.prototype[key] = this.saved_prototype[key];
+		}
 	}
 }
 
