@@ -32,9 +32,8 @@ class Center {
 			this.undefinedUTQ = new Undef.UndefinedUTQ(this.options.undefinedUTQ);
 			this.multiUT = true;
 		}else{
-			// this.undefinedUTQ = [];
 			this.undefinedUTQ = new Undef.UndefinedUTQ(this.options.undefinedUTQ);
-			this.multiUT = true;
+			this.multiUT = false;
 		}
 
 		this.scheduler = null;
@@ -80,7 +79,7 @@ class Center {
 					}
 
 					if (!success && this.chainProp) {
-						/** FIXME */
+						this.undefinedUTQ.addChainProps(propsUT, newlyFoundProps);
 					}
 					
 					this.scheduler = null;  // explicitly set null for garbage collection

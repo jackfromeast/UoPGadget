@@ -138,7 +138,7 @@ parser.addArgument("--chain", {
 	help: "whether test chain undefined prop to the queue",
 });
 
-parser.addArgument("--patching", {
+parser.addArgument("--patch", {
 	dest: "helperProp",
 	defaultValue: false,
 	action: "storeTrue",

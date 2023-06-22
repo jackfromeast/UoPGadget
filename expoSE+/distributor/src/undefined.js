@@ -39,20 +39,23 @@ class UndefinedPool {
 		this.currentUpdataedMap = {};
 	}
 
+	/**
+	 * Only used for debugging for each input when running a test case
+	 * @returns 
+	 */
 	getCurrentUpdatedMap() {
 		return this.currentUpdataedMap;
 	}
 
-	/** FIXME: only support [[xxx], [yyy]] */
-	getNewUndefinedUT(){
-		let newUndefined = [];
-		for (let key in this.currentUpdataedMap) {
-			for (let prop in this.currentUpdataedMap[key]) {
-				newUndefined.push(prop);
-			}
-		}
-		return newUndefined;
-	}
+	// getNewUndefinedUT(){
+	// 	let newUndefined = [];
+	// 	for (let key in this.currentUpdataedMap) {
+	// 		for (let prop in this.currentUpdataedMap[key]) {
+	// 			newUndefined.push(prop);
+	// 		}
+	// 	}
+	// 	return newUndefined;
+	// }
 
 	getUndatedPool(pool){
 		let newUndefined = pool.filter((elem) => !this.undefinedPool.includes(elem));
@@ -93,6 +96,7 @@ class UndefinedPool {
  */
 class UndefinedUTQ {
 	constructor(testFile=undefined) {
+		this.seenUndefPool = [];
 		this.queue = [];
 		this.currentProp = undefined;
 		this.roundid = 0;
@@ -121,6 +125,9 @@ class UndefinedUTQ {
 		this.helperProps = [];		/** all the tested helper properties */
 		this.successHelper = [];
 
+		/** Chained properties */
+		this.chainedPropsMap = {};		/** all the tested chained properties */
+
 	}
 
 	addInitialProps(props) {
@@ -133,6 +140,7 @@ class UndefinedUTQ {
 				withChain: undefined,
 				roundid: this.roundid
 			});
+			this.seenUndefPool = this.seenUndefPool.concat(props[i]);
 		}
 		this.roundid++;
 	}
@@ -180,6 +188,30 @@ class UndefinedUTQ {
 		if(!this.successHelper.includes(props)){
 			this.successHelper = [...this.successHelper, props];
 		}
+	}
+
+	/**
+	 * Add found chained properties to the queue (push)
+	 * @param {*} propsUT 
+	 * @param {*} undefUpdateMap: "input": [prop1, prop2, prop3]
+	 */
+	addChainProps(propsUT, undefUpdateMap) {
+		for (let input in undefUpdateMap) {
+			for (let prop of undefUpdateMap[input]) {
+				if (!this.seenUndefPool.includes(prop)){
+					this.push({
+						props: [...propsUT, prop],
+						initialInput: JSON.parse(input),
+						withHelper: undefined,
+						withChain: prop,
+						roundid: this.roundid
+					});
+					this.chainedPropsMap[input] = prop;
+					this.seenUndefPool.push(prop);
+				}
+			}
+		}
+		this.roundid++;
 	}
 
 	cleanUp(roundid) {

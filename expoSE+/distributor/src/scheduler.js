@@ -40,6 +40,7 @@ class Scheduler extends EventEmitter{
 		this.undefinedUT = propUnderTest.props;
 		this.withHelper = propUnderTest.withHelper;
 		this.withChain = propUnderTest.withChain;
+		this.input = propUnderTest.initialInput;
 
 		this.helperPool = new Undef.UndefinedPool();
 
@@ -60,7 +61,7 @@ class Scheduler extends EventEmitter{
 		this._startTesting([{
 			id: this._nextID(),
 			path: file,
-			input: baseInput || { _bound: 0 },
+			input: this.input || baseInput || { _bound: 0 },		/** baseInput is the input passed from the commandline */
 			undefinedUT: this.undefinedUT
 		}]);
 
@@ -164,7 +165,7 @@ class Scheduler extends EventEmitter{
 		this._summary();
 
 		// emit done event
-		this.emit("done", this.undefinedUT, this.undefinedPool.getNewUndefinedUT(), this.helperPool.getUndefinedPool(), this.success);
+		this.emit("done", this.undefinedUT, this.undefinedPool.getUpdatedMap(), this.helperPool.getUndefinedPool(), this.success);
 	}
 
 	_nextID() {
@@ -282,7 +283,7 @@ class Scheduler extends EventEmitter{
 		Log(`======================================== ENDING TEST RUN: ${this.undefinedUT} ========================================\n`);
         
 		let logFilePath = this._setupLogFile();
-		let newUndefinedMap = this.undefinedPool.getCurrentUpdatedMap();
+		let newUndefinedMap = this.undefinedPool.getUpdatedMap();
 		JsonWriter(logFilePath, this.file, this._coverage, this.starttime, (new Date()).getTime(), newUndefinedMap, this._done);
 
 		function round(num, precision) {
