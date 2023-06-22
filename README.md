@@ -12,17 +12,17 @@ If this system is still a private repo, please follow the link and clone the rep
 git clone https://<your_private_token>@github.com/jackfromeast/ppaeg.git
 ```
 
-#### install node v14
+#### step1: install node v16
 
 install nvm to control the nodejs version:
 
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 source ~/.bashrc
-nvm install 14
+nvm install 16
 ```
 
-#### install codeql
+#### step2: install codeql
 CodeQL need to be installed for two reason: 1/ compared with slient-spring 2/could us find the sink in the codebase as an prelimiary selection.
 I recommand install both codeql cli and codeql plugin for vscode.
 
@@ -41,7 +41,7 @@ bash ./dataset/ppaeg-codeql/createCodeQLdb.sh
 ```
 
 
-#### Install the dependency of each compoent
+#### step3: install the dependency of each compoent
 
 download dependency for codebases in the dataset at different location:
 
@@ -67,7 +67,7 @@ run npm build
 
 ExpoSE+ is a our concolic execution engine for javascript, capable of symbolically executing designated variables while concretely executing a program. The primary aim of this execution engine is to detect prototype pollution gadgets. Depending on the specific task or goal, ExpoSE+ offers multiple execution options.
 
-#### vanilla option
+#### option1: vanilla execution
 
 + **goal**
 
@@ -110,7 +110,7 @@ ExpoSE+ is a our concolic execution engine for javascript, capable of symbolical
     ./expoSE --input "{\"symbol_t\": \"array_string\", \"symbol\": [\"astring\"], \"_bound\": 1}" test.js
     ```
 
-#### main property only option:
+#### option2: main property only
 
 + **goal**
 
@@ -145,7 +145,7 @@ ExpoSE+ is a our concolic execution engine for javascript, capable of symbolical
 
     Currently, ExpoSE+ does not support providing input for each undefined property. They all will start as a `pureSymbol` and determine their type and value based on the path constraints.
 
-#### patching property option:
+#### option3: with patching property
 
 + **goal** 
 
@@ -163,7 +163,7 @@ ExpoSE+ is a our concolic execution engine for javascript, capable of symbolical
 
     Similar to the main property only option, we don't think it is necessary to specify the input for the main undefined property under testing or the helper property.
 
-#### chained property option:
+#### option4: with chained property
 
 + **goal** 
 
