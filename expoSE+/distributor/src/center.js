@@ -16,6 +16,8 @@
 import Undef from "./undefined";
 import Config from "./config";
 import Scheduler from "./scheduler";
+import fs from "fs";
+import path from "path";
 
 class Center {
 
@@ -38,6 +40,13 @@ class Center {
 
 		this.scheduler = null;
 		this.curUndefined = null;
+
+		this.logFilePath = null;
+		this.logObj = {};
+		this.logItems = [];
+		this.curTestStartTime = null;
+		this.curTestEndTime = null;
+		this.id = 0;
 	}
 
 	start(file, baseInput) {
@@ -61,12 +70,15 @@ class Center {
 	 * @param {*} baseInput 
 	 */
 	async startMulti(file, baseInput){
+		this.setupLogFile(file);
 		this.curUndefined = this.undefinedUTQ.next();
 		while(this.curUndefined){
 			this.scheduler = new Scheduler(this.curUndefined);
 
 			const done = new Promise(resolve => {
 				this.scheduler.on("done", (propsUT, newlyFoundProps, newHelperProps, success) => {
+					this.curTestEndTime = Date.now();
+
 					if (success && this.curUndefined.withHelper) {
 						this.undefinedUTQ.addSuccessHelper(this.curUndefined.withHelper);
 						
@@ -84,10 +96,27 @@ class Center {
 					
 					this.scheduler = null;  // explicitly set null for garbage collection
 
+					/** logging */
+					this.log({
+						"id": this.id++,
+						"props": propsUT,
+						"withHelper": this.curUndefined.withHelper,
+						"withChain": this.curUndefined.withChain,
+						"time": (this.curTestEndTime - this.curTestStartTime) / 1000,
+						"success": success,
+						"newlyFoundProps": newlyFoundProps,
+						"addQueueHelper": this.undefinedUTQ.newAddedHelper,
+						"addQueueChain": this.undefinedUTQ.newAddedChain,
+						"roundid": this.curUndefined.roundid,
+					}); //
+					this.undefinedUTQ.cleanNewAddedProps();
+					this.clearTime();
+
 					resolve();  // Resolve the promise, allowing the loop to continue
 				});
 			});
 
+			this.curTestStartTime = Date.now();
 			this.scheduler.start(file, baseInput);		/** this is asynchronouns call */
 
 			await done;									/** suspend at here */
@@ -115,6 +144,39 @@ class Center {
 	addCb(cb) {
 		this.cbs.push(cb);
 		return this;
+	}
+
+	log(item){
+		this.logItems.push(item);
+
+		this.logObj["tests"] = this.logItems;
+		fs.writeFileSync(this.logFilePath, JSON.stringify(this.logObj, null, 2));
+	}
+
+	setupLogFile(file){
+		let dateObj = new Date();
+
+		let logfname = `center-${dateObj.getMonth()+1}-${dateObj.getDate()}-${dateObj.getHours()}-${dateObj.getMinutes()}-log.json`;
+
+		this.logFilePath = path.dirname(file) + "/log/summary/" + logfname;
+		if (Config.jsonOut) {
+			this.logFilePath = Config.jsonOut + "/log/summary/" + logfname;
+		}
+
+		// Ensure the log directory exists
+		fs.mkdirSync(path.dirname(this.logFilePath), { recursive: true });
+
+		this.setupLogObj(file);
+	}
+
+	setupLogObj(file){
+		this.logObj["testfile"] = file;
+		this.logObj["initialUndefinedPool"] = this.undefinedUTQ.seenUndefPool;
+	}
+
+	clearTime(){
+		this.curTestStartTime = null;
+		this.curTestEndTime = null;
 	}
 
 	

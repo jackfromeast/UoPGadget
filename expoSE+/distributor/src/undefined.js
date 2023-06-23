@@ -128,6 +128,9 @@ class UndefinedUTQ {
 		/** Chained properties */
 		this.chainedPropsMap = {};		/** all the tested chained properties */
 
+		/** Logging */
+		this.newAddedHelper = [];
+		this.newAddedChain = [];
 	}
 
 	addInitialProps(props) {
@@ -158,20 +161,21 @@ class UndefinedUTQ {
 		if (this.successHelper.length > 0) {
 			for (let i = 0; i < this.successHelper.length; i++) {
 				if (!propsUT.includes(this.successHelper[i])) {
-					this.push({
+					this.insert({
 						props: [...propsUT, this.successHelper[i]],
 						initialInput: undefined,
 						withHelper: this.successHelper[i],
 						withChain: undefined,
 						roundid: this.roundid
 					});
+					this.newAddedHelper.push([...propsUT, this.successHelper[i]]);
 				}
 			}
 		}
 
 		for (let i = 0; i < newProps.length; i++) {
 			if (!propsUT.includes(newProps[i])){
-				this.push({
+				this.insert({
 					props: [...propsUT, newProps[i]],
 					initialInput: undefined,
 					withHelper: newProps[i],
@@ -179,6 +183,7 @@ class UndefinedUTQ {
 					roundid: this.roundid
 				});
 				this.helperProps.push(newProps[i]);
+				this.newAddedHelper.push([...propsUT, newProps[i]]);
 			}
 		}
 		this.roundid++;
@@ -208,6 +213,7 @@ class UndefinedUTQ {
 					});
 					this.chainedPropsMap[input] = prop;
 					this.seenUndefPool.push(prop);
+					this.newAddedChain.push(prop);
 				}
 			}
 		}
@@ -216,6 +222,11 @@ class UndefinedUTQ {
 
 	cleanUp(roundid) {
 		this.queue = this.queue.filter(item => item.roundid !== roundid);
+	}
+
+	cleanNewAddedProps(){
+		this.newAddedHelper = [];
+		this.newAddedChain = [];
 	}
 
 	getCurrentUT(){

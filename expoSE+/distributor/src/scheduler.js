@@ -347,7 +347,18 @@ class Scheduler extends EventEmitter{
 		let dateObj = new Date();
 		// let fname = path.basename(this.file).replace(".js","");
 
-		let logfname = `${this.undefinedUT.length>0 ? this.undefinedUT.join("-"):"unknown"}-${dateObj.getMonth()+1}-${dateObj.getDate()}-${dateObj.getHours()}-${dateObj.getMinutes()}-log.json`;
+		let logUndefPropName = [];
+		if(this.undefinedUT.length>0){
+			for (let i = 0; i < this.undefinedUT.length; i++) {
+				if (/\n|\s|[/]/.test(this.undefinedUT[i])) {
+					logUndefPropName[i] = `longString${dateObj.getSeconds()}`;
+				}else {
+					logUndefPropName[i] = this.undefinedUT[i];
+				}
+			}
+		}
+
+		let logfname = `${this.undefinedUT.length>0 ? logUndefPropName.join("-"):"unknown"}-${dateObj.getMonth()+1}-${dateObj.getDate()}-${dateObj.getHours()}-${dateObj.getMinutes()}-log.json`;
 
 		let logFilePath = path.dirname(this.file) + "/log/" + logfname;
 		if (Config.jsonOut) {

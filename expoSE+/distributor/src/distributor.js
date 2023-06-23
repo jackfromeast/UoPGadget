@@ -4,7 +4,7 @@
 import Center from "./center";
 import Config from "./config";
 
-process.title = "ExpoSE Distributor";
+process.title = "expoSE+ frontend";
 
 process.on("disconnect", function() {
 	console.log("Premature termination - Parent exit");
