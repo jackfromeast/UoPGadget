@@ -41,6 +41,7 @@ class Scheduler extends EventEmitter{
 		this.withHelper = propUnderTest.withHelper;
 		this.withChain = propUnderTest.withChain;
 		this.input = propUnderTest.initialInput;
+		this.forinLoad = true;
 
 		this.helperPool = new Undef.UndefinedPool();
 
@@ -62,7 +63,8 @@ class Scheduler extends EventEmitter{
 			id: this._nextID(),
 			path: file,
 			input: this.input || baseInput || { _bound: 0 },		/** baseInput is the input passed from the commandline */
-			undefinedUT: this.undefinedUT
+			undefinedUT: this.undefinedUT,
+			forinLoad: this.forinLoad,
 		}]);
 
 		this.timeout =setTimeout(() => {            
@@ -179,12 +181,15 @@ class Scheduler extends EventEmitter{
 				path: file.path,
 				input: alt.input,
 				pc: alt.pc,
-				undefinedUT: this.undefinedUT
+				undefinedUT: this.undefinedUT,
+				forinLoad: alt.forinLoad,
+				forinKeys: alt.forinKeys,
+				forinKeyBound: alt.forinKeyBound
 			}, alt, testCoverage);
 		});
 	}
 
-	_pushDone(test, input, pc, pcString, alternatives, result, undefinedUT, undefinedPool, helperPool, coverage, errors) {
+	_pushDone(test, input, pc, pcString, alternatives, result, undefinedUT, undefinedPool, helperPool, forinLoad, coverage, errors) {
 		this._done.push({
 			id: test.file.id,
 			input: input,
@@ -195,6 +200,7 @@ class Scheduler extends EventEmitter{
 			errors: errors,
 			undefinedPool: this.undefinedPool.getUndatedPool(undefinedPool),
 			helperPool: this.helperPool.getUndatedPool(helperPool),
+			forinLoad: forinLoad,
 			time: test.time(),
 			startTime: test.startTime(),
 			coverage: this._coverage.current(),
@@ -221,7 +227,7 @@ class Scheduler extends EventEmitter{
 		}
 
 		if (finalOut) {
-			this._pushDone(test, finalOut.input, finalOut.pc, finalOut.pcString, finalOut.alternatives, finalOut.result, finalOut.undefinedUT, finalOut.undefinedPool, finalOut.helperPool, coverage, errors.concat(finalOut.errors));
+			this._pushDone(test, finalOut.input, finalOut.pc, finalOut.pcString, finalOut.alternatives, finalOut.result, finalOut.undefinedUT, finalOut.undefinedPool, finalOut.helperPool, finalOut.forinLoad, coverage, errors.concat(finalOut.errors));
 			this._expandAlternatives(test.file, finalOut.alternatives, coverage);
 			this._stats.merge(finalOut.stats);
 			this.undefinedPool.updatePool(finalOut.input, finalOut.undefinedPool);
@@ -232,7 +238,7 @@ class Scheduler extends EventEmitter{
 			}
 
 		} else {
-			this._pushDone(test, test.file.input, test.file.pc, test.file.pcString, [], false, this.undefinedUT, [], [], coverage, errors.concat([{ error: "Error extracting final output - a fatal error must have occured" }]));
+			this._pushDone(test, test.file.input, test.file.pc, test.file.pcString, [], false, this.undefinedUT, [], [], false, coverage, errors.concat([{ error: "Error extracting final output - a fatal error must have occured" }]));
 		}
 
 		this._postTest(test);

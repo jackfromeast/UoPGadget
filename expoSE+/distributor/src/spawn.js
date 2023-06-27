@@ -16,8 +16,14 @@ class Spawn {
 		this.script = script;
 		this.file = file;
 		this.options = opts;
-		// add undefined pool
-		this.args = [this.file.path, JSON.stringify(this.file.input), JSON.stringify(this.file.undefinedUT), JSON.stringify(opts.undefinedPool)];
+		
+		let inherit = {
+			undefinedPool: opts.undefinedPool,
+			forinLoad: this.file.forinLoad || false, 
+			forinKeys: this.file.forinKeys || [],
+			forinKeyBound: this.file.forinKeyBound || 0
+		};
+		this.args = [this.file.path, JSON.stringify(this.file.input), JSON.stringify(this.file.undefinedUT), JSON.stringify(inherit)];
 		// this.args = [this.file.path, JSON.stringify(this.file.input)];
 		this.tmpCoverageFile = tmp.fileSync();
 		this.tmpOutFile = tmp.fileSync();
