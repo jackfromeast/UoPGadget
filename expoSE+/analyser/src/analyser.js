@@ -19,7 +19,7 @@ const process = External.load("process");
 // const withChain = process.argv[process.argv.length - 4];
 const input = process.argv[process.argv.length - 3];
 const undefinedUnderTest = process.argv[process.argv.length - 2];
-const undefinedPool = process.argv[process.argv.length - 1];
+const inherit = process.argv[process.argv.length - 1];
 
 Log.logHigh("Built with VERY logging enabled");
 Log.logMid("Built with FINE logging enabled");
@@ -33,7 +33,9 @@ process.on("disconnect", function() {
 	process.exit();
 });
 
-J$.analysis = new SymbolicExecution(J$, JSON.parse(input), JSON.parse(undefinedUnderTest), JSON.parse(undefinedPool), (state, coverage) => {
+
+
+J$.analysis = new SymbolicExecution(J$, JSON.parse(input), JSON.parse(undefinedUnderTest), JSON.parse(inherit), (state, coverage) => {
 
 	// We record the alternatives list as the results develop to make the output tool more resilient to SMT crashes
 	state.alternatives((current) => {
@@ -46,6 +48,7 @@ J$.analysis = new SymbolicExecution(J$, JSON.parse(input), JSON.parse(undefinedU
 			undefinedPool: state.undefinedPool,
 			undefinedUT: state.undefinedUnderTest,
 			helperPool: state.retHelper? state.helperCandidates: [],
+			forinLoad: state.forinLoad,
 			stats: state.stats.export(),
 			result: state.result
 		};

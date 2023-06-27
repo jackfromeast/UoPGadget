@@ -24,9 +24,9 @@ const fs = require("fs");
 
 class SymbolicExecution {
 
-	constructor(sandbox, initialInput, undefinedUnderTest, undefinedPool, exitFn) {
+	constructor(sandbox, initialInput, undefinedUnderTest, inherit, exitFn) {
 		this._sandbox = sandbox;
-		this.state = new SymbolicState(initialInput, undefinedUnderTest, undefinedPool, this._sandbox);
+		this.state = new SymbolicState(initialInput, undefinedUnderTest, inherit, this._sandbox);
 		this.models = ModelBuilder(this.state);
 		this._fileList = new Array();
 		this._exitFn = exitFn;
@@ -292,7 +292,22 @@ class SymbolicExecution {
 	forinObject(iid, val) {
 		this.state.coverage.touch(iid);
 		
-		
+		// currently, we only support one symbolic key-value pair
+		if(this.state.forinLoad && !this.state.forinIndex){
+			// add both symbolic key and value to prototype, which will be looped over
+			let key = `forin_${this.state.forinIndex++}`;
+
+			let keyType = this.state.createSymbolicValueType(key+"_key_undef_t", "string");
+			this.state.assertEqual(keyType, this.state.concolic("string"));
+			this.state.input._bound += 1;
+
+			this.state.symbolicKey[key] = this.state.createSymbolicValue(key+"_key_undef", key);
+
+			// setup the corresponding symbolic value in the root prototype
+			let keyValue = this.state.createPureSymbol(key+"_undef");
+			this.state.setupUndefined(key, keyValue);
+		}
+
 		// jackfromeast
 		// if the object is symbolic, we will enumerate its concrete properties
 		if(this.state.isSymbolic(val)){
@@ -462,7 +477,8 @@ class SymbolicExecution {
 		//Then return the concrete lookup
 		if (!this.state.isSymbolic(base) && 
              this.state.isSymbolic(offset) &&
-             typeof this.state.getConcrete(offset) == "string") {
+             typeof this.state.getConcrete(offset) == "string" &&
+			!/^forin_\d+$/.test(this.state.getConcrete(offset))) {
 			this._getFieldSymbolicOffset(base, offset);
 			return {
 				result: base[this.state.getConcrete(offset)]
@@ -561,6 +577,12 @@ class SymbolicExecution {
 	write(iid, name, val, _lhs, _isGlobal, _isScriptLocal) {
 		this.state.coverage.touch(iid);
 		Log.logHigh(`Write ${name} at ${this._location(iid)}`);
+
+		// convert the key to a symbolic key
+		if (Object.keys(this.state.symbolicKey).includes(val)){
+			val = this.state.symbolicKey[val];
+		}
+
 		return { result: val };
 	}
 

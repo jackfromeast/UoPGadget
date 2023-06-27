@@ -59,7 +59,7 @@ function BuildUnaryJumpTable(state) {
 }
 
 class SymbolicState {
-	constructor(input, undefinedUnderTest, undefinedPool, sandbox) {
+	constructor(input, undefinedUnderTest, inherit, sandbox) {
 		this.ctx = new Z3.Context();
 		this.slv = new Z3.Solver(this.ctx,
 			Config.incrementalSolverEnabled,
@@ -79,7 +79,7 @@ class SymbolicState {
 		this.inputSymbols = {}; 			/** symbols passing to the sovler, not including pureSymbol and symbolicObject, */
 		this.wrapperSymbols = {}; 			/** pureSymbol and symbolicObject */
 		this.pathCondition = [];
-		this.undefinedPool = undefinedPool; /** current undefined pool */
+		this.undefinedPool = inherit.undefinedPool; /** current undefined pool */
 
 		this.stats = new Stats();
 		this.result = false; 				/** found the gadget or not */
@@ -91,13 +91,113 @@ class SymbolicState {
 		this.hasLoaded = false;				/** whether the polluted variable has been visited */
 		this.helperCandidates = [];			/** patching undefined property candidates */
 		
+		/** Sandbox for Prototype */
 		this.saved_prototype = {};
+		
+		/** for...in Properties load */
+		this.forinIndex = 0;							/** used for forin key naming */
+		this.forinLoad = inherit.forinLoad || false;	/** whether create symbolic key and value when encounter for loop*/
+		this.symbolicKey = {};							/** save the created symbolic key */
+		this.forinKeys= inherit.forinKeys || [];		/** help to initial the found/identified forin key, saved for next round*/
+		this.forinKeyBound = inherit.forinKeyBound || 0;
 
 		this._unaryJumpTable = BuildUnaryJumpTable(this);
 		this._setupSmtFunctions();
 
 		this.undefinedUnderTest = undefinedUnderTest;
 	}
+
+	/**
+	 * we assme the input of the for...in loaded property has the following items
+	 * this.input:{
+	 * 	forin_{id}_key_undef_t: "string",
+	 * 	forin_{id}_key_undef: "somekey",
+	 * 	forin_{id}_undef_t: "atype",
+	 * 	forin_{id}_undef: "someval"
+	 * }
+	 * 
+	 * =>
+	 * set forin_{id}_key_undef_t = "string" 
+	 * 
+	 * if somekey == "":
+	 * 		// means we didn't find the constraints for the key, so we keep the key as it is and try again
+	 * 		somekey = "forin_{id}",
+	 * 		this.input: {
+	 * 			forin_{id}_key_undef_t: "string",
+	 * 			forin_{id}_key_undef: "somekey",
+	 * 			somekey_undef_t: "atype",
+	 * 			somekey_undef: "someval"
+	 * 		},
+	 * 		this.symbolicKey[`${somekey}`] = createPureSymbol(`${somekey}_key_undef`),
+	 * 		Object.prototype[`${somekey}`] = createPureSymbol(`${somekey}_undef`)
+	 * 		this.state.forinLoad = false
+	 * 
+	 * else:
+	 * 		// if we found a concrete key name, then we will use the keyname to pollute the root prototype directly
+	 * 		// we will remove the symbolic key as we no longer need it
+	 *		this.input: {
+	 * 			forin_{id}_key_undef_t: "string",
+	 * 			forin_{id}_key_undef: "somekey",
+	 * 			somekey_undef_t: "atype",
+	 * 			somekey_undef: "someval",
+	 * 			_bound: this.input._bound-2
+	 * 		}
+	 * 
+	 * 		Object.prototype[`${somekey}`] = createPureSymbol(`${somekey}_undef`)
+	 * 		this.state.forinLoad = false
+	 * 		;
+	 * 
+	 */
+	_setupForinKeyVal(){
+		// Loop over all properties of this.input
+		for (let key in this.input) {
+			// Check if key matches the "forin_{id}_key_undef" pattern
+			if (/^forin_\d+_key_undef$/.test(key)) {
+				// Extract ID from the key
+				let id = key.split("_")[1];
+				let somekey = this.input[key];
+		
+				// Correct the key type to string
+				this.input[`${key}_t`] = "string";
+		
+				// Modify key if there are no constraints
+				if (somekey === "") {
+					somekey = `forin_${id}`;
+					this.input[key] = somekey;
+				} else {
+					// Modify key and value based on the existing constraints
+					let existingTypeKey = `forin_${id}_undef_t`;
+					let newTypeKey = `${somekey}_undef_t`;
+					this.input[newTypeKey] = this.input[existingTypeKey];
+					delete this.input[existingTypeKey];
+					
+		
+					let existingValKey = `forin_${id}_undef`;
+					let newValKey = `${somekey}_undef`;
+					if(this.input[existingValKey]){
+						this.input[newValKey] = this.input[existingValKey];
+						delete this.input[existingValKey];
+					}
+					/**
+					 * here we need to remove all the contraints in the _bound for the symbolic key
+					 * usually the number is 2, but there might be more
+					 */
+					this.input._bound -= this.forinKeyBound;
+
+					this.forinKeys.push(somekey);
+				}
+		
+				if(somekey === `forin_${id}`){
+					this.symbolicKey[`${somekey}`] = this.createPureSymbol(`${somekey}_key_undef`);
+				}
+				Object.prototype[`${somekey}`] = this.createPureSymbol(`${somekey}_undef`);
+		
+				// Update the state
+				this.forinLoad = false;
+			}
+		}
+	}
+
 
 	setupUndefined(propName, propValue) {
 		/**
@@ -150,6 +250,17 @@ class SymbolicState {
 				this.setupUndefined(propName, propValue);
 			}
 		}
+		if(this.forinKeys.length > 0){
+			for( let i=0; i < this.forinKeys.length; i++ ){
+				const propName = this.forinKeys[i];
+				const propValue = this.createPureSymbol(propName + "_undef");
+
+				this.setupUndefined(propName, propValue);
+			}
+		}
+
+		this._setupForinKeyVal();
+
 	}
 
 	/** Set up a bunch of SMT functions used by the models **/
@@ -319,6 +430,15 @@ class SymbolicState {
 		// solve done
 		this.slv.reset();
 
+		/**
+		 * calculate the number of constraints in bounds related to the symbolic key 
+		 */
+		if(this.forinLoad && childInputs.length){
+			for(let i=0; i<childInputs.length; i++){
+				childInputs[i].forinKeyBound = this._getForinKeyBound(childInputs[i].input);
+			}
+		}
+
 
 		/** jackfromeast
 		 * For each pure symbol, summarize it
@@ -336,7 +456,7 @@ class SymbolicState {
 					childInputsWithTypes.push({
 						input: Object.assign(pureSymbolTypes[i], {_bound: Object.keys(pureSymbolTypes[i]).length}),
 						pc: "",
-						forkIid: this.coverage.last(),
+						forkIid: this.coverage.last()
 					});
 
 				}
@@ -355,8 +475,34 @@ class SymbolicState {
 			childInputs = childInputsWithTypes;
 		}
 
+		// add inherited info to the childInputs
+		for (let i = 0; i < childInputs.length; i++) {
+			childInputs[i].forinLoad = this.forinLoad;
+			childInputs[i].forinKeys = this.forinKeys;
+		}
+
 		//Guarentee inputCallback is called at least once
 		inputCallback(childInputs);
+	}
+
+	/**
+	 * calculate the number of constraints in bounds related to the symbolic key
+	 * e.g. 
+	 * 		pc: "(= forin_0_key_undef_t \"string\"),(not (= forin_0_key_undef \"hiddenKey\")),(not (= forin_0_key_undef \"hiddenKey2\"))"
+	 * 		and _bound = 3,
+	 * 		then retrun 3
+	 * 
+	 * @param {*} input 
+	 */
+	_getForinKeyBound(input){
+		let count = 0;
+		for(let i=0; i<input._bound; i++){
+			// since we only support one symbolic key
+			if(this.pathCondition[i].ast.toString().includes("forin_0_key_undef")){
+				count++;
+			}
+		}
+		return count;
 	}
 
 	/**
@@ -582,7 +728,7 @@ class SymbolicState {
 			this.input[name] = type;
 		}
 
-		// if the concrete value is undefined, meaning it is a pure symbol, it should appear in the PC of this round
+		// if the concrete value is undefined, meaning it is a pure symbol, it shouldn't appear in the PC of this round
 		this.stats.seen("Symbolic Primitives");
 		const sort = this._getSort("astring");
 		const symbol = this.ctx.mkStringSymbol(name);

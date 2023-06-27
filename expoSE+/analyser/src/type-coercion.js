@@ -102,6 +102,8 @@ function explicitTypeCoerce(type, value) {
  *  op1: "",        // empty string if no coercion
  *  op2: "string",   // type that op2 should be coerced to
  * }
+ * 
+ * TODO: 'asdad' == 'asdas' seems not correct
  */
 function _binaryTypeCoercion(op, operand1, operand2) {
 	const result = { cor: false, op1: "", op2: "" };
