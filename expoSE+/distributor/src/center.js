@@ -126,7 +126,13 @@ class Center {
 	}
 
 	async startSingle(file, baseInput) {
-		this.scheduler = new Scheduler([]);
+		this.scheduler = new Scheduler({
+			props: [],
+			initialInput: baseInput,
+			withHelper: false,
+			withChain: false,
+			roundid: 0,
+		});
 
 		const done = new Promise(resolve => {
 			this.scheduler.on("done", () => {
