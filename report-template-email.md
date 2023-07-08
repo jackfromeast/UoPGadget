@@ -1,4 +1,3 @@
-Title: vulnerable undefined property lookup that escalating prototype pollution to remote code execution
 Email Title: potential security issue found in <XXX> and request for confirmation
 
 Hi there! 
