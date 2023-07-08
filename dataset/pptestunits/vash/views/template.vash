@@ -1,0 +1,10 @@
+@function translate(text) {
+    switch(text) {
+        case 'Hello world':
+            return 'Bonjour le monde';
+        default:
+            return text;
+    }
+}
+
+<p>Hello world: @translate('Hello world')</p>
