@@ -115,8 +115,8 @@ function _binaryTypeCoercion(op, operand1, operand2) {
 			result.op1 = typeof operand1 === "string" ? "" : "string";
 			result.op2 = typeof operand2 === "string" ? "" : "string";
 		}else{
-			result.op1 = typeof operand1 === "string" ? "" : "string";
-			result.op2 = typeof operand2 === "string" ? "" : "string";
+			result.op1 = typeof operand1 === "number" ? "" : "number";
+			result.op2 = typeof operand2 === "number" ? "" : "number";
 		}
 		break;
 
