@@ -238,17 +238,13 @@ class SymbolicState {
 	}
 
 	_setupUndefinedUT() {
+		// pollute the prototype
+		// Object.prototype[this.undefinedUnderTest[i]] = this.createPureSymbol(this.undefinedUnderTest[i]+"_undef");
 		for (let i=0; i < this.undefinedUnderTest.length; i++) {
-			// pollute the prototype
-			// Object.prototype[this.undefinedUnderTest[i]] = this.createPureSymbol(this.undefinedUnderTest[i]+"_undef");
-
-			// pollute the prototype and log its first access
-			for (let i = 0; i < this.undefinedUnderTest.length; i++) {
-				const propName = this.undefinedUnderTest[i];
-				const propValue = this.createPureSymbol(propName + "_undef");
-				
-				this.setupUndefined(propName, propValue);
-			}
+			const propName = this.undefinedUnderTest[i];
+			const propValue = this.createPureSymbol(propName + "_undef");
+			
+			this.setupUndefined(propName, propValue);
 		}
 		if(this.forinKeys.length > 0){
 			for( let i=0; i < this.forinKeys.length; i++ ){
@@ -630,7 +626,11 @@ class SymbolicState {
 
 					if(reg.test(key)){
 						let element_name = reg.exec(key)[1];
-						symbolObj.setField(this, element_name, this.createPureSymbol(`${name}_elements_${element_name}`));
+						let element_symbol = this.createPureSymbol(`${name}_elements_${element_name}`);
+
+						if(element_symbol !== undefined){
+							symbolObj.setField(this, element_name, element_symbol);
+						}
 					}
 				}
 				return symbolObj;
