@@ -13,6 +13,7 @@ import FnModels from './fn-models';
 import RegexModels from './regex-models';
 import DOMModels from './dom-models';
 import JSONModels from './json-models';
+import Log from "../utilities/log";
 
 function Model() {
 	this._models = [];
@@ -73,6 +74,15 @@ function BuildModels(state) {
 	Object._expose._isSymbolic = function(val) { return state.isSymbolic(val)?true:false};
 	Object._expose.setupSymbols = function() { return state._setupUndefinedUT()};
 	Object._expose.setupASymbol = function(name, val) { return state.setupUndefined(name, val)};
+	Object._expose._foundGadgets = function() {
+		Log.logSink("ACI: Arbitrary Content Interpolation");
+		Log.logSink("Found a potential flow to the return value");
+		state.foundGadgets();
+	};
+	Object._expose._foundGadgetsEval = function() {
+		Log.logSink("Found a potential flow to the eval function!");
+		state.foundGadgets();
+	};
 
 	return model;
 }
