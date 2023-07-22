@@ -18,12 +18,34 @@ NotAnErrorException.prototype.toString = function() {
  * @param {*} e 
  * @returns 
  */
-function isUndefCausedError(e){
-	if (e instanceof TypeError) {
-		return true;
-	}else{
-		return false;
+function isUndefCausedError(e) {
+	if (e instanceof TypeError || e instanceof Error) {
+		const errorMessage = e.message.toLowerCase();
+
+		// Error message patterns for different browsers
+		const undefinedErrors = [
+			"cannot read properties of undefined",
+			"undefined is not an object",
+			"is not a function"
+		];
+
+		// Checking against defined error patterns
+		for (let err of undefinedErrors) {
+			if (errorMessage.includes(err)) {
+				return true;
+			}
+		}
+
+		// Using a Regex to match 'plugin <any_string> not found'
+		// For Jade/Pug uses addWith
+		const pluginErrorRegex = /plugin '.*' not found/;
+		if (pluginErrorRegex.test(errorMessage)) {
+			return true;
+		}
 	}
+
+	return false;
 }
+
 
 export default {NotAnErrorException, isUndefCausedError};
