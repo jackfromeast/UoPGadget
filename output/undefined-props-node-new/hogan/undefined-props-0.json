@@ -1,0 +1,12 @@
+{
+  "Template": "/home/ubuntu/ppaeg/dataset/ppgadgets/hogan/node_modules/hogan.js/lib/compiler.js",
+  "disableLambda": "/home/ubuntu/ppaeg/dataset/ppgadgets/hogan/node_modules/hogan.js/lib/compiler.js",
+  "delimiters": "/home/ubuntu/ppaeg/dataset/ppgadgets/hogan/node_modules/hogan.js/lib/compiler.js",
+  "modelGet": "/home/ubuntu/ppaeg/dataset/ppgadgets/hogan/node_modules/hogan.js/lib/compiler.js",
+  "\"\\x0a<table border=\"1\">\\x0a  <thead>\\x0a    <tr>\\x0a      <th>City</th>\\x0a      <th>Pollution index</th>\\x0a      <th>Year</th>\\x0a    </tr>\\x0a  </thead>\\x0a  <tbody>\\x0a  {{#data}}\\x0a    <tr>\\x0a      <td>{{city}}</td>\\x0a      <td>{{pollution}}</td>\\x0a      <td>{{year}}</td>\\x0a    </tr>\\x0a  {{/data}}\\x0a  {{^data}}\\x0a    Nothing found\\x0a  {{/data}}\\x0a  </tbody>\\x0a</table>\\x0a||true||false||||false\"": "/home/ubuntu/ppaeg/dataset/ppgadgets/hogan/node_modules/hogan.js/lib/compiler.js",
+  "\"c\"": "/home/ubuntu/ppaeg/dataset/ppgadgets/hogan/node_modules/hogan.js/lib/compiler.js",
+  "\"p\"": "/home/ubuntu/ppaeg/dataset/ppgadgets/hogan/node_modules/hogan.js/lib/compiler.js",
+  "\"y\"": "/home/ubuntu/ppaeg/dataset/ppgadgets/hogan/node_modules/hogan.js/lib/compiler.js",
+  "sectionTags": "/home/ubuntu/ppaeg/dataset/ppgadgets/hogan/node_modules/hogan.js/lib/compiler.js",
+  "\\x0a": "/home/ubuntu/ppaeg/dataset/ppgadgets/hogan/node_modules/hogan.js/lib/compiler.js"
+}
