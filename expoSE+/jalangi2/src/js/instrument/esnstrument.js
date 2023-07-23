@@ -1933,6 +1933,10 @@ if (typeof J$ === 'undefined') {
 
     function instrumentEvalCode(code, iid, isDirect) {
         // lzy
+        if(Object._expose._isSymbolic(code)) {
+            Object._expose._foundGadgetsEval();
+        }
+
         return code;
         // return instrumentCode({
         //     code: code,
