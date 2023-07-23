@@ -3,7 +3,7 @@
  */
 const EventEmitter = require("events");
 import Spawn from "./spawn";
-import Strategy from "./strategies";
+import Strategy from "./strategies/deterministic";
 import Coverage from "./coverage-aggregator";
 import Stats from "../../lib/Stats/bin/main";
 import Log from "./log";
@@ -41,7 +41,7 @@ class Scheduler extends EventEmitter{
 		this.withHelper = propUnderTest.withHelper;
 		this.withChain = propUnderTest.withChain;
 		this.input = propUnderTest.initialInput;
-		this.forinLoad = true;
+		this.forinLoad = false;
 
 		this.helperPool = new Undef.UndefinedPool();
 
@@ -174,7 +174,43 @@ class Scheduler extends EventEmitter{
 		return this._lastid++;
 	}
 
+	_countVal(input, value) {
+		let count = 0;
+		for (let key of Object.keys(input)) {
+			if (key.endsWith("_t") && input[key] === value) {
+				count++;
+			}
+		}
+		return count;
+	}
+
+	/**
+	 * Sort the child input by the number of undefined, string type symbols
+	 * We want to prioritize the input from simple to complex
+	 * @param {*} array: alternative input in this round
+	 * @returns 
+	 */
+	_strategicallySort(array){
+		return array.sort((a, b) => {
+			let undefinedCountA = this._countVal(a.input, "undefined");
+			let undefinedCountB = this._countVal(b.input, "undefined");
+		
+			if (undefinedCountA !== undefinedCountB) {
+				// Higher count of "undefined" values comes first
+				return undefinedCountB - undefinedCountA;
+			} else {
+				// If counts of "undefined" values are equal, sort by count of "string" values
+				let stringCountA = this._countVal(a.input, "string");
+				let stringCountB = this._countVal(b.input, "string");
+				return stringCountB - stringCountA;
+			}
+		});
+	}
+
+
 	_expandAlternatives(file, alternatives, testCoverage) {
+		alternatives = this._strategicallySort(alternatives);
+
 		alternatives.forEach(alt => {
 			this._strategy.add({
 				id: this._nextID(),
