@@ -1,0 +1,2245 @@
+{
+  "$schema" : "https://json.schemastore.org/sarif-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeQL",
+        "organization" : "GitHub",
+        "semanticVersion" : "2.14.0",
+        "rules" : [ {
+          "id" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+          "name" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+          "shortDescription" : {
+            "text" : "PrototypePollutingGadgetTemplate"
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "warning"
+          },
+          "properties" : {
+            "id" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+            "kind" : "path-problem",
+            "name" : "PrototypePollutingGadgetTemplate",
+            "precision" : "high",
+            "problem.severity" : "warning"
+          }
+        } ]
+      }
+    },
+    "artifacts" : [ {
+      "location" : {
+        "uri" : "lib/ejs.js",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 0
+      }
+    } ],
+    "results" : [ {
+      "ruleId" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "[Template](1) (lib/ejs.js) -> \\[\\] -> [ctor](2)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "lib/ejs.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 509,
+            "endLine" : 549,
+            "endColumn" : 2
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b129e0c273adb2a9:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 509,
+                  "endLine" : 549,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... ex();\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 533,
+                  "startColumn" : 24,
+                  "endColumn" : 39
+                }
+              },
+              "message" : {
+                "text" : "opts.localsName #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 533,
+                  "startColumn" : 24,
+                  "endColumn" : 61
+                }
+              },
+              "message" : {
+                "text" : "opts.lo ... alsName #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 533,
+                  "startColumn" : 24,
+                  "endColumn" : 85
+                }
+              },
+              "message" : {
+                "text" : "opts.lo ... LS_NAME #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 21,
+                  "endColumn" : 36
+                }
+              },
+              "message" : {
+                "text" : "opts.localsName #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 21,
+                  "endColumn" : 69
+                }
+              },
+              "message" : {
+                "text" : "opts.lo ... ethrow' | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 509,
+                  "endLine" : 549,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... ex();\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 533,
+                  "startColumn" : 24,
+                  "endColumn" : 39
+                }
+              },
+              "message" : {
+                "text" : "opts.localsName | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 533,
+                  "startColumn" : 24,
+                  "endColumn" : 61
+                }
+              },
+              "message" : {
+                "text" : "opts.lo ... alsName #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 533,
+                  "startColumn" : 24,
+                  "endColumn" : 85
+                }
+              },
+              "message" : {
+                "text" : "opts.lo ... LS_NAME | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 21,
+                  "endColumn" : 36
+                }
+              },
+              "message" : {
+                "text" : "opts.localsName | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 21,
+                  "endColumn" : 69
+                }
+              },
+              "message" : {
+                "text" : "opts.lo ... ethrow' | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 509,
+                  "endLine" : 549,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... ex();\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 533,
+                  "startColumn" : 43,
+                  "endColumn" : 61
+                }
+              },
+              "message" : {
+                "text" : "exports.localsName #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 533,
+                  "startColumn" : 24,
+                  "endColumn" : 61
+                }
+              },
+              "message" : {
+                "text" : "opts.lo ... alsName | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 533,
+                  "startColumn" : 24,
+                  "endColumn" : 85
+                }
+              },
+              "message" : {
+                "text" : "opts.lo ... LS_NAME | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 21,
+                  "endColumn" : 36
+                }
+              },
+              "message" : {
+                "text" : "opts.localsName #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 21,
+                  "endColumn" : 69
+                }
+              },
+              "message" : {
+                "text" : "opts.lo ... ethrow' | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 509,
+                  "endLine" : 549,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... ex();\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 533,
+                  "startColumn" : 43,
+                  "endColumn" : 61
+                }
+              },
+              "message" : {
+                "text" : "exports.localsName | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 533,
+                  "startColumn" : 24,
+                  "endColumn" : 61
+                }
+              },
+              "message" : {
+                "text" : "opts.lo ... alsName | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 533,
+                  "startColumn" : 24,
+                  "endColumn" : 85
+                }
+              },
+              "message" : {
+                "text" : "opts.lo ... LS_NAME #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 21,
+                  "endColumn" : 36
+                }
+              },
+              "message" : {
+                "text" : "opts.localsName | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 21,
+                  "endColumn" : 69
+                }
+              },
+              "message" : {
+                "text" : "opts.lo ... ethrow' | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "lib/ejs.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 509,
+            "endLine" : 549,
+            "endColumn" : 2
+          }
+        },
+        "message" : {
+          "text" : "Template"
+        }
+      }, {
+        "id" : 2,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "lib/ejs.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 673,
+            "startColumn" : 21,
+            "endColumn" : 69
+          }
+        },
+        "message" : {
+          "text" : "ctor"
+        }
+      } ]
+    }, {
+      "ruleId" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "[Template](1) (lib/ejs.js) -> \\[\\] -> [ctor](2)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "lib/ejs.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 509,
+            "endLine" : 549,
+            "endColumn" : 2
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "b129e0c273adb2a9:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 509,
+                  "endLine" : 549,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... ex();\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 522,
+                  "startColumn" : 22,
+                  "endColumn" : 35
+                }
+              },
+              "message" : {
+                "text" : "opts.filename #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 584,
+                  "startColumn" : 60,
+                  "endColumn" : 73
+                }
+              },
+              "message" : {
+                "text" : "opts.filename #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 584,
+                  "startColumn" : 45,
+                  "endColumn" : 74
+                }
+              },
+              "message" : {
+                "text" : "JSON.st ... lename) #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 584,
+                  "startColumn" : 29,
+                  "endColumn" : 88
+                }
+              },
+              "message" : {
+                "text" : "opts.fi ... efined' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 584,
+                  "startColumn" : 9,
+                  "endColumn" : 88
+                }
+              },
+              "message" : {
+                "text" : "sanitizedFilename #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 625,
+                  "startColumn" : 33,
+                  "endColumn" : 50
+                }
+              },
+              "message" : {
+                "text" : "sanitizedFilename #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 623,
+                  "startColumn" : 13,
+                  "endLine" : 630,
+                  "endColumn" : 21
+                }
+              },
+              "message" : {
+                "text" : "'var __ ...  + '\\n' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 623,
+                  "startColumn" : 7,
+                  "endLine" : 630,
+                  "endColumn" : 21
+                }
+              },
+              "message" : {
+                "text" : "src #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 71,
+                  "endColumn" : 74
+                }
+              },
+              "message" : {
+                "text" : "src | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 509,
+                  "endLine" : 549,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... ex();\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 522,
+                  "startColumn" : 22,
+                  "endColumn" : 35
+                }
+              },
+              "message" : {
+                "text" : "opts.filename | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 584,
+                  "startColumn" : 60,
+                  "endColumn" : 73
+                }
+              },
+              "message" : {
+                "text" : "opts.filename #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 584,
+                  "startColumn" : 45,
+                  "endColumn" : 74
+                }
+              },
+              "message" : {
+                "text" : "JSON.st ... lename) | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 584,
+                  "startColumn" : 29,
+                  "endColumn" : 88
+                }
+              },
+              "message" : {
+                "text" : "opts.fi ... efined' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 584,
+                  "startColumn" : 9,
+                  "endColumn" : 88
+                }
+              },
+              "message" : {
+                "text" : "sanitizedFilename | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 625,
+                  "startColumn" : 33,
+                  "endColumn" : 50
+                }
+              },
+              "message" : {
+                "text" : "sanitizedFilename #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 623,
+                  "startColumn" : 13,
+                  "endLine" : 630,
+                  "endColumn" : 21
+                }
+              },
+              "message" : {
+                "text" : "'var __ ...  + '\\n' | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 623,
+                  "startColumn" : 7,
+                  "endLine" : 630,
+                  "endColumn" : 21
+                }
+              },
+              "message" : {
+                "text" : "src | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 71,
+                  "endColumn" : 74
+                }
+              },
+              "message" : {
+                "text" : "src | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 509,
+                  "endLine" : 549,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... ex();\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 532,
+                  "startColumn" : 32,
+                  "endColumn" : 55
+                }
+              },
+              "message" : {
+                "text" : "opts.ou ... ionName #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 595,
+                  "startColumn" : 33,
+                  "endColumn" : 56
+                }
+              },
+              "message" : {
+                "text" : "opts.ou ... ionName #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 595,
+                  "startColumn" : 22,
+                  "endColumn" : 80
+                }
+              },
+              "message" : {
+                "text" : "'  var  ...  + '\\n' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 595,
+                  "startColumn" : 9,
+                  "endColumn" : 80
+                }
+              },
+              "message" : {
+                "text" : "prepended #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 619,
+                  "startColumn" : 21,
+                  "endColumn" : 30
+                }
+              },
+              "message" : {
+                "text" : "prepended #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 619,
+                  "startColumn" : 21,
+                  "endColumn" : 55
+                }
+              },
+              "message" : {
+                "text" : "prepend ... ppended #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 633,
+                  "startColumn" : 13,
+                  "endColumn" : 24
+                }
+              },
+              "message" : {
+                "text" : "this.source #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 633,
+                  "startColumn" : 7,
+                  "endColumn" : 24
+                }
+              },
+              "message" : {
+                "text" : "src #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 71,
+                  "endColumn" : 74
+                }
+              },
+              "message" : {
+                "text" : "src | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 509,
+                  "endLine" : 549,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... ex();\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 532,
+                  "startColumn" : 32,
+                  "endColumn" : 55
+                }
+              },
+              "message" : {
+                "text" : "opts.ou ... ionName | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 595,
+                  "startColumn" : 33,
+                  "endColumn" : 56
+                }
+              },
+              "message" : {
+                "text" : "opts.ou ... ionName #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 595,
+                  "startColumn" : 22,
+                  "endColumn" : 80
+                }
+              },
+              "message" : {
+                "text" : "'  var  ...  + '\\n' | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 595,
+                  "startColumn" : 9,
+                  "endColumn" : 80
+                }
+              },
+              "message" : {
+                "text" : "prepended #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 619,
+                  "startColumn" : 21,
+                  "endColumn" : 30
+                }
+              },
+              "message" : {
+                "text" : "prepended | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 619,
+                  "startColumn" : 21,
+                  "endColumn" : 55
+                }
+              },
+              "message" : {
+                "text" : "prepend ... ppended #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 633,
+                  "startColumn" : 13,
+                  "endColumn" : 24
+                }
+              },
+              "message" : {
+                "text" : "this.source | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 633,
+                  "startColumn" : 7,
+                  "endColumn" : 24
+                }
+              },
+              "message" : {
+                "text" : "src | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 71,
+                  "endColumn" : 74
+                }
+              },
+              "message" : {
+                "text" : "src | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "lib/ejs.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 509,
+            "endLine" : 549,
+            "endColumn" : 2
+          }
+        },
+        "message" : {
+          "text" : "Template"
+        }
+      }, {
+        "id" : 2,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "lib/ejs.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 673,
+            "startColumn" : 71,
+            "endColumn" : 74
+          }
+        },
+        "message" : {
+          "text" : "ctor"
+        }
+      } ]
+    }, {
+      "ruleId" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "[compile](1) (lib/ejs.js) -> \\[\\] -> [ctor](2)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "lib/ejs.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 571,
+            "startColumn" : 12,
+            "endLine" : 719,
+            "endColumn" : 4
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "66ab696313c81a00:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 571,
+                  "startColumn" : 12,
+                  "endLine" : 719,
+                  "endColumn" : 4
+                }
+              },
+              "message" : {
+                "text" : "functio ... Fn;\\n  } | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 21,
+                  "endColumn" : 36
+                }
+              },
+              "message" : {
+                "text" : "opts.localsName #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 21,
+                  "endColumn" : 69
+                }
+              },
+              "message" : {
+                "text" : "opts.lo ... ethrow' | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 571,
+                  "startColumn" : 12,
+                  "endLine" : 719,
+                  "endColumn" : 4
+                }
+              },
+              "message" : {
+                "text" : "functio ... Fn;\\n  } | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 21,
+                  "endColumn" : 36
+                }
+              },
+              "message" : {
+                "text" : "opts.localsName | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 21,
+                  "endColumn" : 69
+                }
+              },
+              "message" : {
+                "text" : "opts.lo ... ethrow' | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "lib/ejs.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 571,
+            "startColumn" : 12,
+            "endLine" : 719,
+            "endColumn" : 4
+          }
+        },
+        "message" : {
+          "text" : "compile"
+        }
+      }, {
+        "id" : 2,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "lib/ejs.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 673,
+            "startColumn" : 21,
+            "endColumn" : 69
+          }
+        },
+        "message" : {
+          "text" : "ctor"
+        }
+      } ]
+    }, {
+      "ruleId" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "[compile](1) (lib/ejs.js) -> \\[\\] -> [ctor](2)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "lib/ejs.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 571,
+            "startColumn" : 12,
+            "endLine" : 719,
+            "endColumn" : 4
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "66ab696313c81a00:1",
+        "primaryLocationStartColumnFingerprint" : "9"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 571,
+                  "startColumn" : 12,
+                  "endLine" : 719,
+                  "endColumn" : 4
+                }
+              },
+              "message" : {
+                "text" : "functio ... Fn;\\n  } | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 580,
+                  "startColumn" : 20,
+                  "endColumn" : 39
+                }
+              },
+              "message" : {
+                "text" : "opts.escapeFunction #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 580,
+                  "startColumn" : 9,
+                  "endColumn" : 39
+                }
+              },
+              "message" : {
+                "text" : "escapeFn #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 637,
+                  "startColumn" : 41,
+                  "endColumn" : 49
+                }
+              },
+              "message" : {
+                "text" : "escapeFn #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 637,
+                  "startColumn" : 41,
+                  "endColumn" : 60
+                }
+              },
+              "message" : {
+                "text" : "escapeFn.toString() #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 637,
+                  "startColumn" : 13,
+                  "endColumn" : 79
+                }
+              },
+              "message" : {
+                "text" : "'escape ... ' + src #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 637,
+                  "startColumn" : 7,
+                  "endColumn" : 79
+                }
+              },
+              "message" : {
+                "text" : "src #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 71,
+                  "endColumn" : 74
+                }
+              },
+              "message" : {
+                "text" : "src | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 571,
+                  "startColumn" : 12,
+                  "endLine" : 719,
+                  "endColumn" : 4
+                }
+              },
+              "message" : {
+                "text" : "functio ... Fn;\\n  } | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 580,
+                  "startColumn" : 20,
+                  "endColumn" : 39
+                }
+              },
+              "message" : {
+                "text" : "opts.escapeFunction | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 580,
+                  "startColumn" : 9,
+                  "endColumn" : 39
+                }
+              },
+              "message" : {
+                "text" : "escapeFn #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 637,
+                  "startColumn" : 41,
+                  "endColumn" : 49
+                }
+              },
+              "message" : {
+                "text" : "escapeFn | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 637,
+                  "startColumn" : 41,
+                  "endColumn" : 60
+                }
+              },
+              "message" : {
+                "text" : "escapeFn.toString() #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 637,
+                  "startColumn" : 13,
+                  "endColumn" : 79
+                }
+              },
+              "message" : {
+                "text" : "'escape ... ' + src | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 637,
+                  "startColumn" : 7,
+                  "endColumn" : 79
+                }
+              },
+              "message" : {
+                "text" : "src | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 71,
+                  "endColumn" : 74
+                }
+              },
+              "message" : {
+                "text" : "src | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 571,
+                  "startColumn" : 12,
+                  "endLine" : 719,
+                  "endColumn" : 4
+                }
+              },
+              "message" : {
+                "text" : "functio ... Fn;\\n  } | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 584,
+                  "startColumn" : 60,
+                  "endColumn" : 73
+                }
+              },
+              "message" : {
+                "text" : "opts.filename #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 584,
+                  "startColumn" : 45,
+                  "endColumn" : 74
+                }
+              },
+              "message" : {
+                "text" : "JSON.st ... lename) #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 584,
+                  "startColumn" : 29,
+                  "endColumn" : 88
+                }
+              },
+              "message" : {
+                "text" : "opts.fi ... efined' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 584,
+                  "startColumn" : 9,
+                  "endColumn" : 88
+                }
+              },
+              "message" : {
+                "text" : "sanitizedFilename #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 625,
+                  "startColumn" : 33,
+                  "endColumn" : 50
+                }
+              },
+              "message" : {
+                "text" : "sanitizedFilename #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 623,
+                  "startColumn" : 13,
+                  "endLine" : 630,
+                  "endColumn" : 21
+                }
+              },
+              "message" : {
+                "text" : "'var __ ...  + '\\n' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 623,
+                  "startColumn" : 7,
+                  "endLine" : 630,
+                  "endColumn" : 21
+                }
+              },
+              "message" : {
+                "text" : "src #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 71,
+                  "endColumn" : 74
+                }
+              },
+              "message" : {
+                "text" : "src | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 571,
+                  "startColumn" : 12,
+                  "endLine" : 719,
+                  "endColumn" : 4
+                }
+              },
+              "message" : {
+                "text" : "functio ... Fn;\\n  } | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 584,
+                  "startColumn" : 60,
+                  "endColumn" : 73
+                }
+              },
+              "message" : {
+                "text" : "opts.filename | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 584,
+                  "startColumn" : 45,
+                  "endColumn" : 74
+                }
+              },
+              "message" : {
+                "text" : "JSON.st ... lename) #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 584,
+                  "startColumn" : 29,
+                  "endColumn" : 88
+                }
+              },
+              "message" : {
+                "text" : "opts.fi ... efined' | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 584,
+                  "startColumn" : 9,
+                  "endColumn" : 88
+                }
+              },
+              "message" : {
+                "text" : "sanitizedFilename #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 625,
+                  "startColumn" : 33,
+                  "endColumn" : 50
+                }
+              },
+              "message" : {
+                "text" : "sanitizedFilename | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 623,
+                  "startColumn" : 13,
+                  "endLine" : 630,
+                  "endColumn" : 21
+                }
+              },
+              "message" : {
+                "text" : "'var __ ...  + '\\n' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 623,
+                  "startColumn" : 7,
+                  "endLine" : 630,
+                  "endColumn" : 21
+                }
+              },
+              "message" : {
+                "text" : "src | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "lib/ejs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 673,
+                  "startColumn" : 71,
+                  "endColumn" : 74
+                }
+              },
+              "message" : {
+                "text" : "src | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "lib/ejs.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 571,
+            "startColumn" : 12,
+            "endLine" : 719,
+            "endColumn" : 4
+          }
+        },
+        "message" : {
+          "text" : "compile"
+        }
+      }, {
+        "id" : 2,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "lib/ejs.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 673,
+            "startColumn" : 71,
+            "endColumn" : 74
+          }
+        },
+        "message" : {
+          "text" : "ctor"
+        }
+      } ]
+    } ],
+    "columnKind" : "utf16CodeUnits",
+    "properties" : {
+      "semmle.formatSpecifier" : "sarifv2.1.0"
+    }
+  } ]
+}

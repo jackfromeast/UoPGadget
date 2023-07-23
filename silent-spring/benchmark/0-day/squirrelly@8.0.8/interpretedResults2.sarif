@@ -1,0 +1,3361 @@
+{
+  "$schema" : "https://json.schemastore.org/sarif-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeQL",
+        "organization" : "GitHub",
+        "semanticVersion" : "2.14.0",
+        "rules" : [ {
+          "id" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+          "name" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+          "shortDescription" : {
+            "text" : "PrototypePollutingGadgetTemplate"
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "warning"
+          },
+          "properties" : {
+            "id" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+            "kind" : "path-problem",
+            "name" : "PrototypePollutingGadgetTemplate",
+            "precision" : "high",
+            "problem.severity" : "warning"
+          }
+        } ]
+      }
+    },
+    "artifacts" : [ {
+      "location" : {
+        "uri" : "dist/browser/squirrelly.dev.js",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 0
+      }
+    }, {
+      "location" : {
+        "uri" : "dist/squirrelly.cjs.js",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 1
+      }
+    }, {
+      "location" : {
+        "uri" : "dist/squirrelly.es.js",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 2
+      }
+    } ],
+    "results" : [ {
+      "ruleId" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "[compileScope](1) (dist/browser/squirrelly.dev.js) -> \\[\\] -> [ctor](2)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "dist/browser/squirrelly.dev.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 531,
+            "startColumn" : 3,
+            "endLine" : 601,
+            "endColumn" : 4
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "48cd64373776a3d1:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 531,
+                  "startColumn" : 3,
+                  "endLine" : 601,
+                  "endColumn" : 4
+                }
+              },
+              "message" : {
+                "text" : "functio ... r;\\r\\n  } | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 544,
+                  "startColumn" : 29,
+                  "endColumn" : 43
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.c #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 544,
+                  "startColumn" : 29,
+                  "endColumn" : 49
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.c || '' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 544,
+                  "startColumn" : 19,
+                  "endColumn" : 49
+                }
+              },
+              "message" : {
+                "text" : "content #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 596,
+                  "startColumn" : 32,
+                  "endColumn" : 39
+                }
+              },
+              "message" : {
+                "text" : "content #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 596,
+                  "startColumn" : 32,
+                  "endColumn" : 46
+                }
+              },
+              "message" : {
+                "text" : "content + '\\n' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 596,
+                  "startColumn" : 19,
+                  "endColumn" : 46
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 600,
+                  "startColumn" : 14,
+                  "endColumn" : 23
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 467,
+                  "startColumn" : 11,
+                  "endColumn" : 36
+                }
+              },
+              "message" : {
+                "text" : "compile ... r, env) #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 465,
+                  "startColumn" : 17,
+                  "endLine" : 469,
+                  "endColumn" : 35
+                }
+              },
+              "message" : {
+                "text" : "\"var tR ... ' : '') #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 465,
+                  "startColumn" : 11,
+                  "endLine" : 469,
+                  "endColumn" : 35
+                }
+              },
+              "message" : {
+                "text" : "res #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 478,
+                  "startColumn" : 14,
+                  "endColumn" : 17
+                }
+              },
+              "message" : {
+                "text" : "res #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 879,
+                  "startColumn" : 11,
+                  "endColumn" : 40
+                }
+              },
+              "message" : {
+                "text" : "compile ... ptions) | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 531,
+                  "startColumn" : 3,
+                  "endLine" : 601,
+                  "endColumn" : 4
+                }
+              },
+              "message" : {
+                "text" : "functio ... r;\\r\\n  } | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 544,
+                  "startColumn" : 29,
+                  "endColumn" : 43
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.c | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 544,
+                  "startColumn" : 29,
+                  "endColumn" : 49
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.c || '' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 544,
+                  "startColumn" : 19,
+                  "endColumn" : 49
+                }
+              },
+              "message" : {
+                "text" : "content | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 596,
+                  "startColumn" : 32,
+                  "endColumn" : 39
+                }
+              },
+              "message" : {
+                "text" : "content #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 596,
+                  "startColumn" : 32,
+                  "endColumn" : 46
+                }
+              },
+              "message" : {
+                "text" : "content + '\\n' | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 596,
+                  "startColumn" : 19,
+                  "endColumn" : 46
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 600,
+                  "startColumn" : 14,
+                  "endColumn" : 23
+                }
+              },
+              "message" : {
+                "text" : "returnStr | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 467,
+                  "startColumn" : 11,
+                  "endColumn" : 36
+                }
+              },
+              "message" : {
+                "text" : "compile ... r, env) #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 465,
+                  "startColumn" : 17,
+                  "endLine" : 469,
+                  "endColumn" : 35
+                }
+              },
+              "message" : {
+                "text" : "\"var tR ... ' : '') | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 465,
+                  "startColumn" : 11,
+                  "endLine" : 469,
+                  "endColumn" : 35
+                }
+              },
+              "message" : {
+                "text" : "res #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 478,
+                  "startColumn" : 14,
+                  "endColumn" : 17
+                }
+              },
+              "message" : {
+                "text" : "res | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 879,
+                  "startColumn" : 11,
+                  "endColumn" : 40
+                }
+              },
+              "message" : {
+                "text" : "compile ... ptions) | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 531,
+                  "startColumn" : 3,
+                  "endLine" : 601,
+                  "endColumn" : 4
+                }
+              },
+              "message" : {
+                "text" : "functio ... r;\\r\\n  } | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 546,
+                  "startColumn" : 26,
+                  "endColumn" : 40
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.n #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 546,
+                  "startColumn" : 26,
+                  "endColumn" : 46
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.n || '' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 546,
+                  "startColumn" : 19,
+                  "endColumn" : 46
+                }
+              },
+              "message" : {
+                "text" : "name #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 591,
+                  "startColumn" : 76,
+                  "endColumn" : 80
+                }
+              },
+              "message" : {
+                "text" : "name #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 591,
+                  "startColumn" : 34,
+                  "endColumn" : 119
+                }
+              },
+              "message" : {
+                "text" : "(isAsyn ... ,[],c)' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 591,
+                  "startColumn" : 27,
+                  "endColumn" : 129
+                }
+              },
+              "message" : {
+                "text" : "filter( ... ilters) #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 590,
+                  "startColumn" : 23,
+                  "endLine" : 592,
+                  "endColumn" : 30
+                }
+              },
+              "message" : {
+                "text" : "'tR+='  ...     ';' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 589,
+                  "startColumn" : 19,
+                  "endLine" : 592,
+                  "endColumn" : 30
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 600,
+                  "startColumn" : 14,
+                  "endColumn" : 23
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 467,
+                  "startColumn" : 11,
+                  "endColumn" : 36
+                }
+              },
+              "message" : {
+                "text" : "compile ... r, env) | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 465,
+                  "startColumn" : 17,
+                  "endLine" : 469,
+                  "endColumn" : 35
+                }
+              },
+              "message" : {
+                "text" : "\"var tR ... ' : '') #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 465,
+                  "startColumn" : 11,
+                  "endLine" : 469,
+                  "endColumn" : 35
+                }
+              },
+              "message" : {
+                "text" : "res | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 478,
+                  "startColumn" : 14,
+                  "endColumn" : 17
+                }
+              },
+              "message" : {
+                "text" : "res | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 879,
+                  "startColumn" : 11,
+                  "endColumn" : 40
+                }
+              },
+              "message" : {
+                "text" : "compile ... ptions) | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 531,
+                  "startColumn" : 3,
+                  "endLine" : 601,
+                  "endColumn" : 4
+                }
+              },
+              "message" : {
+                "text" : "functio ... r;\\r\\n  } | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 546,
+                  "startColumn" : 26,
+                  "endColumn" : 40
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.n | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 546,
+                  "startColumn" : 26,
+                  "endColumn" : 46
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.n || '' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 546,
+                  "startColumn" : 19,
+                  "endColumn" : 46
+                }
+              },
+              "message" : {
+                "text" : "name | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 591,
+                  "startColumn" : 76,
+                  "endColumn" : 80
+                }
+              },
+              "message" : {
+                "text" : "name #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 591,
+                  "startColumn" : 34,
+                  "endColumn" : 119
+                }
+              },
+              "message" : {
+                "text" : "(isAsyn ... ,[],c)' | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 591,
+                  "startColumn" : 27,
+                  "endColumn" : 129
+                }
+              },
+              "message" : {
+                "text" : "filter( ... ilters) #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 590,
+                  "startColumn" : 23,
+                  "endLine" : 592,
+                  "endColumn" : 30
+                }
+              },
+              "message" : {
+                "text" : "'tR+='  ...     ';' | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 589,
+                  "startColumn" : 19,
+                  "endLine" : 592,
+                  "endColumn" : 30
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 600,
+                  "startColumn" : 14,
+                  "endColumn" : 23
+                }
+              },
+              "message" : {
+                "text" : "returnStr | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 467,
+                  "startColumn" : 11,
+                  "endColumn" : 36
+                }
+              },
+              "message" : {
+                "text" : "compile ... r, env) | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 465,
+                  "startColumn" : 17,
+                  "endLine" : 469,
+                  "endColumn" : 35
+                }
+              },
+              "message" : {
+                "text" : "\"var tR ... ' : '') | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 465,
+                  "startColumn" : 11,
+                  "endLine" : 469,
+                  "endColumn" : 35
+                }
+              },
+              "message" : {
+                "text" : "res | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 478,
+                  "startColumn" : 14,
+                  "endColumn" : 17
+                }
+              },
+              "message" : {
+                "text" : "res #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/browser/squirrelly.dev.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 879,
+                  "startColumn" : 11,
+                  "endColumn" : 40
+                }
+              },
+              "message" : {
+                "text" : "compile ... ptions) | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "dist/browser/squirrelly.dev.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 531,
+            "startColumn" : 3,
+            "endLine" : 601,
+            "endColumn" : 4
+          }
+        },
+        "message" : {
+          "text" : "compileScope"
+        }
+      }, {
+        "id" : 2,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "dist/browser/squirrelly.dev.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 879,
+            "startColumn" : 11,
+            "endColumn" : 40
+          }
+        },
+        "message" : {
+          "text" : "ctor"
+        }
+      } ]
+    }, {
+      "ruleId" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "[compileScope](1) (dist/squirrelly.cjs.js) -> \\[\\] -> [ctor](2)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "dist/squirrelly.cjs.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 557,
+            "endLine" : 627,
+            "endColumn" : 2
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "48cd64373776a3d1:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 557,
+                  "endLine" : 627,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... Str;\\r\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 570,
+                  "startColumn" : 27,
+                  "endColumn" : 41
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.c #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 570,
+                  "startColumn" : 27,
+                  "endColumn" : 47
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.c || '' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 570,
+                  "startColumn" : 17,
+                  "endColumn" : 47
+                }
+              },
+              "message" : {
+                "text" : "content #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 622,
+                  "startColumn" : 30,
+                  "endColumn" : 37
+                }
+              },
+              "message" : {
+                "text" : "content #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 622,
+                  "startColumn" : 30,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "content + '\\n' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 622,
+                  "startColumn" : 17,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 626,
+                  "startColumn" : 12,
+                  "endColumn" : 21
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 493,
+                  "startColumn" : 9,
+                  "endColumn" : 34
+                }
+              },
+              "message" : {
+                "text" : "compile ... r, env) #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 491,
+                  "startColumn" : 15,
+                  "endLine" : 495,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "\"var tR ... ' : '') #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 491,
+                  "startColumn" : 9,
+                  "endLine" : 495,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "res #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 504,
+                  "startColumn" : 12,
+                  "endColumn" : 15
+                }
+              },
+              "message" : {
+                "text" : "res #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 877,
+                  "startColumn" : 9,
+                  "endColumn" : 38
+                }
+              },
+              "message" : {
+                "text" : "compile ... ptions) | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 557,
+                  "endLine" : 627,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... Str;\\r\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 570,
+                  "startColumn" : 27,
+                  "endColumn" : 41
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.c | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 570,
+                  "startColumn" : 27,
+                  "endColumn" : 47
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.c || '' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 570,
+                  "startColumn" : 17,
+                  "endColumn" : 47
+                }
+              },
+              "message" : {
+                "text" : "content | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 622,
+                  "startColumn" : 30,
+                  "endColumn" : 37
+                }
+              },
+              "message" : {
+                "text" : "content #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 622,
+                  "startColumn" : 30,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "content + '\\n' | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 622,
+                  "startColumn" : 17,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 626,
+                  "startColumn" : 12,
+                  "endColumn" : 21
+                }
+              },
+              "message" : {
+                "text" : "returnStr | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 493,
+                  "startColumn" : 9,
+                  "endColumn" : 34
+                }
+              },
+              "message" : {
+                "text" : "compile ... r, env) #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 491,
+                  "startColumn" : 15,
+                  "endLine" : 495,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "\"var tR ... ' : '') | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 491,
+                  "startColumn" : 9,
+                  "endLine" : 495,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "res #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 504,
+                  "startColumn" : 12,
+                  "endColumn" : 15
+                }
+              },
+              "message" : {
+                "text" : "res | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 877,
+                  "startColumn" : 9,
+                  "endColumn" : 38
+                }
+              },
+              "message" : {
+                "text" : "compile ... ptions) | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 557,
+                  "endLine" : 627,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... Str;\\r\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 572,
+                  "startColumn" : 24,
+                  "endColumn" : 38
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.n #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 572,
+                  "startColumn" : 24,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.n || '' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 572,
+                  "startColumn" : 17,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "name #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 617,
+                  "startColumn" : 74,
+                  "endColumn" : 78
+                }
+              },
+              "message" : {
+                "text" : "name #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 617,
+                  "startColumn" : 32,
+                  "endColumn" : 117
+                }
+              },
+              "message" : {
+                "text" : "(isAsyn ... ,[],c)' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 617,
+                  "startColumn" : 25,
+                  "endColumn" : 127
+                }
+              },
+              "message" : {
+                "text" : "filter( ... ilters) #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 616,
+                  "startColumn" : 21,
+                  "endLine" : 618,
+                  "endColumn" : 28
+                }
+              },
+              "message" : {
+                "text" : "'tR+='  ...     ';' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 615,
+                  "startColumn" : 17,
+                  "endLine" : 618,
+                  "endColumn" : 28
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 626,
+                  "startColumn" : 12,
+                  "endColumn" : 21
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 493,
+                  "startColumn" : 9,
+                  "endColumn" : 34
+                }
+              },
+              "message" : {
+                "text" : "compile ... r, env) | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 491,
+                  "startColumn" : 15,
+                  "endLine" : 495,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "\"var tR ... ' : '') #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 491,
+                  "startColumn" : 9,
+                  "endLine" : 495,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "res | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 504,
+                  "startColumn" : 12,
+                  "endColumn" : 15
+                }
+              },
+              "message" : {
+                "text" : "res | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 877,
+                  "startColumn" : 9,
+                  "endColumn" : 38
+                }
+              },
+              "message" : {
+                "text" : "compile ... ptions) | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 557,
+                  "endLine" : 627,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... Str;\\r\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 572,
+                  "startColumn" : 24,
+                  "endColumn" : 38
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.n | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 572,
+                  "startColumn" : 24,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.n || '' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 572,
+                  "startColumn" : 17,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "name | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 617,
+                  "startColumn" : 74,
+                  "endColumn" : 78
+                }
+              },
+              "message" : {
+                "text" : "name #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 617,
+                  "startColumn" : 32,
+                  "endColumn" : 117
+                }
+              },
+              "message" : {
+                "text" : "(isAsyn ... ,[],c)' | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 617,
+                  "startColumn" : 25,
+                  "endColumn" : 127
+                }
+              },
+              "message" : {
+                "text" : "filter( ... ilters) #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 616,
+                  "startColumn" : 21,
+                  "endLine" : 618,
+                  "endColumn" : 28
+                }
+              },
+              "message" : {
+                "text" : "'tR+='  ...     ';' | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 615,
+                  "startColumn" : 17,
+                  "endLine" : 618,
+                  "endColumn" : 28
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 626,
+                  "startColumn" : 12,
+                  "endColumn" : 21
+                }
+              },
+              "message" : {
+                "text" : "returnStr | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 493,
+                  "startColumn" : 9,
+                  "endColumn" : 34
+                }
+              },
+              "message" : {
+                "text" : "compile ... r, env) | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 491,
+                  "startColumn" : 15,
+                  "endLine" : 495,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "\"var tR ... ' : '') | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 491,
+                  "startColumn" : 9,
+                  "endLine" : 495,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "res | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 504,
+                  "startColumn" : 12,
+                  "endColumn" : 15
+                }
+              },
+              "message" : {
+                "text" : "res #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.cjs.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 1
+                },
+                "region" : {
+                  "startLine" : 877,
+                  "startColumn" : 9,
+                  "endColumn" : 38
+                }
+              },
+              "message" : {
+                "text" : "compile ... ptions) | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "dist/squirrelly.cjs.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 557,
+            "endLine" : 627,
+            "endColumn" : 2
+          }
+        },
+        "message" : {
+          "text" : "compileScope"
+        }
+      }, {
+        "id" : 2,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "dist/squirrelly.cjs.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 1
+          },
+          "region" : {
+            "startLine" : 877,
+            "startColumn" : 9,
+            "endColumn" : 38
+          }
+        },
+        "message" : {
+          "text" : "ctor"
+        }
+      } ]
+    }, {
+      "ruleId" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "[compileScope](1) (dist/squirrelly.es.js) -> \\[\\] -> [ctor](2)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "dist/squirrelly.es.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 553,
+            "endLine" : 623,
+            "endColumn" : 2
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "48cd64373776a3d1:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 553,
+                  "endLine" : 623,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... Str;\\r\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 566,
+                  "startColumn" : 27,
+                  "endColumn" : 41
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.c #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 566,
+                  "startColumn" : 27,
+                  "endColumn" : 47
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.c || '' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 566,
+                  "startColumn" : 17,
+                  "endColumn" : 47
+                }
+              },
+              "message" : {
+                "text" : "content #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 618,
+                  "startColumn" : 30,
+                  "endColumn" : 37
+                }
+              },
+              "message" : {
+                "text" : "content #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 618,
+                  "startColumn" : 30,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "content + '\\n' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 618,
+                  "startColumn" : 17,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 622,
+                  "startColumn" : 12,
+                  "endColumn" : 21
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 489,
+                  "startColumn" : 9,
+                  "endColumn" : 34
+                }
+              },
+              "message" : {
+                "text" : "compile ... r, env) #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 487,
+                  "startColumn" : 15,
+                  "endLine" : 491,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "\"var tR ... ' : '') #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 487,
+                  "startColumn" : 9,
+                  "endLine" : 491,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "res #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 500,
+                  "startColumn" : 12,
+                  "endColumn" : 15
+                }
+              },
+              "message" : {
+                "text" : "res #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 873,
+                  "startColumn" : 9,
+                  "endColumn" : 38
+                }
+              },
+              "message" : {
+                "text" : "compile ... ptions) | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 553,
+                  "endLine" : 623,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... Str;\\r\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 566,
+                  "startColumn" : 27,
+                  "endColumn" : 41
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.c | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 566,
+                  "startColumn" : 27,
+                  "endColumn" : 47
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.c || '' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 566,
+                  "startColumn" : 17,
+                  "endColumn" : 47
+                }
+              },
+              "message" : {
+                "text" : "content | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 618,
+                  "startColumn" : 30,
+                  "endColumn" : 37
+                }
+              },
+              "message" : {
+                "text" : "content #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 618,
+                  "startColumn" : 30,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "content + '\\n' | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 618,
+                  "startColumn" : 17,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 622,
+                  "startColumn" : 12,
+                  "endColumn" : 21
+                }
+              },
+              "message" : {
+                "text" : "returnStr | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 489,
+                  "startColumn" : 9,
+                  "endColumn" : 34
+                }
+              },
+              "message" : {
+                "text" : "compile ... r, env) #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 487,
+                  "startColumn" : 15,
+                  "endLine" : 491,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "\"var tR ... ' : '') | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 487,
+                  "startColumn" : 9,
+                  "endLine" : 491,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "res #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 500,
+                  "startColumn" : 12,
+                  "endColumn" : 15
+                }
+              },
+              "message" : {
+                "text" : "res | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 873,
+                  "startColumn" : 9,
+                  "endColumn" : 38
+                }
+              },
+              "message" : {
+                "text" : "compile ... ptions) | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 553,
+                  "endLine" : 623,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... Str;\\r\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 568,
+                  "startColumn" : 24,
+                  "endColumn" : 38
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.n #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 568,
+                  "startColumn" : 24,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.n || '' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 568,
+                  "startColumn" : 17,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "name #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 613,
+                  "startColumn" : 74,
+                  "endColumn" : 78
+                }
+              },
+              "message" : {
+                "text" : "name #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 613,
+                  "startColumn" : 32,
+                  "endColumn" : 117
+                }
+              },
+              "message" : {
+                "text" : "(isAsyn ... ,[],c)' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 613,
+                  "startColumn" : 25,
+                  "endColumn" : 127
+                }
+              },
+              "message" : {
+                "text" : "filter( ... ilters) #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 612,
+                  "startColumn" : 21,
+                  "endLine" : 614,
+                  "endColumn" : 28
+                }
+              },
+              "message" : {
+                "text" : "'tR+='  ...     ';' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 611,
+                  "startColumn" : 17,
+                  "endLine" : 614,
+                  "endColumn" : 28
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 622,
+                  "startColumn" : 12,
+                  "endColumn" : 21
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 489,
+                  "startColumn" : 9,
+                  "endColumn" : 34
+                }
+              },
+              "message" : {
+                "text" : "compile ... r, env) | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 487,
+                  "startColumn" : 15,
+                  "endLine" : 491,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "\"var tR ... ' : '') #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 487,
+                  "startColumn" : 9,
+                  "endLine" : 491,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "res | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 500,
+                  "startColumn" : 12,
+                  "endColumn" : 15
+                }
+              },
+              "message" : {
+                "text" : "res | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 873,
+                  "startColumn" : 9,
+                  "endColumn" : 38
+                }
+              },
+              "message" : {
+                "text" : "compile ... ptions) | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 553,
+                  "endLine" : 623,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... Str;\\r\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 568,
+                  "startColumn" : 24,
+                  "endColumn" : 38
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.n | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 568,
+                  "startColumn" : 24,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "currentBlock.n || '' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 568,
+                  "startColumn" : 17,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "name | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 613,
+                  "startColumn" : 74,
+                  "endColumn" : 78
+                }
+              },
+              "message" : {
+                "text" : "name #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 613,
+                  "startColumn" : 32,
+                  "endColumn" : 117
+                }
+              },
+              "message" : {
+                "text" : "(isAsyn ... ,[],c)' | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 613,
+                  "startColumn" : 25,
+                  "endColumn" : 127
+                }
+              },
+              "message" : {
+                "text" : "filter( ... ilters) #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 612,
+                  "startColumn" : 21,
+                  "endLine" : 614,
+                  "endColumn" : 28
+                }
+              },
+              "message" : {
+                "text" : "'tR+='  ...     ';' | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 611,
+                  "startColumn" : 17,
+                  "endLine" : 614,
+                  "endColumn" : 28
+                }
+              },
+              "message" : {
+                "text" : "returnStr #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 622,
+                  "startColumn" : 12,
+                  "endColumn" : 21
+                }
+              },
+              "message" : {
+                "text" : "returnStr | #polluted #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 489,
+                  "startColumn" : 9,
+                  "endColumn" : 34
+                }
+              },
+              "message" : {
+                "text" : "compile ... r, env) | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 487,
+                  "startColumn" : 15,
+                  "endLine" : 491,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "\"var tR ... ' : '') | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 487,
+                  "startColumn" : 9,
+                  "endLine" : 491,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "res | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 500,
+                  "startColumn" : 12,
+                  "endColumn" : 15
+                }
+              },
+              "message" : {
+                "text" : "res #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "dist/squirrelly.es.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 2
+                },
+                "region" : {
+                  "startLine" : 873,
+                  "startColumn" : 9,
+                  "endColumn" : 38
+                }
+              },
+              "message" : {
+                "text" : "compile ... ptions) | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "dist/squirrelly.es.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 553,
+            "endLine" : 623,
+            "endColumn" : 2
+          }
+        },
+        "message" : {
+          "text" : "compileScope"
+        }
+      }, {
+        "id" : 2,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "dist/squirrelly.es.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 2
+          },
+          "region" : {
+            "startLine" : 873,
+            "startColumn" : 9,
+            "endColumn" : 38
+          }
+        },
+        "message" : {
+          "text" : "ctor"
+        }
+      } ]
+    } ],
+    "columnKind" : "utf16CodeUnits",
+    "properties" : {
+      "semmle.formatSpecifier" : "sarifv2.1.0"
+    }
+  } ]
+}
