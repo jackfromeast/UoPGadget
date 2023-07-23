@@ -1,0 +1,36 @@
+{
+  "$schema" : "https://json.schemastore.org/sarif-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeQL",
+        "organization" : "GitHub",
+        "semanticVersion" : "2.14.0",
+        "rules" : [ {
+          "id" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+          "name" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+          "shortDescription" : {
+            "text" : "PrototypePollutingGadgetTemplate"
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "warning"
+          },
+          "properties" : {
+            "id" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+            "kind" : "path-problem",
+            "name" : "PrototypePollutingGadgetTemplate",
+            "precision" : "high",
+            "problem.severity" : "warning"
+          }
+        } ]
+      }
+    },
+    "results" : [ ],
+    "columnKind" : "utf16CodeUnits",
+    "properties" : {
+      "semmle.formatSpecifier" : "sarifv2.1.0"
+    }
+  } ]
+}
