@@ -1,0 +1,25 @@
+To reproduce:
+
+./expoSE+ --input "{\"block_undef_t\":\"object\",\"_bound\":27,\"block_undef_elements_type_t\":\"string\",\"block_undef_elements_type\":\"Text\",\"block_undef_elements_str_t\":\"object\"}" --patch --chain --undefined-file /home/ubuntu/ppaeg/expoSE+/tests-pp/template-7-22-known/pug@3.0.2/app-0/undefined-props-0.json --undefined-utq /home/ubuntu/ppaeg/expoSE+/tests-pp/template-7-22-known/pug@3.0.2/app-0/standalone-ut.json /home/ubuntu/ppaeg/expoSE+/tests-pp/template-7-22-known/pug@3.0.2/app-0/app-0.js
+
+To avoid:
+this.MAXPCLIMIT = 50; set path constraint limit to 50
+
+#
+# Fatal error in , line 0
+# Check failed: result.second.
+#
+#
+#
+#FailureMessage Object: 0x7ffd7b7d5ef0
+ 1: 0xb72001  [expoSE+ worker]
+ 2: 0x1bfb174 V8_Fatal(char const*, ...) [expoSE+ worker]
+ 3: 0xfb7741 v8::internal::GlobalBackingStoreRegistry::Register(std::shared_ptr<v8::internal::BackingStore>) [expoSE+ worker]
+ 4: 0xd09138 v8::ArrayBuffer::GetBackingStore() [expoSE+ worker]
+ 5: 0xabced0 napi_get_typedarray_info [expoSE+ worker]
+ 6: 0x7fe9ca4053ac  [/home/ubuntu/ppaeg/expoSE+/node_modules/ref-napi/prebuilds/linux-x64/node.napi.node]
+ 7: 0x7fe9ca405b48  [/home/ubuntu/ppaeg/expoSE+/node_modules/ref-napi/prebuilds/linux-x64/node.napi.node]
+ 8: 0x7fe9ca407831  [/home/ubuntu/ppaeg/expoSE+/node_modules/ref-napi/prebuilds/linux-x64/node.napi.node]
+ 9: 0x7fe9ca40d4ab Napi::details::CallbackData<void (*)(Napi::CallbackInfo const&), void>::Wrapper(napi_env__*, napi_callback_info__*) [/home/ubuntu/ppaeg/expoSE+/node_modules/ref-napi/prebuilds/linux-x64/node.napi.node]
+10: 0xab380d  [expoSE+ worker]
+11: 0x156e9cc  [expoSE+ worker]
