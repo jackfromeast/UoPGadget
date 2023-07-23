@@ -335,7 +335,7 @@ class SymbolicExecution {
 	_filterPath(path){
 		// filter out the path that contains the following strings
 
-		if(path.includes("acorn") || path.includes("babel")){
+		if(path.includes("acorn") || path.includes("babel") || path.includes("mime")){
 			return true;
 		}
 		else{
@@ -353,6 +353,8 @@ class SymbolicExecution {
 		if(!isNaN(parseFloat(prop)) && isFinite(prop)){
 			return true;
 		} else if(prop === "undefined"){
+			return true;
+		} else if(prop.includes("Symbol(")){
 			return true;
 		}
 		return false;
@@ -417,10 +419,13 @@ class SymbolicExecution {
 	_getFieldSymbolicOffset(base, offset) {
 		offset = this.state.ToString(offset);   
 		const base_c = this.state.getConcrete(base);
+
+		// these are parallel constraints
 		for (const idx in base_c) {
 			const is_this_idx = this.state.binary("==", idx, offset);
-			this.state.pushCondition(this.state.asSymbolic(is_this_idx));
+			this.state.conditional(this.state.asSymbolic(is_this_idx));
 		}
+		// this.state.parallelid++;
 	}
 
 	/** 
@@ -678,6 +683,21 @@ class SymbolicExecution {
 			left = res.op1;
 			right = res.op2;
 		}
+
+		// in operator for undefined property
+		if (op === "in" && !this.state.isSymbolic(left) && !this.state.isSymbolic(right)) {
+			if (right[left]===undefined && !(left in right) &&
+				!this._filterPath(this._location(iid).toString()) &&
+				!this._filterProp(left.toString())) {
+
+				// if this.state.undefinedPool does not contain this offset, add it to the pool
+				if(!this.state.undefinedPool.includes(left.toString())){
+					Log.logUndefined("Found undefined property through in operator: " + left.toString() + " at " + this._location(iid).toString());
+					this.state.undefinedPool.push(left.toString());
+				}
+			}
+		}
+		
  
 		// Don't do symbolic logic if the symbolic values are diff types
 		// Concretise instead

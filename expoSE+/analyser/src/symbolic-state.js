@@ -79,6 +79,10 @@ class SymbolicState {
 		this.inputSymbols = {}; 			/** symbols passing to the sovler, not including pureSymbol and symbolicObject, */
 		this.wrapperSymbols = {}; 			/** pureSymbol and symbolicObject */
 		this.pathCondition = [];
+		this.parallelid = 0;				/** indicate path constraints that are parallel should be 
+											view as one constraint in bound computation.
+											e.g. this[concolicVar], then we may add constraints for all the property name to the var. these constraints are paralleled.
+											*/
 		this.undefinedPool = inherit.undefinedPool; /** current undefined pool */
 
 		this.stats = new Stats();
@@ -338,8 +342,29 @@ class SymbolicState {
 		}, "") : "";
 	}
 
+	/**
+	 * Count the number of parallel path constraints before pcIndex
+	 * 
+	 * 
+	 * @param {*} pc 
+	 */
+	_removeParallelPC(pcIndex) {
+		let countMap = {};
+		for(let i=0; i<=pcIndex; i++){
+			if(this.pathCondition[i].parallelid !== -1){
+				if(countMap[this.pathCondition[i].parallelid]){
+					countMap[this.pathCondition[i].parallelid]++;
+				}else{
+					countMap[this.pathCondition[i].parallelid] = 1;
+				}
+			}
+		}
+		return (pcIndex+1) + Object.keys(countMap).length - Object.values(countMap).reduce((acc, value) => acc + value, 0);
+	}
+
 	_addInput(pc, solution, pcIndex, childInputs) {
-		solution._bound = pcIndex + 1;
+		// solution._bound = this._removeParallelPC(pcIndex);
+		solution._bound = pcIndex+1;
 		childInputs.push({
 			input: solution,
 			pc: this._stringPC(pc),
@@ -417,8 +442,10 @@ class SymbolicState {
 		 * if bound == pathCondition.length, meaning there is no newly discovered path condition
 		 * 
 		 * but if there are newly discovered pure symbol, we should add them to the childInputs and explore the next round
+		 * 
+		 * update: replaced childInputs.length==0 lol
 		 */
-		if (this.pathCondition.length>0 && this.input._bound === this.pathCondition.length && this._getPureSymbolNum()) {
+		if (this.pathCondition.length>0 && childInputs.length==0 && this._getPureSymbolNum()) {
 			// solve the exisiting path condition(before the _bound)
 			this._solvePC(childInputs, this.input._bound-1, inputCallback, false);
 		}
