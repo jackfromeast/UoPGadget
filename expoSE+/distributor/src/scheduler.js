@@ -65,6 +65,8 @@ class Scheduler extends EventEmitter{
 			input: this.input || baseInput || { _bound: 0 },		/** baseInput is the input passed from the commandline */
 			undefinedUT: this.undefinedUT,
 			forinLoad: this.forinLoad,
+			withHelper: this.withHelper,
+			withChain: this.withChain
 		}]);
 
 		this.timeout =setTimeout(() => {            
@@ -218,6 +220,8 @@ class Scheduler extends EventEmitter{
 				input: alt.input,
 				pc: alt.pc,
 				undefinedUT: this.undefinedUT,
+				withHelper: this.withHelper,
+				withChain: this.withChain,
 				forinLoad: alt.forinLoad,
 				forinKeys: alt.forinKeys,
 				forinKeyBound: alt.forinKeyBound

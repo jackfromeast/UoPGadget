@@ -86,7 +86,7 @@ class Center {
 						this.undefinedUTQ.cleanUp(this.curUndefined.roundid);
 					}
 
-					if (!success && this.helperProp){
+					if (!success && !this.curUndefined.withHelper && this.helperProp){
 						this.undefinedUTQ.addHelperProps(propsUT, newHelperProps);
 					}
 

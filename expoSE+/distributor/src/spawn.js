@@ -19,9 +19,11 @@ class Spawn {
 		
 		let inherit = {
 			undefinedPool: opts.undefinedPool,
+			withHelper: this.file.withHelper || false,
+			withChain: this.file.withChain || false,
 			forinLoad: this.file.forinLoad || false, 
 			forinKeys: this.file.forinKeys || [],
-			forinKeyBound: this.file.forinKeyBound || 0
+			forinKeyBound: this.file.forinKeyBound || 0,
 		};
 		this.args = [this.file.path, JSON.stringify(this.file.input), JSON.stringify(this.file.undefinedUT), JSON.stringify(inherit)];
 		// this.args = [this.file.path, JSON.stringify(this.file.input)];

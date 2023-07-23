@@ -91,6 +91,7 @@ class SymbolicState {
 		this.errors = [];
 
 		/** Helper Properties */
+		this.withHelper = inherit.withHelper;	/** whether use helper properties */
 		this.retHelper = false;				/** whether retrun the helper candidates */
 		this.hasLoaded = false;				/** whether the polluted variable has been visited */
 		this.helperCandidates = [];			/** patching undefined property candidates */
@@ -246,9 +247,14 @@ class SymbolicState {
 		// Object.prototype[this.undefinedUnderTest[i]] = this.createPureSymbol(this.undefinedUnderTest[i]+"_undef");
 		for (let i=0; i < this.undefinedUnderTest.length; i++) {
 			const propName = this.undefinedUnderTest[i];
-			const propValue = this.createPureSymbol(propName + "_undef");
-			
-			this.setupUndefined(propName, propValue);
+
+			// set helper property value to the fixed "true"
+			if (this.withHelper && propName === this.withHelper){
+				Object.prototype[propName] = "true";
+			}else{
+				const propValue = this.createPureSymbol(propName + "_undef");
+				this.setupUndefined(propName, propValue);
+			}
 		}
 		if(this.forinKeys.length > 0){
 			for( let i=0; i < this.forinKeys.length; i++ ){
