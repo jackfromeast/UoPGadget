@@ -2,7 +2,7 @@
 
 const fs = require("fs");
 
-export default function(file, target, coverage, start, end, newUndefinedMap, test_list) {
+export default function(file, target, coverage, start, end, firstHitTime, newUndefinedMap, test_list) {
 	// console.log(`\n*-- Writing JSON to ${file} --*`);
 	fs.writeFile(file, JSON.stringify({
 		source: target,
@@ -11,6 +11,7 @@ export default function(file, target, coverage, start, end, newUndefinedMap, tes
 		// finalCoverage: coverage.final(true) /* Include SMAP in the final coverage JSON */ ,
 		start: start,
 		end: end,
+		firstHit: firstHitTime,
 		undefinedMap: newUndefinedMap,
 		done: filterDone(test_list)
 	}, null, 4), err => { if (err) console.log(`Failed to write JSON because ${err}`); });

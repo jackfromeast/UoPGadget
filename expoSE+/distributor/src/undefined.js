@@ -156,7 +156,8 @@ class UndefinedUTQ {
 	 * @param {*} props 
 	 */
 	addHelperProps(propsUT, props) {
-		let newProps = props.filter(ele => !this.helperProps.includes(ele));
+		// let newProps = props.filter(ele => !this.helperProps.includes(ele));
+		let newProps = props.reverse();
 		
 		if (this.successHelper.length > 0) {
 			for (let i = 0; i < this.successHelper.length; i++) {

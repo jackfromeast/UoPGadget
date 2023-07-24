@@ -48,6 +48,7 @@ class Scheduler extends EventEmitter{
 		/** initialized in start method */
 		this.timeout = null;
 		this.starttime = null;
+		this.firsthittime = null;
 		this.file = null;
 		this.baseInput = null;
 
@@ -273,6 +274,10 @@ class Scheduler extends EventEmitter{
 			this.undefinedPool.updatePool(finalOut.input, finalOut.undefinedPool);
 			this.helperPool.updatePool(finalOut.input, finalOut.helperPool);
 			
+			if (finalOut.result && !this.success){
+				this.firsthittime = (new Date()).getTime();
+			}
+			
 			if (finalOut.result) {
 				this.success += 1;
 			}
@@ -330,7 +335,13 @@ class Scheduler extends EventEmitter{
         
 		let logFilePath = this._setupLogFile();
 		let newUndefinedMap = this.undefinedPool.getUpdatedMap();
-		JsonWriter(logFilePath, this.file, this._coverage, this.starttime, (new Date()).getTime(), newUndefinedMap, this._done);
+		let firstHitTime;
+		if(this.success){
+			firstHitTime = Math.round((this.firsthittime - this.starttime) / 1000);
+		}else{
+			firstHitTime = "-1";
+		}
+		JsonWriter(logFilePath, this.file, this._coverage, this.starttime, (new Date()).getTime(), firstHitTime, newUndefinedMap, this._done);
 
 		function round(num, precision) {
 			return Math.round(num * Math.pow(10, precision)) / Math.pow(10, precision);
