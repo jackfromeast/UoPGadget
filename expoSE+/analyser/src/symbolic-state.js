@@ -74,6 +74,7 @@ class SymbolicState {
 		this.helpers = new Helpers(this, this.ctx);
 
 		Z3.Query.MAX_REFINEMENTS = Config.maxRefinements;
+		this.MAX_PC_LENGTH = 30;
 
 		this.input = input;
 		this.inputSymbols = {}; 			/** symbols passing to the sovler, not including pureSymbol and symbolicObject, */
@@ -438,6 +439,10 @@ class SymbolicState {
 			//Push the current thing we're looking at to the solver
 			this.slv.assert(this.pathCondition[i].ast);
 			this.slv.push();
+
+			if(i>this.MAX_PC_LENGTH){
+				break;
+			}
 		}
 
 
