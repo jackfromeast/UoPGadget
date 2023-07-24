@@ -67,6 +67,14 @@ parser.addArgument("--test-strategy", {
 	help: "test strategy to use",
 });
 
+parser.addArgument("--test-order", {
+	dest: "test_strategy",
+	type: "string",
+	defaultValue: "backward",
+	action: "store",
+	help: "test strategy to use",
+});
+
 parser.addArgument("--json-path", {
 	dest: "json_path",
 	type: "string",
@@ -179,6 +187,7 @@ export default {
 	undefMaxTime: timeFrom(args.undef_per_timeout),
 	testMaxTime: timeFrom(args.per_timeout),
 	testStrategy: args.test_strategy,
+	testOrder: args.test_order,
 	jsonOut: args.json_path,
 	printPaths: args.print_paths,
 	printDeltaCoverage: args.print_coverage,

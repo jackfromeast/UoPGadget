@@ -95,11 +95,13 @@ class UndefinedPool {
  * 
  */
 class UndefinedUTQ {
-	constructor(testFile=undefined) {
+	constructor(testFile=undefined, order="backward") {
 		this.seenUndefPool = [];
 		this.queue = [];
 		this.currentProp = undefined;
 		this.roundid = 0;
+
+		this.order = order;
 
 		if (testFile) {
 			try {
@@ -145,6 +147,15 @@ class UndefinedUTQ {
 			});
 			this.seenUndefPool = this.seenUndefPool.concat(props[i]);
 		}
+
+		if(this.order==="backward"){
+			this.queue = this.queue.reverse();
+		}else if(this.order==="random"){
+			this.queue = this.queue.sort(() => Math.random() - 0.5);
+		}else{
+			this.queue = this.queue;
+		}
+
 		this.roundid++;
 	}
 

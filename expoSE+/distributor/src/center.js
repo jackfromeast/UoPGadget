@@ -31,10 +31,10 @@ class Center {
 		this.helperProp = this.options.helperProp;
 
 		if (this.options.undefinedUTQ){
-			this.undefinedUTQ = new Undef.UndefinedUTQ(this.options.undefinedUTQ);
+			this.undefinedUTQ = new Undef.UndefinedUTQ(this.options.undefinedUTQ, this.options.testOrder);
 			this.multiUT = true;
 		}else{
-			this.undefinedUTQ = new Undef.UndefinedUTQ(this.options.undefinedUTQ);
+			this.undefinedUTQ = new Undef.UndefinedUTQ(this.options.undefinedUTQ, this.options.testOrder);
 			this.multiUT = false;
 		}
 
