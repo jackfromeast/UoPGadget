@@ -1,0 +1,851 @@
+{
+  "$schema" : "https://json.schemastore.org/sarif-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeQL",
+        "organization" : "GitHub",
+        "semanticVersion" : "2.14.0",
+        "rules" : [ {
+          "id" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+          "name" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+          "shortDescription" : {
+            "text" : "PrototypePollutingGadgetTemplate"
+          },
+          "defaultConfiguration" : {
+            "enabled" : true,
+            "level" : "warning"
+          },
+          "properties" : {
+            "id" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+            "kind" : "path-problem",
+            "name" : "PrototypePollutingGadgetTemplate",
+            "precision" : "high",
+            "problem.severity" : "warning"
+          }
+        } ]
+      }
+    },
+    "artifacts" : [ {
+      "location" : {
+        "uri" : "template.js",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 0
+      }
+    } ],
+    "results" : [ {
+      "ruleId" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "js/prototype-polluting-gadget-zhengyu revised by Zhengyu Liu target codebases are template engine Find flows from 1. any exported functions to undefined property read 2. from undefined property read to eval-like function sink(internal function for silent-spring) Use multi-labels to track: 1. callflow for nodes within an exported function 2. polluted for nodes that derived from undefined property read 3. receiver for nodes that represent a object that contains an polluted property To run this script on different codebase: 1. specific the source code path in line 38 2. set the underfined property name in line 250",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "[template](1) (template.js) -> \\[\\] -> [Function](2)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "template.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 134,
+            "endLine" : 236,
+            "endColumn" : 2
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "297f81519be975dc:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 134,
+                  "endLine" : 236,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... sult;\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 196,
+                  "startColumn" : 18,
+                  "endColumn" : 34
+                }
+              },
+              "message" : {
+                "text" : "options.variable #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 196,
+                  "startColumn" : 7,
+                  "endColumn" : 34
+                }
+              },
+              "message" : {
+                "text" : "variable #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 27,
+                  "endColumn" : 35
+                }
+              },
+              "message" : {
+                "text" : "variable #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 27,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "variable || 'obj' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 26,
+                  "endColumn" : 45
+                }
+              },
+              "message" : {
+                "text" : "(variable || 'obj') #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 12,
+                  "endLine" : 222,
+                  "endColumn" : 20
+                }
+              },
+              "message" : {
+                "text" : "'functi ... __p\\n}' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 3,
+                  "endLine" : 222,
+                  "endColumn" : 20
+                }
+              },
+              "message" : {
+                "text" : "source #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 225,
+                  "startColumn" : 58,
+                  "endColumn" : 64
+                }
+              },
+              "message" : {
+                "text" : "source #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 225,
+                  "startColumn" : 34,
+                  "endColumn" : 64
+                }
+              },
+              "message" : {
+                "text" : "sourceU ...  source | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 134,
+                  "endLine" : 236,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... sult;\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 196,
+                  "startColumn" : 18,
+                  "endColumn" : 34
+                }
+              },
+              "message" : {
+                "text" : "options.variable | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 196,
+                  "startColumn" : 7,
+                  "endColumn" : 34
+                }
+              },
+              "message" : {
+                "text" : "variable #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 27,
+                  "endColumn" : 35
+                }
+              },
+              "message" : {
+                "text" : "variable | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 27,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "variable || 'obj' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 26,
+                  "endColumn" : 45
+                }
+              },
+              "message" : {
+                "text" : "(variable || 'obj') | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 12,
+                  "endLine" : 222,
+                  "endColumn" : 20
+                }
+              },
+              "message" : {
+                "text" : "'functi ... __p\\n}' #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 3,
+                  "endLine" : 222,
+                  "endColumn" : 20
+                }
+              },
+              "message" : {
+                "text" : "source | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 225,
+                  "startColumn" : 58,
+                  "endColumn" : 64
+                }
+              },
+              "message" : {
+                "text" : "source | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 225,
+                  "startColumn" : 34,
+                  "endColumn" : 64
+                }
+              },
+              "message" : {
+                "text" : "sourceU ...  source | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 134,
+                  "endLine" : 236,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... sult;\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 196,
+                  "startColumn" : 18,
+                  "endColumn" : 34
+                }
+              },
+              "message" : {
+                "text" : "options.variable #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 196,
+                  "startColumn" : 7,
+                  "endColumn" : 34
+                }
+              },
+              "message" : {
+                "text" : "variable | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 27,
+                  "endColumn" : 35
+                }
+              },
+              "message" : {
+                "text" : "variable #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 27,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "variable || 'obj' | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 26,
+                  "endColumn" : 45
+                }
+              },
+              "message" : {
+                "text" : "(variable || 'obj') #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 12,
+                  "endLine" : 222,
+                  "endColumn" : 20
+                }
+              },
+              "message" : {
+                "text" : "'functi ... __p\\n}' | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 3,
+                  "endLine" : 222,
+                  "endColumn" : 20
+                }
+              },
+              "message" : {
+                "text" : "source | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 225,
+                  "startColumn" : 58,
+                  "endColumn" : 64
+                }
+              },
+              "message" : {
+                "text" : "source #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 225,
+                  "startColumn" : 34,
+                  "endColumn" : 64
+                }
+              },
+              "message" : {
+                "text" : "sourceU ...  source | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 134,
+                  "endLine" : 236,
+                  "endColumn" : 2
+                }
+              },
+              "message" : {
+                "text" : "functio ... sult;\\n} | #callflow"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 196,
+                  "startColumn" : 18,
+                  "endColumn" : 34
+                }
+              },
+              "message" : {
+                "text" : "options.variable | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 196,
+                  "startColumn" : 7,
+                  "endColumn" : 34
+                }
+              },
+              "message" : {
+                "text" : "variable | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 27,
+                  "endColumn" : 35
+                }
+              },
+              "message" : {
+                "text" : "variable | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 27,
+                  "endColumn" : 44
+                }
+              },
+              "message" : {
+                "text" : "variable || 'obj' | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 26,
+                  "endColumn" : 45
+                }
+              },
+              "message" : {
+                "text" : "(variable || 'obj') | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 12,
+                  "endLine" : 222,
+                  "endColumn" : 20
+                }
+              },
+              "message" : {
+                "text" : "'functi ... __p\\n}' | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 3,
+                  "endLine" : 222,
+                  "endColumn" : 20
+                }
+              },
+              "message" : {
+                "text" : "source #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 225,
+                  "startColumn" : 58,
+                  "endColumn" : 64
+                }
+              },
+              "message" : {
+                "text" : "source | #polluted"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "template.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 225,
+                  "startColumn" : 34,
+                  "endColumn" : 64
+                }
+              },
+              "message" : {
+                "text" : "sourceU ...  source | #polluted #receiver"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "template.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 134,
+            "endLine" : 236,
+            "endColumn" : 2
+          }
+        },
+        "message" : {
+          "text" : "template"
+        }
+      }, {
+        "id" : 2,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "template.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 225,
+            "startColumn" : 34,
+            "endColumn" : 64
+          }
+        },
+        "message" : {
+          "text" : "Function"
+        }
+      } ]
+    } ],
+    "columnKind" : "utf16CodeUnits",
+    "properties" : {
+      "semmle.formatSpecifier" : "sarifv2.1.0"
+    }
+  } ]
+}
