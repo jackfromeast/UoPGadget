@@ -44,6 +44,7 @@ class Scheduler extends EventEmitter{
 		this.forinLoad = false;
 
 		this.helperPool = new Undef.UndefinedPool();
+		this.successHelpers = [];
 
 		/** initialized in start method */
 		this.timeout = null;
@@ -170,7 +171,7 @@ class Scheduler extends EventEmitter{
 		this._summary();
 
 		// emit done event
-		this.emit("done", this.undefinedUT, this.undefinedPool.getUpdatedMap(), this.helperPool.getUndefinedPool(), this.success);
+		this.emit("done", this.undefinedUT, this.undefinedPool.getUpdatedMap(), this.helperPool.getUndefinedPool(), this.success, this.successHelpers);
 	}
 
 	_nextID() {
@@ -230,7 +231,7 @@ class Scheduler extends EventEmitter{
 		});
 	}
 
-	_pushDone(test, input, pc, pcString, alternatives, result, undefinedUT, undefinedPool, helperPool, forinLoad, coverage, errors) {
+	_pushDone(test, input, pc, pcString, alternatives, result, undefinedUT, undefinedPool, helperPool, successHelper, forinLoad, coverage, errors) {
 		this._done.push({
 			id: test.file.id,
 			input: input,
@@ -241,6 +242,7 @@ class Scheduler extends EventEmitter{
 			errors: errors,
 			undefinedPool: this.undefinedPool.getUndatedPool(undefinedPool),
 			helperPool: this.helperPool.getUndatedPool(helperPool),
+			successHelper: successHelper,
 			forinLoad: forinLoad,
 			time: test.time(),
 			startTime: test.startTime(),
@@ -268,12 +270,18 @@ class Scheduler extends EventEmitter{
 		}
 
 		if (finalOut) {
-			this._pushDone(test, finalOut.input, finalOut.pc, finalOut.pcString, finalOut.alternatives, finalOut.result, finalOut.undefinedUT, finalOut.undefinedPool, finalOut.helperPool, finalOut.forinLoad, coverage, errors.concat(finalOut.errors));
+			this._pushDone(test, finalOut.input, finalOut.pc, finalOut.pcString, finalOut.alternatives, finalOut.result, finalOut.undefinedUT, finalOut.undefinedPool, finalOut.helperPool, finalOut.successHelper, finalOut.forinLoad, coverage, errors.concat(finalOut.errors));
 			this._expandAlternatives(test.file, finalOut.alternatives, coverage);
 			this._stats.merge(finalOut.stats);
 			this.undefinedPool.updatePool(finalOut.input, finalOut.undefinedPool);
 			this.helperPool.updatePool(finalOut.input, finalOut.helperPool);
 			
+			if (finalOut.successHelper) {
+				if(!this.successHelpers.includes(finalOut.successHelper)){
+					this.successHelpers.push(finalOut.successHelper);
+				}
+			}
+
 			if (finalOut.result && !this.success){
 				this.firsthittime = (new Date()).getTime();
 			}
@@ -283,7 +291,7 @@ class Scheduler extends EventEmitter{
 			}
 
 		} else {
-			this._pushDone(test, test.file.input, test.file.pc, test.file.pcString, [], false, this.undefinedUT, [], [], false, coverage, errors.concat([{ error: "Error extracting final output - a fatal error must have occured" }]));
+			this._pushDone(test, test.file.input, test.file.pc, test.file.pcString, [], false, this.undefinedUT, [], [], undefined, false, coverage, errors.concat([{ error: "Error extracting final output - a fatal error must have occured" }]));
 		}
 
 		this._postTest(test);
@@ -337,7 +345,7 @@ class Scheduler extends EventEmitter{
 		let newUndefinedMap = this.undefinedPool.getUpdatedMap();
 		let firstHitTime;
 		if(this.success){
-			firstHitTime = Math.round((this.firsthittime - this.starttime) / 1000);
+			firstHitTime = (this.firsthittime - this.starttime) / 1000;
 		}else{
 			firstHitTime = "-1";
 		}

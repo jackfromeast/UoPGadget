@@ -47,6 +47,21 @@ class Center {
 		this.curTestStartTime = null;
 		this.curTestEndTime = null;
 		this.id = 0;
+
+		/**
+		 * This part is used for experiment RQ3
+		 * how long does it take to find the correct undefine property
+		 */
+		this.startTime = Date.now();
+		// this.tps = [
+		// 	["code", "value"],
+		// 	["line", "value"],
+		// 	["exposing", "value"],
+		// 	["output", "value"],
+		// 	["itemAlias", "value"],
+		// 	["templateNamespace", "value"]
+		// ];
+
 	}
 
 	start(file, baseInput) {
@@ -70,20 +85,31 @@ class Center {
 	 * @param {*} baseInput 
 	 */
 	async startMulti(file, baseInput){
+		// let tpflag = false;
+		// let tpTime = -1;
+		let tpCount = 0;
+
 		this.setupLogFile(file);
 		this.curUndefined = this.undefinedUTQ.next();
+
+		// if(this.curUndefined && this.tps.some(subArray => this._arrayEqual(this.curUndefined.props, subArray))){
+		// 	tpflag = true;
+		// 	tpTime = Date.now()-this.startTime;
+		// }
+
 		while(this.curUndefined){
 			this.scheduler = new Scheduler(this.curUndefined);
 
 			const done = new Promise(resolve => {
-				this.scheduler.on("done", (propsUT, newlyFoundProps, newHelperProps, success) => {
+				this.scheduler.on("done", (propsUT, newlyFoundProps, newHelperProps, success, successHelper) => {
 					this.curTestEndTime = Date.now();
 
-					if (success && this.curUndefined.withHelper) {
-						this.undefinedUTQ.addSuccessHelper(this.curUndefined.withHelper);
-						
+					if (successHelper) {
+						for(let i=0, len=successHelper.length; i<len; i++){
+							this.undefinedUTQ.addSuccessHelper(successHelper[i]);
+						}
 						// clean up the items in the queue that used to test the helper property
-						this.undefinedUTQ.cleanUp(this.curUndefined.roundid);
+						// this.undefinedUTQ.cleanUp(this.curUndefined.roundid);
 					}
 
 					if (!success && !this.curUndefined.withHelper && this.helperProp){
@@ -96,17 +122,22 @@ class Center {
 					
 					this.scheduler = null;  // explicitly set null for garbage collection
 
+					let curTestTime = (this.curTestEndTime - this.curTestStartTime) / 1000;
+
 					/** logging */
 					this.log({
 						"id": this.id++,
 						"props": propsUT,
 						"withHelper": this.curUndefined.withHelper,
 						"withChain": this.curUndefined.withChain,
-						"time": (this.curTestEndTime - this.curTestStartTime) / 1000,
+						"time": curTestTime,
+						"tpTime": success ? ((this.curTestEndTime-this.startTime) / 1000) - curTestTime : -1,
+						"tpCount": tpCount++,
 						"success": success,
 						"newlyFoundProps": newlyFoundProps,
 						"addQueueHelper": this.undefinedUTQ.newAddedHelper,
 						"addQueueChain": this.undefinedUTQ.newAddedChain,
+						"addSuccessHelper": successHelper,
 						"roundid": this.curUndefined.roundid,
 					}); //
 					this.undefinedUTQ.cleanNewAddedProps();
@@ -115,6 +146,11 @@ class Center {
 					resolve();  // Resolve the promise, allowing the loop to continue
 				});
 			});
+
+			// if(this.curUndefined.props && this.tps.some(subArray => this._arrayEqual(this.curUndefined.props, subArray))){
+			// 	tpflag = true;
+			// 	tpTime = Date.now()-this.startTime;
+			// }
 
 			this.curTestStartTime = Date.now();
 			this.scheduler.start(file, baseInput);		/** this is asynchronouns call */
@@ -185,6 +221,23 @@ class Center {
 		this.curTestEndTime = null;
 	}
 
+	_arrayEqual(a, b){
+		if (a.length !== b.length) {
+			return false;
+		}
+
+		// sort both arrays
+		a.sort();
+		b.sort();
+
+		for (var i = 0; i < a.length; i++) {
+			if (a[i] !== b[i]) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
 	
 }
 

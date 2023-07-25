@@ -186,7 +186,7 @@ class UndefinedUTQ {
 		}
 
 		for (let i = 0; i < newProps.length; i++) {
-			if (!propsUT.includes(newProps[i])){
+			if (!propsUT.includes(newProps[i]) && !this.helperProps.includes(newProps[i])){
 				this.insert({
 					props: [...propsUT, newProps[i]],
 					initialInput: undefined,

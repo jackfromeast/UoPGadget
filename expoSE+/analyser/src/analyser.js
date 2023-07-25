@@ -48,6 +48,7 @@ J$.analysis = new SymbolicExecution(J$, JSON.parse(input), JSON.parse(undefinedU
 			undefinedPool: state.undefinedPool,
 			undefinedUT: state.undefinedUnderTest,
 			helperPool: state.retHelper? state.helperCandidates: [],
+			successHelper: (state.withHelper && !state.retHelper)? state.withHelper: undefined,
 			forinLoad: state.forinLoad,
 			stats: state.stats.export(),
 			result: state.result
