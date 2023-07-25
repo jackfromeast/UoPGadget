@@ -108,8 +108,11 @@ class Center {
 						for(let i=0, len=successHelper.length; i<len; i++){
 							this.undefinedUTQ.addSuccessHelper(successHelper[i]);
 						}
+
 						// clean up the items in the queue that used to test the helper property
-						// this.undefinedUTQ.cleanUp(this.curUndefined.roundid);
+						if(success){
+							this.undefinedUTQ.cleanUp(this.curUndefined.roundid);
+						}
 					}
 
 					if (!success && !this.curUndefined.withHelper && this.helperProp){
