@@ -24,10 +24,14 @@ class Coverage {
 		this._branches = [];
 		this._branchFilenameMap = [];
 		this._lastIid = 0; //Store the last IID touched for search strategizer
+
+		this.brachTrace = {};
 	}
 
 	end() {
-		const payload = {};
+		const payload = {
+			code: {}
+		};
 
 		for (let i = 0; i < this._branches.length; i++) {
             
@@ -48,14 +52,15 @@ class Coverage {
 					}
 				}
 
-				payload[this._branchFilenameMap[i]] = {
+				payload["code"][this._branchFilenameMap[i]] = {
 					smap: map,
 					branches: this._branches[i]
 				};
 			}
 		}
 
-		payload[LAST_IID] = this._lastIid;
+		payload["path"] = this.brachTrace;
+		payload[LAST_IID] =	 this._lastIid;
 		return payload;
 	}
 
@@ -83,10 +88,23 @@ class Coverage {
 	touch_cnd(iid, result) {
 		this.touch(iid);
 		this.getBranchInfo()[iid] |= (result ? CONDITIONAL_TRUE : CONDITIONAL_FALSE);
+
+		this.touchBranch(iid, result);
 	}
 
 	last() {
 		return this._lastIid || 0;
+	}
+
+	touchBranch(iid, result) {
+		let binResult = result ? 1 : 0;
+		let gid = this._sandbox.sid + ":" + iid;
+
+		if(Object.keys(this.brachTrace).includes(gid)){
+			this.brachTrace[gid].push(binResult);
+		}else{
+			this.brachTrace[gid] = [binResult];
+		}
 	}
 }
 

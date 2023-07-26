@@ -9,6 +9,7 @@ class Coverage {
 
 	constructor() {
 		this._current = {};
+		this._uniquePath = [];
 	}
 
 	_getFile(file) {
@@ -47,16 +48,34 @@ class Coverage {
 
 	}
 
+	getUniquePathNum() {
+		return this._uniquePath.length;
+	}
+
+	_stringifyPath(newPath) {	
+		let flatPath = "";
+		for (let [id, decisionList] of Object.entries(newPath)) {
+			flatPath += `[${id}:${decisionList.join("")}]`;
+
+		}
+		return flatPath;
+	}
+
 	/**
      * Merges new coverage data from a path with existing data
     */
 	add(coverage) {
-        
-		for (let i in coverage) {
+		let newPath = this._stringifyPath(coverage["path"]);
+		if(!this._uniquePath.includes(newPath)){
+			this._uniquePath.push(newPath);
+		}
+
+		let codeCoverage = coverage["code"];
+		for (let i in codeCoverage) {
 			if (i != LAST_IID) {
 				let file = this._getFile(i);
-				this._addSMap(file, coverage[i].smap);
-				this._mergeBranches(file, coverage[i].branches);
+				this._addSMap(file, codeCoverage[i].smap);
+				this._mergeBranches(file, codeCoverage[i].branches);
 			}
 		}
 

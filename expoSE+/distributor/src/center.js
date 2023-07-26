@@ -15,6 +15,7 @@
 
 import Undef from "./undefined";
 import Config from "./config";
+import Coverage from "./coverage-aggregator";
 import Scheduler from "./scheduler";
 import fs from "fs";
 import path from "path";
@@ -53,14 +54,8 @@ class Center {
 		 * how long does it take to find the correct undefine property
 		 */
 		this.startTime = Date.now();
-		// this.tps = [
-		// 	["code", "value"],
-		// 	["line", "value"],
-		// 	["exposing", "value"],
-		// 	["output", "value"],
-		// 	["itemAlias", "value"],
-		// 	["templateNamespace", "value"]
-		// ];
+
+		this.coverage = new Coverage(); /** per PuT */
 
 	}
 
@@ -98,10 +93,10 @@ class Center {
 		// }
 
 		while(this.curUndefined){
-			this.scheduler = new Scheduler(this.curUndefined);
+			this.scheduler = new Scheduler(this.curUndefined, this.coverage);
 
 			const done = new Promise(resolve => {
-				this.scheduler.on("done", (propsUT, newlyFoundProps, newHelperProps, success, successHelper) => {
+				this.scheduler.on("done", (propsUT, newlyFoundProps, newHelperProps, success, successHelper, coverage) => {
 					this.curTestEndTime = Date.now();
 
 					if (successHelper) {
@@ -127,6 +122,19 @@ class Center {
 
 					let curTestTime = (this.curTestEndTime - this.curTestStartTime) / 1000;
 
+					/** coverage per undefined property test group */
+					this.coverage = coverage;
+					// let totalLines = 0;
+					let totalRealLines = 0;
+					let totalLinesFound = 0;
+					this.coverage.final().forEach(d => {
+						// totalLines += d.loc.total;
+						totalRealLines += d.loc.all.length;
+						totalLinesFound += d.loc.found;
+					});
+					let lineCoverage = (totalLinesFound / totalRealLines)*100;
+					this.uniquePathNum = this.coverage.getUniquePathNum();
+
 					/** logging */
 					this.log({
 						"id": this.id++,
@@ -142,6 +150,9 @@ class Center {
 						"addQueueChain": this.undefinedUTQ.newAddedChain,
 						"addSuccessHelper": successHelper,
 						"roundid": this.curUndefined.roundid,
+						"linecoverage": lineCoverage,
+						"uniquePathNum": this.uniquePathNum,
+						"pastTime": (this.curTestEndTime-this.startTime) / 1000,
 					}); //
 					this.undefinedUTQ.cleanNewAddedProps();
 					this.clearTime();

@@ -17,7 +17,7 @@ import isInternal from "./internal";
 
 class Scheduler extends EventEmitter{
 
-	constructor(propUnderTest) {
+	constructor(propUnderTest, coverage=undefined) {
 		super();
 
 		this.cbs = [];
@@ -30,7 +30,8 @@ class Scheduler extends EventEmitter{
 		this._running = [];
 		this.undefinedPool = new Undef.UndefinedPool(this.options.undefinedFile);
 
-		this._coverage = new Coverage();
+		this._coverage = new Coverage(); /** per Test Unit */
+		this._sharedCoverage = coverage; /** per PuT */
 		this._stats = new Stats();
 
 		/**
@@ -71,9 +72,9 @@ class Scheduler extends EventEmitter{
 			withChain: this.withChain
 		}]);
 
-		this.timeout =setTimeout(() => {            
+		this.timeout = setTimeout(() => {            
 			this.cancel();
-		}, this.options.undefMaxTime);
+		}, this.withHelper? this.options.withHelperMaxTime: this.options.undefMaxTime);
 
 		return this;
 	}
@@ -171,7 +172,7 @@ class Scheduler extends EventEmitter{
 		this._summary();
 
 		// emit done event
-		this.emit("done", this.undefinedUT, this.undefinedPool.getUpdatedMap(), this.helperPool.getUndefinedPool(), this.success, this.successHelpers);
+		this.emit("done", this.undefinedUT, this.undefinedPool.getUpdatedMap(), this.helperPool.getUndefinedPool(), this.success, this.successHelpers, this._sharedCoverage);
 	}
 
 	_nextID() {
@@ -267,6 +268,7 @@ class Scheduler extends EventEmitter{
 
 		if (coverage) {
 			this._coverage.add(coverage);
+			if(this._sharedCoverage){this._sharedCoverage.add(coverage);}
 		}
 
 		if (finalOut) {
@@ -397,6 +399,7 @@ class Scheduler extends EventEmitter{
 		Math.round((totalLinesFound / totalRealLines) * 10000) / 100;
 		console.log(`[+] Total Lines Of Code ${totalLines}`);
 		console.log(`[+] Total Coverage: ${totalLinesFound / totalRealLines}%`);
+		console.log(`[+] Total Unique Paths: ${this._coverage.getUniquePathNum()}`);
 
 		if (Config.printDeltaCoverage) {
 			CoverageMap(this._coverage.lines(), line => console.log(line));

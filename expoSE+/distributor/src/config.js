@@ -51,6 +51,14 @@ parser.addArgument("--undef-per-timeout", {
 	help: "timeout for individual undefined properties",
 });
 
+parser.addArgument("--undef-per-withhelper-timeout", {
+	dest: "withhelper_timeout",
+	type: "string",
+	defaultValue: "1m",
+	action: "store",
+	help: "timeout for individual undefined properties tested with helper",
+});
+
 parser.addArgument("--per-timeout", {
 	dest: "per_timeout",
 	type: "string",
@@ -186,6 +194,7 @@ export default {
 	maxTime: timeFrom(args.timeout),
 	undefMaxTime: timeFrom(args.undef_per_timeout),
 	testMaxTime: timeFrom(args.per_timeout),
+	withHelperMaxTime: timeFrom(args.withhelper_timeout),
 	testStrategy: args.test_strategy,
 	testOrder: args.test_order,
 	jsonOut: args.json_path,
