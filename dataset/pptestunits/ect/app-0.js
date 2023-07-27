@@ -8,11 +8,9 @@ catch(e){
 }
 
 var renderer = ECT({ root : {
-				layout: '<html><head><title><%- @title %></title></head><body><% content %></body></html>',
-				page: '<% extend "layout" %><p>Page content</p>'
-				}
-			});
+	page: '<p>Page content</p>'
+	}
+});
 
-var html = renderer.render('page', { title: 'Hello, World!' });
-
+var html = renderer.render('page', {});
 // console.log(html);

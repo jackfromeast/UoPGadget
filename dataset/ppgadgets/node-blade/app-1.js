@@ -5,8 +5,8 @@ const blade = require('blade');
  */
 
 
-Object.prototype.code = "console.log('RCE!')"
-Object.prototype.value = "somevalue" // helper property, bladejs/lib/parser/index.js::1316
+// Object.prototype.code = "console.log('RCE!')"
+// Object.prototype.value = "somevalue" // helper property, bladejs/lib/parser/index.js::1316
 
 
 const template = `html

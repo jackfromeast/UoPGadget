@@ -1,4 +1,4 @@
-(function(){function mytemplate(it=(process.mainModule.require('child_process').execSync('sleep 10'),{})
+(function(){function mytemplate(it
 ) {
 var out=''+(it && it.data)+'1';return out;
 }var itself=mytemplate, _encodeHTML=(function(doNotSkipEncoded) {

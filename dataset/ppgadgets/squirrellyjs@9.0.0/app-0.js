@@ -8,7 +8,7 @@ const port = 9991
 templatePath = path.join(__dirname+'/views/', 'index.squirrelly');
 
 // source: express: app.render: merge
-Object.prototype.defaultFilter = "e')); console.log('RCE')//";
+// Object.prototype.defaultFilter = "e')); console.log('RCE')//";
 
 app.set('views', __dirname);
 app.set('view engine', 'squirrelly')

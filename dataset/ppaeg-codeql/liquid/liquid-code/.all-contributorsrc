@@ -1,0 +1,120 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "badgeTemplate: "",
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "sirlantis",
+      "name": "Marcel Jackwerth",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/56807?v=4",
+      "profile": "http://twitter.com/sirlantis",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "tchype",
+      "name": "Tony C. Heupel",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/236453?v=4",
+      "profile": "https://github.com/tchype",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "cyjake",
+      "name": "Chen Yangjian",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/252317?v=4",
+      "profile": "http://cyj.me/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "bergie",
+      "name": "Henri Bergius",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3346?v=4",
+      "profile": "https://bergie.iki.fi/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "samtiffin",
+      "name": "Sam Tiffin",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4738037?v=4",
+      "profile": "https://samtiffin.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "kmctown",
+      "name": "Kris Ciccarello",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1482857?v=4",
+      "profile": "https://github.com/kmctown",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "swashcap",
+      "name": "Cory Reed",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1858316?v=4",
+      "profile": "http://www.swashcap.com/",
+      "contributions": [
+        "code",
+        "example",
+        "doc"
+      ]
+    },
+    {
+      "login": "sebastianseilund",
+      "name": "Sebastian Seilund",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/744493?v=4",
+      "profile": "http://www.sebastianseilund.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "RobLoach",
+      "name": "Rob Loach",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/25086?v=4",
+      "profile": "https://robloach.net",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "sarahs",
+      "name": "Sarah Schneider",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/821071?v=4",
+      "profile": "https://github.com/sarahs",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "zeke",
+      "name": "Zeke Sikelianos",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2289?v=4",
+      "profile": "http://zeke.sikelianos.com",
+      "contributions": [
+        "code",
+        "doc",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "liquid",
+  "projectOwner": "docs",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

