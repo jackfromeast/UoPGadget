@@ -100,6 +100,7 @@ class UndefinedUTQ {
 		this.queue = [];
 		this.currentProp = undefined;
 		this.roundid = 0;
+		this.secondLoad = false;
 
 		this.order = order;
 
@@ -164,6 +165,11 @@ class UndefinedUTQ {
 	 * 
 	 * when testing prop1, we found [prop3, prop4, prop5] as helper properties
 	 * then, we add [[prop1, prop3], [prop1, prop4], [prop1, prop5]] to the queue
+	 * 
+	 * Our current strategy:
+	 * successHelper: helper property that will no longer cause the error
+	 * we test successHelper every time and for other helper properties candidate, we only test them once
+	 * 
 	 * @param {*} props 
 	 */
 	addHelperProps(propsUT, props) {
@@ -215,7 +221,8 @@ class UndefinedUTQ {
 	addChainProps(propsUT, undefUpdateMap) {
 		for (let input in undefUpdateMap) {
 			for (let prop of undefUpdateMap[input]) {
-				if (!this.seenUndefPool.includes(prop)){
+				// if (!this.seenUndefPool.includes(prop) && !propsUT.includes(prop)){
+				if (!propsUT.includes(prop)){
 					this.push({
 						props: [...propsUT, prop],
 						initialInput: JSON.parse(input),
@@ -227,18 +234,41 @@ class UndefinedUTQ {
 					this.seenUndefPool.push(prop);
 					this.newAddedChain.push(prop);
 				}
+				// }
 			}
 		}
 		this.roundid++;
 	}
 
 	cleanUp(roundid) {
-		this.queue = this.queue.filter(item => item.roundid !== roundid);
+		this.queue = this.queue.filter(item => (item.roundid !== roundid || !item.withHelper));
 	}
 
 	cleanNewAddedProps(){
 		this.newAddedHelper = [];
 		this.newAddedChain = [];
+	}
+
+	addSecondChainLayer(){
+		if(this.secondLoad){return;}
+		let secLayerChain = [];
+		for (let i = 0; i < this.seenUndefPool.length; i++) {
+			for (var j = i + 1; j < this.seenUndefPool.length; j++) {
+				secLayerChain.push([this.seenUndefPool[i], this.seenUndefPool[j]]);
+			}
+		}
+
+		for (let i = 0; i < secLayerChain.length; i++) {
+			this.push({
+				props: secLayerChain[i],
+				initialInput: undefined,
+				withHelper: undefined,
+				withChain: undefined,
+				roundid: this.roundid
+			});
+		}
+		this.roundid++;
+		this.secondLoad = true;
 	}
 
 	getCurrentUT(){

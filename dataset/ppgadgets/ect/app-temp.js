@@ -7,6 +7,15 @@ catch(e){
     console.log("[!] symbolic execution not enabled")
 }
 
-var ectRenderer = ECT({ watch: true, root: __dirname + '/views', ext : '.ect' });
+// Object.prototype.indent = "process.mainModule.require('child_process').execSync('sleep 10')\n//";
 
-ectRenderer.render('index');
+var renderer = ECT({ root : {
+				page: '<p>Page content</p>'
+				}
+			});
+
+var html = renderer.render('page', {});
+
+console.log(html);
+
+ 

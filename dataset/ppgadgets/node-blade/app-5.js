@@ -2,8 +2,8 @@ const blade = require('blade');
 const fs = require('fs');
 const path = require('path');
 
-Object.prototype.value = "somevalue"
-Object.prototype.itemAlias = "){console.log('RCE!')}\n,function("
+// Object.prototype.value = "somevalue"
+// Object.prototype.itemAlias = "){console.log('RCE!')}\n,function("
 
 
 // This template includes the `foreach` directive

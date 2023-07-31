@@ -2,8 +2,7 @@
 
 var doT = require('dot');
 
-Object.prototype.destination = "/home/ubuntu/ppaeg/dataset/ppgadgets/doT/tmp"
+// Object.prototype.destination = "/home/ubuntu/ppaeg/dataset/ppgadgets/doT/tmp"
 
-// injected code can only be executed if undefined is passed to template function
+// compile to arbitrary destination
 const templates = doT.process({path: __dirname+'/views'});
-var mytemplate = require(__dirname+'/views/mytemplate.js')

@@ -172,6 +172,11 @@ class Center {
 			await done;									/** suspend at here */
 			
 			this.curUndefined = this.undefinedUTQ.next();
+
+			if(!this.curUndefined && (this.options.chainLayer==="2")){
+				this.undefinedUTQ.addSecondChainLayer();
+				this.curUndefined = this.undefinedUTQ.next();
+			}
 		}
 	}
 

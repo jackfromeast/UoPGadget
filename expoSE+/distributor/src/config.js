@@ -38,7 +38,7 @@ parser.addArgument("--max-concurrent", {
 parser.addArgument("--timeout", {
 	dest: "timeout",
 	type: "string",
-	defaultValue: "2h",
+	defaultValue: "5h",
 	action: "store",
 	help: "maximum time for the tests",
 });
@@ -154,6 +154,13 @@ parser.addArgument("--chain", {
 	help: "whether test chain undefined prop to the queue",
 });
 
+parser.addArgument("--chainLayer", {
+	dest: "chainLayer",
+	defaultValue: 1,
+	action: "store",
+	help: "whether combined each 2 undefined properties in the inital pool",
+});
+
 parser.addArgument("--patch", {
 	dest: "helperProp",
 	defaultValue: false,
@@ -206,6 +213,7 @@ export default {
 	undefinedFile: args.undefined_file,
 	undefinedUTQ: args.undefined_utq,
 	chainProp: args.chainProp,
+	chainLayer: args.chainLayer,
 	helperProp: args.helperProp,
 	z3: args.z3_lib,
 	input: args.init_input,
