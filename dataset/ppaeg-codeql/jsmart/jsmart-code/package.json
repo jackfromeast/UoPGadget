@@ -1,0 +1,63 @@
+{
+  "name": "jsmart",
+  "title": "jSmart",
+  "description": "jSmart is javascript templating engine based on PHP Smarty Template Engine.",
+  "main": "dist/jsmart.js",
+  "version": "4.0.0",
+  "url": "https://github.com/umakantp/jsmart/",
+  "keywords": [
+    "jsmart",
+    "smarty",
+    "javascript",
+    "template",
+    "templates",
+    "engine"
+  ],
+  "author": "Umakant Patil <me@umakantpatil.com>",
+  "contributors": [
+    {
+      "name": "Umakant Patil",
+      "email": "me@umakantpatil.com"
+    },
+    {
+      "name": "Max Miroshnikov",
+      "email": "miroshnikov@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "grunt": "^1.4.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^5.0.1",
+    "grunt-eslint": "^23.0.0",
+    "grunt-karma": "^4.0.2",
+    "jasmine-core": "^3.7.1",
+    "karma": "^6.3.2",
+    "karma-jasmine": "^4.0.1",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-requirejs": "^1.1.0",
+    "karma-spec-reporter": "0.0.32",
+    "load-grunt-tasks": "^5.1.0",
+    "requirejs": "^2.3.6",
+    "requirejs-text": "^2.0.16"
+  },
+  "bugs": {
+    "url": "https://github.com/umakantp/jsmart/issues"
+  },
+  "scripts": {
+    "build": "npm install && grunt",
+    "test": "grunt karma",
+    "precommit": "grunt lint && grunt karma",
+    "doc": "https://github.com/umakantp/jsmart/wiki"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/umakantp/jsmart.git"
+  }
+}

