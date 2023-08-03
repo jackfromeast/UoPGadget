@@ -1,0 +1,33 @@
+{
+  "name": "saker",
+  "version": "1.1.1",
+  "description": "Saker is a template engine for Node.js and browsers, it is lightweight, powerfull and easy to use.",
+  "main": "lib/saker.js",
+  "scripts": {
+    "test": "mocha test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eshengsky/saker.git"
+  },
+  "keywords": [
+    "template",
+    "view",
+    "engine",
+    "node",
+    "node.js"
+  ],
+  "author": "Sky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eshengsky/saker/issues"
+  },
+  "homepage": "https://github.com/eshengsky/saker#readme",
+  "devDependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "express": "^4.14.0",
+    "debug": "~2.2.0",
+    "mocha": "^3.1.2"
+  }
+}

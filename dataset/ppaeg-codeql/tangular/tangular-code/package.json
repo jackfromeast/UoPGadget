@@ -1,0 +1,36 @@
+{
+  "name": "tangular",
+  "version": "4.0.0",
+  "description": "A simple template engine like Angular.js for JavaScript or node.js",
+  "main": "./Tangular.js",
+  "keywords": [
+    "Angular",
+    "Handlebars",
+    "Mustache",
+    "view engine",
+    "template"
+  ],
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petersirka/Tangular.git"
+  },
+  "author": "Peter Širka",
+  "bugs": {
+    "url": "https://github.com/petersirka/Tangular/issues"
+  },
+  "homepage": "https://github.com/petersirka/Tangular#readme",
+  "license": "MIT",
+  "contributors": [{
+      "name": "Peter Širka",
+      "email": "petersirka@gmail.com"
+  }, {
+      "name": "Константин",
+      "email": ""
+  }]
+}

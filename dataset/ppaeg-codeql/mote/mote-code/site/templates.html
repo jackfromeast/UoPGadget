@@ -1,0 +1,21 @@
+<!-- templates -->
+<script type='x-mote' id='result'>
+  <div class="bar"></div>
+  <div class="label">
+    {{name}}: {{?value}}{{opsSec}}K ops/sec{{/value}}
+  </div>
+</script>
+
+<script type='x-mote' id='suite'>
+  <div class="suite" id="{{name}}">
+    <button>{{name}}</button>
+  </div>
+</script>
+
+<script type='x-mote' id='spec-section'>
+  <h2>{{name}}</h2>
+  {{#results}}
+  <div class="spec-result {{status}}">{{description}}</div>
+  {{/results}}
+</script>
+

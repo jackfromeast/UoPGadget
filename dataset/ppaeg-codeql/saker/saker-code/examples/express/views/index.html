@@ -1,0 +1,9 @@
+@{ this.layout = 'layout' }
+
+<article>
+    @if(code === 1) {
+        this.renderPartial('index_partial');
+    } else {
+        <p>Sorry, no data!</p>
+    }
+</article>

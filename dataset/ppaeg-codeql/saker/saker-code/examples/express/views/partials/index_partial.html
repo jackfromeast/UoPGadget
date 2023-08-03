@@ -1,0 +1,9 @@
+<ul>
+    @{
+        data.forEach(function(person) {
+            <li class="@(person.gender === 'female' ? 'pink' : '')">
+                <a href="/details/@person.id">@person.name</a>
+            </li>
+        });
+    }
+</ul>

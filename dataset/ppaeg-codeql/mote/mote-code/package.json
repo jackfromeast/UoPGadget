@@ -1,0 +1,15 @@
+{
+  "author": "satchmorun <rulfzid@gmail.com>",
+  "name": "mote",
+  "description": "A fast mustache template engine for JavaScript",
+  "version": "0.2.0",
+  "homepage": "https://github.com/satchmorun/mote",
+  "keywords": ["mustache", "mote", "template", "templates"],
+  "main": "./mote",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/satchmorun/mote.git"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

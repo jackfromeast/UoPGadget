@@ -1,0 +1,5 @@
+A fatal error occurred: /home/ubuntu/UoPGadget/dataset/ppaeg-codeql/dust2/dust2-db is not a recognized CodeQL database.
+
+real	0m0.451s
+user	0m0.807s
+sys	0m0.061s

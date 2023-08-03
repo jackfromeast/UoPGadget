@@ -1,0 +1,13 @@
+Running queries.
+Compiling query plan for /home/ubuntu/UoPGadget/silent-spring/codeql/queries/exortedAPIFilter.ql.
+[1/1 comp 1m15s] Compiled /home/ubuntu/UoPGadget/silent-spring/codeql/queries/exortedAPIFilter.ql.
+Starting evaluation of jackfromeast/protopollute/exortedAPIFilter.ql.
+[1/1 eval 5.3s] Evaluation done; writing results to jackfromeast/protopollute/exortedAPIFilter.bqrs.
+Shutting down query evaluator.
+Interpreting results.
+A fatal error occurred: Could not process query metadata for /home/ubuntu/UoPGadget/silent-spring/codeql/queries/exortedAPIFilter.ql.
+Error was: Expected result pattern(s) are not present for path-problem query: Expected at least 4 columns. [INVALID_RESULT_PATTERNS]
+
+real	1m22.965s
+user	3m1.022s
+sys	0m2.391s

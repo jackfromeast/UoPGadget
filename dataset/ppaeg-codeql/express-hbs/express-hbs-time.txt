@@ -1,0 +1,5 @@
+A fatal error occurred: /home/ubuntu/UoPGadget/dataset/ppaeg-codeql/express-hbs/express-hbs-db is not a recognized CodeQL database.
+
+real	0m0.477s
+user	0m0.896s
+sys	0m0.072s

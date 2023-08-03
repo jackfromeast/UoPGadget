@@ -1,0 +1,313 @@
+body {
+  background-image: url(broken_noise.png);
+  margin: 0 auto;
+  padding: 80px 0 0;
+  color: #777;
+  font-family: Georgia, serif;
+}
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.80);
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+header h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 0 16px;
+  /*text-shadow: 0 0 20px #fcaf3e;*/
+  display: inline;
+  height: 80px;
+  line-height: 80px;
+}
+
+nav {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  margin-left: 40px;
+}
+
+nav a {
+  font-size: 20px;
+  height: 40px;
+  color: #888a85;
+  line-height: 40px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #d3d7cf;
+}
+
+section {
+  display: none;
+  margin-top: 20px;
+}
+
+.suite {
+  margin: 0 10px 10px 0;
+  position: relative;
+  float: left;
+}
+
+.suite button {
+  height: 30px;
+  width: 100px;
+  margin: 0 0 10px;
+  background-color: #babdb6;
+  color: #222;
+  border: none;
+  padding: none;
+  /*text-transform: uppercase;*/
+  text-shadow: 1px 1px 2px #bbb;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+}
+
+.suite button:hover {
+  background-color: #d3d7cf;
+}
+
+.suite button:disabled {
+  color: #888a85;
+  background-color: #babdb6;
+}
+
+.result {
+  position: relative;
+  height: 30px;
+  width: 290px;
+  background-color: rgba(0, 0, 0, 0.30);
+  margin-bottom: 2px;
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 0;
+}
+
+.label {
+  position: absolute;
+  left: 7px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #bbb;
+}
+
+.spec-result {
+  width: 600px;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.pass {
+  color: #4e9a06;
+}
+
+.pass::before {
+  content: '✓';
+  margin: 0 10px;
+}
+
+.fail, .error {
+  color: #a40000;
+}
+
+.fail::before, .error::before {
+  content: '✖';
+  margin: 0 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+  margin: 1.5em 0 1em;
+}
+
+h1 { font-size: 24px; }
+h2 { font-size: 18px; }
+
+
+p {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+section a {
+  color: #f57900;
+}
+
+section a:visited {
+  color: #ce5c00;
+}
+
+code {
+  font-family: "Droid Sans Mono", Monaco, Consolas, "Lucida Console", monospace;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: rgba(0, 0, 0, 0.30);
+  color: #d3d7cf;
+  padding: 2px 6px;
+}
+
+pre code {
+  display: block;
+  padding: 1em;
+}
+
+pre .comment,
+pre .template_comment,
+pre .javadoc {
+  color: #555753;
+  font-style: italic;
+}
+
+pre .keyword,
+pre .ruby .function .keyword {
+  color: #f57900;
+}
+
+pre .function .keyword,
+pre .sub .keyword,
+pre .method,
+pre .list .title {
+  color: #edd400;
+}
+
+pre .string,
+pre .tag .value,
+pre .cdata,
+pre .filter .argument,
+pre .attr_selector,
+pre .apache .cbracket,
+pre .date,
+pre .tex .command {
+  color: #4e9a06;
+}
+
+pre .subst {
+  color: #DAEFA3;
+}
+
+pre .regexp {
+  color: #E9C062;
+}
+
+pre .function .title,
+pre .sub .identifier,
+pre .pi,
+pre .tag,
+pre .tag .keyword,
+pre .decorator,
+pre .ini .title,
+pre .shebang,
+pre .input_number {
+  color: #89BDFF;
+}
+
+pre .class .title,
+pre .haskell .label,
+pre .smalltalk .class,
+pre .javadoctag,
+pre .yardoctag,
+pre .phpdoc {
+  text-decoration: underline;
+}
+
+pre .symbol,
+pre .ruby .symbol .string,
+pre .ruby .symbol .keyword,
+pre .ruby .symbol .keymethods,
+pre .number {
+  color: #3387CC;
+}
+
+pre .params,
+pre .variable {
+  color: #d3d7cf;
+}
+
+pre .css .tag,
+pre .rules .property,
+pre .pseudo,
+pre .tex .special {
+  color: #CDA869;
+}
+
+pre .css .class {
+  color: #9B703F;
+}
+
+pre .rules .keyword {
+  color: #C5AF75;
+}
+
+pre .rules .value {
+  color: #CF6A4C;
+}
+
+pre .css .id {
+  color: #8B98AB;
+}
+
+pre .annotation,
+pre .apache .sqbracket,
+pre .nginx .built_in {
+  color: #9B859D;
+}
+
+pre .preprocessor {
+  color: #8996A8;
+}
+
+pre .hexcolor,
+pre .css .value .number {
+  color: #DD7B3B;
+}
+
+pre .css .function {
+  color: #DAD085;
+}
+
+pre .diff .header,
+pre .chunk,
+pre .tex .formula {
+  background-color: #0E2231;
+  color: #F8F8F8;
+  font-style: italic;
+}
+
+pre .diff .change {
+  background-color: #4A410D;
+  color: #F8F8F8;
+}
+
+pre .addition {
+  background-color: #253B22;
+  color: #F8F8F8;
+}
+
+pre .deletion {
+  background-color: #420E09;
+  color: #F8F8F8;
+}

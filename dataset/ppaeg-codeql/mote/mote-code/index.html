@@ -1,0 +1,290 @@
+<!doctype html>
+
+<html>
+
+  <head>
+    <meta charset='UTF-8' />
+    <title>mote.js</title>
+
+    <!-- style -->
+    <link href='site/style.css' rel='stylesheet' type='text/css'>
+
+    <!-- scripts -->
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
+    <script src='bench/benchmark.js'></script>
+    <script src='bench/hogan.js'></script>
+    <script src='bench/dust.js'></script>
+    <script src='bench/mustache.js'></script>
+    <script src='bench/handlebars.js'></script>
+    <script src='mote.js'></script>
+    <script src='bench/bench.js'></script>
+    <script src='site/specs.js'></script>
+    <script src='site/color.js'></script>
+    <script src='site/highlight.pack.js'></script>
+    <script src='site/index.js'></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <h1>mote.js</h1>
+        <nav>
+          <li><a href="#">about</a></li>
+          <li><a href="#">docs</a></li>
+          <li><a href="#">bench</a></li>
+          <li><a href="#">spec</a></li>
+          <li><a href="#">code</a></li>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="about">
+        <h1>mote</h1>
+<p>Mote.js is a spec-compliant, fast implementation of <a href="http://mustache.github.com">mustache</a> templates.
+See how it compares to the other popular engines by clicking the &quot;bench&quot; link
+in the menu.
+
+</p>
+<h1>mustache?</h1>
+<p>See the <a href="http://mustache.github.com/mustache.5.html">mustache manual</a> for more information about the mustache
+templating language.
+
+</p>
+<p>Mote is fully compliant with all the required parts of the <a href="https://github.com/mustache/spec">mustache
+spec,</a> with the exception of the optional lambda functionality.
+
+</p>
+<p>Mote has lambda support, but it works a little differently from the spec. For
+more, check out the docs.
+
+</p>
+<h1>motivation</h1>
+<p>Mote began its life as an exercise. I was experimenting with <a href="http://handlebarsjs.com/">Handlebars</a>
+and <a href="http://akdubya.github.com/dustjs/">dust</a>, Twitter had just released <a href="http://twitter.github.com/hogan.js/">hogan</a>, and I thought it would
+be fun to write a mustache implementation.
+
+</p>
+<p>I got it working, then set about trying to make it fast. I didn&apos;t think I could
+be competitive with the existing libraries, but I tried anyway. After all, this
+was just supposed to be a toy.
+
+</p>
+<p>Much to my surprise, it ended up being really fast.
+
+</p>
+<h1>license</h1>
+<p>Mote is MIT-licensed.
+
+</p>
+
+      </section>
+      <section id="docs">
+        <h1>installation</h1>
+<p>For node.js, use <a href="http://npmjs.org">npm</a>:
+
+</p>
+<pre><code>npm install node</code></pre>
+<p>For the browser, just download mote and include it in your page.
+
+</p>
+<pre><code class="html">&lt;script src=&quot;path/to/mote.js&quot;&gt;&lt;/script&gt;</code></pre>
+<h1>usage</h1>
+<p>Compile your template into a JavaScript function with <code>mote.compile</code>, and then
+call that function with your data:
+
+</p>
+<pre><code class="javascript">var greet = mote.compile(&apos;Greetings, {{name}}.&apos;);
+greet({name: &apos;Arthur Dent&apos;}); //=&gt; &apos;Greetings, Arthur Dent.&apos;</code></pre>
+<h1>variables</h1>
+<p>Variable tags are used for simple interpolation, like in the example above. If
+the property doesn&apos;t exist, you get back the empty string:
+
+</p>
+<pre><code class="javascript">var nothing = mote.compile(&apos;{{nothing}}&apos;)
+  , data = {};
+
+nothing(data); //=&gt; &apos;&apos;</code></pre>
+<p>By default, variable tags are HTML-escaped. To bypass the escaping, use
+triple-staches <code>{{{ ... }}}</code> or an ampersand <code>{{&amp; ... }}</code>:
+
+</p>
+<pre><code class="javascript">var normal = mote.compile(&apos;escaped: {{data}}&apos;)
+  , triple = mote.compile(&apos;triple: {{{data}}}&apos;)
+  , ampersand = mote.compile(&apos;ampersand: {{&amp;data}}&apos;)
+  , data = {data: &apos;&amp; &quot; &lt; &gt;&apos;};
+
+normal(data);    //=&gt; &apos;escaped: &amp;amp; &amp;quot; &amp;lt; &amp;gt;&apos;
+triple(data);    //=&gt; &apos;triple: &amp; &quot; &lt; &gt;&apos;
+ampersand(data); //=&gt; &apos;ampersand: &amp; &quot; &lt; &gt;&apos;</code></pre>
+<p>Mote supports the dot syntax for deep lookups:
+
+</p>
+<pre><code class="javascript">var lookup = mote.compile(&apos;{{a.b.c}}&apos;)
+  , data = {a: {b: {c: &apos;42&apos;}}};
+
+lookup(data); //=&gt; &apos;42&apos;</code></pre>
+<p>If a variable tag points to a function, mote will call it in the context of the
+object passed in and interpolate the result:
+
+</p>
+<pre><code class="javascript">var lookupFn = mote.compile(&apos;answer: {{getAnswer}}&apos;)
+  , data = {
+      answer: 42,
+      getAnswer: function() {
+        return this.answer;
+      }
+    };
+
+lookupFn(data); //=&gt; &apos;answer: 42&apos;</code></pre>
+<h1>sections</h1>
+<p>Section tags render the enclosed block zero or more times, depending on the
+value of the key in the passed-in context. They start with a hash and end with
+a slash: <code>{{#key}}{{/key}}</code>.
+
+</p>
+<p>If the key evaluates to a falsy value, the block isn&apos;t rendered:
+
+</p>
+<pre><code class="javascript">var empty = mote.compile(&apos;{{#nope}}Will you render me?{{/nope}}&apos;)
+  , data = {};
+
+empty(data); //=&gt; &apos;&apos;</code></pre>
+<p>If the key evaluates to a truthy value, its value will be pushed onto the
+lookup stack and the block will be rendered once:
+
+</p>
+<pre><code class="javascript">var once = mote.compile(&apos;{{#yep}}The answer is: {{answer}}{{/yep}}&apos;)
+  , data = {yep: {answer: 42}};
+
+once(data); //=&gt; &apos;The answer is: 42&apos;</code></pre>
+<p>If the key evaluates to an array, the block will be rendered once for each item
+in the array, with that item&apos;s value on top of the context stack. You can use
+<code>{{.}}</code> to get at the value of the current item:
+
+</p>
+<pre><code class="javascript">var many = mote.compile(&apos;{{#potatoes}}{{.}} potato, {{/potatoes}}4.&apos;)
+  , data = {potatoes: [1, 2, 3]};
+
+many(data); //=&gt; &apos;1 potato, 2 potato, 3 potato, 4.&apos;</code></pre>
+<p>If the key evaluates to a function, mote will call it in the context of the
+data object, passing it a function that renders the block. It will then
+interpolate the result of calling the key function. That&apos;s a weird glob of
+words, probably easier to just look at an example:
+
+</p>
+<pre><code class="javascript">var keyFn = mote.compile(&apos;{{#lambda}}Hello, {{name}}.{{/lambda}}&apos;)
+  , data = {
+      name: &apos;Arthur Dent&apos;,
+      lambda: function(fn) {
+        return fn() + &apos; &apos; + fn().toUpperCase();
+      }
+    };
+
+keyFn(data); //=&gt; &apos;Hello, Arthur Dent. HELLO, ARTHUR DENT.&apos;</code></pre>
+<h1>inverted sections</h1>
+<p>Inverted sections start with a caret and end with a slash:
+<code>{{^invert}}{{/invert}}</code>. They render their blocks zero or one time(s). If the
+key evaluates to a falsy value, the block renders, otherwise not:
+
+</p>
+<pre><code class="javascript">var emptyverted = mote.compile(&apos;{{^nope}}Will you render me?{{/nope}}&apos;)
+  , data = {};
+
+emptyverted(data); //=&gt; &apos;will you render me?&apos;</code></pre>
+<h1>existence sections</h1>
+<p>Existence sections start with a question mark and end with a slash:
+<code>{{?huh}}{{/huh}}</code>. This tag isn&apos;t in the mustache spec, but it can be
+convenient. It is the inverse of an inverted section: if the key evaluates to
+truthy, it renders the block once pushing the key&apos;s value onto the lookup
+stack, otherwise not at all.
+
+</p>
+<p>It&apos;s most common use is to generate tags surrounding lists:
+
+</p>
+<pre><code class="javascript">var list = mote.compile(
+  &apos;{{?items}}&apos; +
+  &apos;&lt;ul&gt;&apos; +
+  &apos;{{#items}}&lt;li&gt;{{.}}&lt;/li&gt;{{/items}}&apos; +
+  &apos;&lt;/ul&gt;&apos; +
+  &apos;{{/items}}&apos;
+);
+
+list({items: []});
+//=&gt; &apos;&apos;
+list({items: [&apos;Arthur&apos;, &apos;Ford&apos;]});
+//=&gt; &apos;&lt;ul&gt;&lt;li&gt;Arthur&lt;li&gt;&lt;li&gt;Ford&lt;/li&gt;&lt;/ul&gt;&apos;</code></pre>
+<h1>comments</h1>
+<p>Comment tags are just ignored when rendering. They look like: <code>{{! this is
+a comment !}}</code>.
+
+</p>
+<p>The bang before the closing tag is optional.
+
+</p>
+<pre><code class="javascript">var comment = mote.compile(&apos;{{! Listen to what I have to say!! !}}&apos;)
+  , data = {};
+
+comment({}); //=&gt; &apos;&apos;</code></pre>
+<h1>partials</h1>
+<p>Partials are a way to factor out bits of your templates into other templates.
+Another way to write the list example from above (in the existence section)
+would be:
+
+</p>
+<pre><code class="javascript">mote.compilePartial(&apos;list_item&apos;, &apos;{{#.}}&lt;li&gt;{{.}}&lt;/li&gt;{{/.}}&apos;);
+var list = mote.compile(
+  &apos;{{?items}}&apos; +
+  &apos;&lt;ul&gt;&apos; +
+  &apos;{{&gt; list_item}}&apos; +
+  &apos;&lt;/ul&gt;&apos; +
+  &apos;{{/items}}&apos;
+);
+
+list({items: [&apos;Arthur&apos;, &apos;Ford&apos;]});
+//=&gt; &apos;&lt;ul&gt;&lt;li&gt;Arthur&lt;li&gt;&lt;li&gt;Ford&lt;/li&gt;&lt;/ul&gt;&apos;</code></pre>
+<p>First, note that partials need to be compiled using <code>mote.compilePartial</code>,
+which takes the name that will later be used to lookup the partial.
+
+</p>
+<p>Secondly, there&apos;s a little bit of trickery in the partial using &apos;.&apos; as the
+section key. The reason this works is that the existence section tag pushes its
+value onto the top of the lookup stack, and the &apos;.&apos; key always refers to the
+top of the stack. So the first &apos;.&apos; refers to the <code>items</code> array itself, and
+inside its section, the &apos;.&apos; refers to each item in the <code>items</code> array.
+
+</p>
+
+      </section>
+      <section id="bench"></section>
+      <section id="spec"></section>
+      <section id="code">
+        <p><a href="https://github.com/satchmorun/mote">Development happens on the Github.</a></p>
+      </section>
+    </div>
+
+    <!-- templates -->
+<script type='x-mote' id='result'>
+  <div class="bar"></div>
+  <div class="label">
+    {{name}}: {{?value}}{{opsSec}}K ops/sec{{/value}}
+  </div>
+</script>
+
+<script type='x-mote' id='suite'>
+  <div class="suite" id="{{name}}">
+    <button>{{name}}</button>
+  </div>
+</script>
+
+<script type='x-mote' id='spec-section'>
+  <h2>{{name}}</h2>
+  {{#results}}
+  <div class="spec-result {{status}}">{{description}}</div>
+  {{/results}}
+</script>
+
+
+  </body>
+</html>
