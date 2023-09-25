@@ -2,14 +2,14 @@
 
 ![logo](https://github.com/jackfromeast/PPAEG/blob/master/.assets/ppaeg.logo.png)
 
-Please refer to [our wiki page](https://github.com/jackfromeast/PPAEG/wiki/home) for more information!
+Please refer to [our wiki page](https://github.com/anonymous/xxxxx/wiki/home) for more information!
 
 ## Installment
 
 If this system is still a private repo, please follow the link and clone the repo through your github token:
 
 ```
-git clone https://<your_private_token>@github.com/jackfromeast/ppaeg.git
+git clone https://<your_private_token>@github.com/anonymous/xxxxxx.git
 ```
 
 #### step1: install node v16
