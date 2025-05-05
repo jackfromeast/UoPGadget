@@ -2,7 +2,7 @@
 
 ![logo](https://github.com/jackfromeast/PPAEG/blob/master/.assets/ppaeg.logo.png)
 
-Please refer to [our wiki page](https://github.com/anonymous/xxxxx/wiki/home) for more information!
+Please refer to [our wiki page](https://github.com/jackfromeast/UoPGadget/wiki/home) for more information!
 
 ## Installment
 
